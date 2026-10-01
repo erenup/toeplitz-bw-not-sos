@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Build the pinned release and audit every imported project declaration."""
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import tempfile
+
+HERE = Path(__file__).resolve().parent
+FORBIDDEN = re.compile(r'\b(sorry|admit|native_decide|axiom|unsafe|implemented_by)\b')
+
+
+def require(condition, message):
+    if not condition:
+        raise SystemExit('FAIL: ' + message)
+
+
+def scan(text):
+    require(FORBIDDEN.search(text) is None, 'forbidden source token')
+
+
+def inventory():
+    data = json.loads((HERE / 'release-modules.json').read_text())
+    modules = data['modules']
+    require(data['entry_point'] == 'ToeplitzSOSRelease', 'release entry point')
+    require({'ToeplitzSOSRelease', 'ToeplitzSOS.Defs',
+             'ToeplitzSOS.Certificates.Range', 'ToeplitzSOS.Negative.Resolution'} <= set(modules),
+            'release inventory must contain both headline results and its entry point')
+    require(len(modules) == len(set(modules)) == data['module_count'], 'module inventory count')
+    require(all(re.fullmatch(r'ToeplitzSOS(?:\.[A-Za-z0-9_]+)+|ToeplitzSOSRelease', m)
+                for m in modules), 'project module names')
+    expected = sorted(m.replace('.', '/') + '.lean' for m in modules)
+    actual = sorted(str(p.relative_to(HERE)) for p in HERE.rglob('*.lean')
+                    if '.lake' not in p.parts and p != HERE / 'Audit.lean')
+    require(actual == expected == data['files'], 'exact release source inventory')
+    # Default library excludes the large generated certificates, their range
+    # theorem, and the full release entry point that imports that theorem.
+    default = [m for m in modules if m != 'ToeplitzSOSRelease'
+               and m != 'ToeplitzSOS.Certificates.Range'
+               and not m.startswith('ToeplitzSOS.Certificates.Generated.')]
+    return modules, default
+
+
+def audit(imports, inject=''):
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.lean', dir=HERE, delete=False) as file:
+        file.write(imports + '\n' + inject + '\n' + (HERE / 'Audit.lean').read_text().replace('import Lean\n', ''))
+        path = Path(file.name)
+    try:
+        return subprocess.run(['lake', 'env', 'lean', str(path)], cwd=HERE,
+                              text=True, capture_output=True)
+    finally:
+        path.unlink()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--certificates', action='store_true', help='also build and audit certificates at orders 3–20 and the range theorem')
+    args = parser.parse_args()
+    os.environ.setdefault('LEAN_NUM_THREADS', '2')
+    modules, default = inventory()
+    for module in modules:
+        scan((HERE / (module.replace('.', '/') + '.lean')).read_text())
+    subprocess.run(['lake', 'build'], cwd=HERE, check=True)
+    imports = '\n'.join('import ' + module for module in default) + '\nimport Lean\n'
+    expected = set(default)
+    if args.certificates:
+        # Serial targets keep the memory-intensive certificate elaborations apart.
+        for n in range(3, 21):
+            subprocess.run(['lake', 'build', f'ToeplitzSOS.Certificates.Generated.N{n}'], cwd=HERE, check=True)
+        subprocess.run(['lake', 'build', 'ToeplitzSOSRelease'], cwd=HERE, check=True)
+        imports = 'import ToeplitzSOSRelease\nimport Lean\n'
+        expected = set(modules)
+    result = audit(imports)
+    print(result.stdout, end='')
+    require(result.returncode == 0, result.stderr or 'Lean audit failed')
+    lines = result.stdout.splitlines()
+    require(lines[-1:] == ['PASS: axiom audit'], 'missing audit completion')
+    loaded = {line.removeprefix('MODULE ') for line in lines if line.startswith('MODULE ')}
+    require(loaded == expected, f'module coverage mismatch: {sorted(loaded ^ expected)}')
+    for token in ('sorry', 'admit', 'native_decide', 'axiom', 'unsafe', 'implemented_by'):
+        try:
+            scan(token)
+        except SystemExit:
+            pass
+        else:
+            raise SystemExit('FAIL: source rejection control')
+    bad = audit(imports, 'axiom AuditTest.bad : False\n')
+    require(bad.returncode != 0 and 'unexpected axioms' in bad.stdout + bad.stderr,
+            'axiom rejection control')
+    print('PASS: source policy, complete module coverage, and negative controls')
+    print('PASS: Lean verification' + (' including certificates through N=20' if args.certificates else ' (default library)'))
+
+
+if __name__ == '__main__':
+    main()

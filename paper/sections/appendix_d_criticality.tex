@@ -1,0 +1,151 @@
+\section{Proof of the criticality estimate}\label{app:criticality}
+We prove Theorem~\ref{thm:criticality} in the notation of
+Section~\ref{sec:exchange}. A feasible
+budget $\tau$ satisfies
+\begin{equation}\label{eq:critical-feasible}
+ \tau D_n+E\pm(2J_n+\Xi)\succeq0,\qquad
+ M=M_n^0+\calR(\Xi)\succeq0,
+ \qquad \calR(\Xi)s_g=0\quad(2\le g\le n).
+\end{equation}
+
+Fix $0<\rho<1$. The pure vector
+\[
+ z_{pq}=\rho^{(p+q)/2}\sin\frac{\pi(q-p)}2
+\]
+is decomposable: $z=f\wedge g$ for
+$f_p=\rho^{p/2}\cos(\pi p/2)$ and $g_p=\rho^{p/2}\sin(\pi p/2)$.
+Therefore $z^TEz=0$ for every pure Pl\"ucker four-form.
+Put $d_n=z^TD_nz/2$ and $c_n=z^TJ_n z$. The scalar sums are
+\begin{equation}\label{eq:critical-scalars}
+\begin{split}
+ d_n&=\Bigl(\sum_{\substack{1\le p<n\\p\ \mathrm{odd}}}p\rho^p\Bigr)
+       \Bigl(\sum_{\substack{1\le p<n\\p\ \mathrm{even}}}p\rho^p\Bigr),\\
+ c_n&=\frac1{(1-\rho)^2}
+ \sum_{\substack{3\le t\le n\\t\ \mathrm{odd}}}\frac{t-1}{2}
+       (\rho^t-2\rho^{n+1}+\rho^{2n+2-t}).
+\end{split}
+\end{equation}
+In particular $d_n\ge2\rho^3>0$.
+
+\subsection{An exchange bound from the forced means}
+On the mixed coordinates introduce the positive matrix
+\[
+ (W_\rho)_{pq,rs}=\tfrac12\rho^{(p+q+r+s)/2}
+                  \cos\frac{\pi(p+q-r-s)}2.
+\]
+It is half the sum of the two rank-one matrices with vectors
+$\rho^{(p+q)/2}\cos(\pi(p+q)/2)$ and $\rho^{(p+q)/2}\sin(\pi(p+q)/2)$.
+The product-to-sum identity gives
+\[
+ (W_\rho)_{pr,qs}-(W_\rho)_{ps,qr}=-z_{pq}z_{rs},\qquad
+ \langle\calR(\Xi),W_\rho\rangle=-2z^T\Xi z.
+\]
+The low-total parts of both vectors lie in the span of the forced
+means. Thus, writing $W_{\rho,\rm hi}$ for the compression to totals $>n$,
+\[
+ \langle\calR(\Xi),W_\rho\rangle=\langle\calR(\Xi),W_{\rho,\rm hi}\rangle.
+\]
+Since $M_n^0,W_{\rho,\rm hi}\succeq0$, this implies
+$z^T\Xi z\ge-\tfrac12\langle M,W_{\rho,\rm hi}\rangle$.
+The mixed diagonal is fixed and satisfies $0\le M_{pq,pq}\le2pq$.
+Positive semidefiniteness and the bound on each entry of $W_\rho$ therefore
+give
+\[
+ \langle M,W_{\rho,\rm hi}\rangle\le S^2/2,\qquad
+ S=\sum_{p+q>n}\sqrt{M_{pq,pq}}\,\rho^{(p+q)/2}
+          \le\frac{\sqrt2\,n^2\rho^{(n+1)/2}}{1-\sqrt\rho}.
+\]
+There are at most $n$ mixed coordinates on each total. Testing the minus
+pure sector in \eqref{eq:critical-feasible} now yields
+\begin{equation}\label{eq:rational-lower}
+ \gamma_n\ge
+ \frac{c_n-n^4\rho^{n+1}/(1-\rho)^2}{d_n}.
+\end{equation}
+Indeed $z^T\Xi z\ge-S^2/4$ and, since $1-\rho\le2(1-\sqrt\rho)$,
+$S^2/8\le n^4\rho^{n+1}/(1-\rho)^2$.
+The estimate is uniform in every feasible $\Xi,E,\tau$, so it also
+holds at the minimum budget.
+
+\subsection{Summing the scalar kernel}
+For an odd gap $h$, put $l=n-h$. Its block of $J_n$ is
+$\min(p,r,l-p,l-r)$, $1\le p,r<l$, with factorization
+\[
+ \min(p,r,l-p,l-r)=\sum_{j=1}^{\lfloor l/2\rfloor}
+             \one_{j\le p\le l-j}\one_{j\le r\le l-j}.
+\]
+Consequently
+\[
+ c_n=\sum_{h\ \mathrm{odd}}\rho^h
+       \sum_{j=1}^{\lfloor(n-h)/2\rfloor}
+                    \left(\sum_{p=j}^{n-h-j}\rho^p\right)^2.
+\]
+Putting $t=h+2j$ gives \eqref{eq:critical-scalars}.
+The corresponding infinite sums are
+\begin{equation}\label{eq:critical-infinite}
+ d_\infty=\frac{2\rho^3(1+\rho^2)}{(1-\rho^2)^4},\qquad
+ c_\infty=\frac{\rho^3(1+\rho)^2}{(1-\rho^2)^4},\qquad
+ \frac{c_\infty}{d_\infty}
+       =1-\frac{(1-\rho)^2}{2(1+\rho^2)}.
+\end{equation}
+They follow from the odd and even weighted geometric series.
+
+For retained triples $(h,p,r)$, the lost coefficient is
+\[
+ \min(p,r)-\min(p,r,n-h-p,n-h-r)=(p+r+h-n)_+.
+\]
+An omitted triple also has exponent $p+r+h>n$. There are at most $t^2$
+triples of exponent $t$, each with lost coefficient at most $t$. For
+$s=1-\rho$ and $ns\ge8$, it follows that
+\begin{equation}\label{eq:critical-tail}
+\begin{split}
+ 0\le c_\infty-c_n
+ &\le\sum_{t>n}t^3\rho^t\\
+ &\le\rho^n\left(\frac{n^3}{s}+\frac{3n^2}{s^2}
+                     +\frac{6n}{s^3}+\frac6{s^4}\right)
+ \le\frac{2n^3\rho^n}{s}.
+\end{split}
+\end{equation}
+Here the four geometric moment bounds follow from
+$\sum_{j\ge1}j^a\rho^j\le a!/s^{a+1}$ for $a=0,1,2,3$.
+
+For $n\ge128$, let $\ell_{\log}=\lceil\log_2n\rceil$, $s=8\ell_{\log}/n$, and
+$\rho=1-s$. Then $0<s\le1/2$ and
+$\rho^n\le e^{-8\ell_{\log}}\le2^{-8\ell_{\log}}\le n^{-8}$.
+Using $c_n\ge0$, $d_n\le d_\infty$, and
+$d_n,d_\infty\ge2\rho^3$, equations
+\eqref{eq:rational-lower}--\eqref{eq:critical-tail} give
+\[
+\begin{split}
+ \gamma_n
+ &\ge1-\frac{s^2}{2}-\frac{8n^3\rho^n}{s}
+                       -\frac{2n^4\rho^n}{s^2}\\
+ &\ge1-\frac{32\ell_{\log}^2}{n^2}-\frac1{\ell_{\log}n^4}-\frac1{32\ell_{\log}^2n^2}
+ \ge1-\frac{33\ell_{\log}^2}{n^2}.
+\end{split}
+\]
+For the last inequality, $\ell_{\log}\ge7$ and $n\ge128$ suffice. This proves
+the quantitative part of Theorem~\ref{thm:criticality}.
+
+\subsection{The uniform bounds}
+The mixed coordinate $z^{\rm mix}_{11}$ has diagonal zero, so positivity forces
+its row to vanish. In particular $\Xi_{12,12}=M_{11,22}=0$.
+Since a pure four-form has zero diagonal and $(J_n)_{12,12}=1$, the minus
+pure diagonal is $4\tau-2$. Thus every feasible budget satisfies
+$\tau\ge1/2$.
+
+For the upper bound, $J_n\succeq0$ by its interval factorization.
+In each gap block,
+\[
+ 0\le\frac{(J_n)_{p,p+h;r,r+h}}{\sqrt{p(p+h)r(r+h)}}
+          \le\frac1{\max(p,r)}.
+\]
+The weighted Schur test with weight $p^{-1/2}$ gives
+\[
+ \frac1p\sum_{r\le p}r^{-1/2}+\sum_{r>p}r^{-3/2}
+                 \le4p^{-1/2},
+\]
+by comparison with the integrals over $(0,p)$ and $(p,\infty)$.
+Taking absolute values of a vector before applying this entrywise bound
+proves $0\preceq J_n\preceq2D_n$. Therefore $\Xi=E=0$ and $\tau=4$
+make $4D_n\pm2J_n$ positive, and the mixed matrix is $M_n^0\succeq0$.
+This proves $\gamma_n\le4$ and completes the proof.

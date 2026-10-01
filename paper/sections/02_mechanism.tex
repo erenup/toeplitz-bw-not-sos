@@ -1,0 +1,181 @@
+\section{The mechanism}\label{sec:mechanism}
+The proof follows one line. A sum of squares is a positive semidefinite
+Gram matrix on wedge coordinates (\S\ref{sec:mech-wedges}). An exact
+identity removes the freedom of that matrix from one fixed combination
+of its blocks (\S\ref{sec:mech-identity}).
+In a scaling limit, the fixed kernel that remains has a negative direction
+(\S\ref{sec:mech-tangent}). Positivity makes the only remaining
+Gram-dependent term small (\S\ref{sec:mech-continuation}), and every error is explicit at a finite
+scale (\S\ref{sec:mech-estimate}). This section explains each step and
+why it works; Sections~\ref{sec:corner}--\ref{sec:finish} give the proofs.
+
+\subsection{Wedges and Pl\"ucker freedom}\label{sec:mech-wedges}
+For each symbol label $\lambda$ write $w_\lambda=(x_\lambda,y_\lambda)$ and
+\[
+ z_{\lambda\lambda'}=w_\lambda\wedge w_{\lambda'}=x_\lambda y_{\lambda'}-x_{\lambda'} y_\lambda .
+\]
+These wedges vanish simultaneously when the symbol vectors are
+proportional. Because $F_N$ vanishes when $x=0$, when $y=0$, and when
+$x=y$, every square in a sum of squares vanishes there too, and is
+therefore a linear combination of the wedges (Lemma~\ref{lem:frame}).
+Hence $F_N$ is SOS exactly when $F_N=z^TQz$ for a positive semidefinite
+Gram matrix $Q$ on the wedge space.
+
+Such a $Q$ is far from unique. Wedges of actual symbol vectors obey the
+Pl\"ucker identities
+\[
+ z_{ab}z_{cd}-z_{ac}z_{bd}+z_{ad}z_{bc}=0,
+\]
+and adding a multiple of one of them changes $Q$ without changing the
+polynomial. A negative eigenvalue of one particular Gram matrix therefore
+proves nothing: a proof of non-SOS must exclude every Pl\"ucker
+modification at once.
+
+This is also where nonnegativity and sums of squares part ways.
+Nonnegativity tests $z^TQz$ only on decomposable vectors $z=x\wedge y$,
+which satisfy the Pl\"ucker identities; a sum of squares requires some
+$Q$ in the Pl\"ucker coset to be positive on all wedge vectors. For large
+$N$ we construct a linear functional $\Phi$ on Gram matrices with two
+properties: $\Phi(Q)\ge0$ whenever $Q\succeq0$, and $\Phi(Q)<0$ whenever
+$Q\succeq0$ represents the corner of $F_N$. No representation can have
+both.
+
+\subsection{The corner and the cancellation identity}\label{sec:mech-identity}
+The obstruction lives near the two ends of the Toeplitz symbol. The
+diagonal at depth $p$ from either end has only $p+1$ nonzero entries,
+whatever the ambient order. Diagonals from opposite ends interact in two
+disjoint corners of the matrix, and the overlap of two such products is
+the minimum of four depths. Retaining the outer $m$ diagonals on each
+side therefore gives one polynomial $\calB_m$, the same for every
+$N\ge2m$, with product weights $(p+1)(q+1)$ and a minimum kernel
+(Lemma~\ref{lem:corner}).
+
+The wedges of the corner are \emph{pure} (both diagonals from the same
+end) or \emph{mixed} (one from each end). Averaging a Gram matrix over a
+sign change of one side and over the interchange of the two sides loses
+no feasible matrix, and leaves two pure blocks and one mixed block,
+\[
+ P_+=D+E+K+\Theta,\qquad P_-=D+E-K-\Theta,\qquad M=B-\calR \Theta.
+\]
+Here $D,K,B$ are explicit fixed matrices, while a pure four-form $E$ and
+a symmetric cross correction $\Theta$ carry the entire Pl\"ucker freedom. The
+realignment $\calR$ exchanges the two middle variables of a
+four-variable generating kernel, and four-forms satisfy $\calR E=-E$.
+Hence both corrections cancel in
+\begin{equation}\label{eq:mechanism-cancellation}
+ M+\frac{P_++P_-}{2}+\calR P_+=L_m,
+\end{equation}
+whose right side $L_m=B+D+\calR(D+K)$ is fixed. The identity is exact and
+uses no positivity. If the Gram matrix is positive semidefinite, the
+first three terms are positive kernels. Realignment does not preserve
+positive semidefiniteness, so \eqref{eq:mechanism-cancellation} does not
+force $L_m$ to be positive. It reduces the problem to two tasks: find
+test points on which $L_m$ is negative, and show that $\calR P_+$ is small
+there, uniformly over every allowed Gram matrix.
+
+\subsection{The tangent kernel}\label{sec:mech-tangent}
+The test evaluates kernels at nodes $\xi=ie^{-\epsilon a}$, where the
+speed $a$ has positive real part. Evaluation at $\xi$ weights depth $p$
+by $|\xi|^p=e^{-\epsilon p\Re a}$, so these nodes see
+depths of order $1/\epsilon$, deep inside a corner of depth
+$m=\epsilon^{-2}$. At this scale the fixed kernel has a limit. After
+multiplication by $\epsilon^4$, $L_m$ evaluated at the nodes of the
+speed pairs $(a,b)$ and $(a',b')$ tends to
+\begin{equation}\label{eq:mechanism-tangent}
+ S_F((a,b),(a',b'))=
+ 2\left(\frac2{A_0^2}+\frac1{C_0^2}-\frac1{A_0C_0}\right),
+\end{equation}
+where $A_0=(a+\bar a')(b+\bar b')$ and $C_0=(a+b)(\bar a'+\bar b')$.
+
+This tangent kernel has a transparent meaning. For a finite exponential
+sum $\phi(s,t)=\sum_\ell c_\ell e^{-a_\ell s-b_\ell t}$ with real coefficients
+$c_\ell$, the pairing
+$c^*S_Fc$ equals
+\begin{equation}\label{eq:energy}
+ 4\int_{\R_+^2} st|\phi(s,t)|^2\,ds\,dt
+ +2\left|\sum_\ell\frac{c_\ell}{(a_\ell+b_\ell)^2}\right|^2
+ -2\int_{\R_+^2}|\mathcal H\phi(s,t)|^2\,ds\,dt,
+\end{equation}
+where $\mathcal H\phi(s,t)=\int_0^\infty\phi(s+u,t+u)\,du$ integrates $\phi$ along
+the diagonal ray starting at $(s,t)$. The first two terms are positive.
+The third, a diagonal-tail energy, enters with a negative sign. For the
+sum given by \eqref{eq:witness}, the pairs $\sigma=\pm1$ combine into
+multiples of $e^{-r(s+t)}\sin(j(s-t))$, so $\phi$ is antisymmetric, the
+middle term vanishes, and the last term exceeds the first. This is the
+negative direction; Lemma~\ref{lem:witness} certifies it by exact
+rational arithmetic.
+
+Each exponential alone gives a positive value; only the coherent signed
+sum is negative. The test therefore acts on Gram matrices, not on values
+of $F_N$, which are nonnegative: it contradicts the positive
+semidefiniteness required of every candidate representation.
+
+\subsection{Controlling the realigned term}\label{sec:mech-continuation}
+At the test nodes every entry of $\calR P_+$ is a Hermitian diagonal value
+$P_+[\xi_\ell,\bar\xi_h]$ of the pure kernel \eqref{eq:realigned-diagonal}. For an
+arbitrary positive semidefinite Gram matrix such values can be of order
+$\epsilon^{-4}$ at nearby complex nodes (Lemma~\ref{lem:global}); after
+the scaling by $\epsilon^4$ this is the size of the main term. Two facts
+improve the bound.
+
+First, positivity forces the mixed block to annihilate the complete
+antidiagonal sums of low total (Lemma~\ref{lem:means}). This follows by
+evaluating all retained variables on a geometric progression and
+comparing the first nonzero coefficient of a sum of real squares.
+Incomplete high antidiagonals are not forced to vanish; their effect is
+exponentially small at the nodes used here (Lemma~\ref{lem:tails}). As
+a result, on the conjugate set $\eta=\bar\xi$ the pure kernel is at most
+of order $\epsilon^{-2}$, with an explicit finite tail.
+
+Second, a finite positive semidefinite matrix $P_+$ is the Gram matrix of
+a holomorphic vector $V$ with $\|V(\xi,\eta)\|^2=P_+[\xi,\eta]$, and
+$\log\|V\|^2$ is subharmonic. Two maximum-principle comparisons on
+rectangles, one in each speed variable, interpolate between the bounds
+$\epsilon^{-4}$ and $\epsilon^{-2}$ and give
+\[
+ \epsilon^4\|V\|^2\le2^{20}\epsilon^{2^{-17}}
+\]
+on the region needed by all $1024^2$ entries of the test
+(Lemma~\ref{lem:continuation}). The exponent is small because each
+comparison retains only a lower bound for the harmonic weight of one
+side of a rectangle. The estimate holds for finite matrices of every
+size and rank.
+
+\subsection{The finite estimate and the size of the threshold}\label{sec:mech-estimate}
+With $m=\epsilon^{-2}$, the finite kernel $\epsilon^4L_m$ differs from
+$S_F$ by at most $2^{30}\epsilon$ per entry at the test nodes, and
+$\|c\|_1^2<2^{60}$. Pairing \eqref{eq:mechanism-cancellation} with $c$
+gives
+\[
+ 0\le c^*\mathsf G_mc
+ =\epsilon^4c^*\mathbf L_mc-\epsilon^4c^*\mathbf R_mc
+ <-2^{42}+2^{90}\epsilon+2^{80}\epsilon^{2^{-17}},
+\]
+where $\mathbf L_m$ and $\mathbf R_m$ are the matrices of evaluated
+entries of $L_m$ and $\calR P_+$. This is Theorem~\ref{thm:finite-scale}.
+
+The threshold is large for a quantitative reason. The integer
+coefficients make the main term look large, $c^*S_Fc<-2^{42}$, but every
+entrywise error is multiplied by $\|c\|_1^2$, and relative to $\|c\|_1^2$
+the certified negativity is small: $-c^*S_Fc/\|c\|_1^2$ lies between
+$2^{-18}$ and $2^{-16}$, on the scale of $10^{-5}$. The error
+$2^{90}\epsilon$ is harmless, but $2^{80}\epsilon^{2^{-17}}$ decays
+extremely slowly and falls below $2^{42}$ only when
+$\epsilon<2^{-38\cdot2^{17}}$. The largest dyadic $\epsilon$ with a
+negative budget is $2^{-\ScaleExponent}$, which gives
+$m=\epsilon^{-2}=\CornerDepth$ (Appendix~\ref{app:constants}). These
+constants explain the sufficient threshold; they do not predict the
+location of the first non-SOS order.
+
+\subsection{Why small orders are sums of squares}\label{sec:mech-small}
+At a fixed small order the Pl\"ucker freedom can make a Gram matrix
+positive on the complement of its forced kernel. The exact certificates
+through order $50$ do precisely this, with strictly positive rational
+bounds on the relevant compressed blocks (Section~\ref{sec:positive}).
+The analytic obstruction requires a deep corner and a geometric decay
+length $1/\epsilon$ that fits within it, at a scale where the errors
+above fall below the main term; no estimate here makes it effective at
+small orders. Positive certificates must nevertheless
+lose their relative margin as the order grows
+(Section~\ref{sec:exchange}), and the natural induction through positive
+increments fails at all large orders (Section~\ref{sec:boundary}).

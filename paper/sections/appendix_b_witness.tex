@@ -1,0 +1,70 @@
+\section{The exact integer witness}\label{app:witness}
+This appendix specifies the rational sign check of
+Lemma~\ref{lem:witness} completely. No approximation of a transcendental
+number enters the check: for $\ell=(r,j,\sigma)$ and $h=(r',j',\sigma')$
+the complex speeds only lead to the positive integers
+\[
+ A_0=(r+r')^2+(\sigma j-\sigma'j')^2,\qquad C_0=4rr'.
+\]
+On these points,
+\begin{equation}\label{eq:entry-rational}
+ (S_F)_{\ell h}
+       =\frac{4C_0^2+2A_0^2-2A_0C_0}{A_0^2C_0^2}.
+\end{equation}
+The integer weights are the floor formula \eqref{eq:witness}.
+Over the $1024^2$ ordered pairs compute
+\begin{equation}\label{eq:integer-enclosure}
+ J=\sum_{\ell,h}\left\lfloor\frac{2^{64}c_\ell c_h(4C_0^2+2A_0^2-2A_0C_0)}
+ {A_0^2C_0^2}\right\rfloor,
+\end{equation}
+with every quotient rounded toward negative infinity. Each summand
+bounds its exact rational entry from below with error less than one
+unit at denominator $2^{64}$. Consequently
+\[
+ \frac{J}{2^{64}}\le c^*S_Fc\le\frac{J+1048576}{2^{64}}.
+\]
+The exact outputs are
+\begin{align*}
+ J&=-111807741093765987869670624504700,\\
+ J+1048576&=-111807741093765987869670623456124,\\
+ \|c\|_1&=859652168.
+\end{align*}
+The first two are the numerators of the endpoints in \eqref{eq:witness-enclosure}.
+The upper numerator is
+smaller than $-2^{106}$, proving $c^*S_Fc<-2^{42}$. All loops have fixed
+finite bounds; the formulas above are a full specification of the
+calculation.
+
+\subsection{A regrouped sum}
+Grouping the four sign choices gives a shorter exact summation. Define
+\[
+ d_l=\sum_{j,j'=1}^{256}z_jz_{j'}
+       (\one_{|j-j'|=l}-\one_{j+j'=l}),\qquad0\le l\le512,
+\]
+and
+\[
+ \mathcal K(l)=\sum_{r,r'\in\{1,2\}}
+ \left(\frac2{((r+r')^2+l^2)^2}
+       -\frac1{4rr'((r+r')^2+l^2)}\right).
+\]
+Expanding the four sign choices in \eqref{eq:entry-rational} cancels the
+rank-one term, because $\sum_{\sigma,\sigma'}\sigma\sigma'=0$, and gives
+\begin{equation}\label{eq:witness-convolution}
+                        c^*S_Fc=4\sum_{l=0}^{512}d_l\mathcal K(l).
+\end{equation}
+This is a 513-term exact rational sum after integer convolution of the
+weights, and it agrees with the full-entry enclosure. The factor four
+comes from replacing a difference of two exponentials by a sine.
+
+\subsection{Normalization}
+If the negative contribution $-2/(A_0C_0)$ is removed from every entry,
+the pairing becomes strictly positive; the accompanying checker verifies
+this, the enclosure above, and that the convolution
+\eqref{eq:witness-convolution} lies in it, all in exact arithmetic. Relative to the coefficient mass, the
+defect $\delta_{\rm test}=-c^*S_Fc/\|c\|_1^2$ satisfies
+\[
+                            2^{-18}<\delta_{\rm test}<2^{-16}
+\]
+by the same endpoints. This interval describes this particular test,
+not the smallest eigenvalue of $S_F$ or an optimal sum-of-squares
+budget.

@@ -1,0 +1,144 @@
+\section{Introduction}\label{sec:introduction}
+For a real vector $x=(x_{1-N},\dots,x_{N-1})$ let $T_N(x)=(x_{i-j})_{0\le i,j<N}$
+be the real Toeplitz matrix of order $N$ with symbol $x$. Throughout, norms
+and inner products of matrices are Frobenius norms and inner products. Put
+\begin{equation}\label{eq:FN}
+ F_N(x,y)=2\|T_N(x)\|_F^2\|T_N(y)\|_F^2
+ -2\langle T_N(x),T_N(y)\rangle_F^2
+ -\|[T_N(x),T_N(y)]\|_F^2,
+\end{equation}
+a homogeneous quartic in $4N-2$ real variables. The B\"ottcher--Wenzel
+inequality implies that $F_N$ is nonnegative. L\'aszl\'o conjectured that
+this nonnegativity can always be expressed as a sum of squares of real
+quadratic forms \cite[Conjecture~15]{laszlo2012}; the question is problem
+MI-15 in the OpenProblemsInNLA catalogue \cite{catalogue2026}. The
+following theorem answers it negatively.
+
+\begin{theorem}\label{thm:negative}
+For every integer $N\ge\ObstructionOrder$, the polynomial $F_N$ is not a finite
+sum of squares of real homogeneous quadratic forms. Nevertheless,
+$F_N(x,y)\ge0$ for all real symbol vectors $x,y$ and every $N\ge1$.
+\end{theorem}
+
+A \emph{sum of squares} (SOS) always means a finite sum of squares of
+real homogeneous quadratic forms, with arbitrary real coefficients and
+any number of terms. The nonnegativity assertion is classical
+(Section~\ref{sec:context}). The threshold is sufficient, not optimized;
+the first order at which a sum of squares fails is unknown.
+
+\subsection{The quantitative form}
+Let $\calB_m$ be the restriction of $F_{2m}$ to the $m$ outermost nonzero
+diagonals on each side, all other symbol variables being zero. After
+relabelling by depth, the same polynomial is a restriction of $F_N$ for
+every $N\ge2m$ (Lemma~\ref{lem:corner}), so a single obstruction for
+$\calB_m$ transfers to every larger order. The obstruction is tested on
+coefficients and points fixed once and for all:
+\begin{equation}\label{eq:witness}
+\begin{gathered}
+ I=\{(r,j,\sigma):r\in\{1,2\},\ 1\le j\le256,\ \sigma\in\{-1,1\}\},\\
+ a_\ell=r+i\sigma j,\quad b_\ell=r-i\sigma j,\quad
+ c_\ell=\sigma z_j,\qquad
+ z_j=\left\lfloor\frac{2^{43}j}{(128^2+j^2)^2}\right\rfloor.
+\end{gathered}
+\end{equation}
+Thus $|I|=1024$ and $\|c\|_1=859652168<2^{30}$.
+
+\begin{theorem}[Uniform finite-scale obstruction]\label{thm:finite-scale}
+Let $k\ge16$ be an integer, $\epsilon=2^{-k}$, and
+$m=\epsilon^{-2}=2^{2k}$. If $\calB_m$ is a sum of squares, then every
+averaged positive semidefinite Gram matrix in
+Lemma~\ref{lem:corner} gives a positive semidefinite Hermitian matrix
+\begin{equation}\label{eq:nodes}
+ \mathsf G_m=\left[\epsilon^4
+ \left(M+\frac{P_++P_-}{2}\right)(X_\ell,\overline{X_h})\right]_{\ell,h\in I},
+ \quad X_\ell=(i e^{-\epsilon a_\ell},-i e^{-\epsilon b_\ell}),
+\end{equation}
+and its nonnegative quadratic pairing $\Phi_m=c^*\mathsf G_mc$ satisfies
+\begin{equation}\label{eq:finite-scale}
+ \boxed{\quad\Phi_m<-2^{42}+2^{90}m^{-1/2}
+                           +2^{80}m^{-1/262144}.\quad}
+\end{equation}
+All constants are independent of the sum-of-squares decomposition,
+the Gram corrections, and the rank of a Gram factor.
+\end{theorem}
+
+Here $M,P_+,P_-$ are the three positive semidefinite blocks of the
+averaged Gram matrix (Lemma~\ref{lem:corner}), viewed as four-slot
+kernels and evaluated at the nodes $X_\ell$. The upper bound is negative
+once $m$ is large enough.
+
+\begin{corollary}[Explicit threshold]\label{cor:threshold}
+The corner $\calB_{m_0}$ is not a sum of squares for
+$m_0=\CornerDepth$. Consequently $F_N$ is not a sum of squares for
+every $N\ge2m_0=\ObstructionOrder$.
+\end{corollary}
+\begin{proof}
+Set $k=38\cdot2^{17}+1=\ScaleExponent$ in \eqref{eq:finite-scale}.
+Convexity gives $2^{-x}\le1-x/2$ for $0\le x\le1$, so the right side is
+\[
+ -2^{42}+2^{90-k}+2^{42}2^{-2^{-17}}
+ \le-2^{24}+2^{90-k}<0.
+\]
+This contradicts $\Phi_{m_0}\ge0$. Substitution preserves a sum of squares,
+and the stabilized corner is a restriction of every $F_N$ with
+$N\ge2m_0$.
+\end{proof}
+
+\subsection{Small orders and the open range}
+For every $1\le N\le50$, $F_N$ is a sum of squares
+(Proposition~\ref{prop:positive}). Here $F_1=0$; for $2\le N\le50$ the
+statement follows from exact rational Gram certificates, and for
+$2\le N\le20$ it is also formally proved in Lean~4 with Mathlib. The remaining orders are open:
+\[
+ 51\le N<\ObstructionOrder.
+\]
+The smallest non-SOS order therefore lies between $51$ and
+$\ObstructionOrder$, inclusive; monotonicity of the answer within this
+interval is not known.
+Section~\ref{sec:discussion} discusses an expectation for this range and the
+evidence for it.
+
+\subsection{Nonnegativity and sums of squares}\label{sec:context}
+The B\"ottcher--Wenzel inequality
+\[
+ \|[X,Y]\|_F^2\le2\|X\|_F^2\|Y\|_F^2
+\]
+holds for arbitrary real square matrices
+\cite{bottcher2005,laszlo2007,vong2008,bottcher2008}. If $X\ne0$,
+replacing $Y$ by $Y_\perp=Y-\langle X,Y\rangle_F X/\|X\|_F^2$ does not change the
+commutator. Expanding $\|Y_\perp\|_F^2$ in the resulting inequality gives
+exactly $F_N\ge0$; the case $X=0$ is immediate. Thus the nonnegativity
+assertion of Theorem~\ref{thm:negative} holds without the Toeplitz
+hypothesis.
+
+A nonnegative quartic need not be a sum of squares of quadratic forms.
+L\'aszl\'o formulated the Toeplitz question after studying the
+sum-of-squares problem for the B\"ottcher--Wenzel form of general
+matrices \cite{laszlo2010,laszlo2012};
+Lu and Wenzel discuss it together with the broader commutator
+inequalities \cite{lu2017}. The related DDVV inequalities involve sums
+of commutator norms for families of symmetric matrices
+\cite{desmet1999,ge2008,lu2011jfa}. Their sum-of-squares questions are
+likewise distinct from the inequalities themselves; a recent survey
+places both in this setting \cite{ge2024published}.
+
+Theorem~\ref{thm:negative} shows that the Toeplitz structure does not
+close the gap between the two properties. A sum of squares requires a
+positive semidefinite Gram matrix on the whole space of wedge
+coordinates, whereas nonnegativity only tests decomposable wedges
+$x\wedge y$. The proof finds a negative direction for the stronger
+requirement in a limiting kernel and then controls every error at a
+finite order.
+
+\subsection{Verification}
+The negative conclusion of Theorem~\ref{thm:negative} is formally proved
+in Lean~4 with Mathlib, for the literal polynomial $F_N$ and arbitrary
+finite sums of real homogeneous quadratic squares, with no remaining
+analytic hypothesis. The proof includes the complete corner extraction,
+the analytic estimates, and a kernel-checked exact witness
+(Lemma~\ref{lem:witness}). Its expanded statement is
+\path|ToeplitzSOS.Negative.sharp_negative_explicit|; the negation of the
+catalogue conjecture is \path|ToeplitzSOS.Negative.not_MI15|.
+The positive range is formally proved through order $20$.
+Appendix~\ref{app:verification} gives the declarations, the scope of each
+formal component, and the relation to the written proof below.

@@ -1,0 +1,142 @@
+\section{Forced means and finite tails}\label{sec:tails}
+This section supplies the bounds that hold for every positive
+semidefinite Gram matrix of the corner, whatever its corrections: the
+forced low means, the generating kernels of the fixed baselines, a
+global bound for the pure blocks, and explicit finite tails.
+
+
+\begin{lemma}[Forced complete means]\label{lem:means} Let
+\(s_g=\sum_{p+q=g}\mathbf e_{pq}\) in the mixed coordinates. Then \(B\succeq0\),
+and every PSD Gram \eqref{eq:corner-sectors} satisfies
+\begin{equation}
+ Ms_g=Bs_g=0\qquad(0\le g<m).                          \label{eq:forced-low-means}
+\end{equation}
+
+\end{lemma}
+\begin{proof} The matrix $B$ is block diagonal by totals $g=p+q$. On a
+complete total $g$, that is, when all $p,q\ge0$ with $p+q=g$ are
+retained, put \(d=\min(p+1,g-p+1)\). Then
+\[
+ \sum_{r=0}^g\min(d,r+1,g-r+1)
+ =\sum_{h=1}^{d}(g+3-2h)
+ =d(g+2-d)=(p+1)(g-p+1),
+\]
+so every row of the block sums to zero. Its off-diagonal entries are
+nonpositive, so it is a weighted graph Laplacian, positive semidefinite
+with $s_g$ in its kernel. A block with $g\ge m$ is a principal submatrix
+of the complete block given by the same formula. Hence $B\succeq0$, and
+$Bs_g=0$ for $g<m$, since these totals are complete.
+
+Now let $Q\succeq0$ represent $\calB_m$, and substitute
+\(w_p^-=(t^p,0)\), \(w_p^+=(0,t^p)\). The pure wedges vanish and
+$z^{\rm mix}_{pq}=t^{p+q}$, so the substituted polynomial is
+$\|\sum_gt^gQ^{1/2}s_g\|^2$, with $s_g$ placed in the mixed coordinates.
+Computed from the baseline, it equals $\sum_{g,h}t^{g+h}s_g^TBs_h$,
+which has no term of degree below $2m$. If $Q^{1/2}s_g\ne0$ for some
+$g<m$, the least such $g$ makes the coefficient of $t^{2g}$ equal to
+$\|Q^{1/2}s_g\|^2>0$, a contradiction. Hence $Qs_g=0$; in particular the
+mixed block satisfies $Ms_g=0$. This proves \eqref{eq:forced-low-means}. \end{proof}
+
+Only these \emph{complete low means} are forced; the means of the
+incomplete totals \(m\le g\le2m-2\) need not vanish. Symmetry and \eqref{eq:forced-low-means} imply
+that \((M-B)(\xi,\xi,\zeta,\zeta)\) contains only terms \(\xi^g\zeta^h\) with both \(g,h\ge m\).
+They will be bounded as finite tails.
+
+To sum the fixed baselines, put
+\[
+ A=(1-\xi\zeta)(1-\eta\omega),\quad \Delta{}=(1-\xi\omega)(1-\eta\zeta),\quad
+ C=(1-\xi\eta)(1-\zeta\omega),\quad \Pi=\xi\eta\zeta\omega.
+\]
+Absolute geometric series in the open polydisk give
+\begin{equation}
+\begin{aligned}
+ D_\infty&=2(A^{-2}-\Delta{}^{-2}),\\
+ B_\infty&=2(A^{-2}-(A\Delta{})^{-1}),\\
+ Q_{0,\infty}&=D_\infty-2(\Delta{}-A)/(A\Delta{}C),\\
+ L_\infty&=2\{2/A^2+1/C^2-1/(AC)-2/\Delta{}^2\}.
+\end{aligned}                                                    \label{eq:generating-kernels}
+\end{equation}
+Appendix~\ref{app:kernels} derives these sums.
+
+\begin{lemma}[Global bound and the repeated-node identity]\label{lem:global} For every feasible
+finite averaged positive semidefinite Gram and \(|\xi|,|\eta|<1\),
+\begin{equation}
+ 0\le P_\pm[\xi,\eta]\le
+                  \frac8{(1-|\xi|^2)^2(1-|\eta|^2)^2}.      \label{eq:pure-global-bound}
+\end{equation}
+Writing \(\Psi=M-B\), one also has
+\begin{equation}
+ P_+[\xi,\bar \xi]=Q_{0,m}[\xi,\bar \xi]
+                         +\Psi(\xi,\xi,\bar \xi,\bar \xi).        \label{eq:repeated-node}
+\end{equation}
+For \(\xi=\sqrt\rho e^{i\vartheta}\), the infinite baseline on this diagonal is
+\begin{equation}
+ Q_{0,\infty}[\xi,\bar \xi]=
+ \frac{8\rho\sin^2\vartheta}
+ {(1-\rho)^2((1-\rho)^2+4\rho\sin^2\vartheta)^2}.           \label{eq:repeated-baseline}
+\end{equation}
+
+\end{lemma}
+\begin{proof} Alternation of \(E\), before using positivity, gives
+\begin{equation}
+ P_+[\xi,\eta]+P_-[\xi,\eta]+P_+[\xi,\bar \eta]+P_-[\xi,\bar \eta]
+                        =2D_m[\xi,\eta]+2D_m[\xi,\bar \eta].     \label{eq:partial-conjugation}
+\end{equation}
+Every term on the left is nonnegative. The diagonal \(D_m\) is bounded
+by its positive infinite sum, at most
+\(2/((1-|\xi|^2)^2(1-|\eta|^2)^2)\), proving \eqref{eq:pure-global-bound}.
+On the repeated slots \((\xi,\bar \xi,\bar \xi,\xi)\), \(E\) vanishes and
+\[
+ \Psi(\xi,\xi,\bar \xi,\bar \xi)
+     =-\Theta(\xi,\bar \xi,\xi,\bar \xi)=\Theta(\xi,\bar \xi,\bar \xi,\xi),
+\]
+which proves the plus sign in \eqref{eq:repeated-node}. Both \eqref{eq:repeated-node} and \eqref{eq:partial-conjugation} are algebraic
+identities for every averaged Gram; forced means enter only when bounding
+the correction in \eqref{eq:repeated-node}. Substitution in \eqref{eq:generating-kernels}, with
+\(A=C=(1-\rho)^2\) and \(\Delta{}=A+4\rho\sin^2\vartheta\), gives \eqref{eq:repeated-baseline}. \end{proof}
+
+\begin{lemma}[Uniform finite tails]\label{lem:tails} For \(0<\epsilon\le1\), set
+\begin{equation}
+ \mathcal E(m,\epsilon)=2^{32}\epsilon^{-8}e^{-\epsilon m/4}.
+                                                               \label{eq:tail-error}
+\end{equation}
+If all four slot moduli are at most \(e^{-\epsilon/2}\), then
+\(|L_m-L_\infty|\le\mathcal E\). For every averaged positive semidefinite Gram, also
+\(|P_+[\xi,\bar \xi]-Q_{0,\infty}[\xi,\bar \xi]|\le\mathcal E\)
+when \(|\xi|\le e^{-\epsilon/2}\).
+
+\end{lemma}
+\begin{proof} Antisymmetry gives \(\operatorname{diag}(\mathcal R\Theta)=0\).
+Thus the PSD matrices \(M,B\) have the same diagonal, bounded by
+\(2(p+1)(q+1)\). Cauchy–Schwarz yields, with
+\(W=(p+1)(q+1)(r+1)(s+1)\),
+\begin{equation}
+ |\Psi_{pq,rs}|\le4\sqrt W\le4W.             \label{eq:mixed-coefficients}
+\end{equation}
+Every expanded coefficient of \(Q_{0,\infty}\) and \(L_\infty\) has
+absolute value at most \(16W\): the diagonal and minimum terms in \eqref{eq:corner-baselines}
+give bounds \(2W\) for \(D\), \(2W\) for \(K\), and \(4W\) for \(B\);
+even the triangle bound \(10W\) suffices for \(L_\infty\). In a discarded term at least one index
+is at least \(m\). Split its radial decay in half, choose this index in
+four ways, and take the product of four copies of
+\(\sum_{j\ge0}(j+1)e^{-\epsilon j/4}=(1-e^{-\epsilon/4})^{-2}\).
+Since \(1-e^{-\epsilon/4}\ge\epsilon/8\), the truncation error is at most
+\begin{equation}
+ 64e^{-\epsilon m/4}(1-e^{-\epsilon/4})^{-8}
+                  \le2^{30}\epsilon^{-8}e^{-\epsilon m/4}.       \label{eq:baseline-tail}
+\end{equation}
+The repeated correction in \eqref{eq:repeated-node} has both total degrees at least \(m\)
+by Lemma~\ref{lem:means}. Using \eqref{eq:mixed-coefficients} in the same sum bounds it by
+\(2^{26}\epsilon^{-8}e^{-\epsilon m/2}\). Combining these bounds proves
+\eqref{eq:tail-error}, uniformly over every allowed \(E,\Theta\). \end{proof}
+
+For \(k\ge16\), \(\epsilon=2^{-k}\), \(m=\epsilon^{-2}\), the elementary
+inequality \(2^{k-2}\ge8k+40\) follows by checking \(k=16\) and doubling.
+Using \(e>2\) gives
+\begin{equation}
+ \mathcal E\le2^{32+8k-2^{k-2}},\qquad
+ \mathcal E\le\epsilon^{-2},\qquad
+                    \epsilon^4\mathcal E\le\epsilon.   \label{eq:dyadic-tail-budget}
+\end{equation}
+The last two claims require respectively \(2^{k-2}\ge6k+32\) and
+\(2^{k-2}\ge5k+32\), both consequences of the stated inequality.

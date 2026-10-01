@@ -1,0 +1,25 @@
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\def\UrlBreaks{\do\.}\def\UrlBigBreaks{\do\/}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.33\textwidth}>{\raggedright\arraybackslash}p{.43\textwidth}>{\raggedright\arraybackslash}p{.21\textwidth}@{}}
+\toprule Result & Lean declaration & Exact check\\
+\midrule\endhead
+Theorem~\ref{thm:negative} Negative answer & {\scriptsize\path|Negative.sharpNegativeResolution|}\newline {\scriptsize\path|Negative.sharp_negative_explicit|}\newline Unconditional non-SOS assertion; nonnegativity is classical. & \path|negative.py|\newline \path|witness.py|\\[5pt]
+Theorem~\ref{thm:finite-scale} Uniform finite-scale obstruction & {\scriptsize\path|Negative.finite_separation|}\newline {\scriptsize\path|Negative.no_feasible_evaluation|}\newline Formal separation at the selected scale; the uniform budget is the written version. & \path|negative.py|\newline \path|witness.py|\\[5pt]
+Corollary~\ref{cor:threshold} Explicit threshold & {\scriptsize\path|Negative.cornerGram_impossible|}\newline {\scriptsize\path|Negative.not_isSumSqHomQuad_of_large_order|}\newline The selected corner and every larger ambient order. & \path|negative.py|\newline \path|witness.py|\\[5pt]
+Lemma~\ref{lem:frame} The complete quadratic frame & {\scriptsize\path|Negative.exists_alternating_sos|}\newline {\scriptsize\path|Negative.alternating_eq_wedge_sum|}\newline SOS-to-wedge reduction; the full relation-space classification is replaced by polarization. & Written proof\\[5pt]
+Lemma~\ref{lem:corner} Stabilization and the complete normal form & {\scriptsize\path|Negative.outerCorner_eq_baselinePolynomial|}\newline {\scriptsize\path|Negative.cornerGram_of_sos|}\newline Complete literal corner extraction from arbitrary SOS data. & Written proof\\[5pt]
+Lemma~\ref{lem:means} Forced complete means & {\scriptsize\path|Negative.corner_sos_low_means|}\newline {\scriptsize\path|Negative.baselineMixedEntry_low_column|}\newline Complete low means; baseline positivity is given by the written Laplacian proof. & Written proof\\[5pt]
+Lemma~\ref{lem:global} Global bound and the repeated-node identity & {\scriptsize\path|Negative.CornerGram.repeated_diagonal|}\newline {\scriptsize\path|Negative.referenceQ_conjugate|}\newline {\scriptsize\path|Negative.CornerGram.plusVector_global|}\newline Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant. & Written proof\\[5pt]
+Lemma~\ref{lem:tails} Uniform finite tails & {\scriptsize\path|Negative.Analytic.baselineTail|}\newline {\scriptsize\path|Negative.CornerGram.repeated_tail_bound|}\newline Both baseline truncations and the combined repeated-node error; the corner extraction supplies the coefficient and mean hypotheses. & Written proof\\[5pt]
+Lemma~\ref{lem:continuation} Uniform improvement of the pure kernel & {\scriptsize\path|Negative.Analytic.twoRectangles|}\newline {\scriptsize\path|Negative.CornerGram.realigned_bound|}\newline General comparison; Gram majorants and the realigned witness entries are discharged at the selected scale. & Written proof\\[5pt]
+Lemma~\ref{lem:witness} Exact negative pairing & {\scriptsize\path|Negative.Witness.tangent_pairing_lt|}\newline {\scriptsize\path|Negative.Witness.fullUpper_lt|}\newline Exact integer certificate checked by Lean kernel reduction. & \path|negative.py|\newline \path|witness.py|\\[5pt]
+Proposition~\ref{prop:positive} Exact positive certificates & {\scriptsize\path|toeplitzBW_isSumSq_of_le_20|}\newline Orders 2 through 20 only. & \path|positive.py|\\[5pt]
+Theorem~\ref{thm:exchange} Exact exchange criterion & Not formalized & Written proof\\[5pt]
+Theorem~\ref{thm:criticality} Criticality of the pure budget & Not formalized & Written proof\\[5pt]
+Corollary~\ref{cor:boundary} Failure of the all-order increment condition & Not formalized & Written proof\\[5pt]
+Remark~\ref{rem:persistence} An expectation at moderate orders & Not formalized & None (unproved remark)\\[5pt]
+\bottomrule
+\end{longtable}
+\endgroup

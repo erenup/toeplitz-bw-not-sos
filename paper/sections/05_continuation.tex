@@ -1,0 +1,105 @@
+\section{Quantitative continuation}\label{sec:continuation}
+We now propagate the conjugate-node bound of Lemma~\ref{lem:tails} to
+the complex region required by the test
+(Section~\ref{sec:mech-continuation}).
+
+
+\begin{lemma}[Uniform improvement of the pure kernel]\label{lem:continuation} With the dyadic parameters
+of Theorem~\ref{thm:finite-scale}, factor the finite PSD matrix \(P_+\) as a Gram. Let \(V(\xi,\eta)\)
+be its holomorphic vector of wedge evaluations, chosen so that
+$\|V(\xi,\eta)\|^2=P_+[\xi,\eta]$, and put
+\[
+ V_\epsilon(\alpha,\beta)=V(i e^{-\epsilon(\alpha+i\beta)},-i e^{-\epsilon(\alpha-i\beta)}).
+\]
+Then, throughout the fixed region
+\[
+ 1\le\Re \alpha\le2,\quad |\Im \alpha|\le256,\quad
+ |\Re \beta|\le256,\quad |\Im \beta|\le\tfrac12,
+\]
+one has
+\begin{equation}
+ \epsilon^4\|V_\epsilon(\alpha,\beta)\|^2
+                       \le2^{20}\epsilon^{2^{-17}}.    \label{eq:continuation-bound}
+\end{equation}
+\end{lemma}
+\begin{proof} \emph{Boundary bounds.} The vector is entire, since the finite feature vector is
+polynomial before composition. More explicitly, a real factorization
+$P_+=\Gamma^T\Gamma$ gives $V=\Gamma f$, so the stated squared-norm
+identity holds also at complex arguments. The two nodes have moduli
+\[
+ |\xi|=e^{-\epsilon(\Re\alpha-\Im\beta)},\qquad
+ |\eta|=e^{-\epsilon(\Re\alpha+\Im\beta)}.
+\]
+If \(\Re \alpha-|\Im \beta|\ge1/4\), \eqref{eq:pure-global-bound} and
+\(1-e^{-\epsilon/2}\ge\epsilon/4\) give the global bound
+\begin{equation}
+             \|V_\epsilon(\alpha,\beta)\|^2\le2^{20}\epsilon^{-4}.        \label{eq:continuation-global}
+\end{equation}
+Here \(2^{11}\) would suffice; the larger constant will be common to both
+boundary estimates. On the real rectangle
+\(1/2\le \alpha\le1024+1/2\), \(|\beta|\le512\), the nodes are conjugates, with
+$\rho=e^{-2\epsilon\alpha}$ and $\vartheta=\pi/2-\epsilon\beta$.
+As \(\epsilon\le2^{-16}<2^{-12}\), they satisfy
+\(\rho\ge1/2\), \(|\sin\vartheta|\ge1/2\), and
+\(1-\rho\ge \alpha\epsilon\ge\epsilon/2\). The infinite repeated-node expression satisfies
+\[
+ Q_{0,\infty}[\xi,\bar\xi]
+ \le\frac1{2\rho\sin^2\vartheta(1-\rho)^2}\le16\epsilon^{-2}.
+\]
+Lemma~\ref{lem:tails} and \eqref{eq:dyadic-tail-budget} add at most $\epsilon^{-2}$, giving
+\begin{equation}
+ \|V_\epsilon(\alpha,\beta)\|^2\le17\epsilon^{-2}
+                                      \le2^{20}\epsilon^{-2}.   \label{eq:continuation-real}
+\end{equation}
+
+\emph{The comparison principle.} Fix one of the variables
+$\alpha,\beta$ and let the other range over a closed rectangle. Suppose
+\(\|V_\epsilon\|^2\le M_*\) on the boundary and
+\(\|V_\epsilon\|^2\le M_*\epsilon^\theta\) on one distinguished side. If
+\(h\) is harmonic, zero on the other sides, and between zero and one on
+the distinguished side, then
+\begin{equation}
+                         \|V_\epsilon\|^2\le M_*\epsilon^{\theta h}
+                         \quad\text{on the rectangle}.
+                                                               \label{eq:rectangle-comparison}
+\end{equation}
+Indeed \(\log\|V_\epsilon\|^2-\log M_*-\theta h\log\epsilon\) is
+subharmonic and at most zero on the boundary, since \(\log\epsilon<0\).
+The maximum principle proves the claim; zeros of \(V_\epsilon\) give
+\(-\infty\) and cause no problem. The argument does not depend on the
+dimension of the values of \(V_\epsilon\).
+
+\emph{First rectangle.} Fix real \(\beta\in[-512,512]\). In the upper \(\alpha\)-rectangle
+\(1/2\le\Re \alpha\le1024+1/2\), \(0\le\Im \alpha\le512\), use
+\begin{equation}
+ h_1(\alpha)=\sin\frac{\pi(\Re \alpha-1/2)}{1024}
+       \frac{\sinh(\pi(512-\Im \alpha)/1024)}{\sinh(\pi/2)}.           \label{eq:first-barrier}
+\end{equation}
+It is harmonic, zero on the sides and top, and between zero and one on
+the bottom. On \(1\le\Re \alpha\le2\), \(0\le\Im \alpha\le256\), sine concavity
+gives a factor at least \(1/1024\), while
+\(\sinh(\pi/4)/\sinh(\pi/2)=1/(2\cosh(\pi/4))>1/4\).
+Thus \(h_1>2^{-12}>\theta_1:=2^{-13}\). Apply \eqref{eq:rectangle-comparison} to \eqref{eq:continuation-global}–\eqref{eq:continuation-real}, and
+reflect the rectangle to cover negative imaginary parts. The result is
+\begin{equation}
+ \|V_\epsilon(\alpha,\beta)\|^2\le2^{20}\epsilon^{-4+2\theta_1},
+ \quad 1\le\Re \alpha\le2,\ |\Im \alpha|\le256,\ \beta\in[-512,512].          \label{eq:first-continuation}
+\end{equation}
+
+\emph{Second rectangle.} Fix such a complex \(\alpha\). In the \(\beta\)-rectangle
+\(-512\le\Re \beta\le512\), \(0\le\Im \beta\le3/4\), \eqref{eq:continuation-global} remains valid
+because \(\Re \alpha-|\Im \beta|\ge1/4\). Its bottom has \eqref{eq:first-continuation}. Use
+\begin{equation}
+ h_2(\beta)=\cos\frac{\pi\Re \beta}{1024}
+       \frac{\sinh(\pi(3/4-\Im \beta)/1024)}{\sinh(3\pi/4096)}.     \label{eq:second-barrier}
+\end{equation}
+On \(|\Re \beta|\le256\), \(0\le\Im \beta\le1/2\), its cosine factor exceeds
+\(1/2\). The other factor is at least
+\[
+ \frac{\sinh(\pi/4096)}{\sinh(3\pi/4096)}
+ =\frac1{3+4\sinh^2(\pi/4096)}>\frac14.
+\]
+Consequently \(h_2>1/8>\theta_2:=2^{-5}\). A second comparison and its
+reflection give \eqref{eq:continuation-bound}, because \(2\theta_1\theta_2=2^{-17}\). \end{proof}
+
+Both rectangles stay strictly inside the domain allowed by \eqref{eq:pure-global-bound}.

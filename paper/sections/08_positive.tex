@@ -1,0 +1,68 @@
+\section{The finite positive range}\label{sec:positive}
+The positive results concern the literal polynomial
+\eqref{eq:FN}. They can be verified by finite rational arithmetic, without
+using an eigenvalue computed in floating point.
+
+\begin{proposition}[Exact positive certificates]\label{prop:positive}
+The polynomial $F_N$ is a sum of squares for every $1\le N\le50$.
+For $2\le N\le20$, this assertion is also formally verified in Lean~4
+with Mathlib.
+\end{proposition}
+\begin{proof}
+The first two cases are
+\[
+ F_1=0,\qquad
+ F_2=4z_{-1,0}^2+4z_{0,1}^2.
+\]
+For the remaining orders the accompanying exact certificates give a
+chain of $48$ polynomial identities, one for each step
+$n=2,\ldots,49$:
+\begin{equation}\label{eq:positive-chain}
+ F_{n+1}=a_n\,F_n\circ\psi_n+z^TQ_nz,
+ \qquad a_n>0,\qquad Q_n\succeq0.
+\end{equation}
+Here $a_n$ is rational, $\psi_n$ is a rational linear substitution of
+the symbol variables, and $Q_n$ is a rational Gram matrix on the wedges
+of $F_{n+1}$, central squares included. The early steps use scalar or
+identity substitutions, the later ones geometric damping of the signed
+symbols. The accompanying checker reconstructs each $F_n$ from the
+matrix definition, expands every identity \eqref{eq:positive-chain}
+exactly, and verifies the forced kernel and the positive definiteness of
+the compressed rational blocks; the certificate formats are specified in
+the accompanying certificate documentation and verification map. A
+positive scalar multiple, a linear substitution and a sum all preserve
+sums of squares, so induction proves the statement through $N=50$.
+
+For completeness, the last identity is
+\begin{equation}\label{eq:last-positive}
+ F_{50}=F_{49}\circ\psi_{49}+z^TQ_{49}z,\qquad
+ \psi_{49}(w_\lambda)=(97/98)^{|\lambda|}w_\lambda.
+\end{equation}
+Use the noncentral wedges $z_{ab}$, $a<b$, with
+$a,b\in\{-49,\ldots,-1,1,\ldots,49\}$. In each mixed gap
+$g=b-a=50,\ldots,98$, remove the first coordinate in lexicographic
+wedge order, and denote the retained principal submatrix of $Q_{49}$ by
+$\widehat Q_{49}$. The checker prints the exact lower bound
+\[
+ \widehat Q_{49}\succeq0.015624875921\,I\succ I/128,
+\]
+a rational bound rounded down from an exact residual estimate. After
+adjoining the forced zero directions, the retained matrix is congruent
+to the full noncentral Gram matrix; the central squares are checked
+separately. This establishes positivity exactly.
+The formal assertion through order $20$ is the theorem stated in
+Appendix~\ref{app:verification}; it proves the same polynomial and the
+same real homogeneous sum-of-squares predicate.
+\end{proof}
+
+\subsection{Rational certificates}
+A rational Gram matrix $Q\succeq0$ with $F_N=z^TQz$ proves that $F_N$ is
+a sum of squares in the unrestricted real sense: a real factorization
+of $Q$ writes $z^TQz$ as a sum of squares of real linear combinations
+of the wedges, whose coefficients need not be rational. Conversely, by
+Lemma~\ref{lem:frame} every real sum of squares arises in this way from
+a real Gram matrix. Because every positive semidefinite Gram matrix of
+$F_N$ has forced kernel vectors, no bound $Q\succeq\delta I$ with
+$\delta>0$ holds on the whole wedge space; a positive lower bound, such
+as the one above, refers to its stated principal block. Bounds relative
+to the pure diagonal are the subject of the next section.

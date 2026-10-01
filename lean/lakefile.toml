@@ -1,0 +1,114 @@
+name = "toeplitzSOS"
+version = "0.1.0"
+defaultTargets = ["ToeplitzSOS"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "85e3a25e006c35636f0e53b0e9296caca2685bc0"
+
+[[lean_lib]]
+name = "ToeplitzSOS"
+globs = [
+  "ToeplitzSOS.Defs",
+  "ToeplitzSOS.ThmA.Defs",
+  "ToeplitzSOS.Certificates.Basic",
+  "ToeplitzSOS.ThmA.Reindex",
+  "ToeplitzSOS.ThmA.Commutator",
+  "ToeplitzSOS.ThmA.Mixed",
+  "ToeplitzSOS.ThmA.SameSide",
+  "ToeplitzSOS.ThmA.Poly",
+  "ToeplitzSOS.ThmA.Main",
+  "ToeplitzSOS.Negative.Analytic.Tails",
+  "ToeplitzSOS.Negative.Analytic.Nodes",
+  "ToeplitzSOS.Negative.TangentScalar",
+  "ToeplitzSOS.Negative.WitnessArithmetic",
+  "ToeplitzSOS.Negative.WitnessCertificate",
+  "ToeplitzSOS.Negative.Pairing",
+  "ToeplitzSOS.Negative.Kernels",
+  "ToeplitzSOS.Negative.Baseline",
+  "ToeplitzSOS.Negative.AnalyticInputs",
+  "ToeplitzSOS.Negative.Nodes",
+  "ToeplitzSOS.Negative.Witness",
+  "ToeplitzSOS.Negative.TangentReference",
+  "ToeplitzSOS.Negative.CornerGram",
+  "ToeplitzSOS.Negative.ExplicitStatement",
+  "ToeplitzSOS.Negative.Statement",
+  "ToeplitzSOS.Negative.SharpStatement",
+  "ToeplitzSOS.Negative.Constants",
+  "ToeplitzSOS.Negative.ContinuationApplication",
+  "ToeplitzSOS.Negative.FiniteObstruction",
+  "ToeplitzSOS.Negative.GramEvaluation",
+  "ToeplitzSOS.Negative.InitialBounds",
+  "ToeplitzSOS.Negative.Analytic.TailBudget",
+  "ToeplitzSOS.Negative.GlobalBound",
+  "ToeplitzSOS.Negative.SliceBound",
+  "ToeplitzSOS.Negative.TangentApplication",
+  "ToeplitzSOS.Negative.Analytic.Series",
+  "ToeplitzSOS.Negative.Analytic.Truncation",
+  "ToeplitzSOS.Negative.Analytic.BaselineBounds",
+  "ToeplitzSOS.Negative.Analytic.Comparison",
+  "ToeplitzSOS.Negative.Analytic.Barriers",
+  "ToeplitzSOS.Negative.Analytic.Continuation",
+  "ToeplitzSOS.Negative.Analytic.Means",
+  "ToeplitzSOS.Negative.Analytic.MixedTail",
+  "ToeplitzSOS.Negative.Analytic.Interface",
+  "ToeplitzSOS.Negative.CornerObstruction",
+  "ToeplitzSOS.SOS.LinearSubstitution",
+  "ToeplitzSOS.Negative.Restriction",
+  "ToeplitzSOS.Uniform.Corner",
+  "ToeplitzSOS.Kernel.Basic",
+  "ToeplitzSOS.Uniform.Bridge",
+  "ToeplitzSOS.Negative.CornerRestriction",
+  "ToeplitzSOS.Negative.CornerCoordinates",
+  "ToeplitzSOS.Negative.CornerExchange",
+  "ToeplitzSOS.General.Moment",
+  "ToeplitzSOS.Negative.Frame",
+  "ToeplitzSOS.Negative.CornerFrame",
+  "ToeplitzSOS.Negative.CornerForms",
+  "ToeplitzSOS.Negative.CornerBaselineForms",
+  "ToeplitzSOS.Negative.CornerEvaluation",
+  "ToeplitzSOS.Negative.CornerAveraging",
+  "ToeplitzSOS.Negative.CornerRepairs",
+  "ToeplitzSOS.Negative.CornerFactors",
+  "ToeplitzSOS.Negative.CornerLaplacian",
+  "ToeplitzSOS.Negative.LowMeans",
+  "ToeplitzSOS.Negative.CornerForcedMeans",
+  "ToeplitzSOS.Negative.CornerCorrection",
+  "ToeplitzSOS.Negative.CornerCoefficientBound",
+  "ToeplitzSOS.Negative.CornerExtraction",
+  "ToeplitzSOS.Negative.Resolution",
+]
+leanOptions = { warningAsError = true }
+
+[[lean_lib]]
+name = "ToeplitzSOSCerts"
+globs = [
+  "ToeplitzSOS.Certificates.Generated.N3",
+  "ToeplitzSOS.Certificates.Generated.N4",
+  "ToeplitzSOS.Certificates.Generated.N5",
+  "ToeplitzSOS.Certificates.Generated.N6",
+  "ToeplitzSOS.Certificates.Generated.N7",
+  "ToeplitzSOS.Certificates.Generated.N8",
+  "ToeplitzSOS.Certificates.Generated.N9",
+  "ToeplitzSOS.Certificates.Generated.N10",
+  "ToeplitzSOS.Certificates.Generated.N11",
+  "ToeplitzSOS.Certificates.Generated.N12",
+  "ToeplitzSOS.Certificates.Generated.N13",
+  "ToeplitzSOS.Certificates.Generated.N14",
+  "ToeplitzSOS.Certificates.Generated.N15",
+  "ToeplitzSOS.Certificates.Generated.N16",
+  "ToeplitzSOS.Certificates.Generated.N17",
+  "ToeplitzSOS.Certificates.Generated.N18",
+  "ToeplitzSOS.Certificates.Generated.N19",
+  "ToeplitzSOS.Certificates.Generated.N20",
+  "ToeplitzSOS.Certificates.Range",
+]
+leanOptions = { warningAsError = true }
+
+[[lean_lib]]
+name = "ToeplitzSOSRelease"
+globs = [
+  "ToeplitzSOSRelease",
+]
+leanOptions = { warningAsError = true }

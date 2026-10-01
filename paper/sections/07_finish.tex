@@ -1,0 +1,77 @@
+\section{The finite-scale contradiction}\label{sec:finish}
+
+We now prove Theorem~\ref{thm:finite-scale}. Fix \(k\ge16\) and a
+positive semidefinite Gram matrix of the corner, averaged as in
+Lemma~\ref{lem:corner}. Write $\mathbf L_m$ and $\mathbf R_m$ for the matrices of
+evaluated entries of $L_m$ and $\mathcal RP_+$, respectively, on this
+fixed list of points. Write \(X_\ell=(\xi_\ell,\eta_\ell)\) for the nodes
+\eqref{eq:nodes}; since \(b_\ell=\bar a_\ell\), \(\eta_\ell=\bar \xi_\ell\). The matrix \(\mathsf G_m\)
+is PSD: each summand is an evaluated PSD kernel on the same finite list.
+Its pure and mixed features may live in different spaces; their direct
+sum is still a Gram. Thus \(\Phi_m\ge0\).
+
+The crucial realigned entry is exactly a Hermitian diagonal:
+\begin{equation}
+ (\mathcal RP_+)(X_\ell,\overline{X_h})
+ =P_+(\xi_\ell,\bar \xi_h,\bar \xi_\ell,\xi_h)
+ =P_+[\xi_\ell,\bar \xi_h].                               \label{eq:realigned-diagonal}
+\end{equation}
+The array of such entries need not be PSD. If
+\(\ell=(r,j,\sigma)\) and \(h=(r',j',\sigma')\), its coordinates for Lemma~\ref{lem:continuation} are
+\[
+ \alpha=(r+r')/2+i(\sigma j-\sigma'j')/2,\quad
+ \beta=(\sigma j+\sigma'j')/2-i(r-r')/2.
+\]
+Indeed $\alpha+i\beta=a_\ell$ and $\alpha-i\beta=\bar a_h$,
+which gives exactly the arguments $\xi_\ell,\bar\xi_h$ in the pure
+kernel. They satisfy every bound in that lemma. Therefore
+\begin{equation}
+ \left|\epsilon^4 c^*\mathbf R_m c\right|
+ \le\|c\|_1^2\,2^{20}\epsilon^{2^{-17}}
+                    <2^{80}\epsilon^{2^{-17}}.         \label{eq:realigned-pairing}
+\end{equation}
+
+It remains to estimate the finite baseline. At the test points each
+factor of $A$ and of $C$ has the form $1-e^{-\epsilon\chi}$, where
+$\chi$ is a sum of two of the speeds $a_\ell,b_\ell,\bar a_h,\bar b_h$;
+thus $\Re\chi\ge2$ and $|\chi|<2^{10}$. Writing
+$(1-e^{-\epsilon\chi})/(\epsilon\chi)=\int_0^1e^{-\epsilon\chi u}\,du$
+gives
+\[
+ \left|\frac{1-e^{-\epsilon \chi}}{\epsilon \chi}-1\right|
+ \le\epsilon|\chi|/2\le2^{10}\epsilon.
+\]
+Hence \(A/\epsilon^2=A_0(1+\delta_A)\) and
+\(C/\epsilon^2=C_0(1+\delta_C)\), with
+\(|\delta_A|,|\delta_C|\le2^{12}\epsilon\le1/16<1/4\).
+For \(|\delta|\le1/4\), use
+\(|(1+\delta)^{-1}-1|\le2|\delta|\) and
+\(|(1+\delta)^{-2}-1|\le6|\delta|\).
+Since \(A_0,C_0\ge4\) and \(|\Delta{}|\ge1\), substitution in \eqref{eq:generating-kernels} yields
+\[
+ |\epsilon^4L_\infty(X_\ell,\overline{X_h})-S_F(\ell,h)|
+                                               \le2^{20}\epsilon.
+\]
+For the bound on \(\Delta{}\), its factors are \(1+e^{-\epsilon \chi}\), and
+\(|\Im(\epsilon \chi)|\le512\epsilon<1\), so the exponential has positive
+real part. The estimate above follows by bounding the three reciprocal
+errors by \(3\cdot2^{12}\epsilon\) in total and the remaining term by
+\(4\epsilon^4\). Adding the finite tail from \eqref{eq:dyadic-tail-budget} gives, entrywise,
+\begin{equation}
+ |\epsilon^4L_m(X_\ell,\overline{X_h})-S_F(\ell,h)|
+                                               \le2^{30}\epsilon.       \label{eq:finite-tangent-error}
+\end{equation}
+All slot moduli here are at most \(e^{-\epsilon}\), so Lemma~\ref{lem:tails} applies.
+
+Finally apply \eqref{eq:correction-cancellation}, \eqref{eq:negative-pairing}, \eqref{eq:realigned-pairing}, \eqref{eq:finite-tangent-error}, and \(\|c\|_1^2<2^{60}\):
+\begin{equation}
+\begin{aligned}
+ 0\le\Phi_m
+ &=\epsilon^4c^*\mathbf L_m c-\epsilon^4c^*\mathbf R_m c\\
+ &<-2^{42}+2^{90}\epsilon+2^{80}\epsilon^{2^{-17}}\\
+ &=-2^{42}+2^{90}m^{-1/2}+2^{80}m^{-1/262144}.
+\end{aligned}                                                    \label{eq:finite-pairing-bound}
+\end{equation}
+This proves Theorem~\ref{thm:finite-scale}, and hence
+Corollary~\ref{cor:threshold} and the negative assertion of
+Theorem~\ref{thm:negative}.

@@ -1,0 +1,86 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+\usepackage{microtype,mathtools,amssymb,booktabs,array,longtable}
+\usepackage[margin=30mm]{geometry}
+\usepackage{xcolor,xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+ pdftitle={The Toeplitz Böttcher–Wenzel form is not always a sum of squares},pdfauthor={Wenqi Zhu and Ping Nie}}
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\calB}{\mathcal B}
+\newcommand{\calP}{\mathcal P}
+\newcommand{\calR}{\mathcal R}
+\newcommand{\ThresholdExponent}{9961475}
+\newcommand{\ObstructionOrder}{2^{\ThresholdExponent}}
+\newcommand{\CornerExponent}{\number\numexpr\ThresholdExponent-1\relax}
+\newcommand{\CornerDepth}{2^{\CornerExponent}}
+\newcommand{\ScaleExponent}{\number\numexpr(\ThresholdExponent-1)/2\relax}
+\newcommand{\SOS}{\mathrm{SOS}}
+\newcommand{\BL}{\mathrm{BL}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title[The Toeplitz B\"ottcher--Wenzel form]{THE TOEPLITZ B\"OTTCHER--WENZEL FORM\\IS NOT ALWAYS A SUM OF SQUARES}
+\author{Wenqi Zhu}
+\address{Mathematical Institute, University of Oxford}
+\email{wenqi.zhu@maths.ox.ac.uk}
+\author{Ping Nie}
+\address{Peking University}
+\email{ping.nie@pku.edu.cn}
+\date{}
+\begin{document}
+\begin{abstract}
+Let $X$ and $Y$ be real Toeplitz matrices of order $N$. By the
+B\"ottcher--Wenzel inequality, the quartic
+$2\|X\|^2\|Y\|^2-2\langle X,Y\rangle^2-\|XY-YX\|^2$ (Frobenius norms) in
+the $4N-2$ entries of their symbols is nonnegative. For every integer
+$N\ge\ObstructionOrder$ it is not a sum of squares of real quadratic
+forms, which disproves a conjecture of L\'aszl\'o (problem MI-15).
+The negative theorem is formally verified in Lean~4 with Mathlib. The
+obstruction is an exact negative direction of a limiting tangent kernel,
+made effective at a finite scale uniformly over all Gram
+representations. In contrast, the quartic is a sum of squares for every
+$N\le50$.
+\end{abstract}
+\maketitle
+\tableofcontents
+\clearpage
+\input{sections/01_introduction}
+\input{sections/02_mechanism}
+\input{sections/03_corner}
+\input{sections/04_tails}
+\input{sections/05_continuation}
+\input{sections/06_witness}
+\input{sections/07_finish}
+\input{sections/08_positive}
+\input{sections/09_exchange}
+\input{sections/10_boundary}
+\input{sections/11_discussion}
+\appendix
+\input{sections/appendix_a_kernels}
+\input{sections/appendix_b_witness}
+\input{sections/appendix_c_constants}
+\input{sections/appendix_d_criticality}
+\input{sections/appendix_e_verification}
+\bibliographystyle{amsplain}
+\bibliography{refs}
+\end{document}
