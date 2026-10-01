@@ -53,14 +53,41 @@ $N\ge2m$, with product weights $(p+1)(q+1)$ and a minimum kernel
 The wedges of the corner are \emph{pure} (both diagonals from the same
 end) or \emph{mixed} (one from each end). Averaging a Gram matrix over a
 sign change of one side and over the interchange of the two sides loses
-no feasible matrix, and leaves two pure blocks and one mixed block,
+no feasible matrix. The averaged matrix has no pure--mixed entries, and
+it splits into two pure blocks $P_\pm$, on the sums and differences of
+the pure wedges of the two sides, and one mixed block $M$. Each block is
+positive semidefinite when the Gram matrix is.
+
+Each block is a fixed part plus a correction. The fixed parts come from
+one explicit Gram matrix of $\calB_m$ (Lemma~\ref{lem:corner}). Its two
+pure diagonal blocks both equal $D$, a diagonal matrix with the product
+weight $2(p+1)(q+1)$ on the pure wedge of depths $p<q$. Its block
+coupling the pure wedges of the two sides is $K$, which pairs wedges
+with the same gap between their two depths. Its mixed block $B$ consists
+of the product weights on the diagonal minus a minimum kernel on mixed
+wedges with equal depth totals.
+
+The corrections carry the entire Pl\"ucker freedom. Pl\"ucker relations
+among four diagonals from the same end change the pure diagonal blocks
+by a \emph{pure four-form} $E$, a matrix whose entries are totally
+antisymmetric in the four depths involved. Relations among two
+diagonals from each end change the block that couples the pure wedges of
+the two sides by a matrix $\Theta$, symmetric after averaging, and
+simultaneously change the mixed block by $-\calR\Theta$, where $\calR$
+is the realignment described next. The remaining relations couple pure
+and mixed wedges, and averaging removes them. Thus
 \[
  P_+=D+E+K+\Theta,\qquad P_-=D+E-K-\Theta,\qquad M=B-\calR \Theta.
 \]
-Here $D,K,B$ are explicit fixed matrices, while a pure four-form $E$ and
-a symmetric cross correction $\Theta$ carry the entire Pl\"ucker freedom. The
-realignment $\calR$ exchanges the two middle variables of a
-four-variable generating kernel, and four-forms satisfy $\calR E=-E$.
+
+To compare pure and mixed blocks, identify each matrix $G$ with its
+generating kernel $G(\xi,\eta,\zeta,\omega)=f(\xi,\eta)^TGf(\zeta,\omega)$
+in four complex variables, where the feature $f$ evaluates a pure wedge
+of depths $p<q$ as $\xi^p\eta^q-\xi^q\eta^p$ and a mixed wedge as
+$\xi^p\eta^q$. The \emph{realignment} $\calR$ turns a pure kernel $P$ into
+a mixed kernel by exchanging the two middle variables,
+$(\calR P)(\xi,\eta,\zeta,\omega)=P(\xi,\zeta,\eta,\omega)$. The kernel of a
+four-form is alternating in all four variables, so $\calR E=-E$.
 Hence both corrections cancel in
 \begin{equation}\label{eq:mechanism-cancellation}
  M+\frac{P_++P_-}{2}+\calR P_+=L_m,
@@ -151,8 +178,9 @@ gives
  =\epsilon^4c^*\mathbf L_mc-\epsilon^4c^*\mathbf R_mc
  <-2^{42}+2^{90}\epsilon+2^{80}\epsilon^{2^{-17}},
 \]
-where $\mathbf L_m$ and $\mathbf R_m$ are the matrices of evaluated
-entries of $L_m$ and $\calR P_+$. This is Theorem~\ref{thm:finite-scale}.
+where $\mathsf G_m$, $\mathbf L_m$ and $\mathbf R_m$ are the matrices of
+evaluated entries of $\epsilon^4(M+(P_++P_-)/2)$, $L_m$ and $\calR P_+$;
+the first is positive semidefinite. This is Theorem~\ref{thm:finite-scale}.
 
 The threshold is large for a quantitative reason. The integer
 coefficients make the main term look large, $c^*S_Fc<-2^{42}$, but every

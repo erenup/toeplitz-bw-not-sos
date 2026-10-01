@@ -1,6 +1,39 @@
 \section{The finite-scale contradiction}\label{sec:finish}
 
-We now prove Theorem~\ref{thm:finite-scale}. Fix \(k\ge16\) and a
+All objects of the quantitative obstruction outlined in
+Section~\ref{sec:introduction} are now defined: the averaged Gram matrix
+and its positive semidefinite blocks $M,P_+,P_-$
+(Lemma~\ref{lem:corner}), their four-slot generating kernels
+(the kernel conventions of Section~\ref{sec:corner}), and the points and coefficients
+\eqref{eq:witness}. We state it precisely and prove it.
+
+\begin{theorem}[Uniform finite-scale obstruction]\label{thm:finite-scale}
+Let $k\ge16$ be an integer, $\epsilon=2^{-k}$, and
+$m=\epsilon^{-2}=2^{2k}$. If $\calB_m$ is a sum of squares, then every
+averaged positive semidefinite Gram matrix in
+Lemma~\ref{lem:corner} gives a positive semidefinite Hermitian matrix
+\begin{equation}\label{eq:nodes}
+ \mathsf G_m=\left[\epsilon^4
+ \left(M+\frac{P_++P_-}{2}\right)(X_\ell,\overline{X_h})\right]_{\ell,h\in I},
+ \quad X_\ell=(i e^{-\epsilon a_\ell},-i e^{-\epsilon b_\ell}),
+\end{equation}
+and its nonnegative quadratic pairing $\Phi_m=c^*\mathsf G_mc$ satisfies
+\begin{equation}\label{eq:finite-scale}
+ \boxed{\quad\Phi_m<-2^{42}+2^{90}m^{-1/2}
+                           +2^{80}m^{-1/262144}.\quad}
+\end{equation}
+All constants are independent of the sum-of-squares decomposition,
+the Gram corrections, and the rank of a Gram factor.
+\end{theorem}
+
+Here $M,P_+,P_-$ are the three positive semidefinite blocks of the
+averaged Gram matrix (Lemma~\ref{lem:corner}), viewed as four-slot
+kernels and evaluated at the nodes $X_\ell$. The upper bound is negative
+once $m$ is large enough; Corollary~\ref{cor:threshold} makes an explicit
+choice of $k$.
+
+\begin{proof}
+Fix \(k\ge16\) and a
 positive semidefinite Gram matrix of the corner, averaged as in
 Lemma~\ref{lem:corner}. Write $\mathbf L_m$ and $\mathbf R_m$ for the matrices of
 evaluated entries of $L_m$ and $\mathcal RP_+$, respectively, on this
@@ -72,6 +105,7 @@ Finally apply \eqref{eq:correction-cancellation}, \eqref{eq:negative-pairing}, \
  &=-2^{42}+2^{90}m^{-1/2}+2^{80}m^{-1/262144}.
 \end{aligned}                                                    \label{eq:finite-pairing-bound}
 \end{equation}
-This proves Theorem~\ref{thm:finite-scale}, and hence
-Corollary~\ref{cor:threshold} and the negative assertion of
-Theorem~\ref{thm:negative}.
+This proves Theorem~\ref{thm:finite-scale}.
+\end{proof}
+Theorem~\ref{thm:finite-scale} implies Corollary~\ref{cor:threshold},
+and hence the negative assertion of Theorem~\ref{thm:negative}.

@@ -70,77 +70,8 @@
       "formal_routes": {}
     },
     {
-      "label": "thm:finite-scale",
-      "number": "Theorem 1.2",
-      "title": "Uniform finite-scale obstruction",
-      "section": "1. Introduction",
-      "paper_file": "paper/sections/01_introduction.tex",
-      "statement": "For every integer k ≥ 16, a feasible corner Gram has Phi_m < -2^42 + 2^(90-k) + 2^(80-k/2^17), m=2^(2k).",
-      "lean": [
-        {
-          "name": "ToeplitzSOS.Negative.CornerGram.pairing_nonneg",
-          "file": "lean/ToeplitzSOS/Negative/GramEvaluation.lean",
-          "role": "Formal separation at the selected scale; the uniform budget is the written version."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.finite_separation",
-          "file": "lean/ToeplitzSOS/Negative/Pairing.lean",
-          "role": "Formal separation at the selected scale; the uniform budget is the written version."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.no_feasible_evaluation",
-          "file": "lean/ToeplitzSOS/Negative/FiniteObstruction.lean",
-          "role": "Formal separation at the selected scale; the uniform budget is the written version."
-        }
-      ],
-      "checks": [
-        {
-          "script": "verification/negative.py",
-          "command": "python3 verification/negative.py",
-          "expected": "PASS: exact tangent witness and constants",
-          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
-        },
-        {
-          "script": "verification/witness.py",
-          "command": "python3 verification/witness.py",
-          "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
-          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
-        }
-      ],
-      "status": "proved in the paper only",
-      "explanation": "Combines the positive evaluation matrix with the tangent pairing and the uniform error bounds.",
-      "additional_labels": [
-        "eq:nodes",
-        "eq:finite-scale",
-        "sec:mechanism",
-        "sec:mech-wedges",
-        "sec:mech-identity",
-        "eq:mechanism-cancellation",
-        "sec:mech-tangent",
-        "eq:mechanism-tangent",
-        "eq:energy",
-        "sec:mech-continuation",
-        "sec:mech-estimate",
-        "sec:mech-small",
-        "sec:finish",
-        "eq:realigned-diagonal",
-        "eq:realigned-pairing",
-        "eq:finite-tangent-error",
-        "eq:finite-pairing-bound"
-      ],
-      "graph_title": "Finite-scale obstruction",
-      "scope": "The written theorem is uniform for every integer k >= 16, without restrictions on Gram corrections or rank. The mapped formal argument closes the contradiction at k=4980737 using the sharper coefficient-mass budget; it is not a literal all-k formalization of the displayed scalar inequality.",
-      "paper_dependencies": [
-        "lem:corner",
-        "lem:tails",
-        "lem:continuation",
-        "lem:witness"
-      ],
-      "formal_routes": {}
-    },
-    {
       "label": "cor:threshold",
-      "number": "Corollary 1.3",
+      "number": "Corollary 1.2",
       "title": "Explicit threshold",
       "section": "1. Introduction",
       "paper_file": "paper/sections/01_introduction.tex",
@@ -519,6 +450,75 @@
       "graph_title": "Exact tangent witness",
       "scope": "Full 1024^2-entry directed integer enclosure, checked in 64 blocks by Lean kernel reduction in WitnessCertificate, and its real tangent-kernel interpretation. The external 513-term rational convolution remains an independent supplementary check; five paper-checker corruptions are rejected.",
       "paper_dependencies": [],
+      "formal_routes": {}
+    },
+    {
+      "label": "thm:finite-scale",
+      "number": "Theorem 7.1",
+      "title": "Uniform finite-scale obstruction",
+      "section": "7. The finite-scale contradiction",
+      "paper_file": "paper/sections/07_finish.tex",
+      "statement": "For every integer k ≥ 16, a feasible corner Gram has Phi_m < -2^42 + 2^(90-k) + 2^(80-k/2^17), m=2^(2k).",
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.CornerGram.pairing_nonneg",
+          "file": "lean/ToeplitzSOS/Negative/GramEvaluation.lean",
+          "role": "Formal separation at the selected scale; the uniform budget is the written version."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.finite_separation",
+          "file": "lean/ToeplitzSOS/Negative/Pairing.lean",
+          "role": "Formal separation at the selected scale; the uniform budget is the written version."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.no_feasible_evaluation",
+          "file": "lean/ToeplitzSOS/Negative/FiniteObstruction.lean",
+          "role": "Formal separation at the selected scale; the uniform budget is the written version."
+        }
+      ],
+      "checks": [
+        {
+          "script": "verification/negative.py",
+          "command": "python3 verification/negative.py",
+          "expected": "PASS: exact tangent witness and constants",
+          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
+        },
+        {
+          "script": "verification/witness.py",
+          "command": "python3 verification/witness.py",
+          "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
+          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
+        }
+      ],
+      "status": "proved in the paper only",
+      "explanation": "Combines the positive evaluation matrix with the tangent pairing and the uniform error bounds.",
+      "additional_labels": [
+        "eq:nodes",
+        "eq:finite-scale",
+        "sec:mechanism",
+        "sec:mech-wedges",
+        "sec:mech-identity",
+        "eq:mechanism-cancellation",
+        "sec:mech-tangent",
+        "eq:mechanism-tangent",
+        "eq:energy",
+        "sec:mech-continuation",
+        "sec:mech-estimate",
+        "sec:mech-small",
+        "sec:finish",
+        "eq:realigned-diagonal",
+        "eq:realigned-pairing",
+        "eq:finite-tangent-error",
+        "eq:finite-pairing-bound"
+      ],
+      "graph_title": "Finite-scale obstruction",
+      "scope": "The written theorem is uniform for every integer k >= 16, without restrictions on Gram corrections or rank. The mapped formal argument closes the contradiction at k=4980737 using the sharper coefficient-mass budget; it is not a literal all-k formalization of the displayed scalar inequality.",
+      "paper_dependencies": [
+        "lem:corner",
+        "lem:tails",
+        "lem:continuation",
+        "lem:witness"
+      ],
       "formal_routes": {}
     },
     {
