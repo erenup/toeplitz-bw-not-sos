@@ -8,35 +8,35 @@ flowchart LR
   subgraph Results[Numbered results]
     direction TB
   n0["Non-SOS at large orders<br/>thm:negative"]:::s0
-  n2 --> n0
-  n1["Finite-scale obstruction<br/>thm:finite-scale"]:::s2
-  n4 --> n1
-  n7 --> n1
-  n8 --> n1
-  n9 --> n1
-  n2["Explicit threshold<br/>cor:threshold"]:::s0
-  n1 -.-> n2
-  n3["Quadratic frame<br/>lem:frame"]:::s2
-  n4["Stabilized corner<br/>lem:corner"]:::s2
+  n1 --> n0
+  n1["Explicit threshold<br/>cor:threshold"]:::s0
+  n9 -.-> n1
+  n2["Quadratic frame<br/>lem:frame"]:::s2
+  n3["Stabilized corner<br/>lem:corner"]:::s2
+  n2 --> n3
+  n4["Complete low means<br/>lem:means"]:::s2
   n3 --> n4
-  n5["Complete low means<br/>lem:means"]:::s2
-  n4 --> n5
-  n6["Global kernel bound<br/>lem:global"]:::s2
-  n4 --> n6
-  n7["Uniform finite tails<br/>lem:tails"]:::s0
-  n5 -.-> n7
-  n6 -.-> n7
-  n8["Continuation estimate<br/>lem:continuation"]:::s2
-  n7 --> n8
-  n6 --> n8
-  n9["Exact tangent witness<br/>lem:witness"]:::s0
+  n5["Global kernel bound<br/>lem:global"]:::s2
+  n3 --> n5
+  n6["Uniform finite tails<br/>lem:tails"]:::s0
+  n4 -.-> n6
+  n5 -.-> n6
+  n7["Continuation estimate<br/>lem:continuation"]:::s2
+  n6 --> n7
+  n5 --> n7
+  n8["Exact tangent witness<br/>lem:witness"]:::s0
+  n9["Finite-scale obstruction<br/>thm:finite-scale"]:::s2
+  n3 --> n9
+  n6 --> n9
+  n7 --> n9
+  n8 --> n9
   n10["SOS through order 50<br/>prop:positive"]:::s1
   n11["Exchange criterion<br/>thm:exchange"]:::s2
-  n3 --> n11
+  n2 --> n11
   n12["Budget criticality<br/>thm:criticality"]:::s2
   n11 --> n12
   n13["Boundary obstruction<br/>cor:boundary"]:::s2
-  n2 --> n13
+  n1 --> n13
   n14["Moderate-order expectation<br/>rem:persistence"]:::s3
   n10 -.-> n14
   end

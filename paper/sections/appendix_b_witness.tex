@@ -11,7 +11,7 @@ On these points,
  (S_F)_{\ell h}
        =\frac{4C_0^2+2A_0^2-2A_0C_0}{A_0^2C_0^2}.
 \end{equation}
-The integer weights are the floor formula \eqref{eq:witness}.
+The integer weights $\hat c_j$ are given by the floor formula \eqref{eq:witness}.
 Over the $1024^2$ ordered pairs compute
 \begin{equation}\label{eq:integer-enclosure}
  J=\sum_{\ell,h}\left\lfloor\frac{2^{64}c_\ell c_h(4C_0^2+2A_0^2-2A_0C_0)}
@@ -38,7 +38,7 @@ calculation.
 \subsection{A regrouped sum}
 Grouping the four sign choices gives a shorter exact summation. Define
 \[
- d_l=\sum_{j,j'=1}^{256}z_jz_{j'}
+ d_l=\sum_{j,j'=1}^{256}\hat c_j\hat c_{j'}
        (\one_{|j-j'|=l}-\one_{j+j'=l}),\qquad0\le l\le512,
 \]
 and

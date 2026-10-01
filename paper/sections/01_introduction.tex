@@ -22,50 +22,70 @@ $F_N(x,y)\ge0$ for all real symbol vectors $x,y$ and every $N\ge1$.
 
 A \emph{sum of squares} (SOS) always means a finite sum of squares of
 real homogeneous quadratic forms, with arbitrary real coefficients and
-any number of terms. The nonnegativity assertion is classical
-(Section~\ref{sec:context}). The threshold is sufficient, not optimized;
-the first order at which a sum of squares fails is unknown.
+any number of terms. For a quartic form, requiring the squares to be
+homogeneous quadratic forms loses nothing: if a form of degree four
+equals $\sum_jp_j^2$ for real polynomials $p_j$, then neither the squares
+of the highest-degree homogeneous parts of the $p_j$ nor those of their
+lowest-degree parts can cancel, so every $p_j$ is a quadratic form. The
+nonnegativity assertion is classical (Section~\ref{sec:context}). The
+threshold is sufficient, not optimized; the first order at which a sum of
+squares fails is unknown.
 
-\subsection{The quantitative form}
+\subsection{The obstruction in outline}
 Let $\calB_m$ be the restriction of $F_{2m}$ to the $m$ outermost nonzero
 diagonals on each side, all other symbol variables being zero. After
 relabelling by depth, the same polynomial is a restriction of $F_N$ for
-every $N\ge2m$ (Lemma~\ref{lem:corner}), so a single obstruction for
-$\calB_m$ transfers to every larger order. The obstruction is tested on
-coefficients and points fixed once and for all:
+every $N\ge2m$ (Lemma~\ref{lem:corner}). Substitution preserves a sum of
+squares, so a single obstruction for $\calB_m$ transfers to every larger
+order.
+
+\emph{What is tested.} By Lemma~\ref{lem:frame}, $\calB_m$ is a sum of
+squares exactly when $\calB_m=z^TQz$ for a positive semidefinite Gram
+matrix $Q$ on the wedge coordinates $z_{ab}=x_ay_b-x_by_a$; such a $Q$
+is determined only up to the Pl\"ucker relations among the wedges. The
+test is a linear functional $\Phi_m$ of $Q$ that is nonnegative whenever
+$Q\succeq0$. To form it, average $Q$ over two symmetries of the corner,
+which keeps it positive semidefinite, and split the result into three
+positive semidefinite blocks. Substituting monomials in two complex
+variables for the wedge coordinates turns each block into a generating
+kernel in four complex variables. A fixed combination of these kernels,
+evaluated at all pairs of $1024$ points of $\C^2$, is a positive
+semidefinite Hermitian $1024\times1024$ matrix, and $\Phi_m$ is its
+quadratic pairing with a fixed real vector $c$.
+
+\emph{At which points.} The points and the coefficients are fixed once
+and for all:
 \begin{equation}\label{eq:witness}
 \begin{gathered}
  I=\{(r,j,\sigma):r\in\{1,2\},\ 1\le j\le256,\ \sigma\in\{-1,1\}\},\\
  a_\ell=r+i\sigma j,\quad b_\ell=r-i\sigma j,\quad
- c_\ell=\sigma z_j,\qquad
- z_j=\left\lfloor\frac{2^{43}j}{(128^2+j^2)^2}\right\rfloor.
+ c_\ell=\sigma\hat c_j,\qquad
+ \hat c_j=\left\lfloor\frac{2^{43}j}{(128^2+j^2)^2}\right\rfloor.
 \end{gathered}
 \end{equation}
-Thus $|I|=1024$ and $\|c\|_1=859652168<2^{30}$.
+Thus $|I|=1024$ and $\|c\|_1=859652168<2^{30}$. For a dyadic scale
+$\epsilon=2^{-k}$ and a corner of depth $m=\epsilon^{-2}$, the point
+attached to $\ell=(r,j,\sigma)$ is
+$(ie^{-\epsilon a_\ell},-ie^{-\epsilon b_\ell})$. It weights a diagonal at
+depth $p$ by $e^{-\epsilon pr}$ and therefore probes depths of order
+$1/\epsilon$, deep inside the corner.
 
-\begin{theorem}[Uniform finite-scale obstruction]\label{thm:finite-scale}
-Let $k\ge16$ be an integer, $\epsilon=2^{-k}$, and
-$m=\epsilon^{-2}=2^{2k}$. If $\calB_m$ is a sum of squares, then every
-averaged positive semidefinite Gram matrix in
-Lemma~\ref{lem:corner} gives a positive semidefinite Hermitian matrix
-\begin{equation}\label{eq:nodes}
- \mathsf G_m=\left[\epsilon^4
- \left(M+\frac{P_++P_-}{2}\right)(X_\ell,\overline{X_h})\right]_{\ell,h\in I},
- \quad X_\ell=(i e^{-\epsilon a_\ell},-i e^{-\epsilon b_\ell}),
-\end{equation}
-and its nonnegative quadratic pairing $\Phi_m=c^*\mathsf G_mc$ satisfies
-\begin{equation}\label{eq:finite-scale}
- \boxed{\quad\Phi_m<-2^{42}+2^{90}m^{-1/2}
-                           +2^{80}m^{-1/262144}.\quad}
-\end{equation}
-All constants are independent of the sum-of-squares decomposition,
-the Gram corrections, and the rank of a Gram factor.
-\end{theorem}
-
-Here $M,P_+,P_-$ are the three positive semidefinite blocks of the
-averaged Gram matrix (Lemma~\ref{lem:corner}), viewed as four-slot
-kernels and evaluated at the nodes $X_\ell$. The upper bound is negative
-once $m$ is large enough.
+\emph{Why a negative value contradicts SOS.} An exact identity
+(\S\ref{sec:mech-identity}) writes the evaluated combination as a
+part that is the same for every $Q$ minus a single $Q$-dependent term.
+After scaling, the fixed part tends to a limiting tangent kernel whose
+pairing with $c$ is below $-2^{42}$ by exact rational arithmetic
+(Lemma~\ref{lem:witness}). Positivity of $Q$ forces the $Q$-dependent
+term to be small, with constants independent of $Q$, of its size and of
+its rank (Sections~\ref{sec:tails} and~\ref{sec:continuation}).
+Theorem~\ref{thm:finite-scale} states the precise result: for every
+integer $k\ge16$ and $m=2^{2k}$, if $\calB_m$ is a sum of squares, then
+\[
+ 0\le\Phi_m<-2^{42}+2^{90}m^{-1/2}+2^{80}m^{-1/262144}.
+\]
+The right side is negative once $m$ is large enough. Then no positive
+semidefinite Gram matrix, and hence no sum of squares, represents
+$\calB_m$.
 
 \begin{corollary}[Explicit threshold]\label{cor:threshold}
 The corner $\calB_{m_0}$ is not a sum of squares for
@@ -73,7 +93,8 @@ $m_0=\CornerDepth$. Consequently $F_N$ is not a sum of squares for
 every $N\ge2m_0=\ObstructionOrder$.
 \end{corollary}
 \begin{proof}
-Set $k=38\cdot2^{17}+1=\ScaleExponent$ in \eqref{eq:finite-scale}.
+Set $k=38\cdot2^{17}+1=\ScaleExponent$ in the bound
+\eqref{eq:finite-scale} of Theorem~\ref{thm:finite-scale}.
 Convexity gives $2^{-x}\le1-x/2$ for $0\le x\le1$, so the right side is
 \[
  -2^{42}+2^{90-k}+2^{42}2^{-2^{-17}}
@@ -112,9 +133,16 @@ assertion of Theorem~\ref{thm:negative} holds without the Toeplitz
 hypothesis.
 
 A nonnegative quartic need not be a sum of squares of quadratic forms.
-L\'aszl\'o formulated the Toeplitz question after studying the
-sum-of-squares problem for the B\"ottcher--Wenzel form of general
-matrices \cite{laszlo2010,laszlo2012};
+This happens already for biquadratic forms, which have degree two in
+each of two groups of variables, as $F_N$ has in $x$ and in $y$: Choi
+gave a nonnegative biquadratic form in $3+3$ variables that is not a sum
+of squares \cite{choi1975}. A form is a sum of squares exactly when it
+admits a positive semidefinite Gram matrix, and its Gram matrices form an
+affine family \cite{choi1995}; this Gram-matrix method underlies both the
+certificates and the obstruction in this paper. L\'aszl\'o formulated
+the Toeplitz question after studying the sum-of-squares problem for
+the B\"ottcher--Wenzel form of general matrices
+\cite{laszlo2010,laszlo2012};
 Lu and Wenzel discuss it together with the broader commutator
 inequalities \cite{lu2017}. The related DDVV inequalities involve sums
 of commutator norms for families of symmetric matrices
