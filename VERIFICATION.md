@@ -95,11 +95,11 @@ the forbidden-source and untrusted-axiom rejection controls successfully.
 
 | Check | Completion (UTC) | Exit status |
 |---|---|---:|
-| `default-normal` | 2026-10-02T17:04:37Z | 0 |
-| `full-normal` | 2026-10-02T19:18:50Z | 0 |
-| `default-optimized` | 2026-10-02T19:19:05Z | 0 |
-| `full-optimized` | 2026-10-02T19:20:33Z | 0 |
-| `target-axioms` | 2026-10-02T19:20:42Z | 0 |
+| `./verify` | 2026-10-02T17:04:37Z | 0 |
+| `./verify --certificates` | 2026-10-02T19:18:50Z | 0 |
+| `python3 -O verify` | 2026-10-02T19:19:05Z | 0 |
+| `python3 -O verify --certificates` | 2026-10-02T19:20:33Z | 0 |
+| `lake env lean TargetAxioms.lean` | 2026-10-02T19:20:42Z | 0 |
 
 Closing output of `./verify` (also obtained with `python3 -O verify`):
 

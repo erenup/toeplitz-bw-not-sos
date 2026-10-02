@@ -67,6 +67,10 @@ separating matrix at the displayed order.
 
 ## Reproduce the checks
 
+The dated [verification record](VERIFICATION.md) lists the verified commit,
+the exact `lean/` tree, the reproduction commands and the target-theorem
+axiom reports.
+
 Install [elan](https://github.com/leanprover/elan), Python 3.10 or later,
 Graphviz (`dot`), and the TeX dependencies listed in [paper/](paper/README.md).
 

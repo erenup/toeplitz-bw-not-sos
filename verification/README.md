@@ -180,7 +180,7 @@ This standard-library program reads the threshold macro in `paper/main.tex`.
 It independently compares all 1024² rational entries with a 513-term exact
 convolution, checks the coefficient and normalized-defect budgets, and rejects
 five altered inputs on every run. This also checks that the paper and the
-standalone negative checker use the same promoted threshold.
+standalone negative checker use the same threshold.
 
 The two programs intentionally use separate implementations. `negative.py`
 checks the analytic constants and compares the full pairing with a grouped
