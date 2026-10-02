@@ -95,9 +95,9 @@ def declarations(text):
 
 STATUSES = {
     "Lean-proved": "#d1fae5",
-    "exact-verified": "#dbeafe",
-    "proved in the paper only": "#fef3c7",
-    "unproved remark": "#ede9fe",
+    "Exact-verified": "#dbeafe",
+    "Proved in the paper only": "#fef3c7",
+    "Unproved remark": "#ede9fe",
 }
 
 
@@ -241,7 +241,9 @@ def render_tables(data):
             refs = "<br>".join(", ".join(names) + ": " + role for role, names in grouped.items()) or "No declaration cited."
             checks = "<br>".join(
                 f"[{Path(check['script']).name}](#" + Path(check['script']).stem + ")"
-                for check in row["checks"]) or "Written proof."
+                for check in row["checks"]) or (
+                    "Unproved remark; no exact check."
+                    if row["status"] == "Unproved remark" else "Written proof.")
             scope = row["scope"]
             if row["formal_routes"]:
                 scope += "<br>" + "<br>".join(
@@ -296,7 +298,7 @@ def render_graphs(data, svg=True):
             f'  {identifier}["{title}<br/>{row["label"]}"]:::{status_ids[row["status"]]}'
         )
         for dep in row["paper_dependencies"]:
-            dashed = row["status"] == "unproved remark" or dep in row["formal_routes"]
+            dashed = row["status"] == "Unproved remark" or dep in row["formal_routes"]
             dot.append(f"{ids[dep]} -> {identifier}" + (" [style=dashed];" if dashed else ";"))
             mermaid.append(f"  {ids[dep]} " + ("-.->" if dashed else "-->") + f" {identifier}")
     mermaid += ["  end", "  subgraph Legend", "    direction TB"]
@@ -537,7 +539,7 @@ def controls():
             section="Test",
             explanation="Test",
             scope="Test",
-            status="exact-verified",
+            status="Exact-verified",
             paper_dependencies=[],
             formal_routes={},
             lean=[

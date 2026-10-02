@@ -141,7 +141,7 @@
         }
       ],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Removes any restriction on the possible quadratic squares before discussing Gram matrices.",
       "additional_labels": [
         "sec:corner",
@@ -150,7 +150,7 @@
         "eq:realignment-entries"
       ],
       "graph_title": "Quadratic frame",
-      "scope": "The arbitrary real SOS-to-alternating-wedge reduction is formal. The formal producer obtains its four-form and transport identities by polarization instead of exporting the paper's full Pluecker relation-space classification as a separate theorem.",
+      "scope": "The arbitrary real SOS-to-alternating-wedge reduction is formal. The formal producer obtains its four-form and transport identities by polarization instead of exporting the paper's full Plücker relation-space classification as a separate theorem.",
       "paper_dependencies": [],
       "formal_routes": {}
     },
@@ -184,7 +184,7 @@
         }
       ],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Carries arbitrary SOS data to the exact corner interface used by the analytic argument.",
       "additional_labels": [
         "eq:corner-baselines",
@@ -195,7 +195,7 @@
         "eq:correction-cancellation"
       ],
       "graph_title": "Stabilized corner",
-      "scope": "The written lemma gives the complete Pluecker normal form, explicit realignment entries and the averaged block matrix. Lean constructs the corner data required for the negative proof by polarization; it does not separately export the full relation-space classification.",
+      "scope": "The written lemma gives the complete Plücker normal form, explicit realignment entries and the averaged block matrix. Lean constructs the corner data required for the negative proof by polarization; it does not separately export the full relation-space classification.",
       "paper_dependencies": [
         "lem:frame"
       ],
@@ -226,7 +226,7 @@
         }
       ],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Vanishing of complete low means forces the mixed correction into the finite tails; incomplete means are unrestricted.",
       "additional_labels": [
         "sec:tails",
@@ -275,7 +275,7 @@
         }
       ],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Provides the global and real-slice information used by continuation; the formal proof uses a sufficient looser radial bound.",
       "additional_labels": [
         "eq:pure-global-bound",
@@ -371,7 +371,7 @@
         }
       ],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Two rectangle comparisons propagate the small repeated-node bound to the witness points; Lean proves the required selected-scale application.",
       "additional_labels": [
         "sec:continuation",
@@ -490,7 +490,7 @@
           "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
         }
       ],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Combines the positive evaluation matrix with the tangent pairing and the uniform error bounds.",
       "additional_labels": [
         "eq:nodes",
@@ -548,7 +548,7 @@
           "scope": "All polynomial identities and exact positive Gram certificates for the 48-step chain."
         }
       ],
-      "status": "exact-verified",
+      "status": "Exact-verified",
       "explanation": "Starts from the order-two identity and follows 48 exact positive induction steps.",
       "additional_labels": [
         "sec:positive",
@@ -569,7 +569,7 @@
       "statement": "For n ≥ 3, both exchange optima are attained and F_n is SOS exactly when gamma_n ≤ 1, including singular dual states.",
       "lean": [],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Expresses the unrestricted finite SOS question as the exact attained mixed/pure exchange budget.",
       "additional_labels": [
         "sec:exchange",
@@ -598,7 +598,7 @@
       "statement": "The exchange budget obeys 1/2 ≤ gamma_n ≤ 4 and the stated lower bound for n ≥ 128, with a certificate-relative margin consequence.",
       "lean": [],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Explains why feasible certificates approach the critical budget without asserting an unconditional limit equal to one.",
       "additional_labels": [
         "eq:criticality",
@@ -625,7 +625,7 @@
       "statement": "A least non-SOS boundary width κ_* exists; all larger widths and increments R_n for n ≥ max(2,2κ_*-1) fail SOS.",
       "lean": [],
       "checks": [],
-      "status": "proved in the paper only",
+      "status": "Proved in the paper only",
       "explanation": "Uses the corner tail decomposition to refute the all-order increment premise.",
       "additional_labels": [
         "sec:boundary",
@@ -651,7 +651,7 @@
       "statement": "SOS is expected to persist to moderate orders; no endpoint or extension beyond 50 is proved.",
       "lean": [],
       "checks": [],
-      "status": "unproved remark",
+      "status": "Unproved remark",
       "explanation": "Separates a qualitative expectation from the certified finite positive range and the open transition problem.",
       "additional_labels": [
         "sec:discussion",

@@ -6,9 +6,9 @@ starting at 2026-10-02T16:47:44Z.
 Verified source commit:
 [`8e1d71634efa68b03b68b3963e419fcb98416d0d`](https://github.com/erenup/toeplitz-bw-not-sos/tree/8e1d71634efa68b03b68b3963e419fcb98416d0d).
 The exact Git tree of `lean/` is **`69d02281c91fea6ff54fe3556aaddc43eae66e65`**.
-This record is outside `lean/`, so adding it does not change that tree.
-The verification applies to the frozen v1.0 formalization whenever its
-`lean/` tree matches this identifier, including a merge with the same tree.
+The checks below verified this exact `lean/` tree.
+The [v1.0 tag](https://github.com/erenup/toeplitz-bw-not-sos/tree/v1.0/lean)
+contains exactly the same tree, frozen except for errata.
 
 ## Statement and scope
 
@@ -118,6 +118,32 @@ PASS: source policy, complete module coverage, and negative controls
 PASS: Lean verification including certificates through N=20
 ```
 
+## Runtime and disk space
+
+All recorded builds and audits used `LEAN_NUM_THREADS=6`. The default build
+started with the pinned Mathlib cache available and no compiled project
+modules. The certificate build followed it and built all 18 generated
+certificates afresh. The optimized runs reused the completed builds.
+
+| Command | Build state | Recorded wall time |
+|---|---|---:|
+| `./verify` | Fresh default project | 1,013.88 s (about 17 min) |
+| `./verify --certificates` | Fresh certificates after default build | 8,052.40 s (about 2 h 14 min) |
+| `python3 -O verify` | Compiled default project | 15.03 s |
+| `python3 -O verify --certificates` | Compiled complete project | 88.17 s |
+| Per-module `lake env leanchecker` loop below | Compiled complete project; sequential | 3,688.56 s (about 61 min) |
+
+Reserve about **20 GiB of disk** for the pinned Lean toolchain, dependencies,
+downloaded cache and project build files. This is a planning allowance,
+not a measured peak; it excludes a TeX installation and Python environment.
+The default build, certificate build and optional per-module replay share
+these files, so the allowance is not additive. Replay reads the existing
+compiled modules and does not require another copy of the build.
+Cache download and toolchain installation time are excluded from the table;
+wall times depend on the environment. The representative memory requirements
+in the [Lean inventory](lean/README.md) are about 9–10 GiB for a fresh
+default build and up to about 70 GiB for the full certificate build.
+
 ## Target-theorem axioms
 
 After the full build, run this from `lean/`:
@@ -154,9 +180,13 @@ Every one of the 88 project modules was also checked in a separate
 `leanchecker` invocation, replaying its declarations in the kernel with
 its imported environment. This supplements the builds and transitive
 axiom audit; it is not an external proof kernel.
+This optional check took 3,688.56 seconds in total (about 61 minutes),
+with `LEAN_NUM_THREADS=6` and one module per invocation. It reuses the
+compiled files within the 20 GiB disk allowance above.
 From `lean/`, after removing the temporary axiom file above:
 
 ```sh
+export LEAN_NUM_THREADS=6
 python3 - <<'PY'
 import json
 import subprocess
@@ -261,5 +291,3 @@ The recorded invocations all exited successfully:
 | `ToeplitzSOSRelease` | 2026-10-02T20:22:10Z | 0 |
 
 All checked Lean source hashes were unchanged at completion.
-This is the repository's verification record; it does not claim that
-the OpenProblemsInNLA catalogue independently reran these commands.
