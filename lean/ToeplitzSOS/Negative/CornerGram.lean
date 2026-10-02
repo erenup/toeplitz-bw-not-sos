@@ -66,7 +66,7 @@ structure CornerGram (m : ℕ) where
   correction_eq : mixedBlock (baselineB m) T - baselineB m = mixedKernel correction
   /-- The forced complete low means, in both variables. -/
   low_means : CompleteLowMeans correction
-  /-- Cauchy--Schwarz payment from the fixed mixed diagonals, (9). -/
+  /-- Cauchy--Schwarz payment from the fixed mixed diagonals. -/
   correction_bound : ∀ p q r s, ‖correction p q r s‖ ≤ 4 * Real.sqrt
     ((p.val + 1) * (q.val + 1) * (r.val + 1) * (s.val + 1) : ℝ)
 

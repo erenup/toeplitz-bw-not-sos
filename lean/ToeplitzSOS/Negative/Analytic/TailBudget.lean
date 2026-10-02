@@ -20,7 +20,7 @@ theorem exp_neg_reciprocal_bound {ε : ℝ} (hε : 0 < ε) :
   convert! hmul using 1
   field_simp [ne_of_gt hε]
 
-/-- Equation (15), with the scale relation `m = ε⁻²` stated explicitly. -/
+/-- The geometric-tail budget, with the scale relation `m = ε⁻²` stated explicitly. -/
 theorem tail_budget {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ (2 : ℝ)⁻¹ ^ 16)
     {m : ℕ} (hm : (m : ℝ) = ε⁻¹ ^ 2) :
     2 ^ 32 * ε⁻¹ ^ 8 * Real.exp (-ε * m / 4) ≤ ε⁻¹ ^ 2 := by

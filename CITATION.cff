@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this software using the metadata below."
+type: software
+title: "Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Böttcher–Wenzel Form"
+version: 1.0.0
+authors:
+  - family-names: Zhu
+    given-names: Wenqi
+    affiliation: "Mathematical Institute, Woodstock Road, University of Oxford, Oxford, UK, OX2 6GG"
+    email: wenqi.zhu@maths.ox.ac.uk
+  - family-names: Nie
+    given-names: Ping
+    affiliation: "David R. Cheriton School of Computer Science, University of Waterloo"
+    email: ping.nie@uwaterloo.ca
+repository-code: "https://github.com/erenup/toeplitz-bw-not-sos"
+license: MIT

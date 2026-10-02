@@ -136,8 +136,7 @@ private theorem block_62 : upperBlock 62 = (-361915287262829728337280277436 : �
 private theorem block_63 : upperBlock 63 = (305668951718130237264140084992 : ℤ) := by decide +kernel
 
 /-- The sum of the directed integer upper bounds is strictly negative
-with the full margin of (24). Every one of the 1024² entries was reduced
-by the kernel, in 64 blocks to bound resident memory. -/
+with magnitude exceeding `2^42 * 2^64`. All 1024² entries are checked by kernel reduction. -/
 theorem fullUpper_lt : fullUpper < -(2 : ℤ)^42 * 2^64 := by
   unfold fullUpper
   norm_num only [Finset.sum_range_succ, Finset.sum_range_zero, block_0, block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8, block_9, block_10, block_11, block_12, block_13, block_14, block_15, block_16, block_17, block_18, block_19, block_20, block_21, block_22, block_23, block_24, block_25, block_26, block_27, block_28, block_29, block_30, block_31, block_32, block_33, block_34, block_35, block_36, block_37, block_38, block_39, block_40, block_41, block_42, block_43, block_44, block_45, block_46, block_47, block_48, block_49, block_50, block_51, block_52, block_53, block_54, block_55, block_56, block_57, block_58, block_59, block_60, block_61, block_62, block_63]

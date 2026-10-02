@@ -95,12 +95,12 @@ theorem averagedMixedRows_factor {m r : ℕ} (c : Fin r → Fin m → Fin m → 
   norm_num
   ring
 
-/-- Geometric specialization of a pure row Gram is the interface kernel. -/
+/-- Geometric specialization of a pure row Gram is the geometric kernel. -/
 theorem pureFour_geometric {m r : ℕ} (c : Fin r → PureIndex m → ℝ) (x y z w : ℂ) :
     pureFour c c (geometricVector m x) (geometricVector m y)
       (geometricVector m z) (geometricVector m w) = pureGramKernel c x y z w := rfl
 
-/-- Geometric specialization of a mixed row Gram is the interface kernel. -/
+/-- Geometric specialization of a mixed row Gram is the geometric kernel. -/
 theorem mixedFour_geometric {m r : ℕ} (c : Fin r → Fin m → Fin m → ℝ) (x y z w : ℂ) :
     mixedFour c (geometricVector m x) (geometricVector m y)
       (geometricVector m z) (geometricVector m w) = mixedGramKernel c x y z w := rfl

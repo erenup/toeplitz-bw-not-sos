@@ -77,7 +77,7 @@ theorem second_continuation {F : ℂ → E} {B ε : ℝ}
     · linarith [(abs_le.mp hy).1]
     · exact hx
 
-/-- The complete complex-speed bridge (16)–(19), in normalized form. -/
+/-- The complete complex-speed bridge, in normalized form. -/
 theorem two_rectangle_continuation {F : ℂ → ℂ → E} {B ε : ℝ}
     (hFu : ∀ v, Differentiable ℂ (fun u => F u v))
     (hFv : ∀ u, Differentiable ℂ (F u))

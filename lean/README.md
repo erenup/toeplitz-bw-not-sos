@@ -9,6 +9,10 @@ The negative theorem allows arbitrary real coefficients and any finite
 number of homogeneous quadratic squares. It does not assert that the
 quartic takes negative values or identify the first non-SOS order.
 
+The formalization is frozen at **v1.0**; later changes will be limited to errata.
+The dated [verification record](../VERIFICATION.md) identifies the verified
+commit and exact `lean/` tree, with reproduction commands and axiom reports.
+
 ## Read this first
 
 1. [Defs](ToeplitzSOS/Defs.lean): `V`, `toeplitzBW`, `IsSumSqHomQuad`, and
@@ -30,7 +34,7 @@ quartic takes negative values or identify the first non-SOS order.
 
 The `2^33554433` statement in `Statement` and `ExplicitStatement` stays
 as a **weaker corollary** of the `2^9961475` theorem. The word `sharp` in
-registered names distinguishes these two sufficient bounds; it does not
+declaration names distinguishes these two sufficient bounds; it does not
 claim an optimal order.
 
 ## Release modules

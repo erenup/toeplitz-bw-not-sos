@@ -129,7 +129,7 @@ theorem split9 (n : ℕ) (hn : 1 ≤ n) (x y : ℤ → R) :
   set I := Icc (1 : ℤ) ((n : ℤ) - 1) with hI
   rw [split_Ioo _ hn']
   simp only [split_Ioo _ hn', sum_add_distrib]
-  -- the nine blocks
+
   have h00 : ssW n x y 0 0 = 0 := ssW_self n x y 0
   have hC : ∑ Q ∈ I, ssW n x y 0 (-Q) + ∑ Q ∈ I, ssW n x y 0 Q + ∑ P ∈ I, ssW n x y (-P) 0
       + ∑ P ∈ I, ssW n x y P 0 = central n x y := by
@@ -235,12 +235,12 @@ theorem sameside_tent (n : ℕ) (x y : ℤ → R) :
       = -2 * ∑ δ ∈ Icc (1 : ℤ) ((n : ℤ) - 2), ∑ k ∈ Ico (0 : ℤ) ((n : ℤ) - 1),
           Splus n x y δ k * Sminus n x y δ k := by
   show ∑ d ∈ Ioo (-(n : ℤ)) n, ∑ P ∈ Dset n d, ∑ P' ∈ Dset n d, ssG n x y d P P' = _
-  -- symmetrize, then reindex linearly
+
   simp only [fun d => sum_symm_offdiag (Dset n d) (ssG n x y d) (ssG_symm n x y d)
     (ssG_self n x y d), ← mul_sum]
   rw [ss_reindex (n : ℤ) (ssG n x y)]
   simp only [ssG_reindexed, sum_neg_distrib]
-  -- the right side: windows are τ-filters, then the tent-kernel identity
+
   have hR : ∀ δ ∈ Icc (1 : ℤ) ((n : ℤ) - 2),
       ∑ k ∈ Ico (0 : ℤ) ((n : ℤ) - 1), Splus n x y δ k * Sminus n x y δ k
         = ∑ p ∈ Dset n δ, ∑ q ∈ Dset n δ,

@@ -29,7 +29,7 @@ theorem conjugate_radius_bounds {ε u : ℝ} (hε : 0 < ε) (hε1 : ε ≤ (2 : 
   · linarith
   constructor <;> nlinarith
 
-/-- The phase square in (11), where sin(phi) = cos(ε v). -/
+/-- The phase square, where sin(phi) = cos(ε v). -/
 theorem conjugate_phase_bound {ε v : ℝ} (hε : 0 < ε) (hε1 : ε ≤ (2 : ℝ)⁻¹ ^ 16)
     (hv : |v| ≤ 512) : (1 : ℝ) / 4 ≤ Real.cos (ε * v) ^ 2 := by
   apply cos_sq_lower
@@ -101,7 +101,7 @@ theorem speed_nodes_radial {ε : ℝ} (hε : 0 ≤ ε) {u v : ℂ}
   · nlinarith [le_abs_self v.im]
   · nlinarith [neg_abs_le v.im]
 
-/-- The fourth-order pure majorant becomes the uniform bound (16). -/
+/-- The fourth-order pure majorant becomes the uniform bound. -/
 theorem pure_majorant_bound {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ 1)
     {x y : ℂ} (hx : ‖x‖ ≤ Real.exp (-ε / 4)) (hy : ‖y‖ ≤ Real.exp (-ε / 4)) :
     8 / ((1 - ‖x‖ ^ 2) ^ 2 * (1 - ‖y‖ ^ 2) ^ 2) ≤ 2 ^ 20 / ε ^ 4 := by

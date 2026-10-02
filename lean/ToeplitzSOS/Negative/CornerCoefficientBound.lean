@@ -90,7 +90,7 @@ theorem averagedMixedRows_abs_le {m n : ℕ} (a b : Fin n → PureIndex m → �
   change |mixedRowGram e p q r s| ≤ _
   nlinarith [sq_abs (mixedRowGram e p q r s), abs_nonneg (mixedRowGram e p q r s)]
 
-/-- The actual complex correction coefficients satisfy the uniform bound (9). -/
+/-- The actual complex correction coefficients satisfy the uniform bound. -/
 theorem mixedCorrectionEntry_bound {m n : ℕ} (a b : Fin n → PureIndex m → ℝ)
     (c : Fin n → Fin m → Fin m → ℝ)
     (h : baselinePolynomial m = ∑ j, cornerLinear (a j) (b j) (c j) ^ 2)

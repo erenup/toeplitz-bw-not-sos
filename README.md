@@ -1,6 +1,17 @@
-# The Toeplitz Böttcher–Wenzel form is not always a sum of squares
+# Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Böttcher–Wenzel Form
 
 Authors: Wenqi Zhu; Ping Nie.
+
+Wenqi Zhu — Mathematical Institute, Woodstock Road, University of Oxford,
+Oxford, UK, OX2 6GG — wenqi.zhu@maths.ox.ac.uk
+
+Ping Nie — David R. Cheriton School of Computer Science, University of Waterloo
+— ping.nie@uwaterloo.ca
+
+The paper is a **working version dated 2 October 2026** and is being finalized
+by the authors. The final version will be posted on arXiv and will replace
+`paper/`. The theorem and equation numbers in `paper-lean-mapping/` refer
+to this working version.
 
 For real Toeplitz matrices of order N ≥ 2^9961475, the quartic F_N = 2‖X‖_F²‖Y‖_F² − 2⟨X,Y⟩_F² − ‖XY−YX‖_F² is not a finite sum of squares of real homogeneous quadratic forms, allowing arbitrary real coefficients. It is SOS for 2 ≤ N ≤ 50 (and identically zero at N = 1); the gap 51 ≤ N < 2^9961475 remains open.
 
@@ -55,6 +66,10 @@ itself, which is the part that Lean verifies, or construct an ambient
 separating matrix at the displayed order.
 
 ## Reproduce the checks
+
+The dated [verification record](VERIFICATION.md) lists the verified commit,
+the exact `lean/` tree, the reproduction commands and the target-theorem
+axiom reports.
 
 Install [elan](https://github.com/leanprover/elan), Python 3.10 or later,
 Graphviz (`dot`), and the TeX dependencies listed in [paper/](paper/README.md).
@@ -133,4 +148,7 @@ Per-command runtime and memory costs are listed in the directory READMEs.
 - `verification/`: exact Python checkers and compressed positive certificates.
 - `paper/`: manuscript sources, PDF, and portable build script.
 
-The license is to be decided by the owner; no license is granted by this repository.
+## License
+
+Everything outside `paper/` is available under the [MIT license](LICENSE).
+The paper sources and PDF in `paper/` are not licensed; all rights reserved.

@@ -118,7 +118,7 @@ theorem hasSum_gapFeature {x y z w : ℂ} (hx : ‖x‖ < 1) (hy : ‖y‖ < 1)
 def gapKernelTerm (x y z w : ℂ) (i : (ℕ × ℕ) × ℕ) : ℂ :=
   -2 * minSeriesTerm (x * y) (z * w) i.1 * gapFeature x y z w i.2
 
-/-- The same-gap generating kernel in (5). -/
+/-- The same-gap generating kernel. -/
 theorem hasSum_gapKernelTerm {x y z w : ℂ} (hx : ‖x‖ < 1) (hy : ‖y‖ < 1)
     (hz : ‖z‖ < 1) (hw : ‖w‖ < 1) :
     HasSum (gapKernelTerm x y z w) (referenceQ x y z w - referenceD x y z w) := by
@@ -205,7 +205,7 @@ def diagonalSeriesTerm (x y z w : ℂ) (p : ℕ × ℕ) : ℂ :=
   if p.1 < p.2 then 2 * ((p.1 : ℂ) + 1) * ((p.2 : ℂ) + 1) *
     natPureFeature p x y * natPureFeature p z w else 0
 
-/-- The increasing-pair pure diagonal has the rational reference in (5). -/
+/-- The increasing-pair pure diagonal has the rational reference. -/
 theorem hasSum_diagonalSeriesTerm {x y z w : ℂ} (hx : ‖x‖ < 1) (hy : ‖y‖ < 1)
     (hz : ‖z‖ < 1) (hw : ‖w‖ < 1) :
     HasSum (diagonalSeriesTerm x y z w) (referenceD x y z w) := by
@@ -434,7 +434,7 @@ theorem hasSum_mixedDiagonalSeriesTerm {x y z w : ℂ} (hx : ‖x‖ < 1) (hy : 
       exact ⟨p.1, Prod.ext rfl h⟩
     simp [mixedDiagonalSeriesTerm, hne]
 
-/-- The mixed baseline series has precisely the reference in (5). -/
+/-- The mixed baseline series has precisely the reference. -/
 theorem hasSum_mixedSeriesTerm {x y z w : ℂ} (hx : ‖x‖ < 1) (hy : ‖y‖ < 1)
     (hz : ‖z‖ < 1) (hw : ‖w‖ < 1) :
     HasSum (mixedSeriesTerm x y z w) (referenceB x y z w) := by

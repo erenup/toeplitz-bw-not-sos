@@ -102,7 +102,7 @@ theorem rank_le_of_highGap_kernel {n : ℕ} (hn : 2 ≤ n)
   rw [← hrank, Module.finrank_pi] at hnullity
   omega
 
-/-- Corollary K' follows directly from the forced-kernel statement. -/
+/-- The forced-kernel statement bounds the rank by the wedge dimension minus `n − 1`. -/
 theorem forcedKernel_implies_rank (hK : ForcedKernelStatement)
     (n : ℕ) (hn : 2 ≤ n) (Q : Matrix (W n) (W n) ℝ)
     (hQ : Q.PosSemidef) (hgram : IsWedgeGram n Q) :

@@ -25,7 +25,7 @@ def baselineD (m : ℕ) : FourKernel := fun x y z w =>
   ∑ pq : PureIndex m, (2 * (pq.1.1.val + 1) * (pq.1.2.val + 1) : ℂ) *
     pureFeature pq x y * pureFeature pq z w
 
-/-- The signed same-gap pure cross kernel from (1). -/
+/-- The signed same-gap pure cross kernel. -/
 def baselineK (m : ℕ) : FourKernel := fun x y z w =>
   ∑ pq : PureIndex m, ∑ rs : PureIndex m,
     if pq.1.2.val - pq.1.1.val = rs.1.2.val - rs.1.1.val then
@@ -45,14 +45,14 @@ def mixedKernel {m : ℕ} (C : Fin m → Fin m → Fin m → Fin m → ℂ) : Fo
   fun x y z w => ∑ p, ∑ q, ∑ r, ∑ s,
     C p q r s * x ^ p.val * y ^ q.val * z ^ r.val * w ^ s.val
 
-/-- The finite mixed baseline kernel from (1). -/
+/-- The finite mixed baseline kernel. -/
 def baselineB (m : ℕ) : FourKernel :=
   mixedKernel (fun p q r s : Fin m => (baselineMixedEntry p q r s : ℂ))
 
 /-- The finite pure reference `D+K`. -/
 def baselineQ (m : ℕ) : FourKernel := baselineD m + baselineK m
 
-/-- The fixed finite cancellation kernel (3). -/
+/-- The fixed finite cancellation kernel. -/
 def baselineL (m : ℕ) : FourKernel := baselineB m + baselineD m + realign (baselineQ m)
 
 /-- The first vanishing denominator. -/
@@ -64,20 +64,20 @@ def factorB (x y z w : ℂ) : ℂ := (1 - x * w) * (1 - y * z)
 /-- The second vanishing denominator. -/
 def factorC (x y z w : ℂ) : ℂ := (1 - x * y) * (1 - z * w)
 
-/-- Rational infinite reference for the pure diagonal kernel, (5). -/
+/-- Rational infinite reference for the pure diagonal kernel. -/
 def referenceD : FourKernel := fun x y z w =>
   2 * ((factorA x y z w)⁻¹ ^ 2 - (factorB x y z w)⁻¹ ^ 2)
 
-/-- Rational infinite reference for the mixed kernel, (5). -/
+/-- Rational infinite reference for the mixed kernel. -/
 def referenceB : FourKernel := fun x y z w =>
   2 * ((factorA x y z w)⁻¹ ^ 2 - (factorA x y z w * factorB x y z w)⁻¹)
 
-/-- Rational infinite reference for `D+K`, (5). -/
+/-- Rational infinite reference for `D+K`. -/
 def referenceQ : FourKernel := fun x y z w =>
   referenceD x y z w - 2 * (factorB x y z w - factorA x y z w) /
     (factorA x y z w * factorB x y z w * factorC x y z w)
 
-/-- Simplified rational reference for the fixed cancellation kernel, (6). -/
+/-- Simplified rational reference for the fixed cancellation kernel. -/
 def referenceL : FourKernel := fun x y z w =>
   2 * (2 * (factorA x y z w)⁻¹ ^ 2 + (factorC x y z w)⁻¹ ^ 2 -
     (factorA x y z w * factorC x y z w)⁻¹ - 2 * (factorB x y z w)⁻¹ ^ 2)
@@ -90,7 +90,7 @@ theorem realign_factors : realign factorA = factorC ∧
   simp only [realign, factorB]
   ring
 
-/-- The rational cancellation identity (6), with its necessary nonzero
+/-- The rational cancellation identity, with its necessary nonzero
 factor hypotheses made explicit. -/
 theorem reference_cancellation (x y z w : ℂ)
     (hA : factorA x y z w ≠ 0) (hB : factorB x y z w ≠ 0)
@@ -106,7 +106,7 @@ theorem reference_cancellation (x y z w : ℂ)
   ring
 
 /-- The repeated-node rational simplification underlying the conjugate
-formula (11), before substituting polar coordinates. -/
+formula, before substituting polar coordinates. -/
 theorem referenceQ_repeated (x y : ℂ)
     (hA : factorA x y y x ≠ 0) (hB : factorB x y y x ≠ 0) :
     referenceQ x y y x = 2 * (factorB x y y x - factorA x y y x) /

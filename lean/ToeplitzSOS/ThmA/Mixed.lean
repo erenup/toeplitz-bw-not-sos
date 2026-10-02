@@ -68,7 +68,7 @@ private lemma slack_eq_sigma {R : Type*} [CommRing R] (n : ℕ) (x y : ℤ → R
     simp only [mem_Icc] at hB hB'
     rw [max_eq_right (by omega)]; simp
 
-/-- (Theorem B, `mixed_block`): the mixed diagonal minus the σ-block form equals
+/-- The mixed diagonal minus the σ-block form equals
 Laplacian plus slack, `lap n x y + slack n x y`. Used by `thmA_gram`. -/
 theorem mixed_block {R : Type*} [CommRing R] (n : ℕ) (x y : ℤ → R) :
     2 * ∑ A ∈ Icc (1 : ℤ) ((n : ℤ) - 1), ∑ B ∈ Icc (1 : ℤ) ((n : ℤ) - 1),

@@ -63,7 +63,7 @@
         "app:verification"
       ],
       "graph_title": "Non-SOS at large orders",
-      "scope": "Unconditional formal non-SOS theorem for the literal real homogeneous-quadratic predicate, every N >= 2^9961475. The older 2^33554433 theorem and negation of MI15 are corollaries. The classical nonnegativity assertion is proved separately in the text.",
+      "scope": "Unconditional formal non-SOS theorem for the literal real homogeneous-quadratic predicate, every N >= 2^9961475. The weaker 2^33554433 theorem and negation of MI15 are corollaries. The classical nonnegativity assertion is proved separately in the text.",
       "paper_dependencies": [
         "cor:threshold"
       ],

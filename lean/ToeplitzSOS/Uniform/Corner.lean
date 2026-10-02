@@ -156,7 +156,7 @@ lemma finiteCorrection_eq_zero {w n : ℕ} (hn : 2 * w ≤ n) (p q : Pair w) :
   · rfl
 
 /-- Stabilisation of the corner formula: for `n ≥ 2w` the finite-`n` corner
-formula (2) equals the stabilised block `B_w` of (1).  This is a statement
+formula equals the stabilised block `B_w`.  This is a statement
 about the two formulas only (not about the Gram of `F_n`). -/
 theorem finiteCornerBlock_eq_cornerBlock {w n : ℕ} (hn : 2 * w ≤ n) :
     finiteCornerBlock w n = cornerBlock w := by

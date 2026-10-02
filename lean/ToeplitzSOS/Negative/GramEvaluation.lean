@@ -4,9 +4,9 @@ import ToeplitzSOS.Negative.FiniteObstruction
 /-!
 # Finite Gram evaluation, positivity, and the entire pure factor
 
-This module consumes the algebraic `CornerGram` record. It proves the
+This module uses the algebraic `CornerGram` record. It proves the
 nonnegative evaluated pairing and constructs the finite complex vector
-whose norm is the plus-kernel diagonal. References: (16), (25), (28).
+whose norm is the plus-kernel diagonal.
 -/
 
 namespace ToeplitzSOS.Negative

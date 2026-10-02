@@ -10,7 +10,7 @@ proofs check these arithmetic definitions using kernel reduction.
 
 namespace ToeplitzSOS.Negative.Witness
 
-/-- The floor weights of (22), indexed from zero. -/
+/-- The floor weights, indexed from zero. -/
 def weight (j : ℕ) : ℤ := (2^43 * (j + 1) / (128^2 + (j + 1)^2)^2 : ℕ)
 
 /-- The real speed, equal to one or two on the 1024 witness indices. -/

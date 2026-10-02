@@ -14,7 +14,7 @@ noncomputable section
 set_option maxRecDepth 10000
 open Finset
 
-/-- The four-slot tangent kernel (20), with the second node already conjugated. -/
+/-- The four-slot tangent kernel, with the second node already conjugated. -/
 def tangentKernel : FourKernel := fun a b c d =>
   2 * (2 / ((a + c) * (b + d))^2 + 1 / ((a + b) * (c + d))^2 -
     1 / (((a + c) * (b + d)) * ((a + b) * (c + d))))

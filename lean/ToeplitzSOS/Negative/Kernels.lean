@@ -47,7 +47,7 @@ theorem pureMean_eq (D K E T : FourKernel) : pureMean D K E T = D + E := by
   simp only [pureMean, plusBlock, minusBlock, Pi.add_apply, Pi.sub_apply]
   ring
 
-/-- Complete cancellation of both repairs; (3), with no positivity premise. -/
+/-- Complete cancellation of both repairs, with no positivity premise. -/
 theorem cancellation (D K B E T : FourKernel) (hE : realign E = -E) :
     mixedBlock B T + pureMean D K E T + realign (plusBlock D K E T) =
       B + D + realign (D + K) := by
@@ -58,8 +58,8 @@ theorem cancellation (D K B E T : FourKernel) (hE : realign E = -E) :
 /-- Hermitian diagonal of a bilinear generating kernel. -/
 def hermitianDiagonal (F : FourKernel) (x y : ℂ) : ℂ := F x y (conj x) (conj y)
 
-/-- Four-form alternation cancels the two partially conjugated pure means;
-this is (7) before using any PSD inequalities. -/
+/-- Four-form alternation cancels the two partially conjugated pure means,
+before using any PSD inequalities. -/
 theorem partial_conjugation (D K E T : FourKernel)
     (hE : ∀ x y z w, E x w z y = - E x y z w) (x y : ℂ) :
     hermitianDiagonal (plusBlock D K E T) x y +
@@ -78,7 +78,7 @@ theorem repeated_fourForm_eq_zero (E : FourKernel) (hE : realign E = -E) (x y : 
   change E x y y x = - E x y y x at h
   linear_combination (1 / 2 : ℂ) * h
 
-/-- The repeated-node transport has a plus sign, as in (10). -/
+/-- The repeated-node transport has a plus sign. -/
 theorem repeated_node (D K B E T : FourKernel) (hE : realign E = -E)
     (hT : ∀ x y z w, T x y w z = - T x y z w) (x y : ℂ) :
     plusBlock D K E T x y y x =
@@ -88,7 +88,7 @@ theorem repeated_node (D K B E T : FourKernel) (hE : realign E = -E)
   ring
 
 /-- On conjugate node pairs, a realigned entry is a genuine Hermitian
-diagonal of the original kernel; this is exactly (25). -/
+diagonal of the original kernel. -/
 theorem realigned_entry_eq_diagonal (F : FourKernel) (x z : ℂ) :
     realign F x (conj x) (conj z) z = hermitianDiagonal F x (conj z) := by
   simp [realign, hermitianDiagonal]

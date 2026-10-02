@@ -54,14 +54,20 @@ def inner {R : Type*} [CommSemiring R] {n : ℕ}
     (A B : Matrix (Fin n) (Fin n) R) : R :=
   ∑ i, ∑ j, A i j * B i j
 
+/-- The quartic `2‖X‖²‖Y‖² − 2⟨X,Y⟩² − ‖XY − YX‖²` of the generic
+real Toeplitz matrices `X n` and `Y n`, in the `4n − 2` variables `V n`. -/
 def toeplitzBW (n : ℕ) : MvPolynomial (V n) ℝ :=
   2 * frob (X n) * frob (Y n) - 2 * inner (X n) (Y n) ^ 2 -
     frob (X n * Y n - Y n * X n)
 
+/-- A finite sum of squares of real homogeneous quadratic polynomials,
+with arbitrary real coefficients and with the empty sum allowed. -/
 def IsSumSqHomQuad {σ : Type*} (p : MvPolynomial σ ℝ) : Prop :=
   ∃ (N : ℕ) (q : Fin N → MvPolynomial σ ℝ),
     (∀ j, (q j).IsHomogeneous 2) ∧ p = ∑ j, q j ^ 2
 
+/-- The universal Toeplitz SOS conjecture: every order `n ≥ 2` admits
+a finite sum of real homogeneous quadratic squares. `Negative.not_MI15` proves its negation. -/
 def MI15 : Prop :=
   ∀ n ≥ 2, IsSumSqHomQuad (toeplitzBW n)
 
@@ -114,7 +120,7 @@ private lemma matrix_mul_isHomogeneous {n d e : ℕ}
   intro k _
   exact (hA i k).mul (hB k j)
 
-/-- Smoke test: the catalogue polynomial is homogeneous of degree four. -/
+/-- The catalogue polynomial is homogeneous of degree four. -/
 theorem toeplitzBW_isHomogeneous (n : ℕ) :
     (toeplitzBW n).IsHomogeneous 4 := by
   let hX : ∀ i j, ((X n) i j).IsHomogeneous 1 := fun i j ↦ x_isHomogeneous _
