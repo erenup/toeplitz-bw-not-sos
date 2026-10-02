@@ -27,7 +27,7 @@ def CompleteLowMeans {m : ℕ} (C : Fin m → Fin m → Fin m → Fin m → ℂ)
 /-- The three analytic estimates used by the finite proof, with all
 parameters, domains and constants explicit and independent of Gram rank. -/
 structure AnalyticInputs : Prop where
-  /-- Equation (12): the finite baseline truncations have uniformly small tails. -/
+  /-- The finite baseline truncations have uniformly small tails. -/
   baselineTail : ∀ (m : ℕ) (ε : ℝ), 0 < ε → ε ≤ 1 →
     ∀ x y z w : ℂ,
       ‖x‖ ≤ Real.exp (-ε / 2) → ‖y‖ ≤ Real.exp (-ε / 2) →
@@ -36,7 +36,7 @@ structure AnalyticInputs : Prop where
         2 ^ 30 * ε⁻¹ ^ 8 * Real.exp (-ε * m / 4) ∧
       ‖baselineL m x y z w - referenceL x y z w‖ ≤
         2 ^ 30 * ε⁻¹ ^ 8 * Real.exp (-ε * m / 4)
-  /-- The estimate after (12): fixed coefficient bounds and complete low
+  /-- Fixed coefficient bounds and complete low
   means leave only a finite high-total tail on the repeated node. -/
   mixedTail : ∀ (m : ℕ) (ε : ℝ), 0 < ε → ε ≤ 1 →
     ∀ C : Fin m → Fin m → Fin m → Fin m → ℂ,
@@ -45,7 +45,7 @@ structure AnalyticInputs : Prop where
       CompleteLowMeans C → ∀ x : ℂ, ‖x‖ ≤ Real.exp (-ε / 2) →
       ‖mixedKernel C x x (conj x) (conj x)‖ ≤
         2 ^ 26 * ε⁻¹ ^ 8 * Real.exp (-ε * m / 2)
-  /-- Equations (16)-(19): separately entire finite vectors obey the
+  /-- Separately entire finite vectors obey the
   quantitative continuation bound from the global and real-slice bounds. -/
   twoRectangles : ∀ (d : ℕ) (ε : ℝ), 0 < ε → ε ≤ (2 : ℝ)⁻¹ ^ 16 →
     ∀ F : ℂ → ℂ → EuclideanSpace ℂ (Fin d),

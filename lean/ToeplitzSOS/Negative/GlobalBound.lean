@@ -72,7 +72,7 @@ theorem baselineD_radial_bound {m : ℕ} {x y : ℂ} {r : ℝ}
     _ ≤ 8 * (1 / (1-r^2)^2)^2 := by gcongr
     _ = _ := by simp only [div_pow, one_pow, ← pow_mul]; norm_num [div_eq_mul_inv]
 
-/-- The finite plus Gram factor satisfies the global norm bound (16). -/
+/-- The finite plus Gram factor satisfies the global norm bound. -/
 theorem CornerGram.plusVector_global {m : ℕ} (g : CornerGram m) {ε : ℝ}
     (hε : 0 < ε) (hε1 : ε ≤ 1) (u v : ℂ) (huv : 1/4 ≤ u.re - |v.im|) :
     ‖g.plusVector ε u v‖^2 ≤ 2^20 * ε⁻¹ ^ 4 := by

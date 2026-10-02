@@ -1,7 +1,7 @@
 import ToeplitzSOS.Negative.TangentApplication
 import ToeplitzSOS.Negative.Analytic.Interface
 
-/-! # Unconditional obstruction to the full algebraic corner interface -/
+/-! # Unconditional obstruction to the full algebraic corner structure -/
 
 namespace ToeplitzSOS.Negative
 

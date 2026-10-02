@@ -5,7 +5,7 @@ import ToeplitzSOS.Negative.GramEvaluation
 
 Partial conjugation gives the global majorant in terms of the finite D
 kernel. The repeated-node identity and the two explicit tail fields give
-(13). The remaining scalar phase/radius estimates concern only the
+the conjugate-node error bound. The remaining scalar phase/radius estimates concern only the
 rational reference and finite geometric series.
 -/
 
@@ -26,7 +26,7 @@ theorem CornerGram.minus_diagonal_nonneg {m : ℕ} (g : CornerGram m) (x y : ℂ
   exact sum_nonneg fun _ _ => sq_nonneg _
 
 /-- The arbitrary plus repair is bounded by the two fixed diagonal kernels,
-with no restriction on coefficients or rank. This is the algebraic part of (8). -/
+with no restriction on coefficients or rank. -/
 theorem CornerGram.plus_le_diagonals {m : ℕ} (g : CornerGram m) (x y : ℂ) :
     (hermitianDiagonal (plusBlock (baselineD m) (baselineK m) g.E g.T) x y).re ≤
       2 * (hermitianDiagonal (baselineD m) x y).re +
@@ -49,7 +49,7 @@ theorem CornerGram.repeated_diagonal {m : ℕ} (g : CornerGram m) (x : ℂ) :
   rw [g.correction_eq] at h
   simpa only [hermitianDiagonal, starRingEnd_self_apply, baselineQ] using h
 
-/-- The full conjugate-node error (13), obtained only from the two tail
+/-- The full conjugate-node error, obtained only from the two tail
 fields and the exact repeated-node identity. -/
 theorem CornerGram.repeated_tail_bound {m : ℕ} (g : CornerGram m) (hA : AnalyticInputs)
     (ε : ℝ) (hε : 0 < ε) (hε1 : ε ≤ 1) (x : ℂ)

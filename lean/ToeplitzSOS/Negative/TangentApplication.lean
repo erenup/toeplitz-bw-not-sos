@@ -1,7 +1,7 @@
 import ToeplitzSOS.Negative.TangentReference
 import ToeplitzSOS.Negative.SliceBound
 
-/-! # The finite-versus-tangent entry bound (27) -/
+/-! # The finite-versus-tangent entry bound -/
 
 namespace ToeplitzSOS.Negative
 noncomputable section
@@ -84,7 +84,7 @@ theorem baseline_reference_entry_bound (hA : AnalyticInputs) (i j : Fin 1024) :
       exact mul_le_mul_of_nonneg_right (by norm_num) (pow_nonneg (inv_nonneg.mpr epsilon_pos.le) 8)
     _ ≤ epsilon := hbudget
 
-/-- The exact finite-versus-limit estimate (27) on every pair of witness nodes. -/
+/-- The exact finite-versus-limit estimate on every pair of witness nodes. -/
 theorem baseline_tangent_entry_bound (hA : AnalyticInputs) (i j : Fin 1024) :
     |scaledKernel (baselineL cornerDepth) i j - Witness.tangentEntry i j| ≤ 2^30*epsilon := by
   have h1 := baseline_reference_entry_bound hA i j
@@ -106,7 +106,7 @@ theorem CornerGram.realigned_bound (g : CornerGram cornerDepth) (hA : AnalyticIn
     (g.plusVector_global epsilon_pos (epsilon_le_small.trans (by norm_num)))
     (g.plusVector_slice hA) i j
 
-/-- The analytic inputs rule out the complete unrestricted algebraic corner interface. -/
+/-- The analytic inputs rule out the complete unrestricted algebraic corner structure. -/
 theorem no_cornerGram (hA : AnalyticInputs) : ¬ Nonempty (CornerGram cornerDepth) := by
   rintro ⟨g⟩
   exact no_feasible_repaired_kernels cornerDepth g.E g.T g.realign_E

@@ -18,7 +18,7 @@ theorem factorB_conjugate (x : ℂ) :
   rw [← Complex.normSq_eq_norm_sq]
   apply Complex.ext <;> simp [factorB, Complex.normSq_apply, pow_two] <;> ring
 
-/-- The rational closed form (11), expressed without choosing a polar argument. -/
+/-- The rational closed form, expressed without choosing a polar argument. -/
 theorem referenceQ_conjugate (x : ℂ) (hx : ‖x‖ < 1) :
     referenceQ x (conj x) (conj x) x =
       ((8*x.im^2 / ((1-‖x‖^2)^2 * ((1-‖x‖^2)^2+4*x.im^2)^2) : ℝ) : ℂ) := by
@@ -70,7 +70,7 @@ theorem referenceQ_slice_bound {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ (2 : ℝ
   rw [referenceQ_conjugate _ hx, Complex.ofReal_re, analyticNodeX_norm_sq, analyticNodeX_im_sq]
   simpa [div_eq_mul_inv, inv_pow, mul_assoc] using Analytic.conjugate_reference_bound hε ha hs hr
 
-/-- The actual plus factor satisfies (17), including both finite tails. -/
+/-- The actual plus factor satisfies the real-slice bound, including both finite tails. -/
 theorem CornerGram.plusVector_slice (g : CornerGram cornerDepth) (hA : AnalyticInputs)
     (u v : ℝ) (hu : 1/2 ≤ u) (hu' : u ≤ 2049/2) (hv : |v| ≤ 512) :
     ‖g.plusVector epsilon u v‖^2 ≤ 2^20 * epsilon⁻¹^2 := by

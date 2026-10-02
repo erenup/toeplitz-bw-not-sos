@@ -2,13 +2,13 @@ import ToeplitzSOS.Negative.Analytic.Means
 
 /-! # Uniform mixed tail from complete low means
 
-The theorem uses exactly the coefficient and mean hypotheses of (9) and (4).
+The theorem assumes a uniform coefficient bound and vanishing complete low means.
 -/
 
 open Finset ComplexConjugate
 namespace ToeplitzSOS.Negative.Analytic
 
-/-- The repeated-node mixed tail in (12), in raw finite-sum form. -/
+/-- The repeated-node mixed tail, in raw finite-sum form. -/
 theorem mixed_tail_bound (m : ℕ) {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ 1)
     (C : Fin m → Fin m → Fin m → Fin m → ℂ)
     (hC : ∀ p q r s, ‖C p q r s‖ ≤ 4 * Real.sqrt

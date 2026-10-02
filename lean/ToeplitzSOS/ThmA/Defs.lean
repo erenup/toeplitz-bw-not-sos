@@ -53,7 +53,7 @@ def central (n : ℕ) (x y : ℤ → R) : R :=
   ∑ P ∈ Icc (1 : ℤ) ((n : ℤ) - 1),
     ((2 * (n : ℤ) * ((n : ℤ) - P) : ℤ) : R) * (wedge x y 0 P ^ 2 + wedge x y 0 (-P) ^ 2)
 
-/-- Mixed Laplacian squares (Theorem B), ordered pairs of nodes of each σ-block. -/
+/-- Mixed Laplacian squares, ordered pairs of nodes of each σ-block. -/
 def lap (n : ℕ) (x y : ℤ → R) : R :=
   ∑ σ ∈ Icc (2 : ℤ) (2 * (n : ℤ) - 2), ∑ A ∈ blk n σ, ∑ A' ∈ blk n σ,
     ((gcoef n σ A A' : ℤ) : R) * (wedge x y (-A) (σ - A) - wedge x y (-A') (σ - A')) ^ 2

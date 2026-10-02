@@ -25,7 +25,7 @@ def extractedCrossRepair {m r : ℕ} (a b : Fin r → PureIndex m → ℝ) : Fou
     (geometricVector m z) (geometricVector m w)
 
 /-- A complete, unrestricted wedge SOS supplies every field of the algebraic
-producer/consumer interface. -/
+`CornerGram` structure. -/
 theorem cornerGram_of_wedge_sos {m r : ℕ} (a b : Fin r → PureIndex m → ℝ)
     (c : Fin r → Fin m → Fin m → ℝ)
     (h : baselinePolynomial m = ∑ j, cornerLinear (a j) (b j) (c j) ^ 2) :

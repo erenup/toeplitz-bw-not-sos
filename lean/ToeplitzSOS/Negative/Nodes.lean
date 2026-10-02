@@ -19,7 +19,7 @@ def witnessRealSpeed (i : Fin 1024) : ℝ := Witness.radius i.val
 /-- Signed imaginary speed of a witness point. -/
 def witnessImagSpeed (i : Fin 1024) : ℝ := Witness.sign i.val * Witness.frequency i.val
 
-/-- The first speed of the conjugate pair in (22). -/
+/-- The first speed of the conjugate pair. -/
 def witnessSpeed (i : Fin 1024) : ℂ := ⟨witnessRealSpeed i, witnessImagSpeed i⟩
 
 /-- First continuation coordinate of a realigned node pair. -/
@@ -73,7 +73,7 @@ theorem pairU_sub_I_pairV (i j : Fin 1024) :
     pairU i j - Complex.I * pairV i j = conj (witnessSpeed j) := by
   apply Complex.ext <;> simp [pairU, pairV, witnessSpeed, Complex.mul_re, Complex.mul_im] <;> ring
 
-/-- The first finite geometric node in (25); the second is its conjugate. -/
+/-- The first finite geometric node; the second is its conjugate. -/
 def witnessNode (ε : ℝ) (i : Fin 1024) : ℂ :=
   Complex.I * Complex.exp (-(ε : ℂ) * witnessSpeed i)
 

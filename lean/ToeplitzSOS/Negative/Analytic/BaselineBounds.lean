@@ -194,7 +194,7 @@ theorem baselineB_tail {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ 1) (m : ℕ) {x 
     (depthBox m) (fun p hp => mem_depthBox_of_totalDepth_lt p hp)
     (fun p => mixedSeriesTerm_bound p hx hy hz hw)
 
-/-- The pure baseline tail, before the final common interface constant. -/
+/-- The pure baseline tail, with its explicit geometric-tail constant. -/
 theorem baselineQ_tail {ε : ℝ} (hε : 0 < ε) (hε1 : ε ≤ 1) (m : ℕ) {x y z w : ℂ}
     (hx : ‖x‖ ≤ Real.exp (-ε / 2)) (hy : ‖y‖ ≤ Real.exp (-ε / 2))
     (hz : ‖z‖ ≤ Real.exp (-ε / 2)) (hw : ‖w‖ ≤ Real.exp (-ε / 2)) :

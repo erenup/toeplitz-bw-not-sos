@@ -18,7 +18,7 @@ theorem sharpNegativeResolution_of_analyticInputs (hA : AnalyticInputs) :
   intro N hN hSOS
   exact no_cornerGram hA (cornerGram_of_sos (corner_fits hN) hSOS)
 
-/-- The unconditional negative theorem at the sharper threshold. -/
+/-- The original real Toeplitz quartic is not SOS at any order `N ≥ 2^9961475`. -/
 theorem sharpNegativeResolution : SharpNegativeResolution :=
   sharpNegativeResolution_of_analyticInputs Analytic.analyticInputs
 
@@ -28,7 +28,8 @@ theorem not_isSumSqHomQuad_of_large_order {N : ℕ} (hN : 2^9961475 ≤ N) :
   apply sharpNegativeResolution N
   rwa [sharpOrderThreshold_eq]
 
-/-- The literal real homogeneous-quadratic quantifiers at the sharper threshold. -/
+/-- For every `N ≥ 2^9961475`, no finite family of real homogeneous quadratic
+polynomials has squares summing to the original Toeplitz quartic. -/
 theorem sharp_negative_explicit :
     ∀ N ≥ 2^9961475,
       ¬ ∃ (s : ℕ) (q : Fin s → MvPolynomial (V N) ℝ),

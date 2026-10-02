@@ -3,7 +3,7 @@ import Mathlib.Analysis.Normed.Ring.InfiniteSum
 import Mathlib.Analysis.Complex.ExponentialBounds
 import Mathlib.Tactic
 
-/-! # Weighted geometric tails used in (12)–(13)
+/-! # Weighted geometric tails
 
 Indices are grouped into two pairs only to expose the product of four
 absolutely summable scalar series. Bounds apply to arbitrary finite subsets.

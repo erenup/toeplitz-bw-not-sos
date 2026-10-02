@@ -141,11 +141,11 @@ theorem diagonalForm_eq (m : ℕ) (U V W Z : DepthVector m) :
 /-- A geometric depth vector with a specified complex node. -/
 def geometricVector (m : ℕ) (x : ℂ) : DepthVector m := fun p => x ^ p.val
 
-/-- Pure coefficient forms specialize to the interface's geometric feature rows. -/
+/-- Pure coefficient forms specialize to the geometric feature rows. -/
 theorem pureForm_geometric {m : ℕ} (c : PureIndex m → ℝ) (x y : ℂ) :
     pureForm c (geometricVector m x) (geometricVector m y) = pureLinear c x y := rfl
 
-/-- Mixed coefficient forms specialize to the interface's geometric feature rows. -/
+/-- Mixed coefficient forms specialize to the geometric feature rows. -/
 theorem mixedForm_geometric {m : ℕ} (c : Fin m → Fin m → ℝ) (x y : ℂ) :
     mixedForm c (geometricVector m x) (geometricVector m y) = mixedLinear c x y := rfl
 
