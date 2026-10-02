@@ -120,7 +120,7 @@ For r,t in {1,2}, j,k in {1,...,256}, and signs sigma,tau in {−1,1}, set
 ```text
 A = (r+t)^2 + (sigma*j - tau*k)^2,    C = 4*r*t,
 S_F = 2 (2/A^2 + 1/C^2 - 1/(A*C)),
-z_j = floor(2^43*j / (128^2 + j^2)^2),    c_(r,j,sigma) = sigma*z_j.
+ĉ_j = floor(2^43*j / (128^2 + j^2)^2),    c_(r,j,sigma) = sigma*ĉ_j.
 ```
 
 The checker regenerates every coefficient and encloses the sum of all
@@ -132,7 +132,7 @@ sine pairing provides a normalization check. Removing the negative kernel
 term produces a strictly positive lower bound and is rejected as a witness.
 
 The arithmetic checks specialize the analytic estimates at
-K = 38·2^17 + 1 = 4980737, epsilon = 2^(-K), m = epsilon^(-2).
+k = 38·2^17 + 1 = 4980737, epsilon = 2^(-k), m = epsilon^(-2).
 They give m = 2^9961474 and ambient threshold 2m = 2^9961475.
 The integer comparison
 
@@ -141,7 +141,7 @@ The integer comparison
 ```
 
 certifies 2^(-1/131072) < 262143/262144. Thus the budget
-−2^42 + 2^(90−K) + 2^(42−1/131072) is below −2^24 + 1 < 0.
+−2^42 + 2^(90−k) + 2^(42−1/131072) is below −2^24 + 1 < 0.
 A corrupted root bound is rejected. The code checks arithmetic implications
 of the analytic estimates; the estimates themselves are part of the paper.
 

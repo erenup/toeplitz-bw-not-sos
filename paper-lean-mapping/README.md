@@ -23,7 +23,7 @@ open. The enormous threshold is sufficient; no smallest bad order is established
 
 ## Three complementary parts
 
-The [paper directory](../paper/) is where the mathematical explanation belongs.
+The [paper directory](../paper/) contains the mathematical statements and proofs.
 Read its [PDF](../paper/main.pdf) alongside this guide. The negative theorem has a finite analytic
 proof; the supplied arithmetic checks establish specific inputs to that
 argument, not the analytic implications.
@@ -118,7 +118,8 @@ Expected last line:
 or its proof status changes. The generator rejects missing paper labels,
 dangling or cyclic dependencies, nonexistent Lean declarations, and missing
 verification scripts. It also rejects a numbered paper result that lacks its
-own entry. The TODO list records remaining formalization and mathematical questions.
+own entry. The [remaining questions](by-section.md#remaining-questions) list
+open mathematical problems and gaps in the formalization.
 The checker requires `paper_status` to agree with the included TeX files.
 Paper-only results include statements whose precise wording is stronger than
 the corresponding formal ingredients; the entry explains each difference.

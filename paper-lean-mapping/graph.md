@@ -43,9 +43,9 @@ flowchart LR
   subgraph Legend
     direction TB
     legend0["Lean-proved"]:::s0
-    legend1["exact-verified"]:::s1
-    legend2["proved in the paper only"]:::s2
-    legend3["unproved remark"]:::s3
+    legend1["Exact-verified"]:::s1
+    legend2["Proved in the paper only"]:::s2
+    legend3["Unproved remark"]:::s3
     key0["Arrows: paper argument; not Lean proof dependencies"]
     key1["Dashed to green: separate Lean route (see table)"]
     key2["Green: Lean proves the formal scope in the table"]

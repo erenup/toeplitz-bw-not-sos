@@ -20,8 +20,11 @@ The script writes the PDF and intermediate files into the ignored `.build/`
 directory. It leaves the tracked `main.pdf` unchanged. To replace that artifact,
 run `bash paper/build.sh --update-pdf` explicitly; its last line is
 `PASS: paper built and tracked PDF updated (main.pdf)`.
-It requires TeX Live with AMS, the Palatino fonts (`mathpazo`), microtype,
-mathtools, booktabs, geometry, hyperref and xurl, plus `latexmk`, BibTeX, and
+It requires TeX Live with the AMS `amsart` class and `amsplain` bibliography
+style, plus the packages used in `main.tex`: `fontenc`, `inputenc`,
+`mathpazo` (Palatino fonts), `microtype`, `mathtools`, `amssymb`, `booktabs`,
+`array`, `longtable`, `geometry`, `xcolor`, `xurl`, and `hyperref`.
+The build also requires `latexmk`, BibTeX, and
 POSIX `grep`. No plots, network access, or font downloads are needed. A fixed source
 timestamp makes the PDF reproducible with the same TeX distribution.
 Both commands take about 2–3 seconds for a clean build and use under 100 MiB
@@ -41,4 +44,6 @@ reproduction commands are in the [root README](../README.md).
 
 ## Copyright
 
-The paper sources and PDF are not licensed. All rights reserved.
+The contents of this directory, including the paper sources and PDF, are
+not covered by the repository's MIT license. All rights reserved.
+See [COPYRIGHT](COPYRIGHT).
