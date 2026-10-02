@@ -1,5 +1,10 @@
 # The manuscript
 
+The paper is a **working version dated 2 October 2026** and is being finalized
+by the authors. The final version will be posted on arXiv and will replace
+`paper/`. The theorem and equation numbers in `paper-lean-mapping/` refer
+to this working version.
+
 Read [main.pdf](main.pdf) or follow the [result map](../paper-lean-mapping/README.md).
 The sources include the complete finite analytic proof, positive certificate
 argument, exchange criterion, boundary consequence, and open questions.
@@ -33,3 +38,7 @@ The [witness checker](../verification/witness.py) reads the threshold macro
 from `main.tex`, reconstructs the full rational pairing, checks its independent
 convolution, and rejects five corruptions in both Python modes. Full
 reproduction commands are in the [root README](../README.md).
+
+## Copyright
+
+The paper sources and PDF are not licensed. All rights reserved.
