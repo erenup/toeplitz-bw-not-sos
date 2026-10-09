@@ -186,3 +186,7 @@ The published `paper/main.pdf` is licensed under [CC BY-SA 4.0](https://creative
 
 [CITATION.cff](CITATION.cff) prefers the arXiv paper, DOI
 [10.48550/arXiv.2610.08980](https://doi.org/10.48550/arXiv.2610.08980).
+
+## Acknowledgements
+
+We thank [NetMind.AI](https://www.netmind.ai/) and [AI4ALPHA](https://www.ai4alpha.ca/) for their support of this project. The research of Wenqi Zhu was also supported by the Engineering and Physical Sciences Research Council under grant EP/Y028872/1, *Mathematical Foundations of Intelligence: An "Erlangen Programme" for AI*.
