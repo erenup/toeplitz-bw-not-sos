@@ -2,7 +2,6 @@
 __pycache__/
 *.pyc
 lean/.lake/
-paper/.build/
 paper/*.aux
 paper/*.log
 paper/*.out

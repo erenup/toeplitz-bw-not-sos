@@ -2,6 +2,8 @@
 
 from pathlib import Path
 import argparse
+import hashlib
+import os
 import re
 import tempfile
 import copy
@@ -101,32 +103,43 @@ STATUSES = {
 }
 
 
-def validate(root, data):
+def pdf_tokens(text):
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+
+def phrase_found(page, phrase):
+    wanted = pdf_tokens(phrase)
+    if not wanted:
+        return True
+    got = pdf_tokens(page)
+    return any(got[i:i + len(wanted)] == wanted for i in range(len(got) - len(wanted) + 1))
+
+
+def validate(root, data, pdf_pages):
+    """Validate the result map against page-scoped text extracted from paper/main.pdf."""
     rows = data["results"]
     by_label = {row["label"]: row for row in rows}
-    require(
-        bool(rows) and len(by_label) == len(rows), "empty or repeated result labels"
-    )
-    assigned = []
+    require(bool(rows) and len(by_label) == len(rows), "empty or repeated result labels")
+    require(data.get("paper_status") == "pdf-only", "paper status must document PDF-only export")
+    require(len(pdf_pages) == 29, "published PDF text must have 29 pages")
+    require(hashlib.sha256((root / "paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"],
+            "published PDF hash")
+    numbers = []
     for row in rows:
         require(row["status"] in STATUSES, "unknown evidence status")
-        for field in (
-            "label",
-            "title",
-            "statement",
-            "section",
-            "explanation",
-            "scope",
-        ):
-            require(
-                isinstance(row[field], str) and bool(row[field]),
-                "missing result field: " + field,
-            )
-        assigned += [row["label"]] + row.get("additional_labels", [])
-        require(
-            len(set(row["paper_dependencies"])) == len(row["paper_dependencies"]),
-            "repeated dependency",
-        )
+        for field in ("label", "number", "title", "statement", "section", "explanation", "scope"):
+            require(isinstance(row.get(field), str) and row[field], "missing result field: " + field)
+        require(isinstance(row.get("paper_page"), int) and 1 <= row["paper_page"] <= len(pdf_pages),
+                "invalid recorded PDF page: " + row["label"])
+        page = pdf_pages[row["paper_page"] - 1]
+        require(row["number"] in page, "mapped result number absent from recorded PDF page: " + row["label"])
+        require(row.get("pdf_title", "") == "" or phrase_found(page, row["pdf_title"]),
+                "mapped result title absent from recorded PDF page: " + row["label"])
+        require(row.get("paper_file", "").startswith("eprint/"), "missing e-print source anchor")
+        require(isinstance(row.get("source_index"), int) and row["source_index"] > 0, "missing source index")
+        require(not row.get("additional_labels", []), "non-result labels belong in other_labels")
+        numbers.append(row["number"])
+        require(len(set(row["paper_dependencies"])) == len(row["paper_dependencies"]), "repeated dependency")
         for dep in row["paper_dependencies"]:
             require(dep in by_label, "dangling dependency: " + dep)
         routes = row["formal_routes"]
@@ -136,94 +149,53 @@ def validate(root, data):
             if row["status"] == "Lean-proved" and by_label[dep]["status"] != "Lean-proved":
                 require(bool(row["lean"]) and bool(routes.get(dep)),
                         "Lean-proved result must explain its separate formal route: " + dep)
-        require(all(isinstance(note, str) and note.strip() for note in routes.values()),
-                "empty formal-route explanation")
+        require(all(isinstance(note, str) and note.strip() for note in routes.values()), "empty formal-route explanation")
         for ref in row["lean"]:
             path = root / ref["file"]
-            require(
-                ref["file"].startswith("lean/")
-                and ".." not in Path(ref["file"]).parts
-                and path.is_file(),
-                "missing Lean file",
-            )
-            require(
-                ref["name"] in declarations(path.read_text()),
-                "missing Lean declaration: " + ref["name"],
-            )
+            require(ref["file"].startswith("lean/") and ".." not in Path(ref["file"]).parts and path.is_file(), "missing Lean file")
+            require(ref["name"] in declarations(path.read_text()), "missing Lean declaration: " + ref["name"])
             require(bool(ref["role"]), "Lean reference must state its role")
         for check in row["checks"]:
             path = root / check["script"]
-            require(
-                check["script"].startswith("verification/")
-                and ".." not in Path(check["script"]).parts
-                and path.is_file(),
-                "missing verification script",
-            )
-            require(
-                check["script"] in check["command"]
-                and check["expected"]
-                and check["scope"],
-                "incomplete exact-check command",
-            )
-    require(len(assigned) == len(set(assigned)), "paper label assigned more than once")
+            require(check["script"].startswith("verification/") and ".." not in Path(check["script"]).parts and path.is_file(), "missing verification script")
+            require(check["script"] in check["command"] and check["expected"] and check["scope"], "incomplete exact-check command")
+            for data_file in check.get("data_files", []):
+                require(isinstance(data_file, str) and data_file.startswith("verification/") and ".." not in Path(data_file).parts and (root/data_file).is_file(), "missing exact-check data file")
+    require(len(numbers) == len(set(numbers)), "duplicate mapped PDF numbers")
+    require(len(data["other_labels"]) == len({row["label"] for row in data["other_labels"]}), "repeated other label")
     visited, active = set(), set()
-
     def visit(label):
         require(label not in active, "cyclic dependency: " + label)
-        if label in visited:
-            return
+        if label in visited: return
         active.add(label)
-        for dep in by_label[label]["paper_dependencies"]:
-            visit(dep)
-        active.remove(label)
-        visited.add(label)
+        for dep in by_label[label]["paper_dependencies"]: visit(dep)
+        active.remove(label); visited.add(label)
+    for label in by_label: visit(label)
+    return True
 
-    for label in by_label:
-        visit(label)
-    paper_labels = set()
-    tex_files = sorted((root / "paper").rglob("*.tex"))
-    for path in tex_files:
-        text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text())
-        found = re.findall(r"\\label\s*\{([^}]+)\}", text)
-        require(
-            not (paper_labels & set(found)) and len(found) == len(set(found)),
-            "duplicate TeX label",
-        )
-        paper_labels.update(found)
-        for match in re.finditer(
-            r"\\begin\{(theorem|proposition|lemma|corollary|remark)\}(.*?)\\end\{\1\}",
-            text,
-            re.S,
-        ):
-            result_labels = re.findall(r"\\label\s*\{([^}]+)\}", match[2])
-            require(
-                bool(set(result_labels) & set(by_label)),
-                "numbered result needs its own entry",
-            )
-    require(
-        paper_labels <= set(assigned),
-        "paper labels without entries: "
-        + ", ".join(sorted(paper_labels - set(assigned))),
-    )
-    if not tex_files:
-        require(
-            data["paper_status"] == "pending" and bool(data["todos"]),
-            "absent manuscript must be explicit",
-        )
-    else:
-        require(data["paper_status"] == "present", "included manuscript must be marked present")
-        require(
-            all(label in paper_labels for label in by_label),
-            "mapping result absent from paper",
-        )
-    return bool(tex_files)
 
+def immutable_inputs(root, data):
+    revision = data["frozen_revision"]
+    require(revision == "7126c0841b008dc89a21edfd008bbf1b748d280f", "wrong frozen revision")
+    def git(*parts): return subprocess.check_output(["git", "-C", str(root), *parts])
+    require(data["lean_tree"] == "69d02281c91fea6ff54fe3556aaddc43eae66e65", "wrong Lean tree")
+    require(git("rev-parse", revision+":lean").decode().strip() == data["lean_tree"], "frozen Lean tree differs")
+    require(git("rev-parse", "HEAD:lean").decode().strip() == data["lean_tree"], "HEAD Lean tree differs")
+    require(subprocess.run(["git", "-C", str(root), "diff", "--quiet", revision, "--", "lean"]).returncode == 0, "working Lean tree differs")
+    require(not git("ls-files", "--others", "--exclude-standard", "lean").strip(), "additional Lean source")
+    for row in data["results"]:
+        for ref in row["lean"]:
+            payload = git("show", revision+":"+ref["file"])
+            require(payload == (root/ref["file"]).read_bytes(), "cited declaration file differs from frozen tree")
+            require(ref["name"] in declarations(payload.decode()), "declaration absent at frozen revision")
+    require(hashlib.sha256((root/"paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"], "published PDF hash differs")
+    require({str(p.relative_to(root/"paper")) for p in (root/"paper").iterdir()} == {"main.pdf"}, "paper directory must contain only main.pdf")
 
 def render_tables(data):
     lines = [
         "# Results by paper section", "",
         "Generated from `mapping.json`; edit that file and run `python3 paper-lean-mapping/build_and_check.py --write`.", "",
-        "Evidence colours refer to the stated formal scope. All dependencies below are steps in the paper argument; the separate Lean routes are stated explicitly.", "",
+        "Numbers refer to arXiv:2610.08980v1. Evidence colours refer to the stated formal scope. Dependencies describe the paper argument; each separate Lean route is stated explicitly.", "",
     ]
     for section in dict.fromkeys(row["section"] for row in data["results"]):
         lines += ["## " + section, "",
@@ -232,7 +204,7 @@ def render_tables(data):
         for row in data["results"]:
             if row["section"] != section:
                 continue
-            title = (f"[{row['number']}](../{row['paper_file']}) — "
+            title = (f"[{row['number']}](../paper/main.pdf) — "
                      if row.get("number") and row.get("paper_file") else "")
             grouped = {}
             for ref in row["lean"]:
@@ -242,7 +214,7 @@ def render_tables(data):
             checks = "<br>".join(
                 f"[{Path(check['script']).name}](#" + Path(check['script']).stem + ")"
                 for check in row["checks"]) or (
-                    "Unproved remark; no exact check."
+                    "Numerical observation; no exact check."
                     if row["status"] == "Unproved remark" else "Written proof.")
             scope = row["scope"]
             if row["formal_routes"]:
@@ -262,6 +234,14 @@ def render_tables(data):
         lines += ["### " + Path(script).stem, "", check["scope"], "",
                   "Command: `" + check["command"] + "`.", "",
                   "Last line: `" + check["expected"] + "`.", ""]
+        data_files = check.get("data_files", [])
+        if data_files:
+            links = [f"[{Path(name).name}](../{name})" for name in data_files]
+            description = ("; ".join(links) if len(links) < 4 else
+                           links[0] + "; " + links[1] + " through " + links[-1] + f" ({len(links)-1} certificate files)")
+            lines += ["Data: " + description + ".", ""]
+        else:
+            lines += ["Data: integer witness coefficients and constants are reconstructed in the script; no external data file.", ""]
     lines += ["## Remaining questions", ""] + ["- " + item for item in data["todos"]] + [""]
     return "\n".join(lines)
 
@@ -273,7 +253,7 @@ def render_graphs(data, svg=True):
     mermaid = [
         "# Dependency graph",
         "",
-        "Arrows record the paper argument, not Lean proof dependencies. Dashed edges into green nodes use a separate formal route, explained in the section table. Dashed edges into unproved remarks indicate motivation. Green status applies to the formal scope stated in the table. The uniform theorem covers every k >= 16; Lean closes the needed scale k = 4980737 directly. The positive range is a separate branch.",
+        "Arrows record the arXiv v1 paper argument, not Lean proof dependencies. Dashed edges into green nodes use a separate formal route, explained in the section table. Dashed edges into unproved remarks indicate motivation. Green status applies to the formal scope stated in the table. The uniform theorem covers every k >= 16; Lean closes the needed scale k = 4980737 directly. The positive range is a separate branch.",
         "",
         "```mermaid",
         '%%{init: {"flowchart": {"nodeSpacing": 16, "rankSpacing": 22, "padding": 8}, "themeVariables": {"fontSize": "14px"}}}%%',
@@ -290,12 +270,12 @@ def render_graphs(data, svg=True):
     for row in rows:
         identifier = ids[row["label"]]
         title = row.get("graph_title", row["title"])
-        label = "\n".join(textwrap.wrap(title, 30)) + "\n" + row["label"]
+        label = "\n".join(textwrap.wrap(title, 30)) + "\n" + row.get("number", row["label"])
         dot.append(
             f'{identifier} [label={json.dumps(label)}, fillcolor="{STATUSES[row["status"]]}"];'
         )
         mermaid.append(
-            f'  {identifier}["{title}<br/>{row["label"]}"]:::{status_ids[row["status"]]}'
+            f'  {identifier}["{row.get("number", row["label"])}<br/>{title}"]:::{status_ids[row["status"]]}'
         )
         for dep in row["paper_dependencies"]:
             dashed = row["status"] == "Unproved remark" or dep in row["formal_routes"]
@@ -339,7 +319,7 @@ def render_graphs(data, svg=True):
         (
             "“Proved in the paper only” records an analytic proof, whose manuscript is pending in this snapshot. A cited Lean proposition definition does not change that status."
             if data["paper_status"] == "pending"
-            else "“Proved in the paper only” records an analytic proof. A cited Lean proposition definition does not change that status."
+            else "“Proved in the paper only” includes full statements with formal ingredients of narrower scope. Purple remarks are numerical observations. A definition is not a proof."
         ),
         "",
     ]
@@ -524,109 +504,26 @@ def generated_controls():
 
 
 def controls():
-    with tempfile.TemporaryDirectory() as directory:
-        root = Path(directory)
-        for name in ("lean", "paper", "verification"):
-            (root / name).mkdir()
-        (root / "lean/Test.lean").write_text(
-            "namespace Example\n/-- def ghost := 0 -/\ndef present := 0\nend Example\n"
-        )
+    """Exercise PDF-page and mapping rejection controls without touching the release."""
+    with tempfile.TemporaryDirectory() as temporary:
+        root = Path(temporary); (root / "paper").mkdir(); (root / "lean").mkdir(); (root / "verification").mkdir()
+        payload = b"Theorem 1.1. Test result."
+        fake_pages = ["Theorem 1.1. Test result."] + [""] * 28
+        (root / "paper/main.pdf").write_bytes(payload)
+        (root / "lean/Test.lean").write_text("namespace Example\ndef present := 0\nend Example\n")
         (root / "verification/test.py").write_text("")
-        row = dict(
-            label="thm:test",
-            title="Test",
-            statement="Test",
-            section="Test",
-            explanation="Test",
-            scope="Test",
-            status="Exact-verified",
-            paper_dependencies=[],
-            formal_routes={},
-            lean=[
-                dict(name="Example.present", file="lean/Test.lean", role="definition")
-            ],
-            checks=[
-                dict(
-                    script="verification/test.py",
-                    command="python3 verification/test.py",
-                    expected="PASS",
-                    scope="Test",
-                )
-            ],
-        )
-        base = dict(paper_status="pending", todos=["Test"], results=[row])
-        require(not validate(root, base), "placeholder positive control")
-        route = copy.deepcopy(base)
-        target = copy.deepcopy(row)
-        target.update(label="thm:formal", status="Lean-proved",
-                      paper_dependencies=["thm:test"])
-        route["results"].append(target)
-        try:
-            validate(root, route)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: unexplained paper-only premise into Lean result accepted")
-        target["formal_routes"] = {"thm:test": "A separate formal theorem supplies the required instance."}
-        require(not validate(root, route), "explained separate formal route control")
-        target["formal_routes"] = {"absent": "Not a paper edge."}
-        try:
-            validate(root, route)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: dangling formal-route note accepted")
-        corruptions = []
-        for field, value in [
-            ("paper_dependencies", ["missing"]),
-            ("paper_dependencies", ["thm:test"]),
-            (
-                "lean",
-                [dict(name="Example.ghost", file="lean/Test.lean", role="definition")],
-            ),
-            (
-                "checks",
-                [
-                    dict(
-                        script="verification/missing.py",
-                        command="python3 verification/missing.py",
-                        expected="PASS",
-                        scope="Test",
-                    )
-                ],
-            ),
-        ]:
-            bad = copy.deepcopy(base)
-            bad["results"][0][field] = value
-            corruptions.append(bad)
-        for bad in corruptions:
-            try:
-                validate(root, bad)
-            except ValueError:
-                pass
-            else:
-                raise ValueError("FAIL: corrupted mapping accepted")
-        (root / "paper/main.tex").write_text(
-            r"\begin{theorem}\label{thm:missing}X\end{theorem}"
-        )
-        try:
-            validate(root, base)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: missing paper label accepted")
-        (root / "paper/main.tex").write_text(
-            r"\begin{theorem}\label{thm:test}X\end{theorem}"
-        )
-        try:
-            validate(root, base)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: stale manuscript status accepted")
-        base["paper_status"] = "present"
-        require(validate(root, base), "paper coverage positive control")
-
+        row = dict(label="thm:test", number="Theorem 1.1", title="Test", statement="Test", section="Test",
+                   explanation="Test", scope="Test", kind="theorem", paper_file="eprint/main.tex", source_index=1,
+                   paper_page=1, pdf_title="", status="Exact-verified", paper_dependencies=[], formal_routes={},
+                   lean=[dict(name="Example.present",file="lean/Test.lean",role="definition")],
+                   checks=[dict(script="verification/test.py",command="python3 verification/test.py",expected="PASS",scope="Test")])
+        base = dict(paper_status="pdf-only", pdf_sha256=hashlib.sha256(payload).hexdigest(), other_labels=[], todos=["Test"], results=[row])
+        require(validate(root, base, fake_pages), "PDF mapping positive control")
+        for field, value in (("number", "Theorem 9.9"), ("paper_page", 2), ("pdf_title", "Absent title"), ("label", "")):
+            bad = copy.deepcopy(base); bad["results"][0][field] = value
+            try: validate(root, bad, fake_pages)
+            except ValueError: pass
+            else: raise ValueError("FAIL: corrupted PDF mapping accepted: " + field)
 
 def graphviz_preflight():
     executable = shutil.which("dot")
@@ -640,6 +537,15 @@ def graphviz_preflight():
     require(result.returncode == 0, "Graphviz 'dot -V' failed; repair the installation or use --no-graph")
 
 
+def pdf_text_pages(root):
+    pdf = root / "paper/main.pdf"
+    require(pdf.is_file(), "missing published PDF")
+    text = subprocess.check_output(["pdftotext", "-raw", str(pdf), "-"], text=True,
+                                   stderr=subprocess.PIPE)
+    pages = text.split("\f")
+    if pages and not pages[-1].strip(): pages.pop()
+    return pages
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true", help="update generated tables and diagrams")
@@ -652,12 +558,14 @@ def main():
     data = json.loads((directory / "mapping.json").read_text())
     controls()
     generated_controls()
-    has_paper = validate(directory.parent, data)
+    immutable_inputs(directory.parent, data)
+    pdf_pages = pdf_text_pages(directory.parent)
+    has_paper = validate(directory.parent, data, pdf_pages)
     outputs = {"by-section.md": render_tables(data), **render_graphs(data, svg=not args.no_graph)}
     generated_files(directory, outputs, write=args.write)
     print(
         "PASS: mapping, DAG, declarations, scripts, and rejection controls ("
-        + ("paper labels covered" if has_paper else "paper pending")
+        + ("arXiv numbering and frozen tree checked" if has_paper else "paper pending")
         + ("; SVG skipped" if args.no_graph else "")
         + ")"
     )
