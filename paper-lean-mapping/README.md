@@ -24,7 +24,10 @@ open. The enormous threshold is sufficient; no smallest bad order is established
 ## Three complementary parts
 
 The [paper directory](../paper/) contains the mathematical statements and proofs.
-Read its [PDF](../paper/main.pdf) alongside this guide. The negative theorem has a finite analytic
+Read [arXiv:2610.08980v1](https://arxiv.org/abs/2610.08980v1) or its
+[published PDF](../paper/main.pdf) alongside this guide. All current map numbers
+refer to arXiv v1; the [v1.0 map](https://github.com/erenup/toeplitz-bw-not-sos/tree/v1.0/paper-lean-mapping)
+refers to the 2 October working version. The negative theorem has a finite analytic
 proof; the supplied arithmetic checks establish specific inputs to that
 argument, not the analytic implications.
 
@@ -46,14 +49,14 @@ exercise these rejection paths on every run.
 
 ## Follow a result
 
-For the [positive range](by-section.md#8-the-finite-positive-range), the paper states
+For the [positive range](by-section.md#4-exact-certificates), the paper states
 an SOS theorem, the Lean declaration proves its subrange through 20, and the
 Python program checks 48 exact induction steps to reach 50. The map records
 those different scopes explicitly.
 
 For the negative theorem, begin with the exact negative pairing, then follow
-the paper argument through the uniform finite-scale estimate, threshold
-corollary, and main theorem. Lean proves the full main theorem, including
+the paper argument through the uniform finite-scale estimate, explicit-threshold
+proposition, and main theorem. Lean proves the full main theorem, including
 the exact witness and its transfer to the literal polynomial. Python provides
 an additional arithmetic check of the witness and the paper's error budget.
 
@@ -71,10 +74,30 @@ all-k theorem. Both the SVG and Mermaid legends state this distinction.
 
 [![Dependency graph](graph.svg)](graph.svg)
 
-The graph covers all 15 numbered results of the manuscript. Equation and
-section labels are assigned to the related result entries as additional labels. The [Mermaid version](graph.md)
+The graph covers all 29 numbered theorems, propositions, lemmas and remarks,
+plus the numbered example. Equation and section labels appear in `other_labels`
+in the map. The two remarks without source labels have stable file/environment
+anchors; temporary compilation labels check their numbers without changing the
+published sources. The [Mermaid version](graph.md)
 also renders on GitHub. The independent positive branch does not imply the
 negative theorem.
+
+The arXiv argument presents the finite compression as a Gram-invariant term
+minus a Gram-dependent realignment (Lemma 2.6). The frozen proof uses the
+kernel cancellation theorem `ToeplitzSOS.Negative.cancellation` and a direct
+quantitative witness pairing. In the paper's depth orientation the positive
+pure wedge is reversed: `K_paper = -K_Lean`, `E1_paper = -T_Lean`, and
+`P_minus,paper = P_plus,Lean`. The table identifies which polynomial and
+quantitative statements are proved formally and which complete parametrizations
+or qualitative intermediate results have no standalone counterpart.
+
+ArXiv Theorem 3.1, for one symmetric or skew-symmetric factor at every order,
+is proved in the paper; it is not part of this repository's Lean formalization.
+Its splitting, mixed-pair and window identities have paper-only entries.
+Numerical observations in Remarks C.1 and C.2 are labelled separately and are
+not used as exact evidence. The five v1.0 numbered items omitted or unnumbered
+in arXiv v1, including the exchange and boundary results, are listed in the
+[root README](../README.md).
 
 ## Reproduce the checks
 
@@ -111,7 +134,7 @@ unchanged. Adding `--write` regenerates only the tables and Mermaid in this
 mode. The full command is still needed to validate the SVG.
 
 Expected last line:
-`PASS: mapping, DAG, declarations, scripts, and rejection controls (paper labels covered)`.
+`PASS: mapping, DAG, declarations, scripts, and rejection controls (arXiv numbering and frozen tree checked)`.
 
 [`mapping.json`](mapping.json) is the single source for the
 [section tables](by-section.md), SVG, and Mermaid graph. Edit it when a result
@@ -120,7 +143,11 @@ dangling or cyclic dependencies, nonexistent Lean declarations, and missing
 verification scripts. It also rejects a numbered paper result that lacks its
 own entry. The [remaining questions](by-section.md#remaining-questions) list
 open mathematical problems and gaps in the formalization.
-The checker requires `paper_status` to agree with the included TeX files.
+The checker checks every number against newly compiled `.aux` data, verifies
+the published source and PDF digests, and checks each cited declaration against
+the frozen Lean tree `69d02281c91fea6ff54fe3556aaddc43eae66e65` at v1.0.
+Wrong numbers, labels, source anchors and omitted unlabelled remarks are rejection
+controls, including under optimized Python.
 Paper-only results include statements whose precise wording is stronger than
 the corresponding formal ingredients; the entry explains each difference.
 
@@ -129,7 +156,7 @@ any limits; `paper_dependencies` records the written argument; `formal_routes`
 explains where the formal proof uses a different or specialized result.
 Each checker command appears once in the section table's command catalogue.
 
-Both full and non-graph commands take under a second and use under 50 MiB
-of resident memory on a representative run. Graphviz installation time
+Both full and non-graph commands compile a temporary source copy with the
+paper build dependencies and take about 3 seconds, using under 100 MiB of memory. Graphviz installation time
 depends on the operating system. SVG geometry can vary across versions;
 the comparison checks its mathematical content and evidence legend.

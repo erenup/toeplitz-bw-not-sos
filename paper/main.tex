@@ -1,86 +1,112 @@
-\documentclass[11pt,reqno]{amsart}
-\usepackage[T1]{fontenc}
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{geometry}
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm}
 \usepackage[utf8]{inputenc}
-\usepackage[sc]{mathpazo}
-\linespread{1.05}
-\usepackage{microtype,mathtools,amssymb,booktabs,array,longtable}
-\usepackage[margin=30mm]{geometry}
-\usepackage{xcolor,xurl}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
- pdftitle={Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Böttcher–Wenzel Form},pdfauthor={Wenqi Zhu and Ping Nie}}
-\numberwithin{equation}{section}
-\setcounter{tocdepth}{1}
+\usepackage{amsmath,amsthm,amssymb,mathrsfs,natbib,graphicx}
+\usepackage{listings,caption,tikz,array,makecell,sidecap,subcaption}
+\usepackage{xcolor,color,enumitem,comment}
+
+\IfFileExists{algorithm2e.sty}{\usepackage[ruled,vlined]{algorithm2e}}{}
+\IfFileExists{algpseudocode.sty}{\usepackage{algpseudocode}}{}
+\IfFileExists{bbm.sty}{\usepackage{bbm}}{}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularray,diagbox,csquotes}
+\UseTblrLibrary{booktabs}
+\setcitestyle{numbers,comma,square}
+\definecolor{darkred}{RGB}{139,0,0}
+\definecolor{darkblue}{RGB}{0,0,139}
+\newif\ifshowchanges
+\showchangesfalse
+\newcommand{\rev}[1]{{\ifshowchanges\color{darkblue}\fi#1}}
+\newcommand{\dr}[1]{\rev{#1}}
+\newenvironment{drblock}{\par\begingroup\color{darkblue}}{\endgroup\par}
+\usepackage{xurl}
+\usepackage[pdfpagelabels,hypertexnames=false,bookmarksopen=true,
+ bookmarksopenlevel=1,colorlinks=true,pdfstartview=Fit,
+ linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Bottcher-Wenzel Form},
+ pdfauthor={Wenqi Zhu and Ping Nie}}
+\usepackage{cleveref}
+
+\newtheorem{proposition}{Proposition}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{remark}[theorem]{Remark}
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\calB}{\mathcal B}
-\newcommand{\calP}{\mathcal P}
-\newcommand{\calR}{\mathcal R}
-\newcommand{\ThresholdExponent}{9961475}
-\newcommand{\ObstructionOrder}{2^{\ThresholdExponent}}
-\newcommand{\CornerExponent}{\number\numexpr\ThresholdExponent-1\relax}
-\newcommand{\CornerDepth}{2^{\CornerExponent}}
-\newcommand{\ScaleExponent}{\number\numexpr(\ThresholdExponent-1)/2\relax}
-\newcommand{\SOS}{\mathrm{SOS}}
-\newcommand{\BL}{\mathrm{BL}}
-\newcommand{\tr}{\operatorname{tr}}
-\newcommand{\diag}{\operatorname{diag}}
-\newcommand{\Span}{\operatorname{span}}
-\newcommand{\rank}{\operatorname{rank}}
-\newcommand{\supp}{\operatorname{supp}}
-\newcommand{\one}{\mathbf 1}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{assumption}{Assumption}
+\renewcommand{\baselinestretch}{1.25}
 \setlength{\emergencystretch}{2em}
 \allowdisplaybreaks[1]
-\title[Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz B\"ottcher--Wenzel Form]{Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz B\"ottcher--Wenzel Form}
-\author{Wenqi Zhu}
-\address{Mathematical Institute, Woodstock Road, University of Oxford, Oxford, UK, OX2 6GG}
-\email{wenqi.zhu@maths.ox.ac.uk}
-\author{Ping Nie}
-\address{David R. Cheriton School of Computer Science, University of Waterloo}
-\email{ping.nie@uwaterloo.ca}
-\date{Working version, 2 October 2026}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\SoS}{\mathrm{SoS}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\ThresholdExponent}{9961475}
+\newcommand{\SufficientOrder}{2^{\ThresholdExponent}}
+\newcommand{\CornerDepth}{2^{\number\numexpr\ThresholdExponent-1\relax}}
+\newcommand{\ScaleExponent}{\number\numexpr(\ThresholdExponent-1)/2\relax}
+
+\title{Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Böttcher–Wenzel Form}
+
+\author{Wenqi Zhu\thanks{Mathematical Institute, Woodstock Road, University of Oxford, Oxford, UK, OX2 6GG.  {\tt wenqi.zhu@maths.ox.ac.uk} } \quad and \quad
+Ping Nie\thanks{David R. Cheriton School of Computer Science, University of Waterloo.
+{\tt ping.nie@uwaterloo.ca}}}
+
+\date{\today}
+
 \begin{document}
-\begin{abstract}
-Let $X$ and $Y$ be real Toeplitz matrices of order $N$. By the
-B\"ottcher--Wenzel inequality, the quartic
-$2\|X\|^2\|Y\|^2-2\langle X,Y\rangle^2-\|XY-YX\|^2$ (Frobenius norms) in
-the $4N-2$ entries of their symbols is nonnegative. For every integer
-$N\ge\ObstructionOrder$ it is not a sum of squares of real quadratic
-forms, which disproves a conjecture of L\'aszl\'o (problem MI-15).
-The negative theorem is formally verified in Lean~4 with Mathlib. The
-obstruction is an exact negative direction of a limiting tangent kernel,
-made effective at a finite scale uniformly over all Gram
-representations. In contrast, the quartic is a sum of squares for every
-$N\le50$.
-\end{abstract}
 \maketitle
-\tableofcontents
-\clearpage
+
+\begin{abstract}
+Toeplitz matrices are among the simplest structured models of
+translation invariance, arising naturally in convolution, stationary
+covariance models, and discretizations of translation-invariant
+operators.  For a pair of real matrices, the B\"ottcher--Wenzel form
+(BW form) is a nonnegative quartic measuring the gap in the
+corresponding commutator inequality.  L\'aszl\'o conjectured that,
+when both matrices are Toeplitz, this quartic is a sum of squares
+for every matrix order. 
+We show that the conjecture is false.  More precisely, we identify an
+explicit family of corner-supported Toeplitz pairs, retaining only the
+outermost diagonals on the two sides, for which the associated BW form
+is not a sum of squares at all sufficiently large orders.  The proof
+reduces the complete family of Gram representations to a finite complex
+test: its Gram-invariant part develops a strictly negative limiting
+direction, while the remaining Gram-dependent contribution vanishes.
+We also give an explicit sufficient threshold for the matrix order. 
+The negative result is complemented by two positive regimes.  If either
+Toeplitz factor is symmetric or skew-symmetric, then the corresponding
+BW form is SoS for every order, with the other factor allowed to be an
+arbitrary real Toeplitz matrix.  For unrestricted Toeplitz pairs, we
+further prove SoS representability for every $2\le N\le50$, with
+formal Lean~4 verification through order $20$.
+\end{abstract}
 \input{sections/01_introduction}
-\input{sections/02_mechanism}
-\input{sections/03_corner}
-\input{sections/04_tails}
-\input{sections/05_continuation}
-\input{sections/06_witness}
-\input{sections/07_finish}
-\input{sections/08_positive}
-\input{sections/09_exchange}
-\input{sections/10_boundary}
-\input{sections/11_discussion}
+\input{sections/02_non_sos}
+\input{sections/03_positive_subclasses}
+\input{sections/04_exact_certificates}
+\input{sections/05_conclusion}
+
 \appendix
-\input{sections/appendix_a_kernels}
-\input{sections/appendix_b_witness}
-\input{sections/appendix_c_constants}
-\input{sections/appendix_d_criticality}
-\input{sections/appendix_e_verification}
-\bibliographystyle{amsplain}
-\bibliography{refs}
+\input{appendices/A_wedge_gram}
+\input{appendices/B_quantitative}
+\input{appendices/C_negative_witness}
+\input{appendices/D_explicit_bound}
+\input{appendices/E_positive_certificates}
+\input{appendices/F_finite_certificates}
+
+\scriptsize
+\bibliographystyle{plainnat}
+\bibliography{references}
 \end{document}

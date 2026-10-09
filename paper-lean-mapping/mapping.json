@@ -1,18 +1,501 @@
 {
   "paper_status": "present",
+  "paper_version": "arXiv:2610.08980v1",
+  "frozen_revision": "7126c0841b008dc89a21edfd008bbf1b748d280f",
+  "lean_tree": "69d02281c91fea6ff54fe3556aaddc43eae66e65",
+  "source_sha256": {
+    "00README.json": "d1f6b1a71c9accb812ec5121d1fff7910c025ca7bb201948bacdb40941bc14e5",
+    "appendices/A_wedge_gram.tex": "336a4631224166de936f5648909a066f9a5e8467186c794d2cf36a226ab05941",
+    "appendices/B_quantitative.tex": "8325dde7d424bac63f9f8e71455306f51f6acc823cbf8cf06a0e8e9957b57588",
+    "appendices/C_negative_witness.tex": "f0494d087549ed533d1cdb27facaff17d8358191eadffd8850db2c398f58c1e2",
+    "appendices/D_explicit_bound.tex": "d82a51f26fa0b839d96a10afdabf03589a6670c91f9104f55ea101b342c24ac5",
+    "appendices/E_positive_certificates.tex": "b75ec0cc847e1e17baa7ae90506b0a235e04eb3f9569aad115d66c1edc4f7065",
+    "appendices/F_finite_certificates.tex": "46743e25ddac68a8989e114806437edbcb235d6ac6235087890fd67810eabf83",
+    "main.tex": "2938813d3720bf0bc46db6f69260fad555be66a0522819fabd361689d7d3882e",
+    "references.bib": "0b108ad0d519b0b5de8d6b0b156a6ac54e063a3e37729063e9d6648df8fb76a3",
+    "sections/01_introduction.tex": "4663c363202cd06023f3401085e8f21289c91008c081afe8e2faf5d7fd362e03",
+    "sections/02_non_sos.tex": "6cfffb7ec555dd50a1d9bb8fdcb00a01b3fee703c6503160bfba5c34151a16b8",
+    "sections/03_positive_subclasses.tex": "a30c6bbc009ef5258e6f064df228055b1b060c4196b605c6b1ee4c8027d1fbba",
+    "sections/04_exact_certificates.tex": "878c90de1ea4f242963a50ac765030b925465cc4d4c22d5bd2e2c65764b02f7c",
+    "sections/05_conclusion.tex": "b87fabcffc6e847ec38b9223290334df530f74d082f9a8927c5bb128e1f92bd8"
+  },
+  "pdf_sha256": "aa474f031feb4e2e002611db9c4f18625e13b471cf059090970a7785492bdff4",
+  "other_labels": [
+    {
+      "label": "B:eq:AC-limit",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "35"
+    },
+    {
+      "label": "B:eq:Linfty",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "34"
+    },
+    {
+      "label": "B:eq:Rvanish",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "37"
+    },
+    {
+      "label": "B:eq:conjugate-tail",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "44"
+    },
+    {
+      "label": "B:eq:denominators",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "38"
+    },
+    {
+      "label": "B:eq:dyadic-scale",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "45"
+    },
+    {
+      "label": "B:eq:dyadic-tails",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "46"
+    },
+    {
+      "label": "B:eq:generating",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "39"
+    },
+    {
+      "label": "B:eq:global",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "40"
+    },
+    {
+      "label": "B:eq:hepsilon",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "47"
+    },
+    {
+      "label": "B:eq:means",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "36"
+    },
+    {
+      "label": "B:eq:quant-continuation",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "48"
+    },
+    {
+      "label": "B:eq:repeated",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "41"
+    },
+    {
+      "label": "B:eq:repeated-baseline",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "42"
+    },
+    {
+      "label": "B:eq:speed-region",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "49"
+    },
+    {
+      "label": "B:eq:tail-budget",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "43"
+    },
+    {
+      "label": "B:subsec:effective",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "B.3"
+    },
+    {
+      "label": "C:eq:eig-margin",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "number": "53"
+    },
+    {
+      "label": "C:eq:entry",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "number": "50"
+    },
+    {
+      "label": "C:eq:witness",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "number": "51"
+    },
+    {
+      "label": "C:eq:witness-bounds",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "number": "52"
+    },
+    {
+      "label": "app:exact-psd-checks",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "F.2"
+    },
+    {
+      "label": "app:explicit-bound",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "D"
+    },
+    {
+      "label": "app:finite-certificates",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "F"
+    },
+    {
+      "label": "app:increment-data",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "F.1"
+    },
+    {
+      "label": "app:lean-negative",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "F.3"
+    },
+    {
+      "label": "app:negative-witness",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "number": "C"
+    },
+    {
+      "label": "app:normal-form-proof",
+      "paper_file": "paper/appendices/A_wedge_gram.tex",
+      "number": "A"
+    },
+    {
+      "label": "app:positive-certificates",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "E"
+    },
+    {
+      "label": "app:positive-coupling",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "E.3"
+    },
+    {
+      "label": "app:positive-lean",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "F.4"
+    },
+    {
+      "label": "app:positive-windows",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "E.2"
+    },
+    {
+      "label": "app:quantitative",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "number": "B"
+    },
+    {
+      "label": "app:same-symmetry-reduction",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "E.1"
+    },
+    {
+      "label": "app:wedge-gram",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.1"
+    },
+    {
+      "label": "eq:Bm-definition",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "9"
+    },
+    {
+      "label": "eq:FN",
+      "paper_file": "paper/sections/01_introduction.tex",
+      "number": "{BW form}"
+    },
+    {
+      "label": "eq:L-limit",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "24"
+    },
+    {
+      "label": "eq:L-negative-limit",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "25"
+    },
+    {
+      "label": "eq:R-vanishes",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "26"
+    },
+    {
+      "label": "eq:appendix-geometric-step",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "63"
+    },
+    {
+      "label": "eq:appendix-normalized-step",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "62"
+    },
+    {
+      "label": "eq:baseline-gram",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "13"
+    },
+    {
+      "label": "eq:baselines",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "14"
+    },
+    {
+      "label": "eq:commutator-overlap",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "12"
+    },
+    {
+      "label": "eq:corner-example-matrix",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "8"
+    },
+    {
+      "label": "eq:evaluated-gram",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "55"
+    },
+    {
+      "label": "eq:exact-residual-certificate",
+      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "number": "64"
+    },
+    {
+      "label": "eq:exchange",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "15"
+    },
+    {
+      "label": "eq:finite-chain",
+      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "number": "33"
+    },
+    {
+      "label": "eq:finite-compression",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "18"
+    },
+    {
+      "label": "eq:finite-decomposition",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "20"
+    },
+    {
+      "label": "eq:finite-scale",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "54"
+    },
+    {
+      "label": "eq:finite-tangent",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "58"
+    },
+    {
+      "label": "eq:frame",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "7"
+    },
+    {
+      "label": "eq:general-gram-1",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "16"
+    },
+    {
+      "label": "eq:general-gram-2",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "{Block-diag Gram}"
+    },
+    {
+      "label": "eq:literal-gram",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "11"
+    },
+    {
+      "label": "eq:matched-features",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "22"
+    },
+    {
+      "label": "eq:plucker",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "6"
+    },
+    {
+      "label": "eq:positive-ddvv-relation",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "32"
+    },
+    {
+      "label": "eq:positive-mixed",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "29"
+    },
+    {
+      "label": "eq:positive-reduced-form",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "31"
+    },
+    {
+      "label": "eq:positive-reduction",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "30"
+    },
+    {
+      "label": "eq:positive-slack",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "60"
+    },
+    {
+      "label": "eq:positive-split",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "27"
+    },
+    {
+      "label": "eq:positive-split-identities",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "28"
+    },
+    {
+      "label": "eq:positive-tent",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "59"
+    },
+    {
+      "label": "eq:positive-window-certificate",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "number": "61"
+    },
+    {
+      "label": "eq:realigned-diagonal",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "56"
+    },
+    {
+      "label": "eq:realigned-error",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "number": "57"
+    },
+    {
+      "label": "eq:sectors",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "17"
+    },
+    {
+      "label": "eq:special-V",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "19"
+    },
+    {
+      "label": "eq:test-nodes",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "23"
+    },
+    {
+      "label": "eq:toeplitz",
+      "paper_file": "paper/sections/01_introduction.tex",
+      "number": "1"
+    },
+    {
+      "label": "origin parameter",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2"
+    },
+    {
+      "label": "restricted wedge coordinate",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "10"
+    },
+    {
+      "label": "sec choose direction",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.2.3"
+    },
+    {
+      "label": "sec:conclusion",
+      "paper_file": "paper/sections/05_conclusion.tex",
+      "number": "5"
+    },
+    {
+      "label": "sec:exact-certificates",
+      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "number": "4"
+    },
+    {
+      "label": "sec:introduction",
+      "paper_file": "paper/sections/01_introduction.tex",
+      "number": "1"
+    },
+    {
+      "label": "sec:non-sos",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2"
+    },
+    {
+      "label": "sec:positive-subclasses",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "3"
+    },
+    {
+      "label": "subsec:certificate-chain",
+      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "number": "4"
+    },
+    {
+      "label": "subsec:corner",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.2"
+    },
+    {
+      "label": "subsec:corner-gram",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.2.1"
+    },
+    {
+      "label": "subsec:finite-test",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.2.2"
+    },
+    {
+      "label": "subsec:positive-pairs",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "3"
+    },
+    {
+      "label": "subsec:positive-split",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "number": "3"
+    },
+    {
+      "label": "subsec:wedge-coordinates",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "2.1"
+    },
+    {
+      "label": "vanish",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "5"
+    },
+    {
+      "label": "wedge coordinate",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "number": "3"
+    }
+  ],
   "todos": [
+    "Formalize the one-factor positive theorem and its all-order identities.",
     "Extend the Lean positive range beyond 20.",
-    "Package the displayed all-scale statements and the remaining structural paper results as standalone Lean theorems.",
-    "Resolve the open interval between the positive range and the sufficient negative threshold."
+    "Package the qualitative limits, complete Gram parametrization and all-scale estimates as standalone Lean theorems.",
+    "Resolve the open interval between order 50 and the sufficient negative threshold."
   ],
   "results": [
     {
       "label": "thm:negative",
-      "number": "Theorem 1.1",
-      "title": "Negative answer",
-      "section": "1. Introduction",
-      "paper_file": "paper/sections/01_introduction.tex",
-      "statement": "F_N is nonnegative for every N and is not SOS for every N ≥ 2^9961475.",
+      "number": "Theorem 2.1",
+      "title": "Non-SOS at large orders",
+      "section": "2. Failure of SOS",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "statement": "There is a sufficient N0 such that F_N is nonnegative and not a finite sum of real homogeneous quadratic squares for every N >= N0.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.sharpNegativeResolution",
@@ -45,89 +528,40 @@
           "script": "verification/negative.py",
           "command": "python3 verification/negative.py",
           "expected": "PASS: exact tangent witness and constants",
-          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
+          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof.",
+          "data_files": []
         },
         {
           "script": "verification/witness.py",
           "command": "python3 verification/witness.py",
           "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
-          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
+          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript.",
+          "data_files": []
         }
       ],
       "status": "Lean-proved",
-      "explanation": "The main negative assertion is fully formal; the classical nonnegativity argument is given in the introduction.",
-      "additional_labels": [
-        "sec:introduction",
-        "eq:FN",
-        "eq:witness",
-        "app:verification"
-      ],
+      "explanation": "Lean proves the full non-SOS assertion with the explicit sufficient bound N >= 2^9961475 and arbitrary real coefficients. Classical nonnegativity is proved in the paper and is outside the formalization. The formal proof uses the selected finite scale, rather than the qualitative limiting argument of Section 2.",
+      "additional_labels": [],
       "graph_title": "Non-SOS at large orders",
-      "scope": "Unconditional formal non-SOS theorem for the literal real homogeneous-quadratic predicate, every N >= 2^9961475. The weaker 2^33554433 theorem and negation of MI15 are corollaries. The classical nonnegativity assertion is proved separately in the text.",
+      "scope": "Lean proves the full non-SOS assertion with the explicit sufficient bound N >= 2^9961475 and arbitrary real coefficients. Classical nonnegativity is proved in the paper and is outside the formalization. The formal proof uses the selected finite scale, rather than the qualitative limiting argument of Section 2.",
       "paper_dependencies": [
-        "cor:threshold"
-      ],
-      "formal_routes": {}
-    },
-    {
-      "label": "cor:threshold",
-      "number": "Corollary 1.2",
-      "title": "Explicit threshold",
-      "section": "1. Introduction",
-      "paper_file": "paper/sections/01_introduction.tex",
-      "statement": "The corner at m=2^9961474 is non-SOS; this implies non-SOS for every ambient N ≥ 2^9961475.",
-      "lean": [
-        {
-          "name": "ToeplitzSOS.Negative.cornerGram_impossible",
-          "file": "lean/ToeplitzSOS/Negative/CornerObstruction.lean",
-          "role": "The selected corner and every larger ambient order."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.cornerGram_of_baseline_sos",
-          "file": "lean/ToeplitzSOS/Negative/CornerExtraction.lean",
-          "role": "The selected corner and every larger ambient order."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.not_isSumSqHomQuad_of_large_order",
-          "file": "lean/ToeplitzSOS/Negative/Resolution.lean",
-          "role": "The selected corner and every larger ambient order."
-        }
-      ],
-      "checks": [
-        {
-          "script": "verification/negative.py",
-          "command": "python3 verification/negative.py",
-          "expected": "PASS: exact tangent witness and constants",
-          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
-        },
-        {
-          "script": "verification/witness.py",
-          "command": "python3 verification/witness.py",
-          "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
-          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
-        }
-      ],
-      "status": "Lean-proved",
-      "explanation": "Specializes the error budget and transfers the corner obstruction to every larger matrix order.",
-      "additional_labels": [
-        "sec:context"
-      ],
-      "graph_title": "Explicit threshold",
-      "scope": "Substitute k=38*2^17+1=4980737, use the convexity bound, and apply literal corner stabilization for every N >= 2m. Least negative integer scale for the stated budget; no first bad order claimed. Formal scope: The selected corner and every larger ambient order.",
-      "paper_dependencies": [
-        "thm:finite-scale"
+        "lem:negative-limit",
+        "prop:explicit-threshold"
       ],
       "formal_routes": {
-        "thm:finite-scale": "Lean closes the selected scale k = 4980737 directly using finite_separation and the sharper coefficient-mass bound; it does not assume the displayed all-k theorem."
-      }
+        "lem:negative-limit": "Lean proves the full non-SOS assertion with the explicit sufficient bound N >= 2^9961475 and arbitrary real coefficients. Classical nonnegativity is proved in the paper and is outside the formalization. The formal proof uses the selected finite scale, rather than the qualitative limiting argument of Section 2.",
+        "prop:explicit-threshold": "Lean proves the full non-SOS assertion with the explicit sufficient bound N >= 2^9961475 and arbitrary real coefficients. Classical nonnegativity is proved in the paper and is outside the formalization. The formal proof uses the selected finite scale, rather than the qualitative limiting argument of Section 2."
+      },
+      "kind": "theorem",
+      "source_index": 1
     },
     {
       "label": "lem:frame",
-      "number": "Lemma 3.1",
-      "title": "The complete quadratic frame",
-      "section": "3. The wedge frame and the stabilized corner",
-      "paper_file": "paper/sections/03_corner.tex",
-      "statement": "Every quadratic square in a real SOS of F_N belongs to the alternating wedge frame; relations are generated by the Plücker quadrics.",
+      "number": "Lemma 2.1",
+      "title": "Complete wedge Gram characterization",
+      "section": "2. Failure of SOS",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "statement": "For any homogeneous quartic vanishing at (x,0), (0,y) and (x,x), every quadratic SOS factor is an alternating wedge form; the full Gram correction space is the Plucker span.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.exists_alternating_sos",
@@ -142,25 +576,22 @@
       ],
       "checks": [],
       "status": "Proved in the paper only",
-      "explanation": "Removes any restriction on the possible quadratic squares before discussing Gram matrices.",
-      "additional_labels": [
-        "sec:corner",
-        "eq:complete-frame",
-        "eq:realignment-kernel",
-        "eq:realignment-entries"
-      ],
-      "graph_title": "Quadratic frame",
-      "scope": "The arbitrary real SOS-to-alternating-wedge reduction is formal. The formal producer obtains its four-form and transport identities by polarization instead of exporting the paper's full Plücker relation-space classification as a separate theorem.",
+      "explanation": "The cited Lean theorems prove the general axis/diagonal-vanishing polynomial SOS-to-alternating-bilinear reduction and its wedge expansion. They do not export the complete Plucker relation-space classification or its PSD equivalence.",
+      "additional_labels": [],
+      "graph_title": "Complete wedge Gram characterization",
+      "scope": "The cited Lean theorems prove the general axis/diagonal-vanishing polynomial SOS-to-alternating-bilinear reduction and its wedge expansion. They do not export the complete Plucker relation-space classification or its PSD equivalence.",
       "paper_dependencies": [],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "lemma",
+      "source_index": 1
     },
     {
       "label": "lem:corner",
-      "number": "Lemma 3.2",
-      "title": "Stabilization and the complete normal form",
-      "section": "3. The wedge frame and the stabilized corner",
-      "paper_file": "paper/sections/03_corner.tex",
-      "statement": "The outer corner stabilizes for N ≥ 2m and every feasible Gram has the complete mixed/pure normal form and cancellation identity.",
+      "number": "Lemma 2.2",
+      "title": "Literal corner stabilization",
+      "section": "2. Failure of SOS",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "statement": "Restriction keeps the principal wedge Gram, the corner polynomial is independent of N for N >= 2m, and corner non-SOS transfers to all such orders.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.outerCorner_stable",
@@ -185,29 +616,505 @@
       ],
       "checks": [],
       "status": "Proved in the paper only",
-      "explanation": "Carries arbitrary SOS data to the exact corner interface used by the analytic argument.",
-      "additional_labels": [
-        "eq:corner-baselines",
-        "eq:corner-gram",
-        "eq:corner-sectors",
-        "eq:corner-commutators",
-        "eq:plucker-exchange",
-        "eq:correction-cancellation"
-      ],
-      "graph_title": "Stabilized corner",
-      "scope": "The written lemma gives the complete Plücker normal form, explicit realignment entries and the averaged block matrix. Lean constructs the corner data required for the negative proof by polarization; it does not separately export the full relation-space classification.",
+      "explanation": "Lean proves the literal stabilized polynomial and extracts necessary corner data from any real homogeneous-quadratic SOS. The paper presents the arbitrary principal-Gram statement explicitly.",
+      "additional_labels": [],
+      "graph_title": "Literal corner stabilization",
+      "scope": "Lean proves the literal stabilized polynomial and extracts necessary corner data from any real homogeneous-quadratic SOS. The paper presents the arbitrary principal-Gram statement explicitly.",
       "paper_dependencies": [
         "lem:frame"
       ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "lemma",
+      "source_index": 2
     },
     {
-      "label": "lem:means",
+      "lean": [],
+      "checks": [],
+      "label": "ex:gram-m2",
+      "title": "Depth-two Gram example",
+      "graph_title": "Depth-two Gram example",
+      "statement": "The depth-two corner has the displayed six-coordinate wedge Gram representation.",
+      "scope": "The explicit matrix is a paper example. No standalone declaration or shipped computation checks this example.",
+      "explanation": "The explicit matrix is a paper example. No standalone declaration or shipped computation checks this example.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Example 2.1",
+      "kind": "example",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 1,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.outerCorner_eq_baselinePolynomial",
+          "file": "lean/ToeplitzSOS/Negative/CornerExchange.lean",
+          "role": "Literal polynomial equality in the frozen depth coordinates; reverse the positive pure wedge for the paper matrix."
+        }
+      ],
+      "checks": [],
+      "label": "lem:corner-gram",
+      "title": "Baseline corner Gram",
+      "graph_title": "Baseline corner Gram",
+      "statement": "The depth-indexed corner form has the displayed D/K/B Gram with entries independent of the ambient order.",
+      "scope": "outerCorner_eq_baselinePolynomial proves the same corner polynomial after the coordinate orientation is translated: the paper reverses the positive pure wedge, so K_paper = -K_Lean. It is not a verbatim equality with the displayed arXiv block matrix.",
+      "explanation": "outerCorner_eq_baselinePolynomial proves the same corner polynomial after the coordinate orientation is translated: the paper reverses the positive pure wedge, so K_paper = -K_Lean. It is not a verbatim equality with the displayed arXiv block matrix.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:corner"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 2.3",
+      "kind": "lemma",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 3,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.cornerGram_of_sos",
+          "file": "lean/ToeplitzSOS/Negative/CornerExtraction.lean",
+          "role": "Necessary formal corner data, obtained by polarization; no exported full PSD parametrization or converse."
+        }
+      ],
+      "checks": [],
+      "label": "lem:normal-form",
+      "title": "Complete normal form",
+      "graph_title": "Complete normal form",
+      "statement": "Every feasible Gram can be averaged to the three-block normal form; SOS is equivalent to existence of PSD P_plus, P_minus and M.",
+      "scope": "cornerGram_of_sos constructs all data and identities required by the formal contradiction through polarization. It proves a necessary consequence of an SOS representation, not the complete parametrization or converse asserted here. The paper uses K_paper = -K_Lean and swaps the pure plus/minus sectors.",
+      "explanation": "cornerGram_of_sos constructs all data and identities required by the formal contradiction through polarization. It proves a necessary consequence of an SOS representation, not the complete parametrization or converse asserted here. The paper uses K_paper = -K_Lean and swaps the pure plus/minus sectors.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:frame",
+        "lem:corner-gram"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 2.4",
+      "kind": "lemma",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 4,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.scaled_pureGram_nonneg",
+          "file": "lean/ToeplitzSOS/Negative/GramEvaluation.lean",
+          "role": "Nonnegativity of an evaluated pure Gram pairing."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.scaled_mixedGram_nonneg",
+          "file": "lean/ToeplitzSOS/Negative/GramEvaluation.lean",
+          "role": "Nonnegativity of an evaluated mixed Gram pairing."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.CornerGram.pairing_nonneg",
+          "file": "lean/ToeplitzSOS/Negative/GramEvaluation.lean",
+          "role": "The particular summed witness pairing used by the formal proof."
+        }
+      ],
+      "checks": [],
+      "label": "lem:finite-test",
+      "title": "Finite complex Gram test",
+      "graph_title": "Finite complex Gram test",
+      "statement": "Every complex compression V* Q V of a real PSD normal-form Gram is PSD.",
+      "scope": "The cited Lean declarations prove nonnegativity for evaluated pure and mixed Gram sums and the particular witness pairing. No standalone theorem in this project asserts PSD for every arbitrary compression V.",
+      "explanation": "The cited Lean declarations prove nonnegativity for evaluated pure and mixed Gram sums and the particular witness pairing. No standalone theorem in this project asserts PSD for every arbitrary compression V.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:normal-form"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 2.5",
+      "kind": "lemma",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 5,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "rem:complex-test",
+      "title": "Complex tests of a real SOS problem",
+      "graph_title": "Complex tests of a real SOS problem",
+      "statement": "A real symmetric PSD Gram remains nonnegative on complex vectors; the underlying SOS problem remains real.",
+      "scope": "The general real/imaginary-vector explanation is in the paper. The specialized formal nonnegativity ingredients are mapped at Lemma 2.5.",
+      "explanation": "The general real/imaginary-vector explanation is in the paper. The specialized formal nonnegativity ingredients are mapped at Lemma 2.5.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:finite-test"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Remark 2.1",
+      "kind": "remark",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 1,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.cancellation",
+          "file": "lean/ToeplitzSOS/Negative/Kernels.lean",
+          "role": "Kernel cancellation in the frozen orientation, not the arXiv finite matrix decomposition."
+        }
+      ],
+      "checks": [],
+      "label": "lem:finite-decomposition",
+      "title": "Gram-invariant decomposition",
+      "graph_title": "Gram-invariant decomposition",
+      "statement": "For the special direct-sum features, the finite test decomposes as G_m = L_m - R_m, with R_m obtained by realigning the paper minus pure block.",
+      "scope": "The frozen kernel identity cancellation proves M + (P_plus+P_minus)/2 + realign(P_plus) = B + D + realign(D+K). In its convention M = B - realign(T). Reversing the positive pure wedge gives K_paper = -K_Lean and P_minus,paper = P_plus,Lean; the paper mixed correction +calR(E1) corresponds to the frozen -realign(T) with E1_paper = -T_Lean. Thus both identities cancel the same repairs, but no declaration states the arXiv matrix L_m/R_m decomposition for every special V.",
+      "explanation": "The frozen kernel identity cancellation proves M + (P_plus+P_minus)/2 + realign(P_plus) = B + D + realign(D+K). In its convention M = B - realign(T). Reversing the positive pure wedge gives K_paper = -K_Lean and P_minus,paper = P_plus,Lean; the paper mixed correction +calR(E1) corresponds to the frozen -realign(T) with E1_paper = -T_Lean. Thus both identities cancel the same repairs, but no declaration states the arXiv matrix L_m/R_m decomposition for every special V.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:normal-form",
+        "lem:finite-test"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 2.6",
+      "kind": "lemma",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 6,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "lem:negative-limit",
+      "title": "Negative limiting test",
+      "graph_title": "Negative limiting test",
+      "statement": "The Gram-invariant test divided by m^2 tends to a fixed matrix with a negative direction, while the Gram-dependent term vanishes uniformly.",
+      "scope": "The qualitative limit, the fixed unit eigenvector, and uniform all-depth vanishing are paper statements without standalone Lean counterparts. Lean proves the same eventual non-SOS conclusion by a quantitative argument at k = 4980737; the exact limiting witness is mapped at Lemma C.1.",
+      "explanation": "The qualitative limit, the fixed unit eigenvector, and uniform all-depth vanishing are paper statements without standalone Lean counterparts. Lean proves the same eventual non-SOS conclusion by a quantitative argument at k = 4980737; the exact limiting witness is mapped at Lemma C.1.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:finite-decomposition",
+        "B:lem:tail",
+        "C:lem:witness",
+        "B:prop:R"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Proposition 2.1",
+      "kind": "proposition",
+      "paper_file": "paper/sections/02_non_sos.tex",
+      "source_index": 1,
+      "section": "2. Failure of SOS"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "lem:positive-split",
+      "title": "Symmetry splitting",
+      "graph_title": "Symmetry splitting",
+      "statement": "When one factor has fixed symmetric or skew-symmetric type, splitting the other into its two symmetry parts splits F into the two corresponding BW forms.",
+      "scope": "Proved in the paper; no declaration for this splitting identity exists in the frozen formalization.",
+      "explanation": "Proved in the paper; no declaration for this splitting identity exists in the frozen formalization.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 3.1",
+      "kind": "lemma",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "source_index": 1,
+      "section": "3. Positive subclasses"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "lem:positive-mixed",
+      "title": "Symmetric/skew pair identity",
+      "graph_title": "Symmetric/skew pair identity",
+      "statement": "For arbitrary real symmetric S and skew-symmetric K, F(S,K) has the explicit anticommutator and exterior-product square decomposition.",
+      "scope": "Proved in the paper. The frozen repository has no counterpart for this all-order identity, including in its Toeplitz specialization.",
+      "explanation": "Proved in the paper. The frozen repository has no counterpart for this all-order identity, including in its Toeplitz specialization.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma 3.2",
+      "kind": "lemma",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "source_index": 2,
+      "section": "3. Positive subclasses"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "prop:same-symmetry",
+      "title": "Same-symmetry Toeplitz pairs",
+      "graph_title": "Same-symmetry Toeplitz pairs",
+      "statement": "F is SOS at every order when both Toeplitz factors are symmetric, or both are skew-symmetric.",
+      "scope": "Proved in the paper using the window decomposition in Proposition E.1. This all-order restricted-class result is outside the frozen Lean formalization.",
+      "explanation": "Proved in the paper using the window decomposition in Proposition E.1. This all-order restricted-class result is outside the frozen Lean formalization.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "prop:positive-window-certificate"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Proposition 3.1",
+      "kind": "proposition",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "source_index": 1,
+      "section": "3. Positive subclasses"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "thm:one-sided",
+      "title": "One symmetric or skew factor",
+      "graph_title": "One symmetric or skew factor",
+      "statement": "At every order N >= 2, F(X,Y) is SOS if either Toeplitz factor is symmetric or skew-symmetric; the other is arbitrary Toeplitz.",
+      "scope": "Proved in the paper; not part of this repository's Lean formalization.",
+      "explanation": "Proved in the paper; not part of this repository's Lean formalization.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:positive-split",
+        "lem:positive-mixed",
+        "prop:same-symmetry"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Theorem 3.1",
+      "kind": "theorem",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "source_index": 1,
+      "section": "3. Positive subclasses"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "unlabelled:sections/03_positive_subclasses.tex:remark:1",
+      "title": "Both factors with mixed symmetry",
+      "graph_title": "Both factors with mixed symmetry",
+      "statement": "Decomposing both factors introduces extra cross terms, so the one-sided proof does not prove SOS for unrestricted pairs.",
+      "scope": "The discussion and full expansion in Appendix E.3 are paper only. The source has no label; a label is added solely in the temporary numbering build.",
+      "explanation": "The discussion and full expansion in Appendix E.3 are paper only. The source has no label; a label is added solely in the temporary numbering build.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "thm:one-sided"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Remark 3.1",
+      "kind": "remark",
+      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "source_index": 1,
+      "section": "3. Positive subclasses"
+    },
+    {
+      "lean": [],
+      "checks": [
+        {
+          "script": "verification/positive.py",
+          "command": ".venv/bin/python verification/positive.py",
+          "expected": "PASS: F_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected",
+          "scope": "All polynomial identities and exact positive Gram certificates for the 48-step chain.",
+          "data_files": [
+            "verification/data/manifest.json",
+            "verification/data/step_02.json.gz",
+            "verification/data/step_03.json.gz",
+            "verification/data/step_04.json.gz",
+            "verification/data/step_05.json.gz",
+            "verification/data/step_06.json.gz",
+            "verification/data/step_07.json.gz",
+            "verification/data/step_08.json.gz",
+            "verification/data/step_09.json.gz",
+            "verification/data/step_10.json.gz",
+            "verification/data/step_11.json.gz",
+            "verification/data/step_12.json.gz",
+            "verification/data/step_13.json.gz",
+            "verification/data/step_14.json.gz",
+            "verification/data/step_15.json.gz",
+            "verification/data/step_16.json.gz",
+            "verification/data/step_17.json.gz",
+            "verification/data/step_18.json.gz",
+            "verification/data/step_19.json.gz",
+            "verification/data/step_20.json.gz",
+            "verification/data/step_21.json.gz",
+            "verification/data/step_22.json.gz",
+            "verification/data/step_23.json.gz",
+            "verification/data/step_24.json.gz",
+            "verification/data/step_25.json.gz",
+            "verification/data/step_26.json.gz",
+            "verification/data/step_27.json.gz",
+            "verification/data/step_28.json.gz",
+            "verification/data/step_29.json.gz",
+            "verification/data/step_30.json.gz",
+            "verification/data/step_31.json.gz",
+            "verification/data/step_32.json.gz",
+            "verification/data/step_33.json.gz",
+            "verification/data/step_34.json.gz",
+            "verification/data/step_35.json.gz",
+            "verification/data/step_36.json.gz",
+            "verification/data/step_37.json.gz",
+            "verification/data/step_38.json.gz",
+            "verification/data/step_39.json.gz",
+            "verification/data/step_40.json.gz",
+            "verification/data/step_41.json.gz",
+            "verification/data/step_42.json.gz",
+            "verification/data/step_43.json.gz",
+            "verification/data/step_44.json.gz",
+            "verification/data/step_45.json.gz",
+            "verification/data/step_46.json.gz",
+            "verification/data/step_47.json.gz",
+            "verification/data/step_48.json.gz",
+            "verification/data/step_49.json.gz"
+          ]
+        }
+      ],
+      "label": "lem:finite-increments",
+      "title": "Exact positive increments",
+      "graph_title": "Exact positive increments",
+      "statement": "For each 2 <= n <= 49 there is an exact rational positive Gram increment transporting F_n to F_(n+1).",
+      "scope": "verification/positive.py checks all 48 literal polynomial identities, central squares, kernel relations, and exact positive residual certificates. The data are verification/data/step_02.json.gz through step_49.json.gz with manifest.json. The frozen range theorem establishes independent fixed-order SOS results, not these increment identities.",
+      "explanation": "verification/positive.py checks all 48 literal polynomial identities, central squares, kernel relations, and exact positive residual certificates. The data are verification/data/step_02.json.gz through step_49.json.gz with manifest.json. The frozen range theorem establishes independent fixed-order SOS results, not these increment identities.",
+      "status": "Exact-verified",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
       "number": "Lemma 4.1",
-      "title": "Forced complete means",
-      "section": "4. Forced means and finite tails",
-      "paper_file": "paper/sections/04_tails.tex",
-      "statement": "The mixed baseline is positive semidefinite, and every feasible Gram annihilates the complete low means s_g for 0 ≤ g < m.",
+      "kind": "lemma",
+      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "source_index": 1,
+      "section": "4. Exact certificates"
+    },
+    {
+      "label": "thm:finite-positive",
+      "number": "Theorem 4.1",
+      "title": "SOS through order 50",
+      "section": "4. Exact certificates",
+      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "statement": "The unrestricted Toeplitz BW form is SOS for every 2 <= N <= 50.",
+      "lean": [
+        {
+          "name": "ToeplitzSOS.toeplitzBW_two_isSumSq",
+          "file": "lean/ToeplitzSOS/Defs.lean",
+          "role": "Orders 2 through 20 only."
+        },
+        {
+          "name": "ToeplitzSOS.toeplitzBW_isSumSq_of_le_20",
+          "file": "lean/ToeplitzSOS/Certificates/Range.lean",
+          "role": "Orders 2 through 20 only."
+        }
+      ],
+      "checks": [
+        {
+          "script": "verification/positive.py",
+          "command": ".venv/bin/python verification/positive.py",
+          "expected": "PASS: F_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected",
+          "scope": "All polynomial identities and exact positive Gram certificates for the 48-step chain.",
+          "data_files": [
+            "verification/data/manifest.json",
+            "verification/data/step_02.json.gz",
+            "verification/data/step_03.json.gz",
+            "verification/data/step_04.json.gz",
+            "verification/data/step_05.json.gz",
+            "verification/data/step_06.json.gz",
+            "verification/data/step_07.json.gz",
+            "verification/data/step_08.json.gz",
+            "verification/data/step_09.json.gz",
+            "verification/data/step_10.json.gz",
+            "verification/data/step_11.json.gz",
+            "verification/data/step_12.json.gz",
+            "verification/data/step_13.json.gz",
+            "verification/data/step_14.json.gz",
+            "verification/data/step_15.json.gz",
+            "verification/data/step_16.json.gz",
+            "verification/data/step_17.json.gz",
+            "verification/data/step_18.json.gz",
+            "verification/data/step_19.json.gz",
+            "verification/data/step_20.json.gz",
+            "verification/data/step_21.json.gz",
+            "verification/data/step_22.json.gz",
+            "verification/data/step_23.json.gz",
+            "verification/data/step_24.json.gz",
+            "verification/data/step_25.json.gz",
+            "verification/data/step_26.json.gz",
+            "verification/data/step_27.json.gz",
+            "verification/data/step_28.json.gz",
+            "verification/data/step_29.json.gz",
+            "verification/data/step_30.json.gz",
+            "verification/data/step_31.json.gz",
+            "verification/data/step_32.json.gz",
+            "verification/data/step_33.json.gz",
+            "verification/data/step_34.json.gz",
+            "verification/data/step_35.json.gz",
+            "verification/data/step_36.json.gz",
+            "verification/data/step_37.json.gz",
+            "verification/data/step_38.json.gz",
+            "verification/data/step_39.json.gz",
+            "verification/data/step_40.json.gz",
+            "verification/data/step_41.json.gz",
+            "verification/data/step_42.json.gz",
+            "verification/data/step_43.json.gz",
+            "verification/data/step_44.json.gz",
+            "verification/data/step_45.json.gz",
+            "verification/data/step_46.json.gz",
+            "verification/data/step_47.json.gz",
+            "verification/data/step_48.json.gz",
+            "verification/data/step_49.json.gz"
+          ]
+        }
+      ],
+      "status": "Exact-verified",
+      "explanation": "Exact 48-step rational chain through order 50; the same SOS statement for 2 <= N <= 20 is proved by the frozen Lean range theorem via independent fixed-order certificates.",
+      "additional_labels": [],
+      "graph_title": "SOS through order 50",
+      "scope": "Exact 48-step rational chain through order 50; the same SOS statement for 2 <= N <= 20 is proved by the frozen Lean range theorem via independent fixed-order certificates.",
+      "paper_dependencies": [
+        "lem:finite-increments"
+      ],
+      "formal_routes": {},
+      "kind": "theorem",
+      "source_index": 1
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.Analytic.baselineTail",
+          "file": "lean/ToeplitzSOS/Negative/Analytic/BaselineBounds.lean",
+          "role": "Related quantitative baseline-tail theorem; not the qualitative m-to-infinity statement."
+        }
+      ],
+      "checks": [],
+      "label": "B:lem:tail",
+      "title": "Qualitative finite-depth tail",
+      "graph_title": "Qualitative finite-depth tail",
+      "statement": "The finite Gram-invariant baseline differs from its infinite sum by C m^4 exp(-c sqrt(m)) for fixed test speeds; the normalized tail tends to zero.",
+      "scope": "This all-depth qualitative formulation is paper only. The frozen analytic baselineTail provides quantitative baseline estimates under its stated radial hypotheses, not the displayed asymptotic lemma.",
+      "explanation": "This all-depth qualitative formulation is paper only. The frozen analytic baselineTail provides quantitative baseline estimates under its stated radial hypotheses, not the displayed asymptotic lemma.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "lem:corner-gram"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma B.1",
+      "kind": "lemma",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "source_index": 1,
+      "section": "Appendix B. Quantitative bounds"
+    },
+    {
+      "label": "B:lem:means",
+      "number": "Lemma B.2",
+      "title": "Forced low mixed modes",
+      "section": "Appendix B. Quantitative bounds",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "statement": "The mixed baseline B is PSD, and every feasible normal form satisfies M s_g = B s_g = 0 for 0 <= g < m.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.corner_sos_low_means",
@@ -227,77 +1134,110 @@
       ],
       "checks": [],
       "status": "Proved in the paper only",
-      "explanation": "Vanishing of complete low means forces the mixed correction into the finite tails; incomplete means are unrestricted.",
-      "additional_labels": [
-        "sec:tails",
-        "eq:forced-low-means",
-        "eq:generating-kernels"
-      ],
-      "graph_title": "Complete low means",
-      "scope": "The formal producer proves vanishing of exactly the complete low row means and the mixed correction's two complete-low-mean identities. The separate PSD claim for B is the written weighted-Laplacian argument.",
+      "explanation": "Lean proves exactly the complete low means and the mixed correction's corresponding identities. The separate B-PSD weighted-Laplacian assertion is paper only; incomplete high means are not set to zero.",
+      "additional_labels": [],
+      "graph_title": "Forced low mixed modes",
+      "scope": "Lean proves exactly the complete low means and the mixed correction's corresponding identities. The separate B-PSD weighted-Laplacian assertion is paper only; incomplete high means are not set to zero.",
       "paper_dependencies": [
-        "lem:corner"
+        "lem:normal-form"
       ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "lemma",
+      "source_index": 2
     },
     {
-      "label": "lem:global",
-      "number": "Lemma 4.2",
-      "title": "Global bound and the repeated-node identity",
-      "section": "4. Forced means and finite tails",
-      "paper_file": "paper/sections/04_tails.tex",
-      "statement": "The pure diagonal kernels have the stated global bound, repeated-node identity, and explicit baseline formula.",
       "lean": [
-        {
-          "name": "ToeplitzSOS.Negative.partial_conjugation",
-          "file": "lean/ToeplitzSOS/Negative/Kernels.lean",
-          "role": "Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.repeated_node",
-          "file": "lean/ToeplitzSOS/Negative/Kernels.lean",
-          "role": "Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.CornerGram.repeated_diagonal",
-          "file": "lean/ToeplitzSOS/Negative/InitialBounds.lean",
-          "role": "Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant."
-        },
-        {
-          "name": "ToeplitzSOS.Negative.referenceQ_conjugate",
-          "file": "lean/ToeplitzSOS/Negative/SliceBound.lean",
-          "role": "Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant."
-        },
         {
           "name": "ToeplitzSOS.Negative.CornerGram.plusVector_global",
           "file": "lean/ToeplitzSOS/Negative/GlobalBound.lean",
-          "role": "Kernel identities and a sufficient global majorant; the formal radial estimate uses a looser constant."
+          "role": "Formal global majorant in the frozen plus-sector convention."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.CornerGram.plusVector_slice",
+          "file": "lean/ToeplitzSOS/Negative/SliceBound.lean",
+          "role": "Selected-scale real-slice bound, not an exported all-m big-O statement."
         }
       ],
       "checks": [],
+      "label": "B:lem:conjugate",
+      "title": "Conjugate-point improvement",
+      "graph_title": "Conjugate-point improvement",
+      "statement": "Uniformly over feasible Grams the paper minus pure block is O(m) on conjugate scaled points and O(m^2) in the stated complex region.",
+      "scope": "The qualitative all-m big-O statement is paper only. Lean plusVector_global and plusVector_slice give the needed global and slice bounds in the opposite pure-sector convention; the slice application is at the selected dyadic scale.",
+      "explanation": "The qualitative all-m big-O statement is paper only. Lean plusVector_global and plusVector_slice give the needed global and slice bounds in the opposite pure-sector convention; the slice application is at the selected dyadic scale.",
       "status": "Proved in the paper only",
-      "explanation": "Provides the global and real-slice information used by continuation; the formal proof uses a sufficient looser radial bound.",
-      "additional_labels": [
-        "eq:pure-global-bound",
-        "eq:repeated-node",
-        "eq:repeated-baseline",
-        "eq:partial-conjugation",
-        "app:kernels"
-      ],
-      "graph_title": "Global kernel bound",
-      "scope": "The kernel identities and a sufficient global majorant are formal. The formal radial diagonal bound is 8/(1-r^2)^4 and gives the required 2^20 epsilon^-4 Gram majorant; it is not the paper's exact product-denominator bound with constant 8.",
       "paper_dependencies": [
-        "lem:corner"
+        "B:lem:means",
+        "B:lem:tail"
       ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma B.3",
+      "kind": "lemma",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "source_index": 3,
+      "section": "Appendix B. Quantitative bounds"
     },
     {
-      "label": "lem:tails",
-      "number": "Lemma 4.3",
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.Analytic.twoRectangles",
+          "file": "lean/ToeplitzSOS/Negative/Analytic/Interface.lean",
+          "role": "Related explicit two-rectangle comparison; different scope from the qualitative limit statement."
+        }
+      ],
+      "checks": [],
+      "label": "B:lem:continuation",
+      "title": "Qualitative continuation",
+      "graph_title": "Qualitative continuation",
+      "statement": "Bounded holomorphic vector-valued functions vanishing on a boundary segment vanish uniformly on the indicated compact subsets.",
+      "scope": "The qualitative sequence theorem is paper only. Analytic.twoRectangles is a quantitative two-variable comparison with explicit epsilon and scale hypotheses, not this qualitative theorem.",
+      "explanation": "The qualitative sequence theorem is paper only. Analytic.twoRectangles is a quantitative two-variable comparison with explicit epsilon and scale hypotheses, not this qualitative theorem.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Lemma B.4",
+      "kind": "lemma",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "source_index": 4,
+      "section": "Appendix B. Quantitative bounds"
+    },
+    {
+      "lean": [
+        {
+          "name": "ToeplitzSOS.Negative.CornerGram.realigned_bound",
+          "file": "lean/ToeplitzSOS/Negative/TangentApplication.lean",
+          "role": "Selected-scale quantitative bound for the formal realigned pure block."
+        }
+      ],
+      "checks": [],
+      "label": "B:prop:R",
+      "title": "Uniform Gram-dependent vanishing",
+      "graph_title": "Uniform Gram-dependent vanishing",
+      "statement": "The maximum entry of R_m divided by m^2 tends to zero uniformly over all feasible normal-form Grams; so does every fixed-vector pairing.",
+      "scope": "No standalone Lean theorem asserts this uniform qualitative limit. The formal realigned_bound gives an explicit witness-entry estimate at the selected scale.",
+      "explanation": "No standalone Lean theorem asserts this uniform qualitative limit. The formal realigned_bound gives an explicit witness-entry estimate at the selected scale.",
+      "status": "Proved in the paper only",
+      "paper_dependencies": [
+        "B:lem:conjugate",
+        "B:lem:continuation"
+      ],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Proposition B.1",
+      "kind": "proposition",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "source_index": 1,
+      "section": "Appendix B. Quantitative bounds"
+    },
+    {
+      "label": "B:lem:quant-tails",
+      "number": "Lemma B.5",
       "title": "Uniform finite tails",
-      "section": "4. Forced means and finite tails",
-      "paper_file": "paper/sections/04_tails.tex",
-      "statement": "For 0 < epsilon ≤ 1, both baseline truncation and repeated-node error are at most 2^32 epsilon^-8 exp(-epsilon m/4).",
+      "section": "Appendix B. Quantitative bounds",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "statement": "For 0 < epsilon <= 1, the baseline truncation and conjugate-node error are bounded by 2^32 epsilon^-8 exp(-epsilon m/4).",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.Analytic.baselineTail",
@@ -322,32 +1262,26 @@
       ],
       "checks": [],
       "status": "Lean-proved",
-      "explanation": "Turns the forced means and coefficient bounds into uniform finite tail estimates.",
-      "additional_labels": [
-        "eq:tail-error",
-        "eq:mixed-coefficients",
-        "eq:baseline-tail",
-        "eq:dyadic-tail-budget",
-        "app:constants"
-      ],
+      "explanation": "The formal baselineTail and repeated_tail_bound prove these quantitative estimates for arbitrary m and epsilon under the specified modulus bounds. Translate the paper minus sector to the Lean plus sector. The theorem analyticInputs assembles the estimates without an unproved analytic hypothesis.",
+      "additional_labels": [],
       "graph_title": "Uniform finite tails",
-      "scope": "Formal baselineTail bounds both Q and L truncations with interface constant 2^30 using term-wise majorants and total-degree tails. The mixed coefficient and complete-mean hypotheses are proved by the corner producer. CornerGram.repeated_tail_bound combines both tails with constant 2^32 for arbitrary m and 0 < epsilon <= 1; analyticInputs has no remaining analytic premise.",
+      "scope": "The formal baselineTail and repeated_tail_bound prove these quantitative estimates for arbitrary m and epsilon under the specified modulus bounds. Translate the paper minus sector to the Lean plus sector. The theorem analyticInputs assembles the estimates without an unproved analytic hypothesis.",
       "paper_dependencies": [
-        "lem:means",
-        "lem:global"
+        "B:lem:means"
       ],
       "formal_routes": {
-        "lem:means": "The corner producer proves the complete low means required by baselineTail; the separate paper-only baseline PSD statement is not a formal premise.",
-        "lem:global": "Lean proves its own term-wise majorants and total-degree tail bounds; the sharper product-denominator estimate displayed in the paper is not a formal premise."
-      }
+        "B:lem:means": "The formal baselineTail and repeated_tail_bound prove these quantitative estimates for arbitrary m and epsilon under the specified modulus bounds. Translate the paper minus sector to the Lean plus sector. The theorem analyticInputs assembles the estimates without an unproved analytic hypothesis."
+      },
+      "kind": "lemma",
+      "source_index": 5
     },
     {
-      "label": "lem:continuation",
-      "number": "Lemma 5.1",
-      "title": "Uniform improvement of the pure kernel",
-      "section": "5. Quantitative continuation",
-      "paper_file": "paper/sections/05_continuation.tex",
-      "statement": "At the dyadic parameters k ≥ 16, the scaled pure kernel on the required nodes is at most 2^20 epsilon^(2^-17).",
+      "label": "B:lem:quant-continuation",
+      "number": "Lemma B.6",
+      "title": "Quantitative continuation",
+      "section": "Appendix B. Quantitative bounds",
+      "paper_file": "paper/appendices/B_quantitative.tex",
+      "statement": "For every dyadic scale k >= 16, the scaled pure Gram-vector norm in the stated speed region is at most 2^20 epsilon^(2^-17), independently of its dimension.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.Analytic.twoRectangles",
@@ -372,32 +1306,24 @@
       ],
       "checks": [],
       "status": "Proved in the paper only",
-      "explanation": "Two rectangle comparisons propagate the small repeated-node bound to the witness points; Lean proves the required selected-scale application.",
-      "additional_labels": [
-        "sec:continuation",
-        "eq:continuation-bound",
-        "eq:continuation-global",
-        "eq:continuation-real",
-        "eq:rectangle-comparison",
-        "eq:first-barrier",
-        "eq:first-continuation",
-        "eq:second-barrier"
-      ],
-      "graph_title": "Continuation estimate",
-      "scope": "The general two-rectangle theorem is formal. The actual Gram-vector global majorant is derived for general epsilon, and its real-slice and realigned witness applications are assembled at the selected dyadic scale. This supplies the complete negative theorem without an unproved majorant premise.",
+      "explanation": "The general two-rectangle comparison and the global Gram majorant are formal. The real-slice and realigned-witness applications are assembled at k = 4980737, so the all-k statement here is not a literal standalone formal theorem. Translate the paper minus sector to the Lean plus sector.",
+      "additional_labels": [],
+      "graph_title": "Quantitative continuation",
+      "scope": "The general two-rectangle comparison and the global Gram majorant are formal. The real-slice and realigned-witness applications are assembled at k = 4980737, so the all-k statement here is not a literal standalone formal theorem. Translate the paper minus sector to the Lean plus sector.",
       "paper_dependencies": [
-        "lem:tails",
-        "lem:global"
+        "B:lem:quant-tails"
       ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "lemma",
+      "source_index": 6
     },
     {
-      "label": "lem:witness",
-      "number": "Lemma 6.1",
-      "title": "Exact negative pairing",
-      "section": "6. An exact negative tangent direction",
-      "paper_file": "paper/sections/06_witness.tex",
-      "statement": "The fixed 1024-point tangent witness has coefficient l1 mass 859652168 and pairing below -2^42.",
+      "label": "C:lem:witness",
+      "number": "Lemma C.1",
+      "title": "Exact limiting witness",
+      "section": "Appendix C. Negative witness",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "statement": "The 1024-point integer vector has l1 mass 859652168 and pairing below -2^42; its Rayleigh quotient gives a smallest eigenvalue below -2^-18.",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.Witness.fullUpper_lt",
@@ -425,40 +1351,72 @@
           "script": "verification/negative.py",
           "command": "python3 verification/negative.py",
           "expected": "PASS: exact tangent witness and constants",
-          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
+          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof.",
+          "data_files": []
         },
         {
           "script": "verification/witness.py",
           "command": "python3 verification/witness.py",
           "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
-          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
+          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript.",
+          "data_files": []
         }
       ],
-      "status": "Lean-proved",
-      "explanation": "Supplies the strict negative direction; the convolution check independently confirms the full-entry integer enclosure.",
-      "additional_labels": [
-        "sec:witness",
-        "eq:tangent-kernel",
-        "eq:negative-pairing",
-        "eq:witness-enclosure",
-        "eq:exponential-integrals",
-        "app:witness",
-        "eq:entry-rational",
-        "eq:integer-enclosure",
-        "eq:witness-convolution"
-      ],
-      "graph_title": "Exact tangent witness",
-      "scope": "Full 1024^2-entry directed integer enclosure, checked in 64 blocks by Lean kernel reduction in WitnessCertificate, and its real tangent-kernel interpretation. The external 513-term rational convolution remains an independent supplementary check; five paper-checker corruptions are rejected.",
+      "status": "Exact-verified",
+      "explanation": "Lean proves the coefficient mass and strict negative tangent pairing via a full directed integer enclosure. Python independently verifies that enclosure, the rational convolution and the normalized defect. The separate spectral/Rayleigh formulation is a paper consequence, not an exported Lean eigenvalue theorem.",
+      "additional_labels": [],
+      "graph_title": "Exact limiting witness",
+      "scope": "Lean proves the coefficient mass and strict negative tangent pairing via a full directed integer enclosure. Python independently verifies that enclosure, the rational convolution and the normalized defect. The separate spectral/Rayleigh formulation is a paper consequence, not an exported Lean eigenvalue theorem.",
       "paper_dependencies": [],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "lemma",
+      "source_index": 1
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "unlabelled:appendices/C_negative_witness.tex:remark:1",
+      "title": "Numerical eigenvalue observation",
+      "graph_title": "Numerical eigenvalue observation",
+      "statement": "Floating-point diagonalization gives a smallest eigenvalue approximately -0.0118428.",
+      "scope": "Numerical observation only, not an exact certificate and not used in the proof. No shipped checker claims to certify this floating-point value. The source has no label; numbering is checked in a temporary labelled copy.",
+      "explanation": "Numerical observation only, not an exact certificate and not used in the proof. No shipped checker claims to certify this floating-point value. The source has no label; numbering is checked in a temporary labelled copy.",
+      "status": "Unproved remark",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Remark C.1",
+      "kind": "remark",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "source_index": 1,
+      "section": "Appendix C. Negative witness"
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "C:rem:alternative-test-families",
+      "title": "Alternative numerical test families",
+      "graph_title": "Alternative numerical test families",
+      "statement": "A three-family numerical search suggests a negative direction near J = 44; the proof retains the exact two-family witness.",
+      "scope": "Preliminary numerical observation only. No exact certificate or Lean theorem for the three-family search is included.",
+      "explanation": "Preliminary numerical observation only. No exact certificate or Lean theorem for the three-family search is included.",
+      "status": "Unproved remark",
+      "paper_dependencies": [],
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Remark C.2",
+      "kind": "remark",
+      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "source_index": 2,
+      "section": "Appendix C. Negative witness"
     },
     {
       "label": "thm:finite-scale",
-      "number": "Theorem 7.1",
+      "number": "Theorem D.1",
       "title": "Uniform finite-scale obstruction",
-      "section": "7. The finite-scale contradiction",
-      "paper_file": "paper/sections/07_finish.tex",
-      "statement": "For every integer k ≥ 16, a feasible corner Gram has Phi_m < -2^42 + 2^(90-k) + 2^(80-k/2^17), m=2^(2k).",
+      "section": "Appendix D. Explicit threshold",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "statement": "For every k >= 16 and m = 2^(2k), feasibility implies 0 <= Phi_m < -2^42 + 2^90 m^(-1/2) + 2^80 m^(-1/262144).",
       "lean": [
         {
           "name": "ToeplitzSOS.Negative.CornerGram.pairing_nonneg",
@@ -481,188 +1439,106 @@
           "script": "verification/negative.py",
           "command": "python3 verification/negative.py",
           "expected": "PASS: exact tangent witness and constants",
-          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof."
+          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof.",
+          "data_files": []
         },
         {
           "script": "verification/witness.py",
           "command": "python3 verification/witness.py",
           "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
-          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript."
+          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript.",
+          "data_files": []
         }
       ],
       "status": "Proved in the paper only",
-      "explanation": "Combines the positive evaluation matrix with the tangent pairing and the uniform error bounds.",
-      "additional_labels": [
-        "eq:nodes",
-        "eq:finite-scale",
-        "sec:mechanism",
-        "sec:mech-wedges",
-        "sec:mech-identity",
-        "eq:mechanism-cancellation",
-        "sec:mech-tangent",
-        "eq:mechanism-tangent",
-        "eq:energy",
-        "sec:mech-continuation",
-        "sec:mech-estimate",
-        "sec:mech-small",
-        "sec:finish",
-        "eq:realigned-diagonal",
-        "eq:realigned-pairing",
-        "eq:finite-tangent-error",
-        "eq:finite-pairing-bound"
-      ],
-      "graph_title": "Finite-scale obstruction",
-      "scope": "The written theorem is uniform for every integer k >= 16, without restrictions on Gram corrections or rank. The mapped formal argument closes the contradiction at k=4980737 using the sharper coefficient-mass budget; it is not a literal all-k formalization of the displayed scalar inequality.",
+      "explanation": "The displayed inequality is uniform over every k >= 16. The frozen formal pairing_nonneg, finite_separation and no_feasible_evaluation close the needed instance k = 4980737, using the sharper coefficient-mass budget. They do not state the literal all-k inequality. The sign/sector correspondence is described at Lemma 2.6.",
+      "additional_labels": [],
+      "graph_title": "Uniform finite-scale obstruction",
+      "scope": "The displayed inequality is uniform over every k >= 16. The frozen formal pairing_nonneg, finite_separation and no_feasible_evaluation close the needed instance k = 4980737, using the sharper coefficient-mass budget. They do not state the literal all-k inequality. The sign/sector correspondence is described at Lemma 2.6.",
       "paper_dependencies": [
-        "lem:corner",
-        "lem:tails",
-        "lem:continuation",
-        "lem:witness"
+        "lem:finite-decomposition",
+        "B:lem:quant-tails",
+        "B:lem:quant-continuation",
+        "C:lem:witness"
       ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "kind": "theorem",
+      "source_index": 1
     },
     {
-      "label": "prop:positive",
-      "number": "Proposition 8.1",
-      "title": "Exact positive certificates",
-      "section": "8. The finite positive range",
-      "paper_file": "paper/sections/08_positive.tex",
-      "statement": "F_N is SOS for 1 ≤ N ≤ 50; F_1=0 and the certificate chain covers 2 ≤ N ≤ 50.",
+      "label": "prop:explicit-threshold",
+      "number": "Proposition D.1",
+      "title": "Explicit sufficient order",
+      "section": "Appendix D. Explicit threshold",
+      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "statement": "The corner at m = 2^9961474 is non-SOS; consequently F_N is non-SOS for every N >= 2^9961475.",
       "lean": [
         {
-          "name": "ToeplitzSOS.toeplitzBW_two_isSumSq",
-          "file": "lean/ToeplitzSOS/Defs.lean",
-          "role": "Orders 2 through 20 only."
+          "name": "ToeplitzSOS.Negative.cornerGram_impossible",
+          "file": "lean/ToeplitzSOS/Negative/CornerObstruction.lean",
+          "role": "The selected corner and every larger ambient order."
         },
         {
-          "name": "ToeplitzSOS.toeplitzBW_isSumSq_of_le_20",
-          "file": "lean/ToeplitzSOS/Certificates/Range.lean",
-          "role": "Orders 2 through 20 only."
+          "name": "ToeplitzSOS.Negative.cornerGram_of_baseline_sos",
+          "file": "lean/ToeplitzSOS/Negative/CornerExtraction.lean",
+          "role": "The selected corner and every larger ambient order."
+        },
+        {
+          "name": "ToeplitzSOS.Negative.not_isSumSqHomQuad_of_large_order",
+          "file": "lean/ToeplitzSOS/Negative/Resolution.lean",
+          "role": "The selected corner and every larger ambient order."
         }
       ],
       "checks": [
         {
-          "script": "verification/positive.py",
-          "command": ".venv/bin/python verification/positive.py",
-          "expected": "PASS: F_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected",
-          "scope": "All polynomial identities and exact positive Gram certificates for the 48-step chain."
+          "script": "verification/negative.py",
+          "command": "python3 verification/negative.py",
+          "expected": "PASS: exact tangent witness and constants",
+          "scope": "Exact tangent witness and scalar error-budget arithmetic; not the analytic proof.",
+          "data_files": []
+        },
+        {
+          "script": "verification/witness.py",
+          "command": "python3 verification/witness.py",
+          "expected": "PASS: manuscript witness, convolution, threshold, and five rejection controls",
+          "scope": "Full-entry enclosure, independent rational convolution, coefficient budget, and threshold read from the manuscript.",
+          "data_files": []
         }
       ],
-      "status": "Exact-verified",
-      "explanation": "Starts from the order-two identity and follows 48 exact positive induction steps.",
-      "additional_labels": [
-        "sec:positive",
-        "eq:positive-chain",
-        "eq:last-positive"
+      "status": "Lean-proved",
+      "explanation": "Lean proves the impossibility of the selected corner data, extracts such data from any corner SOS, and proves the same explicit ambient non-SOS statement. It uses a direct quantitative application at k = 4980737; the paper applies its uniform Theorem D.1.",
+      "additional_labels": [],
+      "graph_title": "Explicit sufficient order",
+      "scope": "Lean proves the impossibility of the selected corner data, extracts such data from any corner SOS, and proves the same explicit ambient non-SOS statement. It uses a direct quantitative application at k = 4980737; the paper applies its uniform Theorem D.1.",
+      "paper_dependencies": [
+        "thm:finite-scale",
+        "lem:corner"
       ],
-      "graph_title": "SOS through order 50",
-      "scope": "F_1=0; exact chain for 2 <= N <= 50; Lean for 2 <= N <= 20. The release checker prints retained Gram >= 0.015624875921 I for step 49, in the coordinates specified in the text. No separate pure-block margin is claimed.",
+      "formal_routes": {
+        "thm:finite-scale": "Lean proves the impossibility of the selected corner data, extracts such data from any corner SOS, and proves the same explicit ambient non-SOS statement. It uses a direct quantitative application at k = 4980737; the paper applies its uniform Theorem D.1.",
+        "lem:corner": "Lean proves the impossibility of the selected corner data, extracts such data from any corner SOS, and proves the same explicit ambient non-SOS statement. It uses a direct quantitative application at k = 4980737; the paper applies its uniform Theorem D.1."
+      },
+      "kind": "proposition",
+      "source_index": 1
+    },
+    {
+      "lean": [],
+      "checks": [],
+      "label": "prop:positive-window-certificate",
+      "title": "Positive window decomposition",
+      "graph_title": "Positive window decomposition",
+      "statement": "For every m >= 1 the reduced same-symmetry form has the explicit window/edge/slack square decomposition, with positive integer edges and slack at least p^2.",
+      "scope": "Proved in the paper only; the frozen repository has no all-order window decomposition theorem.",
+      "explanation": "Proved in the paper only; the frozen repository has no all-order window decomposition theorem.",
+      "status": "Proved in the paper only",
       "paper_dependencies": [],
-      "formal_routes": {}
-    },
-    {
-      "label": "thm:exchange",
-      "number": "Theorem 9.1",
-      "title": "Exact exchange criterion",
-      "section": "9. The exchange criterion and criticality",
-      "paper_file": "paper/sections/09_exchange.tex",
-      "statement": "For n ≥ 3, both exchange optima are attained and F_n is SOS exactly when gamma_n ≤ 1, including singular dual states.",
-      "lean": [],
-      "checks": [],
-      "status": "Proved in the paper only",
-      "explanation": "Expresses the unrestricted finite SOS question as the exact attained mixed/pure exchange budget.",
-      "additional_labels": [
-        "sec:exchange",
-        "eq:center",
-        "eq:budget-baseline",
-        "eq:budget-mixed",
-        "eq:exchange-set",
-        "eq:pure-norm",
-        "eq:gamma",
-        "eq:budget-feasible",
-        "eq:pure-primal"
-      ],
-      "graph_title": "Exchange criterion",
-      "scope": "Written criterion, both optima attained, includes singular dual states and equality gamma=1. Rational strict certificates only for gamma<1.",
-      "paper_dependencies": [
-        "lem:frame"
-      ],
-      "formal_routes": {}
-    },
-    {
-      "label": "thm:criticality",
-      "number": "Theorem 9.2",
-      "title": "Criticality of the pure budget",
-      "section": "9. The exchange criterion and criticality",
-      "paper_file": "paper/sections/09_exchange.tex",
-      "statement": "The exchange budget obeys 1/2 ≤ gamma_n ≤ 4 and the stated lower bound for n ≥ 128, with a certificate-relative margin consequence.",
-      "lean": [],
-      "checks": [],
-      "status": "Proved in the paper only",
-      "explanation": "Explains why feasible certificates approach the critical budget without asserting an unconditional limit equal to one.",
-      "additional_labels": [
-        "eq:criticality",
-        "app:criticality",
-        "eq:critical-feasible",
-        "eq:critical-scalars",
-        "eq:rational-lower",
-        "eq:critical-infinite",
-        "eq:critical-tail"
-      ],
-      "graph_title": "Budget criticality",
-      "scope": "1/2 <= gamma_n <= 4; lower bound for n >= 128; certificate-relative margin consequence. No unconditional gamma_n -> 1.",
-      "paper_dependencies": [
-        "thm:exchange"
-      ],
-      "formal_routes": {}
-    },
-    {
-      "label": "cor:boundary",
-      "number": "Corollary 10.1",
-      "title": "Failure of the all-order increment condition",
-      "section": "10. Boundary layers and increments",
-      "paper_file": "paper/sections/10_boundary.tex",
-      "statement": "A least non-SOS boundary width κ_* exists; all larger widths and increments R_n for n ≥ max(2,2κ_*-1) fail SOS.",
-      "lean": [],
-      "checks": [],
-      "status": "Proved in the paper only",
-      "explanation": "Uses the corner tail decomposition to refute the all-order increment premise.",
-      "additional_labels": [
-        "sec:boundary",
-        "eq:increment",
-        "eq:BL",
-        "eq:BL-exchange",
-        "eq:tail-decomposition",
-        "eq:increment-corner"
-      ],
-      "graph_title": "Boundary obstruction",
-      "scope": "Existence and all-larger-width transfer; the self-contained written proof uses the established F corner and tail identity.",
-      "paper_dependencies": [
-        "cor:threshold"
-      ],
-      "formal_routes": {}
-    },
-    {
-      "label": "rem:persistence",
-      "number": "Remark 11.1",
-      "title": "An expectation at moderate orders",
-      "section": "11. The intermediate range",
-      "paper_file": "paper/sections/11_discussion.tex",
-      "statement": "SOS is expected to persist to moderate orders; no endpoint or extension beyond 50 is proved.",
-      "lean": [],
-      "checks": [],
-      "status": "Unproved remark",
-      "explanation": "Separates a qualitative expectation from the certified finite positive range and the open transition problem.",
-      "additional_labels": [
-        "sec:discussion",
-        "sec:questions"
-      ],
-      "graph_title": "Moderate-order expectation",
-      "scope": "An expectation without a specified endpoint, not a proved extension of the positive range. Evidence is limited to the shipped exact ambient certificates through order 50 and the normalized tangent defect.",
-      "paper_dependencies": [
-        "prop:positive"
-      ],
-      "formal_routes": {}
+      "formal_routes": {},
+      "additional_labels": [],
+      "number": "Proposition E.1",
+      "kind": "proposition",
+      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "source_index": 1,
+      "section": "Appendix E. Positive certificates"
     }
   ]
 }

@@ -1,0 +1,482 @@
+\section{Qualitative estimates for the finite Gram test}
+\label{app:quantitative}
+
+This appendix supplies the qualitative estimates used in
+\Cref{lem:negative-limit}.  The main theorem only requires their
+large-$m$ limits.  We also record, at the end of the appendix, the
+quantitative constants used to obtain the explicit sufficient order in
+\Cref{app:explicit-bound}.
+
+\subsection{The scaled limit of the Gram-invariant part}
+
+Let
+\[
+ \delta_m:=m^{-1/2},\qquad
+ \mathsf x_\ell^{(m)}
+ =(\xi_\ell^{(m)},\eta_\ell^{(m)})
+ =\left(ie^{-\delta_m a_\ell},
+        -ie^{-\delta_m\overline{a_\ell}}\right),
+ \qquad 1\le\ell\le s.
+\]
+The speed parameters $a_1,\ldots,a_s$ are fixed throughout, with
+$\Re a_\ell>0$.  Let $\mathbf L_{\infty,m}$ denote the matrix obtained
+from $\mathbf L_m$ by extending the depth indices in $D,K,B$ from
+$\{0,\ldots,m-1\}$ to all nonnegative integers.
+
+For the pair $(\ell,h)$, set
+\[
+\begin{aligned}
+ A_m^{\ell h}
+ &:=(1-\xi_\ell^{(m)}\overline{\xi_h^{(m)}})
+    (1-\eta_\ell^{(m)}\overline{\eta_h^{(m)}}),\\
+ C_m^{\ell h}
+ &:=(1-\xi_\ell^{(m)}\eta_\ell^{(m)})
+    (1-\overline{\xi_h^{(m)}}\,\overline{\eta_h^{(m)}}),\\
+ \Delta_m^{\ell h}
+ &:=(1-\xi_\ell^{(m)}\overline{\eta_h^{(m)}})
+    (1-\eta_\ell^{(m)}\overline{\xi_h^{(m)}}).
+\end{aligned}
+\]
+Direct summation of the geometric series associated with $D,K,B$ gives
+\begin{equation}\label{B:eq:Linfty}
+ (\mathbf L_{\infty,m})_{\ell h}
+ =
+ 2\left(
+ \frac{2}{(A_m^{\ell h})^2}
+ +\frac{1}{(C_m^{\ell h})^2}
+ -\frac{1}{A_m^{\ell h}C_m^{\ell h}}
+ -\frac{2}{(\Delta_m^{\ell h})^2}
+ \right).
+\end{equation}
+
+\begin{lemma}[Finite-depth tail]\label{B:lem:tail}
+For the fixed finite set of test points, there exist constants
+$C,c>0$, independent of $m$, such that
+\[
+ \max_{1\le\ell,h\le s}
+ \left|
+ (\mathbf L_m-\mathbf L_{\infty,m})_{\ell h}
+ \right|
+ \le C m^4 e^{-c\sqrt m}.
+\]
+Consequently,
+\[
+        \frac{1}{m^2}
+        \bigl(\mathbf L_m-\mathbf L_{\infty,m}\bigr)
+        \longrightarrow0.
+\]
+\end{lemma}
+
+\begin{proof}
+All coefficients in the finite sums defining $D,K,B$ and their
+realignments grow at most polynomially, of degree four, in the depth
+indices.  Since the set of speeds is fixed and
+$\rho_0:=\min_\ell\Re a_\ell>0$, every test-point monomial of total
+depth $q$ has modulus at most $e^{-\rho_0 q/\sqrt m}$.  Every term
+discarded when the infinite sums are truncated at depth $m$ contains
+at least one index of size at least $m$.  Summing the resulting
+polynomially weighted geometric tails gives
+\[
+ C m^4e^{-c\sqrt m}
+\]
+for suitable constants $C,c>0$.  Division by $m^2$ proves the second
+assertion.
+\end{proof}
+
+For the fixed speed parameters define
+\begin{equation}\label{B:eq:AC-limit}
+ A_{\ell h}:=
+ |a_\ell+\overline{a_h}|^2,\qquad
+ C_{\ell h}:=
+ 4\,\Re(a_\ell)\Re(a_h).
+\end{equation}
+Since $1-e^{-\delta z}=\delta z+O(\delta^2)$ as $\delta\to0$,
+uniformly for the present finite set of $z$'s,
+\[
+ m A_m^{\ell h}\longrightarrow A_{\ell h},\qquad
+ m C_m^{\ell h}\longrightarrow C_{\ell h},\qquad
+ \Delta_m^{\ell h}\longrightarrow4.
+\]
+Combining this with \eqref{B:eq:Linfty} and
+\Cref{B:lem:tail} gives
+\[
+ \frac{1}{m^2}(\mathbf L_m)_{\ell h}
+ \longrightarrow
+ 2\left(
+ \frac{2}{A_{\ell h}^2}
+ +\frac{1}{C_{\ell h}^2}
+ -\frac{1}{A_{\ell h}C_{\ell h}}
+ \right).
+\]
+Since $s$ is fixed, the convergence is also convergence in every
+matrix norm.  This is the limit matrix $\mathbf L_\star$ used in
+\Cref{lem:negative-limit}.
+
+\subsection{Qualitative control of the Gram-dependent part}
+
+We now prove the only uniform estimate needed in the main theorem:
+for the fixed finite test,
+\[
+ \sup_{\widehat Q_{\rm av}\succeq0}
+ \frac{1}{m^2}
+ \max_{\ell,h}|(\mathbf R_m)_{\ell h}|
+ \longrightarrow0.
+\]
+The argument has two ingredients.  Positivity first eliminates all
+low-total mixed modes.  This gives an improved estimate on conjugate
+points.  A qualitative maximum-principle argument then propagates the
+improvement to the finitely many realigned points. 
+For $0\le g\le2m-2$, let
+\[
+ s_g:=\sum_{\substack{p+q=g\\0\le p,q<m}}\mathbf e_{pq}
+\]
+in the mixed coordinates.
+
+\begin{lemma}[Forced low mixed modes]\label{B:lem:means}
+The baseline mixed block $B$ is positive semidefinite, and every
+positive semidefinite normal-form Gram representation satisfies
+\begin{equation}\label{B:eq:means}
+                 Ms_g=Bs_g=0,\qquad 0\le g<m.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The matrix $B$ is block diagonal with respect to the total
+$g=p+q$.  On a complete block, its off-diagonal entries are
+nonpositive and its row sums vanish; hence the block is a weighted
+graph Laplacian and is positive semidefinite.  Incomplete blocks are
+principal submatrices, so $B\succeq0$.
+
+To obtain the second assertion, substitute the corner variables so that
+the pure wedges vanish and the mixed wedge $w_{pq}$ equals $t^{p+q}$.
+If $Q\succeq0$ is any feasible Gram matrix, the resulting polynomial
+is
+\[
+ \left\|\sum_g t^gQ^{1/2}s_g\right\|^2.
+\]
+The same polynomial computed from the baseline mixed block has no term
+of degree below $2m$.  If $g<m$ were the least index for which
+$Q^{1/2}s_g\ne0$, the coefficient of $t^{2g}$ would be strictly
+positive, a contradiction.  Thus $Qs_g=0$ for $g<m$.  Restricting to
+the mixed block gives \eqref{B:eq:means}.
+\end{proof}
+
+Write
+\[
+        \Psi_m:=M-B.
+\]
+By \Cref{B:lem:means}, the repeated generating expression associated
+with $\Psi_m$ contains only total degrees at least $m$ in each pair of
+variables.  At the conjugate points used below this high-order support
+is exponentially suppressed.  Together with the explicit baseline
+block $D-K$, this yields the following qualitative estimate.
+
+\begin{lemma}[Conjugate-point improvement]\label{B:lem:conjugate}
+Let $\alpha,\beta$ range over fixed compact real intervals with
+$\alpha>0$, and set
+\[
+ \xi_m=ie^{-(\alpha+i\beta)/\sqrt m},\qquad
+ \eta_m=-ie^{-(\alpha-i\beta)/\sqrt m}.
+\]
+Uniformly over all positive semidefinite normal-form Gram
+representations,
+\[
+        P_-[\xi_m,\eta_m]=O(m),
+\]
+whereas on every fixed complex neighbourhood on which the two node
+moduli stay strictly inside the unit disk at distance comparable with
+$m^{-1/2}$,
+\[
+        P_-[\xi,\eta]=O(m^2).
+\]
+\end{lemma}
+
+\begin{proof}
+The global estimate follows from positivity and the diagonal pure
+block:
+\[
+ 0\le P_-[\xi,\eta]
+ \le
+ \frac{8}{(1-|\xi|^2)^2(1-|\eta|^2)^2}.
+\]
+At the scaled points above, the right-hand side is $O(m^2)$.
+
+On the conjugate slice, the same-side four-form vanishes and the
+Pl\"ucker correction can be rewritten through $\Psi_m$.  The baseline
+term $D-K$ is $O(m)$ there, while the high-total support of $\Psi_m$
+from \Cref{B:lem:means} contributes $o(m)$.  Hence
+$P_-[\xi_m,\eta_m]=O(m)$ uniformly.  A direct tail estimate proving the last $o(m)$ statement is obtained exactly as in \Cref{B:lem:tail}; the quantitative version is recorded below.
+\end{proof}
+
+We use the following standard qualitative form of the two-constant
+principle.
+
+\begin{lemma}[Qualitative continuation]\label{B:lem:continuation}
+Let $W_m$ be a holomorphic vector-valued function on a fixed rectangle
+$\Omega\subset\C$, possibly with a range dimension depending on $m$.
+Assume $\|W_m\|\le C$ on $\Omega$ and
+$\|W_m\|\to0$ uniformly on a nontrivial open segment $I$ of one side
+of the rectangle.  Then $\|W_m\|\to0$ uniformly on every compact subset
+of $\Omega$ having positive harmonic measure with respect to $I$.
+\end{lemma}
+
+\begin{proof}
+For nonzero $W_m$, the function $\log\|W_m\|$ is subharmonic; zeros are
+handled by the usual value $-\infty$.  The two-constant theorem bounds
+$\log\|W_m(z)\|$ by the boundary majorant weighted by the harmonic
+measure of $I$.  On a fixed compact subset this harmonic measure is
+bounded below by a positive constant.  Since the bound on $I$ tends to
+zero while the global bound remains fixed, the resulting interior bound
+also tends to zero.  The identically zero case is immediate.
+\end{proof}
+
+\begin{proposition}[Uniform vanishing of the Gram-dependent term]
+\label{B:prop:R}
+For the fixed test points of \eqref{eq:test-nodes},
+\begin{equation}\label{B:eq:Rvanish}
+ \sup_{\widehat Q_{\rm av}\succeq0}
+ \frac1{m^2}\max_{1\le\ell,h\le s}
+ |(\mathbf R_m)_{\ell h}|
+ \longrightarrow0.
+\end{equation}
+Consequently, for every fixed $c\in\C^s$,
+\[
+ \sup_{\widehat Q_{\rm av}\succeq0}
+ \left|
+ c^*\frac{\mathbf R_m}{m^2}c
+ \right|
+ \longrightarrow0.
+\]
+\end{proposition}
+
+\begin{proof}
+Let $P_-=\Gamma^\top\Gamma$ and define
+\[
+ \mathbf h_m(\alpha,\beta)
+ :=
+ \frac1m\,
+ \Gamma f\left(
+ ie^{-(\alpha+i\beta)/\sqrt m},
+ -ie^{-(\alpha-i\beta)/\sqrt m}
+ \right).
+\]
+By \Cref{B:lem:conjugate}, $\|\mathbf h_m\|$ is uniformly bounded on
+fixed complex rectangles, while it tends uniformly to zero on the real
+conjugate slice.
+
+Apply \Cref{B:lem:continuation} first in the $\alpha$ variable and then
+in the $\beta$ variable.  No explicit harmonic-measure constant is
+needed because the test set is finite and fixed.  For each pair
+$(\ell,h)$, put
+\[
+ \alpha_{\ell h}:=
+ \frac{a_\ell+\overline{a_h}}2,\qquad
+ \beta_{\ell h}:=
+ \frac{a_\ell-\overline{a_h}}{2i}.
+\]
+These finitely many points lie in a fixed compact set.  Realignment
+gives
+\[
+ \frac1{m^2}(\mathbf R_m)_{\ell h}
+ =
+ \left\|
+ \mathbf h_m(\alpha_{\ell h},\beta_{\ell h})
+ \right\|^2,
+\]
+and therefore every entry tends to zero, uniformly over all feasible
+Gram representations.  Since there are only finitely many entries,
+\eqref{B:eq:Rvanish} follows.  Finally,
+\[
+ \left|
+ c^*\frac{\mathbf R_m}{m^2}c
+ \right|
+ \le
+ \|c\|_1^2\,
+ \frac1{m^2}\max_{\ell,h}|(\mathbf R_m)_{\ell h}|,
+\]
+which proves the last assertion.
+\end{proof}
+
+\subsection{Explicit estimates for the sufficient threshold}
+\label{B:subsec:effective}
+
+For completeness, we now record the quantitative version of the preceding
+argument that is used in \Cref{app:explicit-bound}.  These constants are not
+needed for the qualitative proof in the main text.
+
+For four arguments in the open unit disk define
+\begin{equation}\label{B:eq:denominators}
+\begin{gathered}
+ A=(1-\xi\zeta)(1-\eta\omega),\qquad
+ \Delta=(1-\xi\omega)(1-\eta\zeta),\\
+ C=(1-\xi\eta)(1-\zeta\omega),\qquad
+ \Pi=\xi\eta\zeta\omega.
+\end{gathered}
+\end{equation}
+At the level of scalar generating expressions, write
+$Q_{0,m}:=D-K$ and let $L_m$ denote the Gram-invariant kernel
+corresponding to \(\mathbf L_m\).  A subscript \(\infty\) means that the
+depth indices are extended over all nonnegative integers.  Direct summation
+of the geometric series gives
+\begin{equation}\label{B:eq:generating}
+\begin{aligned}
+ D_\infty&=2(A^{-2}-\Delta^{-2}),\\
+ B_\infty&=2(A^{-2}-(A\Delta)^{-1}),\\
+ Q_{0,\infty}&=D_\infty-\frac{2(\Delta-A)}{A\Delta C},\\
+ L_\infty&=2\left(\frac2{A^2}+\frac1{C^2}
+                       -\frac1{AC}-\frac2{\Delta^2}\right).
+\end{aligned}
+\end{equation}
+Indeed, the first two formulas follow from
+$\sum_{p\ge0}(p+1)t^p=(1-t)^{-2}$ and the common-shift identity for the
+minimum kernel.  For the pure cross block, setting $q=p+h$, $s=r+h$,
+$h\ge1$, gives
+\[
+ \sum_{p,r\ge0}\min(p+1,r+1)(\xi\eta)^p(\zeta\omega)^r
+     =\frac1{C(1-\Pi)},
+\]
+and
+\[
+ \sum_{h\ge1}(\eta^h-\xi^h)(\omega^h-\zeta^h)
+     =\frac{(1-\Pi)(\Delta-A)}{A\Delta}.
+\]
+Realignment interchanges $A$ and $C$ and leaves $\Delta$ unchanged,
+which yields the last line of \eqref{B:eq:generating}.
+
+Write $\mathcal E_{\rm mix}:=M-B$.  By \Cref{B:lem:means}, the repeated
+generating expression $\mathcal E_{\rm mix}(\xi,\xi,\zeta,\zeta)$
+contains only total degrees at least $m$ in each pair of variables.
+Moreover, positivity and \eqref{eq:sectors} imply the global bound
+\begin{equation}\label{B:eq:global}
+ 0\le P_\pm[\xi,\eta]
+ \le\frac8{(1-|\xi|^2)^2(1-|\eta|^2)^2},
+ \qquad |\xi|,|\eta|<1.
+\end{equation}
+On conjugate nodes, the same-side four-form vanishes and
+\begin{equation}\label{B:eq:repeated}
+ P_-[\xi,\bar\xi]
+ =Q_{0,m}[\xi,\bar\xi]
+  +\mathcal E_{\rm mix}(\xi,\xi,\bar\xi,\bar\xi).
+\end{equation}
+If $\xi=\sqrt\rho e^{i\vartheta}$, the corresponding infinite baseline is
+\begin{equation}\label{B:eq:repeated-baseline}
+ Q_{0,\infty}[\xi,\bar\xi]
+ =\frac{8\rho\sin^2\vartheta}
+ {(1-\rho)^2((1-\rho)^2+4\rho\sin^2\vartheta)^2}.
+\end{equation}
+
+\begin{lemma}[Uniform finite tails]\label{B:lem:quant-tails}
+For $0<\epsilon\le1$, set
+\begin{equation}\label{B:eq:tail-budget}
+ \mathcal T(m,\epsilon)=2^{32}\epsilon^{-8}e^{-\epsilon m/4}.
+\end{equation}
+If all four argument moduli are at most $e^{-\epsilon/2}$, then
+$|L_m-L_\infty|\le\mathcal T(m,\epsilon)$.  For every positive
+semidefinite normal-form Gram representation,
+\begin{equation}\label{B:eq:conjugate-tail}
+ |P_-[\xi,\bar\xi]-Q_{0,\infty}[\xi,\bar\xi]|
+ \le\mathcal T(m,\epsilon)
+ \qquad(|\xi|\le e^{-\epsilon/2}).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The diagonal of the realigned correction vanishes, so the positive
+semidefinite matrices $M$ and $B$ have the same diagonal.  For
+$W=(p+1)(q+1)(r+1)(s+1)$, Cauchy--Schwarz gives
+\[
+ |(\mathcal E_{\rm mix})_{pq,rs}|\le4\sqrt W\le4W.
+\]
+The coefficients of the baseline kernels are bounded by a constant
+multiple of $W$.  Every discarded finite-depth term contains at least one
+index of size at least $m$.  Splitting the radial decay in half and using
+$1-e^{-\epsilon/4}\ge\epsilon/8$ therefore gives
+\[
+ |L_m-L_\infty|,\ |Q_{0,m}-Q_{0,\infty}|
+ \le2^{30}\epsilon^{-8}e^{-\epsilon m/4}.
+\]
+For the correction in \eqref{B:eq:repeated}, \Cref{B:lem:means} leaves
+only total degrees at least $m$ in both variable pairs; the same summation
+gives
+\[
+ |\mathcal E_{\rm mix}(\xi,\xi,\bar\xi,\bar\xi)|
+ \le2^{26}\epsilon^{-8}e^{-\epsilon m/2}.
+\]
+Combining the two estimates proves the lemma.
+\end{proof}
+
+For the explicit threshold set
+\begin{equation}\label{B:eq:dyadic-scale}
+ k\ge16,\qquad \epsilon=2^{-k},\qquad m=\epsilon^{-2}=2^{2k}.
+\end{equation}
+Then
+\begin{equation}\label{B:eq:dyadic-tails}
+ \mathcal T\le2^{32+8k-2^{k-2}},\qquad
+ \mathcal T\le\epsilon^{-2},\qquad
+ \epsilon^4\mathcal T\le\epsilon.
+\end{equation}
+
+\begin{lemma}[Quantitative continuation]\label{B:lem:quant-continuation}
+Let $P_-=\Gamma^\top\Gamma$ be a real Gram factorization, define
+$\mathbf h(\xi,\eta)=\Gamma f(\xi,\eta)$, and set
+\begin{equation}\label{B:eq:hepsilon}
+ \mathbf h_\epsilon(\alpha,\beta)
+ =\mathbf h\bigl(ie^{-\epsilon(\alpha+i\beta)},
+        -ie^{-\epsilon(\alpha-i\beta)}\bigr).
+\end{equation}
+For the parameters in \eqref{B:eq:dyadic-scale},
+\begin{equation}\label{B:eq:quant-continuation}
+ \epsilon^4\norm{\mathbf h_\epsilon(\alpha,\beta)}^2
+ \le2^{20}\epsilon^{2^{-17}}
+\end{equation}
+throughout
+\begin{equation}\label{B:eq:speed-region}
+ 1\le\Re\alpha\le2,\quad |\Im\alpha|\le256,\quad
+ |\Re\beta|\le256,\quad |\Im\beta|\le\tfrac12.
+\end{equation}
+The bound is uniform over the dimension of the Gram factorization.
+\end{lemma}
+
+\begin{proof}
+From \eqref{B:eq:global} and $1-e^{-\epsilon/2}\ge\epsilon/4$,
+\[
+ \norm{\mathbf h_\epsilon(\alpha,\beta)}^2
+ \le2^{20}\epsilon^{-4}
+\]
+whenever $\Re\alpha-|\Im\beta|\ge1/4$.  On the real conjugate slice,
+\eqref{B:eq:repeated-baseline}, \Cref{B:lem:quant-tails}, and
+\eqref{B:eq:dyadic-tails} improve this to
+\[
+ \norm{\mathbf h_\epsilon(\alpha,\beta)}^2
+ \le2^{20}\epsilon^{-2}
+\]
+for $\alpha\in[1/2,1024+1/2]$ and $\beta\in[-512,512]$.
+
+We apply the two-constant principle twice.  On the upper
+$\alpha$-rectangle
+$1/2\le\Re\alpha\le1024+1/2$, $0\le\Im\alpha\le512$, use
+\[
+ h_1(\alpha)=\sin\frac{\pi(\Re\alpha-1/2)}{1024}
+ \frac{\sinh(\pi(512-\Im\alpha)/1024)}{\sinh(\pi/2)}.
+\]
+On $1\le\Re\alpha\le2$ and $0\le\Im\alpha\le256$ one has
+$h_1>2^{-12}>2^{-13}$.  Repeating in the lower rectangle yields
+\[
+ \norm{\mathbf h_\epsilon(\alpha,\beta)}^2
+ \le2^{20}\epsilon^{-4+2\cdot2^{-13}}
+\]
+for $1\le\Re\alpha\le2$, $|\Im\alpha|\le256$, and real
+$\beta\in[-512,512]$.
+
+For fixed such $\alpha$, apply the same argument in the upper and lower
+$\beta$-rectangles with
+\[
+ h_2(\beta)=\cos\frac{\pi\Re\beta}{1024}
+ \frac{\sinh(\pi(3/4-\Im\beta)/1024)}{\sinh(3\pi/4096)}.
+\]
+On $|\Re\beta|\le256$ and $|\Im\beta|\le1/2$, its relevant harmonic
+measure is larger than $2^{-5}$.  Since
+$2\cdot2^{-13}\cdot2^{-5}=2^{-17}$, the second comparison gives
+\eqref{B:eq:quant-continuation}.
+\end{proof}
+

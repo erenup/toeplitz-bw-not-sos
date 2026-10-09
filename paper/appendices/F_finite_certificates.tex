@@ -1,0 +1,144 @@
+\section{Data and formal verification}
+\label{app:finite-certificates}
+
+This appendix specifies the $48$ exact positive-increment steps used in
+Lemma~\ref{lem:finite-increments} and the exact tests that establish
+their validity. The accompanying files
+\path{verification/data/step_02.json.gz} through
+\path{verification/data/step_49.json.gz} contain rational
+coefficients and their indices. The manifest lists the steps in
+order and gives hashes of both compressed and uncompressed data.
+
+\subsection{The two types of increment}\label{app:increment-data}
+
+For $2\le n\le16$, the certificate represents
+\begin{equation}\label{eq:appendix-normalized-step}
+ R_n=(n-1)F_{n+1}-(n+1)F_n
+\end{equation}
+as an SoS. In \eqref{eq:finite-chain} this gives
+$\alpha_n=(n+1)/(n-1)$, the coordinate projection for $\psi_n$,
+and the Gram of $R_n$ divided by $n-1$ for $\mathbf H_n$.
+For $17\le n\le49$, it represents
+\begin{equation}\label{eq:appendix-geometric-step}
+ I_n=F_{n+1}-F_n\circ\psi_n,\qquad
+ \psi_n(x,y)=
+ \bigl((q_n^{|a|}x_a)_{|a|<n},(q_n^{|a|}y_a)_{|a|<n}\bigr),
+\end{equation}
+where $q_n=1-\theta_n/n$ is rational and $0<q_n\le1$.
+The rational number $\theta_n$ is stored in the corresponding data
+file. Here $\alpha_n=1$. In particular, $q_{49}=97/98$ at the final step.
+
+The stored Gram blocks use noncentral wedges, with both labels
+nonzero. Central wedges are added as separate squares. For each
+$1\le a\le n$, the coefficient of each of
+$z_{-a,0}^2$ and $z_{0,a}^2$ is
+\[
+ \begin{cases}
+ 2(n+1)(a-1),&\text{in }R_n,\\
+ 2\bigl((n+1)(n+1-a)-q_n^{2a}n(n-a)\bigr),
+     &\text{in }I_n.
+ \end{cases}
+\]
+These coefficients are nonnegative. Adjoining them produces a
+Gram on all wedges, as required in \eqref{eq:finite-chain}.
+
+\subsection{Exact polynomial and positivity checks}
+\label{app:exact-psd-checks}
+
+For each step, the checker expands $F_n$ and $F_{n+1}$ directly
+from the Toeplitz matrix definition. It also expands the proposed
+Gram expression and verifies equality of every monomial coefficient.
+The Pl\"ucker corrections are separately checked to represent zero.
+All coefficients in these comparisons are integers or rationals.
+
+The full noncentral Gram has verified kernel vectors
+\[
+ h_g=\sum_{\substack{-n\le a<0<b\le n\\b-a=g}}e_{ab},
+ \qquad n+1\le g\le2n,
+\]
+where $e_{ab}$ is the coordinate vector for $z_{ab}$.
+Their supports are disjoint. For each $h_g$, delete the first
+coordinate in its support, in lexicographic order. The remaining
+coordinate vectors together with the $h_g$ form a basis. Once
+the exact relations $\mathbf H_nh_g=0$ have been checked, this change of
+basis gives a congruence
+\[
+ \mathbf H_n\ \sim\ \begin{pmatrix}\widehat H_n&0\\0&0\end{pmatrix},
+\]
+where $\widehat H_n$ is the retained principal submatrix.
+Consequently $\mathbf H_n\succeq0$ follows from $\widehat H_n\succeq0$.
+No theorem about the kernel of all possible Grams is needed for
+this check of the supplied matrices.
+
+Each connected block of $\widehat H_n$ is checked independently.
+One available test is Sylvester's criterion using exact
+fraction-free elimination. The default checker uses an integer
+residual certificate. Write a rational block as $A/d$, with
+$A$ integral and $d>0$. For an integer matrix $L$ and integer
+$s\ge0$, it computes
+\begin{equation}\label{eq:exact-residual-certificate}
+ E=2^{2s}A-dLL^\top,\qquad
+ \delta=\min_i\left(E_{ii}-\sum_{j\ne i}|E_{ij}|\right).
+\end{equation}
+If $\delta>0$, symmetry and diagonal dominance give
+$E\succeq\delta I$, hence
+\[
+ \frac{A}{d}
+ =2^{-2s}LL^\top+\frac{E}{d\,2^{2s}}
+ \succeq\frac{\delta}{d\,2^{2s}}I\succ0.
+\]
+The proposed $L$ may be obtained numerically, but every equality
+and inequality in this acceptance test uses exact integers.
+The rational factorization coefficients of an SoS itself are
+not required: a positive semidefinite rational Gram admits the
+real factorization used in Section~\ref{sec:exact-certificates}.
+
+Run \texttt{python3 verification/positive.py} after installing
+the dependencies in \path{verification/requirements.txt}.
+The checker validates the complete chain, including the base case,
+coefficient identities, central squares, kernel relations, and
+positivity. It also rejects deliberately corrupted identities
+and Gram corrections. The expected final line is
+\begin{quote}\small\ttfamily
+PASS: F\_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected
+\end{quote}
+The compressed coefficients are included with the source archive;
+the mathematical acceptance conditions are
+\eqref{eq:appendix-normalized-step}--\eqref{eq:exact-residual-certificate}.
+
+\subsection{Lean verification of the large-order negative result}
+\label{app:lean-negative}
+
+\rev{The public repository also contains a Lean~4 formalization of the
+large-order negative theorem for the original Toeplitz BW polynomial.
+In particular, the declaration
+\texttt{ToeplitzSOS.Negative.sharpNegativeResolution} proves that the
+original real Toeplitz BW form is not SoS for every
+$N\ge\SufficientOrder$, where the SoS predicate allows an arbitrary
+finite number of homogeneous quadratic squares with arbitrary real
+coefficients.  The source is
+\path{lean/ToeplitzSOS/Negative/Resolution.lean}.  The verified
+formalization is frozen at repository tag \texttt{v1.0}; reproduction
+commands and the exact verified source tree are recorded in
+\path{VERIFICATION.md}.}
+
+\subsection{The positive Lean statement}\label{app:positive-lean}
+
+In the supplied formalization, \texttt{toeplitzBW n} is the
+polynomial defined by the original real Toeplitz matrices, and
+\texttt{IsSumSqHomQuad} asserts the existence of a finite sum of
+real homogeneous quadratic squares. In the namespace
+\texttt{ToeplitzSOS}, the range theorem is
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
+theorem toeplitzBW_isSumSq_of_le_20
+    (n : Nat) (h2 : 2 <= n) (h20 : n <= 20) :
+    IsSumSqHomQuad (toeplitzBW n)
+\end{lstlisting}
+Its proof combines the explicit order-two identity with the
+fixed-order theorems for $n=3,\ldots,20$.
+The source file in the public repository is
+\path{lean/ToeplitzSOS/Certificates/Range.lean}.
+The Lean and Mathlib versions are pinned by the repository release.
+From the \path{lean/} directory, the positive certificates can be
+checked with \texttt{./verify --certificates}.  The rational chain at
+orders $21$--$50$ is not part of this theorem.

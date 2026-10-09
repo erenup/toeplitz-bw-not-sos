@@ -1,235 +1,417 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="956pt" height="514pt"
- viewBox="0.00 0.00 956.00 514.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(14.4 499.65)">
+<svg width="2361pt" height="584pt"
+ viewBox="0.00 0.00 2360.69 583.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(14.4 569.4)">
 <title>Results</title>
-<polygon fill="white" stroke="none" points="-14.4,14.4 -14.4,-499.65 941.35,-499.65 941.35,14.4 -14.4,14.4"/>
+<polygon fill="white" stroke="transparent" points="-14.4,14.4 -14.4,-569.4 2346.29,-569.4 2346.29,14.4 -14.4,14.4"/>
 <g id="clust1" class="cluster">
 <title>cluster_legend</title>
-<path fill="white" stroke="#cbd5e1" d="M634.95,-8C634.95,-8 906.95,-8 906.95,-8 912.95,-8 918.95,-14 918.95,-20 918.95,-20 918.95,-465.25 918.95,-465.25 918.95,-471.25 912.95,-477.25 906.95,-477.25 906.95,-477.25 634.95,-477.25 634.95,-477.25 628.95,-477.25 622.95,-471.25 622.95,-465.25 622.95,-465.25 622.95,-20 622.95,-20 622.95,-14 628.95,-8 634.95,-8"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-459.95" font-family="DejaVu Sans" font-size="14.00">Evidence status</text>
+<path fill="white" stroke="#cbd5e1" d="M2039.89,-44C2039.89,-44 2311.89,-44 2311.89,-44 2317.89,-44 2323.89,-50 2323.89,-56 2323.89,-56 2323.89,-535 2323.89,-535 2323.89,-541 2317.89,-547 2311.89,-547 2311.89,-547 2039.89,-547 2039.89,-547 2033.89,-547 2027.89,-541 2027.89,-535 2027.89,-535 2027.89,-56 2027.89,-56 2027.89,-50 2033.89,-44 2039.89,-44"/>
+<text text-anchor="middle" x="2175.89" y="-531.8" font-family="DejaVu Sans" font-size="14.00">Evidence status</text>
 </g>
 <g id="node1" class="node">
 <title>n0</title>
-<path fill="#d1fae5" stroke="#475569" d="M135.9,-101C135.9,-101 12,-101 12,-101 6,-101 0,-95 0,-89 0,-89 0,-77 0,-77 0,-71 6,-65 12,-65 12,-65 135.9,-65 135.9,-65 141.9,-65 147.9,-71 147.9,-77 147.9,-77 147.9,-89 147.9,-89 147.9,-95 141.9,-101 135.9,-101"/>
-<text xml:space="preserve" text-anchor="middle" x="73.95" y="-86.05" font-family="DejaVu Sans" font-size="11.00">Non&#45;SOS at large orders</text>
-<text xml:space="preserve" text-anchor="middle" x="73.95" y="-72.55" font-family="DejaVu Sans" font-size="11.00">thm:negative</text>
+<path fill="#d1fae5" stroke="#475569" d="M513.89,-36C513.89,-36 389.89,-36 389.89,-36 383.89,-36 377.89,-30 377.89,-24 377.89,-24 377.89,-12 377.89,-12 377.89,-6 383.89,0 389.89,0 389.89,0 513.89,0 513.89,0 519.89,0 525.89,-6 525.89,-12 525.89,-12 525.89,-24 525.89,-24 525.89,-30 519.89,-36 513.89,-36"/>
+<text text-anchor="middle" x="451.89" y="-21.2" font-family="DejaVu Sans" font-size="11.00">Non&#45;SOS at large orders</text>
+<text text-anchor="middle" x="451.89" y="-9.2" font-family="DejaVu Sans" font-size="11.00">thm:negative</text>
 </g>
 <g id="node2" class="node">
-<title>n1</title>
-<path fill="#d1fae5" stroke="#475569" d="M193.77,-150C193.77,-150 108.12,-150 108.12,-150 102.12,-150 96.12,-144 96.12,-138 96.12,-138 96.12,-126 96.12,-126 96.12,-120 102.12,-114 108.12,-114 108.12,-114 193.77,-114 193.77,-114 199.77,-114 205.77,-120 205.77,-126 205.77,-126 205.77,-138 205.77,-138 205.77,-144 199.77,-150 193.77,-150"/>
-<text xml:space="preserve" text-anchor="middle" x="150.95" y="-135.05" font-family="DejaVu Sans" font-size="11.00">Explicit threshold</text>
-<text xml:space="preserve" text-anchor="middle" x="150.95" y="-121.55" font-family="DejaVu Sans" font-size="11.00">cor:threshold</text>
+<title>n9</title>
+<path fill="#fef3c7" stroke="#475569" d="M366.89,-141C366.89,-141 256.89,-141 256.89,-141 250.89,-141 244.89,-135 244.89,-129 244.89,-129 244.89,-117 244.89,-117 244.89,-111 250.89,-105 256.89,-105 256.89,-105 366.89,-105 366.89,-105 372.89,-105 378.89,-111 378.89,-117 378.89,-117 378.89,-129 378.89,-129 378.89,-135 372.89,-141 366.89,-141"/>
+<text text-anchor="middle" x="311.89" y="-126.2" font-family="DejaVu Sans" font-size="11.00">Negative limiting test</text>
+<text text-anchor="middle" x="311.89" y="-114.2" font-family="DejaVu Sans" font-size="11.00">lem:negative&#45;limit</text>
 </g>
 <g id="edge1" class="edge">
-<title>n1&#45;&gt;n0</title>
-<path fill="none" stroke="#64748b" d="M122.72,-113.77C118.48,-111.18 114.07,-108.49 109.7,-105.82"/>
-<polygon fill="#64748b" stroke="#64748b" points="110.98,-103.73 103.73,-102.18 108.43,-107.92 110.98,-103.73"/>
-</g>
-<g id="node14" class="node">
-<title>n13</title>
-<path fill="#fef3c7" stroke="#475569" d="M282.4,-101C282.4,-101 173.5,-101 173.5,-101 167.5,-101 161.5,-95 161.5,-89 161.5,-89 161.5,-77 161.5,-77 161.5,-71 167.5,-65 173.5,-65 173.5,-65 282.4,-65 282.4,-65 288.4,-65 294.4,-71 294.4,-77 294.4,-77 294.4,-89 294.4,-89 294.4,-95 288.4,-101 282.4,-101"/>
-<text xml:space="preserve" text-anchor="middle" x="227.95" y="-86.05" font-family="DejaVu Sans" font-size="11.00">Boundary obstruction</text>
-<text xml:space="preserve" text-anchor="middle" x="227.95" y="-72.55" font-family="DejaVu Sans" font-size="11.00">cor:boundary</text>
-</g>
-<g id="edge16" class="edge">
-<title>n1&#45;&gt;n13</title>
-<path fill="none" stroke="#64748b" d="M179.18,-113.77C183.42,-111.18 187.83,-108.49 192.2,-105.82"/>
-<polygon fill="#64748b" stroke="#64748b" points="193.47,-107.92 198.17,-102.18 190.92,-103.73 193.47,-107.92"/>
+<title>n9&#45;&gt;n0</title>
+<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M335.01,-104.99C359.13,-87.25 396.98,-59.4 423.04,-40.23"/>
+<polygon fill="#64748b" stroke="#64748b" points="424.55,-42.16 428.74,-36.03 421.65,-38.21 424.55,-42.16"/>
 </g>
 <g id="node3" class="node">
-<title>n9</title>
-<path fill="#fef3c7" stroke="#475569" d="M209.9,-199C209.9,-199 92,-199 92,-199 86,-199 80,-193 80,-187 80,-187 80,-175 80,-175 80,-169 86,-163 92,-163 92,-163 209.9,-163 209.9,-163 215.9,-163 221.9,-169 221.9,-175 221.9,-175 221.9,-187 221.9,-187 221.9,-193 215.9,-199 209.9,-199"/>
-<text xml:space="preserve" text-anchor="middle" x="150.95" y="-184.05" font-family="DejaVu Sans" font-size="11.00">Finite&#45;scale obstruction</text>
-<text xml:space="preserve" text-anchor="middle" x="150.95" y="-170.55" font-family="DejaVu Sans" font-size="11.00">thm:finite&#45;scale</text>
+<title>n28</title>
+<path fill="#d1fae5" stroke="#475569" d="M600.39,-88C600.39,-88 483.39,-88 483.39,-88 477.39,-88 471.39,-82 471.39,-76 471.39,-76 471.39,-64 471.39,-64 471.39,-58 477.39,-52 483.39,-52 483.39,-52 600.39,-52 600.39,-52 606.39,-52 612.39,-58 612.39,-64 612.39,-64 612.39,-76 612.39,-76 612.39,-82 606.39,-88 600.39,-88"/>
+<text text-anchor="middle" x="541.89" y="-73.2" font-family="DejaVu Sans" font-size="11.00">Explicit sufficient order</text>
+<text text-anchor="middle" x="541.89" y="-61.2" font-family="DejaVu Sans" font-size="11.00">prop:explicit&#45;threshold</text>
 </g>
 <g id="edge2" class="edge">
-<title>n9&#45;&gt;n1</title>
-<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M150.95,-162.77C150.95,-161.36 150.95,-159.92 150.95,-158.48"/>
-<polygon fill="#64748b" stroke="#64748b" points="153.4,-158.75 150.95,-151.75 148.5,-158.75 153.4,-158.75"/>
+<title>n28&#45;&gt;n0</title>
+<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M511.17,-51.93C504.01,-47.95 496.31,-43.68 488.91,-39.57"/>
+<polygon fill="#64748b" stroke="#64748b" points="490.09,-37.42 482.78,-36.16 487.71,-41.7 490.09,-37.42"/>
 </g>
 <g id="node4" class="node">
-<title>n2</title>
-<path fill="#fef3c7" stroke="#475569" d="M350.15,-444C350.15,-444 269.75,-444 269.75,-444 263.75,-444 257.75,-438 257.75,-432 257.75,-432 257.75,-420 257.75,-420 257.75,-414 263.75,-408 269.75,-408 269.75,-408 350.15,-408 350.15,-408 356.15,-408 362.15,-414 362.15,-420 362.15,-420 362.15,-432 362.15,-432 362.15,-438 356.15,-444 350.15,-444"/>
-<text xml:space="preserve" text-anchor="middle" x="309.95" y="-429.05" font-family="DejaVu Sans" font-size="11.00">Quadratic frame</text>
-<text xml:space="preserve" text-anchor="middle" x="309.95" y="-415.55" font-family="DejaVu Sans" font-size="11.00">lem:frame</text>
+<title>n1</title>
+<path fill="#fef3c7" stroke="#475569" d="M565.39,-520C565.39,-520 448.39,-520 448.39,-520 442.39,-520 436.39,-514 436.39,-508 436.39,-508 436.39,-488 436.39,-488 436.39,-482 442.39,-476 448.39,-476 448.39,-476 565.39,-476 565.39,-476 571.39,-476 577.39,-482 577.39,-488 577.39,-488 577.39,-508 577.39,-508 577.39,-514 571.39,-520 565.39,-520"/>
+<text text-anchor="middle" x="506.89" y="-507.2" font-family="DejaVu Sans" font-size="11.00">Complete wedge Gram</text>
+<text text-anchor="middle" x="506.89" y="-495.2" font-family="DejaVu Sans" font-size="11.00">characterization</text>
+<text text-anchor="middle" x="506.89" y="-483.2" font-family="DejaVu Sans" font-size="11.00">lem:frame</text>
 </g>
 <g id="node5" class="node">
-<title>n3</title>
-<path fill="#fef3c7" stroke="#475569" d="M251.27,-395C251.27,-395 168.62,-395 168.62,-395 162.62,-395 156.62,-389 156.62,-383 156.62,-383 156.62,-371 156.62,-371 156.62,-365 162.62,-359 168.62,-359 168.62,-359 251.27,-359 251.27,-359 257.27,-359 263.27,-365 263.27,-371 263.27,-371 263.27,-383 263.27,-383 263.27,-389 257.27,-395 251.27,-395"/>
-<text xml:space="preserve" text-anchor="middle" x="209.95" y="-380.05" font-family="DejaVu Sans" font-size="11.00">Stabilized corner</text>
-<text xml:space="preserve" text-anchor="middle" x="209.95" y="-366.55" font-family="DejaVu Sans" font-size="11.00">lem:corner</text>
+<title>n2</title>
+<path fill="#fef3c7" stroke="#475569" d="M670.39,-463C670.39,-463 535.39,-463 535.39,-463 529.39,-463 523.39,-457 523.39,-451 523.39,-451 523.39,-439 523.39,-439 523.39,-433 529.39,-427 535.39,-427 535.39,-427 670.39,-427 670.39,-427 676.39,-427 682.39,-433 682.39,-439 682.39,-439 682.39,-451 682.39,-451 682.39,-457 676.39,-463 670.39,-463"/>
+<text text-anchor="middle" x="602.89" y="-448.2" font-family="DejaVu Sans" font-size="11.00">Literal corner stabilization</text>
+<text text-anchor="middle" x="602.89" y="-436.2" font-family="DejaVu Sans" font-size="11.00">lem:corner</text>
 </g>
 <g id="edge3" class="edge">
-<title>n2&#45;&gt;n3</title>
-<path fill="none" stroke="#64748b" d="M273,-407.63C267.05,-404.84 260.84,-401.92 254.73,-399.05"/>
-<polygon fill="#64748b" stroke="#64748b" points="255.83,-396.86 248.45,-396.1 253.75,-401.29 255.83,-396.86"/>
-</g>
-<g id="node12" class="node">
-<title>n11</title>
-<path fill="#fef3c7" stroke="#475569" d="M419.15,-395C419.15,-395 326.75,-395 326.75,-395 320.75,-395 314.75,-389 314.75,-383 314.75,-383 314.75,-371 314.75,-371 314.75,-365 320.75,-359 326.75,-359 326.75,-359 419.15,-359 419.15,-359 425.15,-359 431.15,-365 431.15,-371 431.15,-371 431.15,-383 431.15,-383 431.15,-389 425.15,-395 419.15,-395"/>
-<text xml:space="preserve" text-anchor="middle" x="372.95" y="-380.05" font-family="DejaVu Sans" font-size="11.00">Exchange criterion</text>
-<text xml:space="preserve" text-anchor="middle" x="372.95" y="-366.55" font-family="DejaVu Sans" font-size="11.00">thm:exchange</text>
-</g>
-<g id="edge14" class="edge">
-<title>n2&#45;&gt;n11</title>
-<path fill="none" stroke="#64748b" d="M333.05,-407.77C336.3,-405.34 339.69,-402.82 343.04,-400.31"/>
-<polygon fill="#64748b" stroke="#64748b" points="344.49,-402.29 348.64,-396.14 341.56,-398.36 344.49,-402.29"/>
-</g>
-<g id="edge10" class="edge">
-<title>n3&#45;&gt;n9</title>
-<path fill="none" stroke="#64748b" d="M156.13,-371.59C120.78,-367.44 79.1,-359.75 67.95,-346 28.38,-297.2 73.9,-261.22 112.95,-212 115.01,-209.41 117.33,-206.9 119.79,-204.52"/>
-<polygon fill="#64748b" stroke="#64748b" points="121.02,-206.71 124.59,-200.21 117.74,-203.07 121.02,-206.71"/>
-</g>
-<g id="node6" class="node">
-<title>n4</title>
-<path fill="#fef3c7" stroke="#475569" d="M192.9,-346C192.9,-346 87,-346 87,-346 81,-346 75,-340 75,-334 75,-334 75,-322 75,-322 75,-316 81,-310 87,-310 87,-310 192.9,-310 192.9,-310 198.9,-310 204.9,-316 204.9,-322 204.9,-322 204.9,-334 204.9,-334 204.9,-340 198.9,-346 192.9,-346"/>
-<text xml:space="preserve" text-anchor="middle" x="139.95" y="-331.05" font-family="DejaVu Sans" font-size="11.00">Complete low means</text>
-<text xml:space="preserve" text-anchor="middle" x="139.95" y="-317.55" font-family="DejaVu Sans" font-size="11.00">lem:means</text>
-</g>
-<g id="edge4" class="edge">
-<title>n3&#45;&gt;n4</title>
-<path fill="none" stroke="#64748b" d="M184.28,-358.77C180.48,-356.21 176.51,-353.55 172.59,-350.92"/>
-<polygon fill="#64748b" stroke="#64748b" points="174.05,-348.94 166.87,-347.08 171.32,-353.01 174.05,-348.94"/>
-</g>
-<g id="node7" class="node">
-<title>n5</title>
-<path fill="#fef3c7" stroke="#475569" d="M330.9,-346C330.9,-346 231,-346 231,-346 225,-346 219,-340 219,-334 219,-334 219,-322 219,-322 219,-316 225,-310 231,-310 231,-310 330.9,-310 330.9,-310 336.9,-310 342.9,-316 342.9,-322 342.9,-322 342.9,-334 342.9,-334 342.9,-340 336.9,-346 330.9,-346"/>
-<text xml:space="preserve" text-anchor="middle" x="280.95" y="-331.05" font-family="DejaVu Sans" font-size="11.00">Global kernel bound</text>
-<text xml:space="preserve" text-anchor="middle" x="280.95" y="-317.55" font-family="DejaVu Sans" font-size="11.00">lem:global</text>
-</g>
-<g id="edge5" class="edge">
-<title>n3&#45;&gt;n5</title>
-<path fill="none" stroke="#64748b" d="M235.98,-358.77C239.84,-356.21 243.86,-353.55 247.84,-350.92"/>
-<polygon fill="#64748b" stroke="#64748b" points="249.17,-352.97 253.66,-347.07 246.47,-348.89 249.17,-352.97"/>
+<title>n1&#45;&gt;n2</title>
+<path fill="none" stroke="#64748b" d="M546.49,-475.96C552.41,-472.82 558.5,-469.58 564.4,-466.45"/>
+<polygon fill="#64748b" stroke="#64748b" points="565.66,-468.55 570.7,-463.1 563.37,-464.22 565.66,-468.55"/>
 </g>
 <g id="node8" class="node">
-<title>n6</title>
-<path fill="#d1fae5" stroke="#475569" d="M201.15,-297C201.15,-297 108.75,-297 108.75,-297 102.75,-297 96.75,-291 96.75,-285 96.75,-285 96.75,-273 96.75,-273 96.75,-267 102.75,-261 108.75,-261 108.75,-261 201.15,-261 201.15,-261 207.15,-261 213.15,-267 213.15,-273 213.15,-273 213.15,-285 213.15,-285 213.15,-291 207.15,-297 201.15,-297"/>
-<text xml:space="preserve" text-anchor="middle" x="154.95" y="-282.05" font-family="DejaVu Sans" font-size="11.00">Uniform finite tails</text>
-<text xml:space="preserve" text-anchor="middle" x="154.95" y="-268.55" font-family="DejaVu Sans" font-size="11.00">lem:tails</text>
+<title>n5</title>
+<path fill="#fef3c7" stroke="#475569" d="M555.89,-361C555.89,-361 441.89,-361 441.89,-361 435.89,-361 429.89,-355 429.89,-349 429.89,-349 429.89,-337 429.89,-337 429.89,-331 435.89,-325 441.89,-325 441.89,-325 555.89,-325 555.89,-325 561.89,-325 567.89,-331 567.89,-337 567.89,-337 567.89,-349 567.89,-349 567.89,-355 561.89,-361 555.89,-361"/>
+<text text-anchor="middle" x="498.89" y="-346.2" font-family="DejaVu Sans" font-size="11.00">Complete normal form</text>
+<text text-anchor="middle" x="498.89" y="-334.2" font-family="DejaVu Sans" font-size="11.00">lem:normal&#45;form</text>
+</g>
+<g id="edge5" class="edge">
+<title>n1&#45;&gt;n5</title>
+<path fill="none" stroke="#64748b" d="M505.78,-475.73C504.31,-447.57 501.72,-398.03 500.17,-368.39"/>
+<polygon fill="#64748b" stroke="#64748b" points="502.61,-368.17 499.8,-361.31 497.72,-368.43 502.61,-368.17"/>
+</g>
+<g id="edge34" class="edge">
+<title>n2&#45;&gt;n28</title>
+<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M682.56,-432.07C767.19,-417.09 888.89,-387.92 888.89,-344 888.89,-344 888.89,-344 888.89,-179 888.89,-122.95 721.76,-92.68 619.48,-79.4"/>
+<polygon fill="#64748b" stroke="#64748b" points="619.79,-76.97 612.53,-78.52 619.16,-81.83 619.79,-76.97"/>
+</g>
+<g id="node7" class="node">
+<title>n4</title>
+<path fill="#fef3c7" stroke="#475569" d="M467.89,-414C467.89,-414 357.89,-414 357.89,-414 351.89,-414 345.89,-408 345.89,-402 345.89,-402 345.89,-390 345.89,-390 345.89,-384 351.89,-378 357.89,-378 357.89,-378 467.89,-378 467.89,-378 473.89,-378 479.89,-384 479.89,-390 479.89,-390 479.89,-402 479.89,-402 479.89,-408 473.89,-414 467.89,-414"/>
+<text text-anchor="middle" x="412.89" y="-399.2" font-family="DejaVu Sans" font-size="11.00">Baseline corner Gram</text>
+<text text-anchor="middle" x="412.89" y="-387.2" font-family="DejaVu Sans" font-size="11.00">lem:corner&#45;gram</text>
+</g>
+<g id="edge4" class="edge">
+<title>n2&#45;&gt;n4</title>
+<path fill="none" stroke="#64748b" d="M534.03,-426.97C518.74,-423.18 502.48,-419.16 486.99,-415.33"/>
+<polygon fill="#64748b" stroke="#64748b" points="487.32,-412.89 479.93,-413.58 486.14,-417.64 487.32,-412.89"/>
+</g>
+<g id="node6" class="node">
+<title>n3</title>
+<path fill="#fef3c7" stroke="#475569" d="M746.89,-516C746.89,-516 614.89,-516 614.89,-516 608.89,-516 602.89,-510 602.89,-504 602.89,-504 602.89,-492 602.89,-492 602.89,-486 608.89,-480 614.89,-480 614.89,-480 746.89,-480 746.89,-480 752.89,-480 758.89,-486 758.89,-492 758.89,-492 758.89,-504 758.89,-504 758.89,-510 752.89,-516 746.89,-516"/>
+<text text-anchor="middle" x="680.89" y="-501.2" font-family="DejaVu Sans" font-size="11.00">Depth&#45;two Gram example</text>
+<text text-anchor="middle" x="680.89" y="-489.2" font-family="DejaVu Sans" font-size="11.00">ex:gram&#45;m2</text>
 </g>
 <g id="edge6" class="edge">
-<title>n4&#45;&gt;n6</title>
-<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M145.45,-309.77C145.94,-308.23 146.44,-306.66 146.95,-305.08"/>
-<polygon fill="#64748b" stroke="#64748b" points="149.2,-306.09 148.99,-298.67 144.53,-304.6 149.2,-306.09"/>
+<title>n4&#45;&gt;n5</title>
+<path fill="none" stroke="#64748b" d="M442.01,-377.73C449.09,-373.53 456.73,-369 464.05,-364.66"/>
+<polygon fill="#64748b" stroke="#64748b" points="465.33,-366.75 470.1,-361.08 462.83,-362.54 465.33,-366.75"/>
+</g>
+<g id="node12" class="node">
+<title>n17</title>
+<path fill="#fef3c7" stroke="#475569" d="M299.39,-308C299.39,-308 160.39,-308 160.39,-308 154.39,-308 148.39,-302 148.39,-296 148.39,-296 148.39,-284 148.39,-284 148.39,-278 154.39,-272 160.39,-272 160.39,-272 299.39,-272 299.39,-272 305.39,-272 311.39,-278 311.39,-284 311.39,-284 311.39,-296 311.39,-296 311.39,-302 305.39,-308 299.39,-308"/>
+<text text-anchor="middle" x="229.89" y="-293.2" font-family="DejaVu Sans" font-size="11.00">Qualitative finite&#45;depth tail</text>
+<text text-anchor="middle" x="229.89" y="-281.2" font-family="DejaVu Sans" font-size="11.00">B:lem:tail</text>
+</g>
+<g id="edge21" class="edge">
+<title>n4&#45;&gt;n17</title>
+<path fill="none" stroke="#64748b" d="M382.67,-377.83C350.66,-359.63 300.12,-330.91 266.02,-311.53"/>
+<polygon fill="#64748b" stroke="#64748b" points="267.15,-309.35 259.85,-308.03 264.73,-313.61 267.15,-309.35"/>
+</g>
+<g id="node9" class="node">
+<title>n6</title>
+<path fill="#fef3c7" stroke="#475569" d="M662.39,-308C662.39,-308 533.39,-308 533.39,-308 527.39,-308 521.39,-302 521.39,-296 521.39,-296 521.39,-284 521.39,-284 521.39,-278 527.39,-272 533.39,-272 533.39,-272 662.39,-272 662.39,-272 668.39,-272 674.39,-278 674.39,-284 674.39,-284 674.39,-296 674.39,-296 674.39,-302 668.39,-308 662.39,-308"/>
+<text text-anchor="middle" x="597.89" y="-293.2" font-family="DejaVu Sans" font-size="11.00">Finite complex Gram test</text>
+<text text-anchor="middle" x="597.89" y="-281.2" font-family="DejaVu Sans" font-size="11.00">lem:finite&#45;test</text>
 </g>
 <g id="edge7" class="edge">
 <title>n5&#45;&gt;n6</title>
-<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M234.39,-309.63C226.32,-306.62 217.85,-303.46 209.59,-300.38"/>
-<polygon fill="#64748b" stroke="#64748b" points="210.57,-298.13 203.16,-297.98 208.86,-302.72 210.57,-298.13"/>
+<path fill="none" stroke="#64748b" d="M532.13,-324.88C540.54,-320.54 549.65,-315.85 558.34,-311.38"/>
+<polygon fill="#64748b" stroke="#64748b" points="559.47,-313.55 564.57,-308.17 557.23,-309.19 559.47,-313.55"/>
 </g>
-<g id="node9" class="node">
-<title>n7</title>
-<path fill="#fef3c7" stroke="#475569" d="M252.27,-248C252.27,-248 139.62,-248 139.62,-248 133.62,-248 127.62,-242 127.62,-236 127.62,-236 127.62,-224 127.62,-224 127.62,-218 133.62,-212 139.62,-212 139.62,-212 252.27,-212 252.27,-212 258.27,-212 264.27,-218 264.27,-224 264.27,-224 264.27,-236 264.27,-236 264.27,-242 258.27,-248 252.27,-248"/>
-<text xml:space="preserve" text-anchor="middle" x="195.95" y="-233.05" font-family="DejaVu Sans" font-size="11.00">Continuation estimate</text>
-<text xml:space="preserve" text-anchor="middle" x="195.95" y="-219.55" font-family="DejaVu Sans" font-size="11.00">lem:continuation</text>
+<g id="node11" class="node">
+<title>n8</title>
+<path fill="#fef3c7" stroke="#475569" d="M539.39,-255C539.39,-255 382.39,-255 382.39,-255 376.39,-255 370.39,-249 370.39,-243 370.39,-243 370.39,-231 370.39,-231 370.39,-225 376.39,-219 382.39,-219 382.39,-219 539.39,-219 539.39,-219 545.39,-219 551.39,-225 551.39,-231 551.39,-231 551.39,-243 551.39,-243 551.39,-249 545.39,-255 539.39,-255"/>
+<text text-anchor="middle" x="460.89" y="-240.2" font-family="DejaVu Sans" font-size="11.00">Gram&#45;invariant decomposition</text>
+<text text-anchor="middle" x="460.89" y="-228.2" font-family="DejaVu Sans" font-size="11.00">lem:finite&#45;decomposition</text>
 </g>
 <g id="edge9" class="edge">
-<title>n5&#45;&gt;n7</title>
-<path fill="none" stroke="#64748b" d="M265.75,-309.84C252.06,-294.37 231.81,-271.5 216.64,-254.37"/>
-<polygon fill="#64748b" stroke="#64748b" points="218.78,-253.09 212.3,-249.47 215.11,-256.34 218.78,-253.09"/>
+<title>n5&#45;&gt;n8</title>
+<path fill="none" stroke="#64748b" d="M496.68,-324.8C494.41,-310.3 490.17,-289.23 482.89,-272 481.39,-268.44 479.52,-264.84 477.5,-261.38"/>
+<polygon fill="#64748b" stroke="#64748b" points="479.54,-260.01 473.77,-255.35 475.37,-262.59 479.54,-260.01"/>
 </g>
-<g id="edge11" class="edge">
-<title>n6&#45;&gt;n9</title>
-<path fill="none" stroke="#64748b" d="M130.1,-260.78C126.38,-257.02 123.09,-252.74 120.95,-248 114.37,-233.42 114.83,-226.78 120.95,-212 121.85,-209.83 122.99,-207.74 124.3,-205.73"/>
-<polygon fill="#64748b" stroke="#64748b" points="126.01,-207.52 128.35,-200.49 122.13,-204.53 126.01,-207.52"/>
+<g id="node23" class="node">
+<title>n18</title>
+<path fill="#fef3c7" stroke="#475569" d="M464.39,-308C464.39,-308 337.39,-308 337.39,-308 331.39,-308 325.39,-302 325.39,-296 325.39,-296 325.39,-284 325.39,-284 325.39,-278 331.39,-272 337.39,-272 337.39,-272 464.39,-272 464.39,-272 470.39,-272 476.39,-278 476.39,-284 476.39,-284 476.39,-296 476.39,-296 476.39,-302 470.39,-308 464.39,-308"/>
+<text text-anchor="middle" x="400.89" y="-293.2" font-family="DejaVu Sans" font-size="11.00">Forced low mixed modes</text>
+<text text-anchor="middle" x="400.89" y="-281.2" font-family="DejaVu Sans" font-size="11.00">B:lem:means</text>
+</g>
+<g id="edge22" class="edge">
+<title>n5&#45;&gt;n18</title>
+<path fill="none" stroke="#64748b" d="M465.99,-324.88C457.75,-320.59 448.82,-315.94 440.3,-311.51"/>
+<polygon fill="#64748b" stroke="#64748b" points="441.22,-309.22 433.88,-308.17 438.96,-313.57 441.22,-309.22"/>
+</g>
+<g id="node10" class="node">
+<title>n7</title>
+<path fill="#fef3c7" stroke="#475569" d="M854.89,-259C854.89,-259 708.89,-259 708.89,-259 702.89,-259 696.89,-253 696.89,-247 696.89,-247 696.89,-227 696.89,-227 696.89,-221 702.89,-215 708.89,-215 708.89,-215 854.89,-215 854.89,-215 860.89,-215 866.89,-221 866.89,-227 866.89,-227 866.89,-247 866.89,-247 866.89,-253 860.89,-259 854.89,-259"/>
+<text text-anchor="middle" x="781.89" y="-246.2" font-family="DejaVu Sans" font-size="11.00">Complex tests of a real SOS</text>
+<text text-anchor="middle" x="781.89" y="-234.2" font-family="DejaVu Sans" font-size="11.00">problem</text>
+<text text-anchor="middle" x="781.89" y="-222.2" font-family="DejaVu Sans" font-size="11.00">rem:complex&#45;test</text>
 </g>
 <g id="edge8" class="edge">
 <title>n6&#45;&gt;n7</title>
-<path fill="none" stroke="#64748b" d="M169.98,-260.77C171.77,-258.72 173.61,-256.61 175.45,-254.5"/>
-<polygon fill="#64748b" stroke="#64748b" points="177.17,-256.26 179.92,-249.37 173.47,-253.04 177.17,-256.26"/>
+<path fill="none" stroke="#64748b" d="M659.42,-271.95C672.14,-268.42 685.74,-264.65 699.08,-260.95"/>
+<polygon fill="#64748b" stroke="#64748b" points="699.93,-263.26 706.02,-259.03 698.62,-258.54 699.93,-263.26"/>
+</g>
+<g id="edge10" class="edge">
+<title>n6&#45;&gt;n8</title>
+<path fill="none" stroke="#64748b" d="M551.89,-271.88C539.69,-267.33 526.42,-262.39 513.88,-257.73"/>
+<polygon fill="#64748b" stroke="#64748b" points="514.42,-255.31 507.01,-255.17 512.71,-259.9 514.42,-255.31"/>
+</g>
+<g id="edge11" class="edge">
+<title>n8&#45;&gt;n9</title>
+<path fill="none" stroke="#64748b" d="M379.43,-218.99C353.87,-212.94 331.15,-206.52 326.89,-202 313.6,-187.91 310.38,-165.79 310.18,-148.7"/>
+<polygon fill="#64748b" stroke="#64748b" points="312.64,-148.28 310.28,-141.25 307.74,-148.22 312.64,-148.28"/>
+</g>
+<g id="node30" class="node">
+<title>n27</title>
+<path fill="#fef3c7" stroke="#475569" d="M590.89,-145C590.89,-145 492.89,-145 492.89,-145 486.89,-145 480.89,-139 480.89,-133 480.89,-133 480.89,-113 480.89,-113 480.89,-107 486.89,-101 492.89,-101 492.89,-101 590.89,-101 590.89,-101 596.89,-101 602.89,-107 602.89,-113 602.89,-113 602.89,-133 602.89,-133 602.89,-139 596.89,-145 590.89,-145"/>
+<text text-anchor="middle" x="541.89" y="-132.2" font-family="DejaVu Sans" font-size="11.00">Uniform finite&#45;scale</text>
+<text text-anchor="middle" x="541.89" y="-120.2" font-family="DejaVu Sans" font-size="11.00">obstruction</text>
+<text text-anchor="middle" x="541.89" y="-108.2" font-family="DejaVu Sans" font-size="11.00">thm:finite&#45;scale</text>
+</g>
+<g id="edge29" class="edge">
+<title>n8&#45;&gt;n27</title>
+<path fill="none" stroke="#64748b" d="M469.37,-218.73C477.79,-202.34 491.64,-177.4 506.89,-158 508.95,-155.39 511.19,-152.78 513.52,-150.24"/>
+<polygon fill="#64748b" stroke="#64748b" points="515.34,-151.88 518.38,-145.12 511.78,-148.51 515.34,-151.88"/>
 </g>
 <g id="edge12" class="edge">
-<title>n7&#45;&gt;n9</title>
-<path fill="none" stroke="#64748b" d="M179.45,-211.77C177.37,-209.59 175.22,-207.35 173.07,-205.1"/>
-<polygon fill="#64748b" stroke="#64748b" points="175.11,-203.69 168.5,-200.33 171.57,-207.08 175.11,-203.69"/>
-</g>
-<g id="node10" class="node">
-<title>n8</title>
-<path fill="#d1fae5" stroke="#475569" d="M403.65,-248C403.65,-248 290.25,-248 290.25,-248 284.25,-248 278.25,-242 278.25,-236 278.25,-236 278.25,-224 278.25,-224 278.25,-218 284.25,-212 290.25,-212 290.25,-212 403.65,-212 403.65,-212 409.65,-212 415.65,-218 415.65,-224 415.65,-224 415.65,-236 415.65,-236 415.65,-242 409.65,-248 403.65,-248"/>
-<text xml:space="preserve" text-anchor="middle" x="346.95" y="-233.05" font-family="DejaVu Sans" font-size="11.00">Exact tangent witness</text>
-<text xml:space="preserve" text-anchor="middle" x="346.95" y="-219.55" font-family="DejaVu Sans" font-size="11.00">lem:witness</text>
-</g>
-<g id="edge13" class="edge">
-<title>n8&#45;&gt;n9</title>
-<path fill="none" stroke="#64748b" d="M277.85,-212.43C262.46,-208.74 246.02,-204.8 230.25,-201.02"/>
-<polygon fill="#64748b" stroke="#64748b" points="230.93,-198.66 223.55,-199.41 229.79,-203.42 230.93,-198.66"/>
-</g>
-<g id="node11" class="node">
-<title>n10</title>
-<path fill="#dbeafe" stroke="#475569" d="M584.78,-444C584.78,-444 475.13,-444 475.13,-444 469.13,-444 463.13,-438 463.13,-432 463.13,-432 463.13,-420 463.13,-420 463.13,-414 469.13,-408 475.13,-408 475.13,-408 584.78,-408 584.78,-408 590.78,-408 596.78,-414 596.78,-420 596.78,-420 596.78,-432 596.78,-432 596.78,-438 590.78,-444 584.78,-444"/>
-<text xml:space="preserve" text-anchor="middle" x="529.95" y="-429.05" font-family="DejaVu Sans" font-size="11.00">SOS through order 50</text>
-<text xml:space="preserve" text-anchor="middle" x="529.95" y="-415.55" font-family="DejaVu Sans" font-size="11.00">prop:positive</text>
-</g>
-<g id="node15" class="node">
-<title>n14</title>
-<path fill="#ede9fe" stroke="#475569" d="M602.78,-395C602.78,-395 457.13,-395 457.13,-395 451.13,-395 445.13,-389 445.13,-383 445.13,-383 445.13,-371 445.13,-371 445.13,-365 451.13,-359 457.13,-359 457.13,-359 602.78,-359 602.78,-359 608.78,-359 614.78,-365 614.78,-371 614.78,-371 614.78,-383 614.78,-383 614.78,-389 608.78,-395 602.78,-395"/>
-<text xml:space="preserve" text-anchor="middle" x="529.95" y="-380.05" font-family="DejaVu Sans" font-size="11.00">Moderate&#45;order expectation</text>
-<text xml:space="preserve" text-anchor="middle" x="529.95" y="-366.55" font-family="DejaVu Sans" font-size="11.00">rem:persistence</text>
-</g>
-<g id="edge17" class="edge">
-<title>n10&#45;&gt;n14</title>
-<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M529.95,-407.77C529.95,-406.36 529.95,-404.92 529.95,-403.48"/>
-<polygon fill="#64748b" stroke="#64748b" points="532.4,-403.75 529.95,-396.75 527.5,-403.75 532.4,-403.75"/>
-</g>
-<g id="node13" class="node">
-<title>n12</title>
-<path fill="#fef3c7" stroke="#475569" d="M453.02,-346C453.02,-346 368.88,-346 368.88,-346 362.88,-346 356.88,-340 356.88,-334 356.88,-334 356.88,-322 356.88,-322 356.88,-316 362.88,-310 368.88,-310 368.88,-310 453.02,-310 453.02,-310 459.02,-310 465.02,-316 465.02,-322 465.02,-322 465.02,-334 465.02,-334 465.02,-340 459.02,-346 453.02,-346"/>
-<text xml:space="preserve" text-anchor="middle" x="410.95" y="-331.05" font-family="DejaVu Sans" font-size="11.00">Budget criticality</text>
-<text xml:space="preserve" text-anchor="middle" x="410.95" y="-317.55" font-family="DejaVu Sans" font-size="11.00">thm:criticality</text>
-</g>
-<g id="edge15" class="edge">
-<title>n11&#45;&gt;n12</title>
-<path fill="none" stroke="#64748b" d="M386.88,-358.77C388.54,-356.72 390.24,-354.61 391.95,-352.5"/>
-<polygon fill="#64748b" stroke="#64748b" points="393.57,-354.39 396.07,-347.41 389.76,-351.31 393.57,-354.39"/>
-</g>
-<g id="node16" class="node">
-<title>legend0</title>
-<path fill="#d1fae5" stroke="#475569" d="M796.53,-444C796.53,-444 745.38,-444 745.38,-444 739.38,-444 733.38,-438 733.38,-432 733.38,-432 733.38,-420 733.38,-420 733.38,-414 739.38,-408 745.38,-408 745.38,-408 796.53,-408 796.53,-408 802.53,-408 808.53,-414 808.53,-420 808.53,-420 808.53,-432 808.53,-432 808.53,-438 802.53,-444 796.53,-444"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-422.88" font-family="DejaVu Sans" font-size="10.00">Lean&#45;proved</text>
-</g>
-<g id="node17" class="node">
-<title>legend1</title>
-<path fill="#dbeafe" stroke="#475569" d="M799.53,-395C799.53,-395 742.38,-395 742.38,-395 736.38,-395 730.38,-389 730.38,-383 730.38,-383 730.38,-371 730.38,-371 730.38,-365 736.38,-359 742.38,-359 742.38,-359 799.53,-359 799.53,-359 805.53,-359 811.53,-365 811.53,-371 811.53,-371 811.53,-383 811.53,-383 811.53,-389 805.53,-395 799.53,-395"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-373.88" font-family="DejaVu Sans" font-size="10.00">Exact&#45;verified</text>
-</g>
-<g id="node18" class="node">
-<title>legend2</title>
-<path fill="#fef3c7" stroke="#475569" d="M825.78,-346C825.78,-346 716.12,-346 716.12,-346 710.12,-346 704.12,-340 704.12,-334 704.12,-334 704.12,-322 704.12,-322 704.12,-316 710.12,-310 716.12,-310 716.12,-310 825.78,-310 825.78,-310 831.78,-310 837.78,-316 837.78,-322 837.78,-322 837.78,-334 837.78,-334 837.78,-340 831.78,-346 825.78,-346"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-324.88" font-family="DejaVu Sans" font-size="10.00">Proved in the paper only</text>
-</g>
-<g id="node19" class="node">
-<title>legend3</title>
-<path fill="#ede9fe" stroke="#475569" d="M808.9,-297C808.9,-297 733,-297 733,-297 727,-297 721,-291 721,-285 721,-285 721,-273 721,-273 721,-267 727,-261 733,-261 733,-261 808.9,-261 808.9,-261 814.9,-261 820.9,-267 820.9,-273 820.9,-273 820.9,-285 820.9,-285 820.9,-291 814.9,-297 808.9,-297"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-275.88" font-family="DejaVu Sans" font-size="10.00">Unproved remark</text>
-</g>
-<g id="node20" class="node">
-<title>key0</title>
-<path fill="white" stroke="#475569" d="M898.53,-248C898.53,-248 643.38,-248 643.38,-248 637.38,-248 631.38,-242 631.38,-236 631.38,-236 631.38,-224 631.38,-224 631.38,-218 637.38,-212 643.38,-212 643.38,-212 898.53,-212 898.53,-212 904.53,-212 910.53,-218 910.53,-224 910.53,-224 910.53,-236 910.53,-236 910.53,-242 904.53,-248 898.53,-248"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-226.88" font-family="DejaVu Sans" font-size="10.00">Arrows: paper argument; not Lean proof dependencies</text>
-</g>
-<g id="node21" class="node">
-<title>key1</title>
-<path fill="white" stroke="#475569" d="M885.78,-199C885.78,-199 656.12,-199 656.12,-199 650.12,-199 644.12,-193 644.12,-187 644.12,-187 644.12,-175 644.12,-175 644.12,-169 650.12,-163 656.12,-163 656.12,-163 885.78,-163 885.78,-163 891.78,-163 897.78,-169 897.78,-175 897.78,-175 897.78,-187 897.78,-187 897.78,-193 891.78,-199 885.78,-199"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-177.88" font-family="DejaVu Sans" font-size="10.00">Dashed to green: separate Lean route (see table)</text>
-</g>
-<g id="node22" class="node">
-<title>key2</title>
-<path fill="white" stroke="#475569" d="M885.4,-150C885.4,-150 656.5,-150 656.5,-150 650.5,-150 644.5,-144 644.5,-138 644.5,-138 644.5,-126 644.5,-126 644.5,-120 650.5,-114 656.5,-114 656.5,-114 885.4,-114 885.4,-114 891.4,-114 897.4,-120 897.4,-126 897.4,-126 897.4,-138 897.4,-138 897.4,-144 891.4,-150 885.4,-150"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-128.88" font-family="DejaVu Sans" font-size="10.00">Green: Lean proves the formal scope in the table</text>
-</g>
-<g id="node23" class="node">
-<title>key3</title>
-<path fill="white" stroke="#475569" d="M888.4,-101C888.4,-101 653.5,-101 653.5,-101 647.5,-101 641.5,-95 641.5,-89 641.5,-89 641.5,-77 641.5,-77 641.5,-71 647.5,-65 653.5,-65 653.5,-65 888.4,-65 888.4,-65 894.4,-65 900.4,-71 900.4,-77 900.4,-77 900.4,-89 900.4,-89 900.4,-95 894.4,-101 888.4,-101"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-79.88" font-family="DejaVu Sans" font-size="10.00">All k &gt;= 16: paper; k = 4980737: Lean application</text>
+<title>n17&#45;&gt;n9</title>
+<path fill="none" stroke="#64748b" d="M148.21,-288.77C93,-286.67 26.98,-279.71 8.89,-259 -3.97,-244.27 -1.56,-231.53 8.89,-215 40.44,-165.09 72.73,-176.21 128.89,-158 163.9,-146.65 203.99,-138.67 237.7,-133.3"/>
+<polygon fill="#64748b" stroke="#64748b" points="238.25,-135.7 244.79,-132.2 237.5,-130.86 238.25,-135.7"/>
 </g>
 <g id="node24" class="node">
+<title>n19</title>
+<path fill="#fef3c7" stroke="#475569" d="M344.39,-255C344.39,-255 189.39,-255 189.39,-255 183.39,-255 177.39,-249 177.39,-243 177.39,-243 177.39,-231 177.39,-231 177.39,-225 183.39,-219 189.39,-219 189.39,-219 344.39,-219 344.39,-219 350.39,-219 356.39,-225 356.39,-231 356.39,-231 356.39,-243 356.39,-243 356.39,-249 350.39,-255 344.39,-255"/>
+<text text-anchor="middle" x="266.89" y="-240.2" font-family="DejaVu Sans" font-size="11.00">Conjugate&#45;point improvement</text>
+<text text-anchor="middle" x="266.89" y="-228.2" font-family="DejaVu Sans" font-size="11.00">B:lem:conjugate</text>
+</g>
+<g id="edge24" class="edge">
+<title>n17&#45;&gt;n19</title>
+<path fill="none" stroke="#64748b" d="M242.42,-271.73C244.89,-268.33 247.52,-264.7 250.11,-261.14"/>
+<polygon fill="#64748b" stroke="#64748b" points="252.25,-262.35 254.38,-255.25 248.29,-259.48 252.25,-262.35"/>
+</g>
+<g id="node13" class="node">
+<title>n24</title>
+<path fill="#dbeafe" stroke="#475569" d="M457.39,-198C457.39,-198 346.39,-198 346.39,-198 340.39,-198 334.39,-192 334.39,-186 334.39,-186 334.39,-174 334.39,-174 334.39,-168 340.39,-162 346.39,-162 346.39,-162 457.39,-162 457.39,-162 463.39,-162 469.39,-168 469.39,-174 469.39,-174 469.39,-186 469.39,-186 469.39,-192 463.39,-198 457.39,-198"/>
+<text text-anchor="middle" x="401.89" y="-183.2" font-family="DejaVu Sans" font-size="11.00">Exact limiting witness</text>
+<text text-anchor="middle" x="401.89" y="-171.2" font-family="DejaVu Sans" font-size="11.00">C:lem:witness</text>
+</g>
+<g id="edge13" class="edge">
+<title>n24&#45;&gt;n9</title>
+<path fill="none" stroke="#64748b" d="M373.91,-161.9C365.11,-156.52 355.28,-150.52 346.1,-144.9"/>
+<polygon fill="#64748b" stroke="#64748b" points="347.11,-142.65 339.86,-141.09 344.55,-146.83 347.11,-142.65"/>
+</g>
+<g id="edge32" class="edge">
+<title>n24&#45;&gt;n27</title>
+<path fill="none" stroke="#64748b" d="M445.42,-161.9C456.87,-157.4 469.42,-152.47 481.58,-147.7"/>
+<polygon fill="#64748b" stroke="#64748b" points="482.66,-149.9 488.28,-145.06 480.87,-145.34 482.66,-149.9"/>
+</g>
+<g id="node14" class="node">
+<title>n21</title>
+<path fill="#fef3c7" stroke="#475569" d="M277.89,-202C277.89,-202 147.89,-202 147.89,-202 141.89,-202 135.89,-196 135.89,-190 135.89,-190 135.89,-170 135.89,-170 135.89,-164 141.89,-158 147.89,-158 147.89,-158 277.89,-158 277.89,-158 283.89,-158 289.89,-164 289.89,-170 289.89,-170 289.89,-190 289.89,-190 289.89,-196 283.89,-202 277.89,-202"/>
+<text text-anchor="middle" x="212.89" y="-189.2" font-family="DejaVu Sans" font-size="11.00">Uniform Gram&#45;dependent</text>
+<text text-anchor="middle" x="212.89" y="-177.2" font-family="DejaVu Sans" font-size="11.00">vanishing</text>
+<text text-anchor="middle" x="212.89" y="-165.2" font-family="DejaVu Sans" font-size="11.00">B:prop:R</text>
+</g>
+<g id="edge14" class="edge">
+<title>n21&#45;&gt;n9</title>
+<path fill="none" stroke="#64748b" d="M250.89,-157.89C258.72,-153.54 266.97,-148.96 274.78,-144.62"/>
+<polygon fill="#64748b" stroke="#64748b" points="276.28,-146.59 281.21,-141.04 273.9,-142.3 276.28,-146.59"/>
+</g>
+<g id="node15" class="node">
+<title>n10</title>
+<path fill="#fef3c7" stroke="#475569" d="M1121.89,-463C1121.89,-463 1025.89,-463 1025.89,-463 1019.89,-463 1013.89,-457 1013.89,-451 1013.89,-451 1013.89,-439 1013.89,-439 1013.89,-433 1019.89,-427 1025.89,-427 1025.89,-427 1121.89,-427 1121.89,-427 1127.89,-427 1133.89,-433 1133.89,-439 1133.89,-439 1133.89,-451 1133.89,-451 1133.89,-457 1127.89,-463 1121.89,-463"/>
+<text text-anchor="middle" x="1073.89" y="-448.2" font-family="DejaVu Sans" font-size="11.00">Symmetry splitting</text>
+<text text-anchor="middle" x="1073.89" y="-436.2" font-family="DejaVu Sans" font-size="11.00">lem:positive&#45;split</text>
+</g>
+<g id="node19" class="node">
+<title>n13</title>
+<path fill="#fef3c7" stroke="#475569" d="M1152.89,-414C1152.89,-414 994.89,-414 994.89,-414 988.89,-414 982.89,-408 982.89,-402 982.89,-402 982.89,-390 982.89,-390 982.89,-384 988.89,-378 994.89,-378 994.89,-378 1152.89,-378 1152.89,-378 1158.89,-378 1164.89,-384 1164.89,-390 1164.89,-390 1164.89,-402 1164.89,-402 1164.89,-408 1158.89,-414 1152.89,-414"/>
+<text text-anchor="middle" x="1073.89" y="-399.2" font-family="DejaVu Sans" font-size="11.00">One symmetric or skew factor</text>
+<text text-anchor="middle" x="1073.89" y="-387.2" font-family="DejaVu Sans" font-size="11.00">thm:one&#45;sided</text>
+</g>
+<g id="edge16" class="edge">
+<title>n10&#45;&gt;n13</title>
+<path fill="none" stroke="#64748b" d="M1073.89,-426.77C1073.89,-424.98 1073.89,-423.14 1073.89,-421.29"/>
+<polygon fill="#64748b" stroke="#64748b" points="1076.34,-421.23 1073.89,-414.23 1071.44,-421.23 1076.34,-421.23"/>
+</g>
+<g id="node16" class="node">
+<title>n11</title>
+<path fill="#fef3c7" stroke="#475569" d="M1311.89,-463C1311.89,-463 1159.89,-463 1159.89,-463 1153.89,-463 1147.89,-457 1147.89,-451 1147.89,-451 1147.89,-439 1147.89,-439 1147.89,-433 1153.89,-427 1159.89,-427 1159.89,-427 1311.89,-427 1311.89,-427 1317.89,-427 1323.89,-433 1323.89,-439 1323.89,-439 1323.89,-451 1323.89,-451 1323.89,-457 1317.89,-463 1311.89,-463"/>
+<text text-anchor="middle" x="1235.89" y="-448.2" font-family="DejaVu Sans" font-size="11.00">Symmetric/skew pair identity</text>
+<text text-anchor="middle" x="1235.89" y="-436.2" font-family="DejaVu Sans" font-size="11.00">lem:positive&#45;mixed</text>
+</g>
+<g id="edge17" class="edge">
+<title>n11&#45;&gt;n13</title>
+<path fill="none" stroke="#64748b" d="M1176.95,-426.9C1164.74,-423.36 1151.8,-419.6 1139.37,-416"/>
+<polygon fill="#64748b" stroke="#64748b" points="1139.93,-413.61 1132.52,-414.01 1138.56,-418.31 1139.93,-413.61"/>
+</g>
+<g id="node17" class="node">
+<title>n12</title>
+<path fill="#fef3c7" stroke="#475569" d="M987.39,-463C987.39,-463 830.39,-463 830.39,-463 824.39,-463 818.39,-457 818.39,-451 818.39,-451 818.39,-439 818.39,-439 818.39,-433 824.39,-427 830.39,-427 830.39,-427 987.39,-427 987.39,-427 993.39,-427 999.39,-433 999.39,-439 999.39,-439 999.39,-451 999.39,-451 999.39,-457 993.39,-463 987.39,-463"/>
+<text text-anchor="middle" x="908.89" y="-448.2" font-family="DejaVu Sans" font-size="11.00">Same&#45;symmetry Toeplitz pairs</text>
+<text text-anchor="middle" x="908.89" y="-436.2" font-family="DejaVu Sans" font-size="11.00">prop:same&#45;symmetry</text>
+</g>
+<g id="edge18" class="edge">
+<title>n12&#45;&gt;n13</title>
+<path fill="none" stroke="#64748b" d="M968.93,-426.9C981.37,-423.36 994.55,-419.6 1007.21,-416"/>
+<polygon fill="#64748b" stroke="#64748b" points="1008.12,-418.28 1014.18,-414.01 1006.78,-413.57 1008.12,-418.28"/>
+</g>
+<g id="node18" class="node">
+<title>n29</title>
+<path fill="#fef3c7" stroke="#475569" d="M992.39,-516C992.39,-516 825.39,-516 825.39,-516 819.39,-516 813.39,-510 813.39,-504 813.39,-504 813.39,-492 813.39,-492 813.39,-486 819.39,-480 825.39,-480 825.39,-480 992.39,-480 992.39,-480 998.39,-480 1004.39,-486 1004.39,-492 1004.39,-492 1004.39,-504 1004.39,-504 1004.39,-510 998.39,-516 992.39,-516"/>
+<text text-anchor="middle" x="908.89" y="-501.2" font-family="DejaVu Sans" font-size="11.00">Positive window decomposition</text>
+<text text-anchor="middle" x="908.89" y="-489.2" font-family="DejaVu Sans" font-size="11.00">prop:positive&#45;window&#45;certificate</text>
+</g>
+<g id="edge15" class="edge">
+<title>n29&#45;&gt;n12</title>
+<path fill="none" stroke="#64748b" d="M908.89,-479.73C908.89,-476.74 908.89,-473.58 908.89,-470.44"/>
+<polygon fill="#64748b" stroke="#64748b" points="911.34,-470.25 908.89,-463.25 906.44,-470.25 911.34,-470.25"/>
+</g>
+<g id="node20" class="node">
+<title>n14</title>
+<path fill="#fef3c7" stroke="#475569" d="M1225.39,-365C1225.39,-365 922.39,-365 922.39,-365 916.39,-365 910.39,-359 910.39,-353 910.39,-353 910.39,-333 910.39,-333 910.39,-327 916.39,-321 922.39,-321 922.39,-321 1225.39,-321 1225.39,-321 1231.39,-321 1237.39,-327 1237.39,-333 1237.39,-333 1237.39,-353 1237.39,-353 1237.39,-359 1231.39,-365 1225.39,-365"/>
+<text text-anchor="middle" x="1073.89" y="-352.2" font-family="DejaVu Sans" font-size="11.00">Both factors with mixed</text>
+<text text-anchor="middle" x="1073.89" y="-340.2" font-family="DejaVu Sans" font-size="11.00">symmetry</text>
+<text text-anchor="middle" x="1073.89" y="-328.2" font-family="DejaVu Sans" font-size="11.00">unlabelled:sections/03_positive_subclasses.tex:remark:1</text>
+</g>
+<g id="edge19" class="edge">
+<title>n13&#45;&gt;n14</title>
+<path fill="none" stroke="#64748b" d="M1073.89,-377.73C1073.89,-375.96 1073.89,-374.13 1073.89,-372.29"/>
+<polygon fill="#64748b" stroke="#64748b" points="1076.34,-372.14 1073.89,-365.14 1071.44,-372.14 1076.34,-372.14"/>
+</g>
+<g id="node21" class="node">
+<title>n15</title>
+<path fill="#dbeafe" stroke="#475569" d="M1471.89,-516C1471.89,-516 1337.89,-516 1337.89,-516 1331.89,-516 1325.89,-510 1325.89,-504 1325.89,-504 1325.89,-492 1325.89,-492 1325.89,-486 1331.89,-480 1337.89,-480 1337.89,-480 1471.89,-480 1471.89,-480 1477.89,-480 1483.89,-486 1483.89,-492 1483.89,-492 1483.89,-504 1483.89,-504 1483.89,-510 1477.89,-516 1471.89,-516"/>
+<text text-anchor="middle" x="1404.89" y="-501.2" font-family="DejaVu Sans" font-size="11.00">Exact positive increments</text>
+<text text-anchor="middle" x="1404.89" y="-489.2" font-family="DejaVu Sans" font-size="11.00">lem:finite&#45;increments</text>
+</g>
+<g id="node22" class="node">
+<title>n16</title>
+<path fill="#dbeafe" stroke="#475569" d="M1459.89,-463C1459.89,-463 1349.89,-463 1349.89,-463 1343.89,-463 1337.89,-457 1337.89,-451 1337.89,-451 1337.89,-439 1337.89,-439 1337.89,-433 1343.89,-427 1349.89,-427 1349.89,-427 1459.89,-427 1459.89,-427 1465.89,-427 1471.89,-433 1471.89,-439 1471.89,-439 1471.89,-451 1471.89,-451 1471.89,-457 1465.89,-463 1459.89,-463"/>
+<text text-anchor="middle" x="1404.89" y="-448.2" font-family="DejaVu Sans" font-size="11.00">SOS through order 50</text>
+<text text-anchor="middle" x="1404.89" y="-436.2" font-family="DejaVu Sans" font-size="11.00">thm:finite&#45;positive</text>
+</g>
+<g id="edge20" class="edge">
+<title>n15&#45;&gt;n16</title>
+<path fill="none" stroke="#64748b" d="M1404.89,-479.73C1404.89,-476.74 1404.89,-473.58 1404.89,-470.44"/>
+<polygon fill="#64748b" stroke="#64748b" points="1407.34,-470.25 1404.89,-463.25 1402.44,-470.25 1407.34,-470.25"/>
+</g>
+<g id="edge23" class="edge">
+<title>n18&#45;&gt;n19</title>
+<path fill="none" stroke="#64748b" d="M355.9,-271.88C343.97,-267.33 330.99,-262.39 318.72,-257.73"/>
+<polygon fill="#64748b" stroke="#64748b" points="319.41,-255.37 312,-255.17 317.67,-259.95 319.41,-255.37"/>
+</g>
+<g id="node26" class="node">
+<title>n22</title>
+<path fill="#d1fae5" stroke="#475569" d="M670.39,-255C670.39,-255 577.39,-255 577.39,-255 571.39,-255 565.39,-249 565.39,-243 565.39,-243 565.39,-231 565.39,-231 565.39,-225 571.39,-219 577.39,-219 577.39,-219 670.39,-219 670.39,-219 676.39,-219 682.39,-225 682.39,-231 682.39,-231 682.39,-243 682.39,-243 682.39,-249 676.39,-255 670.39,-255"/>
+<text text-anchor="middle" x="623.89" y="-240.2" font-family="DejaVu Sans" font-size="11.00">Uniform finite tails</text>
+<text text-anchor="middle" x="623.89" y="-228.2" font-family="DejaVu Sans" font-size="11.00">B:lem:quant&#45;tails</text>
+</g>
+<g id="edge27" class="edge">
+<title>n18&#45;&gt;n22</title>
+<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M476.76,-276.39C502.65,-271.59 531.67,-265.65 557.89,-259 560.37,-258.37 562.89,-257.7 565.43,-257.01"/>
+<polygon fill="#64748b" stroke="#64748b" points="566.11,-259.36 572.18,-255.1 564.78,-254.64 566.11,-259.36"/>
+</g>
+<g id="edge25" class="edge">
+<title>n19&#45;&gt;n21</title>
+<path fill="none" stroke="#64748b" d="M250.1,-218.9C246.45,-215.17 242.5,-211.15 238.58,-207.16"/>
+<polygon fill="#64748b" stroke="#64748b" points="240.32,-205.44 233.67,-202.16 236.83,-208.87 240.32,-205.44"/>
+</g>
+<g id="node25" class="node">
+<title>n20</title>
+<path fill="#fef3c7" stroke="#475569" d="M151.39,-255C151.39,-255 28.39,-255 28.39,-255 22.39,-255 16.39,-249 16.39,-243 16.39,-243 16.39,-231 16.39,-231 16.39,-225 22.39,-219 28.39,-219 28.39,-219 151.39,-219 151.39,-219 157.39,-219 163.39,-225 163.39,-231 163.39,-231 163.39,-243 163.39,-243 163.39,-249 157.39,-255 151.39,-255"/>
+<text text-anchor="middle" x="89.89" y="-240.2" font-family="DejaVu Sans" font-size="11.00">Qualitative continuation</text>
+<text text-anchor="middle" x="89.89" y="-228.2" font-family="DejaVu Sans" font-size="11.00">B:lem:continuation</text>
+</g>
+<g id="edge26" class="edge">
+<title>n20&#45;&gt;n21</title>
+<path fill="none" stroke="#64748b" d="M128.14,-218.9C137.95,-214.51 148.69,-209.71 159.12,-205.04"/>
+<polygon fill="#64748b" stroke="#64748b" points="160.18,-207.26 165.57,-202.16 158.18,-202.78 160.18,-207.26"/>
+</g>
+<g id="node27" class="node">
+<title>n23</title>
+<path fill="#fef3c7" stroke="#475569" d="M657.89,-198C657.89,-198 525.89,-198 525.89,-198 519.89,-198 513.89,-192 513.89,-186 513.89,-186 513.89,-174 513.89,-174 513.89,-168 519.89,-162 525.89,-162 525.89,-162 657.89,-162 657.89,-162 663.89,-162 669.89,-168 669.89,-174 669.89,-174 669.89,-186 669.89,-186 669.89,-192 663.89,-198 657.89,-198"/>
+<text text-anchor="middle" x="591.89" y="-183.2" font-family="DejaVu Sans" font-size="11.00">Quantitative continuation</text>
+<text text-anchor="middle" x="591.89" y="-171.2" font-family="DejaVu Sans" font-size="11.00">B:lem:quant&#45;continuation</text>
+</g>
+<g id="edge28" class="edge">
+<title>n22&#45;&gt;n23</title>
+<path fill="none" stroke="#64748b" d="M613.94,-218.9C611.32,-214.39 608.44,-209.44 605.66,-204.65"/>
+<polygon fill="#64748b" stroke="#64748b" points="607.58,-203.1 601.95,-198.28 603.35,-205.56 607.58,-203.1"/>
+</g>
+<g id="edge30" class="edge">
+<title>n22&#45;&gt;n27</title>
+<path fill="none" stroke="#64748b" d="M661.36,-218.87C667.6,-214.3 673.22,-208.71 676.89,-202 686.27,-184.84 688.91,-173.42 676.89,-158 668.16,-146.79 638.97,-138.71 609.96,-133.24"/>
+<polygon fill="#64748b" stroke="#64748b" points="610.32,-130.82 603,-131.98 609.45,-135.64 610.32,-130.82"/>
+</g>
+<g id="edge31" class="edge">
+<title>n23&#45;&gt;n27</title>
+<path fill="none" stroke="#64748b" d="M576.35,-161.9C573.04,-158.26 569.47,-154.33 565.92,-150.43"/>
+<polygon fill="#64748b" stroke="#64748b" points="567.65,-148.69 561.13,-145.16 564.03,-151.99 567.65,-148.69"/>
+</g>
+<g id="node28" class="node">
+<title>n25</title>
+<path fill="#ede9fe" stroke="#475569" d="M1809.89,-520C1809.89,-520 1509.89,-520 1509.89,-520 1503.89,-520 1497.89,-514 1497.89,-508 1497.89,-508 1497.89,-488 1497.89,-488 1497.89,-482 1503.89,-476 1509.89,-476 1509.89,-476 1809.89,-476 1809.89,-476 1815.89,-476 1821.89,-482 1821.89,-488 1821.89,-488 1821.89,-508 1821.89,-508 1821.89,-514 1815.89,-520 1809.89,-520"/>
+<text text-anchor="middle" x="1659.89" y="-507.2" font-family="DejaVu Sans" font-size="11.00">Numerical eigenvalue</text>
+<text text-anchor="middle" x="1659.89" y="-495.2" font-family="DejaVu Sans" font-size="11.00">observation</text>
+<text text-anchor="middle" x="1659.89" y="-483.2" font-family="DejaVu Sans" font-size="11.00">unlabelled:appendices/C_negative_witness.tex:remark:1</text>
+</g>
+<g id="node29" class="node">
+<title>n26</title>
+<path fill="#ede9fe" stroke="#475569" d="M2007.39,-520C2007.39,-520 1848.39,-520 1848.39,-520 1842.39,-520 1836.39,-514 1836.39,-508 1836.39,-508 1836.39,-488 1836.39,-488 1836.39,-482 1842.39,-476 1848.39,-476 1848.39,-476 2007.39,-476 2007.39,-476 2013.39,-476 2019.39,-482 2019.39,-488 2019.39,-488 2019.39,-508 2019.39,-508 2019.39,-514 2013.39,-520 2007.39,-520"/>
+<text text-anchor="middle" x="1927.89" y="-507.2" font-family="DejaVu Sans" font-size="11.00">Alternative numerical test</text>
+<text text-anchor="middle" x="1927.89" y="-495.2" font-family="DejaVu Sans" font-size="11.00">families</text>
+<text text-anchor="middle" x="1927.89" y="-483.2" font-family="DejaVu Sans" font-size="11.00">C:rem:alternative&#45;test&#45;families</text>
+</g>
+<g id="edge33" class="edge">
+<title>n27&#45;&gt;n28</title>
+<path fill="none" stroke="#64748b" stroke-dasharray="5,2" d="M541.89,-100.96C541.89,-99.09 541.89,-97.18 541.89,-95.29"/>
+<polygon fill="#64748b" stroke="#64748b" points="544.34,-95.1 541.89,-88.1 539.44,-95.1 544.34,-95.1"/>
+</g>
+<g id="node31" class="node">
+<title>legend0</title>
+<path fill="#d1fae5" stroke="#475569" d="M2201.39,-516C2201.39,-516 2150.39,-516 2150.39,-516 2144.39,-516 2138.39,-510 2138.39,-504 2138.39,-504 2138.39,-492 2138.39,-492 2138.39,-486 2144.39,-480 2150.39,-480 2150.39,-480 2201.39,-480 2201.39,-480 2207.39,-480 2213.39,-486 2213.39,-492 2213.39,-492 2213.39,-504 2213.39,-504 2213.39,-510 2207.39,-516 2201.39,-516"/>
+<text text-anchor="middle" x="2175.89" y="-495.5" font-family="DejaVu Sans" font-size="10.00">Lean&#45;proved</text>
+</g>
+<g id="node32" class="node">
+<title>legend1</title>
+<path fill="#dbeafe" stroke="#475569" d="M2204.39,-463C2204.39,-463 2147.39,-463 2147.39,-463 2141.39,-463 2135.39,-457 2135.39,-451 2135.39,-451 2135.39,-439 2135.39,-439 2135.39,-433 2141.39,-427 2147.39,-427 2147.39,-427 2204.39,-427 2204.39,-427 2210.39,-427 2216.39,-433 2216.39,-439 2216.39,-439 2216.39,-451 2216.39,-451 2216.39,-457 2210.39,-463 2204.39,-463"/>
+<text text-anchor="middle" x="2175.89" y="-442.5" font-family="DejaVu Sans" font-size="10.00">Exact&#45;verified</text>
+</g>
+<g id="node33" class="node">
+<title>legend2</title>
+<path fill="#fef3c7" stroke="#475569" d="M2230.89,-414C2230.89,-414 2120.89,-414 2120.89,-414 2114.89,-414 2108.89,-408 2108.89,-402 2108.89,-402 2108.89,-390 2108.89,-390 2108.89,-384 2114.89,-378 2120.89,-378 2120.89,-378 2230.89,-378 2230.89,-378 2236.89,-378 2242.89,-384 2242.89,-390 2242.89,-390 2242.89,-402 2242.89,-402 2242.89,-408 2236.89,-414 2230.89,-414"/>
+<text text-anchor="middle" x="2175.89" y="-393.5" font-family="DejaVu Sans" font-size="10.00">Proved in the paper only</text>
+</g>
+<g id="node34" class="node">
+<title>legend3</title>
+<path fill="#ede9fe" stroke="#475569" d="M2213.89,-361C2213.89,-361 2137.89,-361 2137.89,-361 2131.89,-361 2125.89,-355 2125.89,-349 2125.89,-349 2125.89,-337 2125.89,-337 2125.89,-331 2131.89,-325 2137.89,-325 2137.89,-325 2213.89,-325 2213.89,-325 2219.89,-325 2225.89,-331 2225.89,-337 2225.89,-337 2225.89,-349 2225.89,-349 2225.89,-355 2219.89,-361 2213.89,-361"/>
+<text text-anchor="middle" x="2175.89" y="-340.5" font-family="DejaVu Sans" font-size="10.00">Unproved remark</text>
+</g>
+<g id="node35" class="node">
+<title>key0</title>
+<path fill="white" stroke="#475569" d="M2303.39,-308C2303.39,-308 2048.39,-308 2048.39,-308 2042.39,-308 2036.39,-302 2036.39,-296 2036.39,-296 2036.39,-284 2036.39,-284 2036.39,-278 2042.39,-272 2048.39,-272 2048.39,-272 2303.39,-272 2303.39,-272 2309.39,-272 2315.39,-278 2315.39,-284 2315.39,-284 2315.39,-296 2315.39,-296 2315.39,-302 2309.39,-308 2303.39,-308"/>
+<text text-anchor="middle" x="2175.89" y="-287.5" font-family="DejaVu Sans" font-size="10.00">Arrows: paper argument; not Lean proof dependencies</text>
+</g>
+<g id="node36" class="node">
+<title>key1</title>
+<path fill="white" stroke="#475569" d="M2290.89,-255C2290.89,-255 2060.89,-255 2060.89,-255 2054.89,-255 2048.89,-249 2048.89,-243 2048.89,-243 2048.89,-231 2048.89,-231 2048.89,-225 2054.89,-219 2060.89,-219 2060.89,-219 2290.89,-219 2290.89,-219 2296.89,-219 2302.89,-225 2302.89,-231 2302.89,-231 2302.89,-243 2302.89,-243 2302.89,-249 2296.89,-255 2290.89,-255"/>
+<text text-anchor="middle" x="2175.89" y="-234.5" font-family="DejaVu Sans" font-size="10.00">Dashed to green: separate Lean route (see table)</text>
+</g>
+<g id="node37" class="node">
+<title>key2</title>
+<path fill="white" stroke="#475569" d="M2290.39,-198C2290.39,-198 2061.39,-198 2061.39,-198 2055.39,-198 2049.39,-192 2049.39,-186 2049.39,-186 2049.39,-174 2049.39,-174 2049.39,-168 2055.39,-162 2061.39,-162 2061.39,-162 2290.39,-162 2290.39,-162 2296.39,-162 2302.39,-168 2302.39,-174 2302.39,-174 2302.39,-186 2302.39,-186 2302.39,-192 2296.39,-198 2290.39,-198"/>
+<text text-anchor="middle" x="2175.89" y="-177.5" font-family="DejaVu Sans" font-size="10.00">Green: Lean proves the formal scope in the table</text>
+</g>
+<g id="node38" class="node">
+<title>key3</title>
+<path fill="white" stroke="#475569" d="M2293.39,-141C2293.39,-141 2058.39,-141 2058.39,-141 2052.39,-141 2046.39,-135 2046.39,-129 2046.39,-129 2046.39,-117 2046.39,-117 2046.39,-111 2052.39,-105 2058.39,-105 2058.39,-105 2293.39,-105 2293.39,-105 2299.39,-105 2305.39,-111 2305.39,-117 2305.39,-117 2305.39,-129 2305.39,-129 2305.39,-135 2299.39,-141 2293.39,-141"/>
+<text text-anchor="middle" x="2175.89" y="-120.5" font-family="DejaVu Sans" font-size="10.00">All k &gt;= 16: paper; k = 4980737: Lean application</text>
+</g>
+<g id="node39" class="node">
 <title>key4</title>
-<path fill="white" stroke="#475569" d="M887.65,-52C887.65,-52 654.25,-52 654.25,-52 648.25,-52 642.25,-46 642.25,-40 642.25,-40 642.25,-28 642.25,-28 642.25,-22 648.25,-16 654.25,-16 654.25,-16 887.65,-16 887.65,-16 893.65,-16 899.65,-22 899.65,-28 899.65,-28 899.65,-40 899.65,-40 899.65,-46 893.65,-52 887.65,-52"/>
-<text xml:space="preserve" text-anchor="middle" x="770.95" y="-30.88" font-family="DejaVu Sans" font-size="10.00">Dashed to unproved remark: motivating evidence</text>
+<path fill="white" stroke="#475569" d="M2292.89,-88C2292.89,-88 2058.89,-88 2058.89,-88 2052.89,-88 2046.89,-82 2046.89,-76 2046.89,-76 2046.89,-64 2046.89,-64 2046.89,-58 2052.89,-52 2058.89,-52 2058.89,-52 2292.89,-52 2292.89,-52 2298.89,-52 2304.89,-58 2304.89,-64 2304.89,-64 2304.89,-76 2304.89,-76 2304.89,-82 2298.89,-88 2292.89,-88"/>
+<text text-anchor="middle" x="2175.89" y="-67.5" font-family="DejaVu Sans" font-size="10.00">Dashed to unproved remark: motivating evidence</text>
 </g>
 </g>
 </svg>

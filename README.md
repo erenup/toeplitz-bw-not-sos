@@ -8,10 +8,12 @@ Oxford, UK, OX2 6GG — wenqi.zhu@maths.ox.ac.uk
 Ping Nie — David R. Cheriton School of Computer Science, University of Waterloo
 — ping.nie@uwaterloo.ca
 
-The paper is a **working version dated 2 October 2026** and is being finalized
-by the authors. The final version will be posted on arXiv and will replace
-`paper/`. The theorem and equation numbers in `paper-lean-mapping/` refer
-to this working version.
+The paper is [arXiv:2610.08980](https://arxiv.org/abs/2610.08980),
+version 1, submitted 6 October 2026. Read the [published PDF](paper/main.pdf)
+or its [sources and provenance](paper/README.md). The result map uses arXiv v1
+numbering. The [2 October working version](https://github.com/erenup/toeplitz-bw-not-sos/blob/v1.0/paper/main.pdf)
+remains at tag v1.0. Version 1.1 updates the paper and documentation while
+preserving the v1.0 Lean source tree and exact verification code and data.
 
 For real Toeplitz matrices of order N ≥ 2^9961475, the quartic F_N = 2‖X‖_F²‖Y‖_F² − 2⟨X,Y⟩_F² − ‖XY−YX‖_F² is not a finite sum of squares of real homogeneous quadratic forms, allowing arbitrary real coefficients. It is SOS for 2 ≤ N ≤ 50 (and identically zero at N = 1); the gap 51 ≤ N < 2^9961475 remains open.
 
@@ -36,20 +38,37 @@ at every order. The negative result concerns SOS representation.
   exact rational Gram identities checked in Python with integer and
   rational arithmetic. The negative tangent witness and the paper's
   constants are also rechecked exactly in Python.
-- **Proved in the paper only:** the uniform finite-scale estimate for every
-  scale k ≥ 16 (Lean proves its ingredients and the one scale,
-  k = 4980737, that the negative theorem needs), the full written forms of
-  several structural lemmas, the exchange criterion and criticality bound,
-  and the boundary-layer corollary.
-  The [result map](paper-lean-mapping/by-section.md) states the exact
-  formal scope of each numbered result.
+- **Proved in the paper only:** arXiv Theorem 3.1 states that the form is
+  SOS at every order when one Toeplitz factor is symmetric or skew-symmetric,
+  with the other factor arbitrary Toeplitz. This theorem and its all-order
+  identities are not part of this repository's Lean formalization. The
+  qualitative limiting proof, the complete Gram parametrization, and the
+  all-scale statements also have the precise formal limits recorded in the
+  [result map](paper-lean-mapping/by-section.md).
 - **Classical nonnegativity:** F_N ≥ 0 follows from the Böttcher–Wenzel
   inequality; see [Böttcher and Wenzel (2008)](https://doi.org/10.1016/j.laa.2008.05.020).
   The paper's introduction gives a short derivation. This fact is not
   formalized in the Lean project.
 - **Open:** every order 51 ≤ N < 2^9961475, and the location of the first
-  non-SOS order. The manuscript's expectation for this range is an
-  unproved remark.
+  non-SOS order. No extension beyond order 50 or location of a transition is established.
+
+Five numbered items of the v1.0 working version are not numbered results of
+arXiv v1. The global-bound and repeated-node material is now in Appendix B's
+unnumbered displays; the other four items are absent as numbered results.
+Their status at the frozen Lean tree is:
+
+| v1.0 item | Lean status |
+|---|---|
+| Lemma 4.2, global bound and repeated-node identity | Kernel identities and a sufficient radial majorant are proved; the complete sharper bound as written is not a standalone formal theorem. |
+| Theorem 9.1, exchange criterion | Proved in the v1.0 working version; no Lean theorem. |
+| Theorem 9.2, criticality estimate | Proved in the v1.0 working version; no Lean theorem. |
+| Corollary 10.1, boundary-layer consequence | Proved in the v1.0 working version; no Lean theorem. |
+| Remark 11.1, moderate-order expectation | Unproved expectation; no Lean theorem. |
+
+Consult the [v1.0 result map](https://github.com/erenup/toeplitz-bw-not-sos/blob/v1.0/paper-lean-mapping/by-section.md)
+for those statements. References in frozen Lean documentation retain their
+v1.0 context; [VERIFICATION.md](VERIFICATION.md) remains the v1.0 verification
+record. The current map describes correspondence to arXiv v1.
 
 ## Where to read
 
@@ -143,12 +162,13 @@ PASS: F_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected
 PASS: exact tangent witness and constants
 PASS: manuscript witness, convolution, threshold, and five rejection controls
 PASS: paper built (.build/main.pdf)
-PASS: mapping, DAG, declarations, scripts, and rejection controls (paper labels covered)
+PASS: mapping, DAG, declarations, scripts, and rejection controls (arXiv numbering and frozen tree checked)
 ```
 
 The toolchain and all Lean dependencies are pinned; do not run `lake update`.
-The manuscript build writes the ignored `paper/.build/main.pdf`. Use
-`bash paper/build.sh --update-pdf` to replace the tracked `paper/main.pdf`.
+The manuscript build writes the ignored `paper/.build/main.pdf`; the tracked
+`paper/main.pdf` contains the published arXiv bytes. The local PDF has no arXiv
+stamp and can differ with the TeX distribution; see [paper/README.md](paper/README.md).
 Per-command runtime and memory costs are listed in the directory READMEs.
 
 ## Layout
@@ -161,5 +181,14 @@ Per-command runtime and memory costs are listed in the directory READMEs.
 ## License
 
 Everything outside `paper/` is available under the [MIT license](LICENSE).
-The contents of `paper/`, including the paper sources and PDF, are excluded
-from that license; all rights reserved. See [paper/COPYRIGHT](paper/COPYRIGHT).
+The contents of `paper/`, including the paper sources and PDF, are licensed
+under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), matching
+arXiv v1. See [paper/LICENSE](paper/LICENSE).
+
+
+## Citation
+
+[CITATION.cff](CITATION.cff) prefers the arXiv paper, DOI
+[10.48550/arXiv.2610.08980](https://doi.org/10.48550/arXiv.2610.08980).
+After version 1.1 is merged, set the software release date with one command:
+`python3 paper-lean-mapping/set_release_date.py` (UTC date, or `--date YYYY-MM-DD`).

@@ -1,0 +1,53 @@
+\section{Conclusion}\label{sec:conclusion}
+
+This paper shows that Toeplitz structure alone is not sufficient to
+guarantee a sum-of-squares representation of the
+B\"ottcher--Wenzel form.  The main negative result is obtained by
+restricting the Toeplitz form to a corner-supported family whose
+structure is independent of the matrix order.  After describing the
+complete family of Gram representations of this restricted form, we
+separate a fixed Gram-invariant contribution from the remaining
+Gram-dependent part.  A finite complex test then detects a negative
+limiting direction in the former, while the latter vanishes uniformly
+over all positive semidefinite Gram representations.  This gives the
+contradiction and proves that the unrestricted Toeplitz BW form is not
+SoS for every sufficiently large order.
+
+At the same time, the failure is not universal across structured
+Toeplitz classes.  We prove that if either factor is symmetric or
+skew-symmetric Toeplitz, then the BW form remains SoS at every order,
+with the other factor completely unrestricted within the real Toeplitz
+class.  The proof follows from an orthogonal decomposition into
+symmetric and skew-symmetric parts, together with SoS identities for
+pairs of the same symmetry and for symmetric--skew-symmetric pairs.
+Thus the negative result is caused not by Toeplitz structure itself,
+but by the interaction between the two symmetry components when both
+factors contain them.
+
+These two results leave several natural questions open.  Most
+immediately, the smallest order at which the unrestricted Toeplitz BW
+form ceases to be SoS is still unknown.  The present negative argument
+gives only a sufficient large-order threshold, while exact computations
+show that the form remains SoS throughout a substantial initial range.
+A second direction is to identify further structured subspaces, beyond
+the symmetric and skew-symmetric cases considered here, on which the
+interaction between the two symmetry components can still be controlled.
+More generally, it would be interesting to understand whether the
+corner and Gram-realignment mechanisms developed here can be used to
+locate sharper boundaries between nonnegativity and SoS in other
+structured polynomial matrix inequalities.
+
+\paragraph{Declaration of generative AI and AI-assisted technologies}
+During the preparation of this work the authors used large language model
+systems (Claude, Anthropic; Codex models, OpenAI) to generate candidate
+constructions and code, to run computations, to draft mathematical
+arguments, and to improve the readability of the text. After using these
+tools, the authors reviewed and edited the content as needed and take full
+responsibility for the content of the publication.
+
+\paragraph{Data availability}
+\rev{The exact certificate data, verification scripts, and Lean~4
+formalization are available at
+\url{https://github.com/erenup/toeplitz-bw-not-sos}.  The archived release
+used for the results reported here is tag \texttt{v1.0}; the release
+documentation is recorded at commit \texttt{7126c08}.}
