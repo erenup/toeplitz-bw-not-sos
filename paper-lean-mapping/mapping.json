@@ -1,24 +1,8 @@
 {
-  "paper_status": "present",
+  "paper_status": "pdf-only",
   "paper_version": "arXiv:2610.08980v1",
   "frozen_revision": "7126c0841b008dc89a21edfd008bbf1b748d280f",
   "lean_tree": "69d02281c91fea6ff54fe3556aaddc43eae66e65",
-  "source_sha256": {
-    "00README.json": "d1f6b1a71c9accb812ec5121d1fff7910c025ca7bb201948bacdb40941bc14e5",
-    "appendices/A_wedge_gram.tex": "336a4631224166de936f5648909a066f9a5e8467186c794d2cf36a226ab05941",
-    "appendices/B_quantitative.tex": "8325dde7d424bac63f9f8e71455306f51f6acc823cbf8cf06a0e8e9957b57588",
-    "appendices/C_negative_witness.tex": "f0494d087549ed533d1cdb27facaff17d8358191eadffd8850db2c398f58c1e2",
-    "appendices/D_explicit_bound.tex": "d82a51f26fa0b839d96a10afdabf03589a6670c91f9104f55ea101b342c24ac5",
-    "appendices/E_positive_certificates.tex": "b75ec0cc847e1e17baa7ae90506b0a235e04eb3f9569aad115d66c1edc4f7065",
-    "appendices/F_finite_certificates.tex": "46743e25ddac68a8989e114806437edbcb235d6ac6235087890fd67810eabf83",
-    "main.tex": "2938813d3720bf0bc46db6f69260fad555be66a0522819fabd361689d7d3882e",
-    "references.bib": "0b108ad0d519b0b5de8d6b0b156a6ac54e063a3e37729063e9d6648df8fb76a3",
-    "sections/01_introduction.tex": "4663c363202cd06023f3401085e8f21289c91008c081afe8e2faf5d7fd362e03",
-    "sections/02_non_sos.tex": "6cfffb7ec555dd50a1d9bb8fdcb00a01b3fee703c6503160bfba5c34151a16b8",
-    "sections/03_positive_subclasses.tex": "a30c6bbc009ef5258e6f064df228055b1b060c4196b605c6b1ee4c8027d1fbba",
-    "sections/04_exact_certificates.tex": "878c90de1ea4f242963a50ac765030b925465cc4d4c22d5bd2e2c65764b02f7c",
-    "sections/05_conclusion.tex": "b87fabcffc6e847ec38b9223290334df530f74d082f9a8927c5bb128e1f92bd8"
-  },
   "pdf_sha256": "aa474f031feb4e2e002611db9c4f18625e13b471cf059090970a7785492bdff4",
   "other_labels": [
     {
@@ -553,7 +537,9 @@
         "prop:explicit-threshold": "Lean proves the full non-SOS assertion with the explicit sufficient bound N >= 2^9961475 and arbitrary real coefficients. Classical nonnegativity is proved in the paper and is outside the formalization. The formal proof uses the selected finite scale, rather than the qualitative limiting argument of Section 2."
       },
       "kind": "theorem",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 3,
+      "pdf_title": ""
     },
     {
       "label": "lem:frame",
@@ -583,7 +569,9 @@
       "paper_dependencies": [],
       "formal_routes": {},
       "kind": "lemma",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 4,
+      "pdf_title": "Complete characterization of wedge Gram representations"
     },
     {
       "label": "lem:corner",
@@ -625,7 +613,9 @@
       ],
       "formal_routes": {},
       "kind": "lemma",
-      "source_index": 2
+      "source_index": 2,
+      "paper_page": 5,
+      "pdf_title": "Properties of the corner-supported Toeplitz BW form"
     },
     {
       "lean": [],
@@ -644,7 +634,9 @@
       "kind": "example",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 1,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 6,
+      "pdf_title": "Gram representation for a corner-supported Toeplitz BW form with $m=2$"
     },
     {
       "lean": [
@@ -671,7 +663,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 3,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 6,
+      "pdf_title": "Gram representation of the corner-supported Toeplitz BW form"
     },
     {
       "lean": [
@@ -699,7 +693,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 4,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 7,
+      "pdf_title": "General Gram normal form for the corner-supported Toeplitz BW form"
     },
     {
       "lean": [
@@ -736,7 +732,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 5,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 7,
+      "pdf_title": "Finite Gram test"
     },
     {
       "lean": [],
@@ -757,7 +755,9 @@
       "kind": "remark",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 1,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 8,
+      "pdf_title": "Complex test points"
     },
     {
       "lean": [
@@ -785,7 +785,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 6,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 8,
+      "pdf_title": "Finite Gram decomposition"
     },
     {
       "lean": [],
@@ -809,7 +811,9 @@
       "kind": "proposition",
       "paper_file": "paper/sections/02_non_sos.tex",
       "source_index": 1,
-      "section": "2. Failure of SOS"
+      "section": "2. Failure of SOS",
+      "paper_page": 9,
+      "pdf_title": "Negative limit of the Gram-invariant part"
     },
     {
       "lean": [],
@@ -828,7 +832,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/03_positive_subclasses.tex",
       "source_index": 1,
-      "section": "3. Positive subclasses"
+      "section": "3. Positive subclasses",
+      "paper_page": 11,
+      "pdf_title": "The Splitting Lemma"
     },
     {
       "lean": [],
@@ -847,7 +853,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/03_positive_subclasses.tex",
       "source_index": 2,
-      "section": "3. Positive subclasses"
+      "section": "3. Positive subclasses",
+      "paper_page": 11,
+      "pdf_title": "Symmetric--skew-symmetric pair"
     },
     {
       "lean": [],
@@ -868,7 +876,9 @@
       "kind": "proposition",
       "paper_file": "paper/sections/03_positive_subclasses.tex",
       "source_index": 1,
-      "section": "3. Positive subclasses"
+      "section": "3. Positive subclasses",
+      "paper_page": 11,
+      "pdf_title": "Both symmetric or skew-symmetric pair"
     },
     {
       "lean": [],
@@ -891,7 +901,9 @@
       "kind": "theorem",
       "paper_file": "paper/sections/03_positive_subclasses.tex",
       "source_index": 1,
-      "section": "3. Positive subclasses"
+      "section": "3. Positive subclasses",
+      "paper_page": 12,
+      "pdf_title": "One symmetric or skew-symmetric factor"
     },
     {
       "lean": [],
@@ -912,7 +924,9 @@
       "kind": "remark",
       "paper_file": "paper/sections/03_positive_subclasses.tex",
       "source_index": 1,
-      "section": "3. Positive subclasses"
+      "section": "3. Positive subclasses",
+      "paper_page": 12,
+      "pdf_title": ""
     },
     {
       "lean": [],
@@ -989,7 +1003,9 @@
       "kind": "lemma",
       "paper_file": "paper/sections/04_exact_certificates.tex",
       "source_index": 1,
-      "section": "4. Exact certificates"
+      "section": "4. Exact certificates",
+      "paper_page": 14,
+      "pdf_title": "Exact positive increments"
     },
     {
       "label": "thm:finite-positive",
@@ -1079,7 +1095,9 @@
       ],
       "formal_routes": {},
       "kind": "theorem",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 14,
+      "pdf_title": "The finite positive range"
     },
     {
       "lean": [
@@ -1106,7 +1124,9 @@
       "kind": "lemma",
       "paper_file": "paper/appendices/B_quantitative.tex",
       "source_index": 1,
-      "section": "Appendix B. Quantitative bounds"
+      "section": "Appendix B. Quantitative bounds",
+      "paper_page": 17,
+      "pdf_title": "Finite-depth tail"
     },
     {
       "label": "B:lem:means",
@@ -1143,7 +1163,9 @@
       ],
       "formal_routes": {},
       "kind": "lemma",
-      "source_index": 2
+      "source_index": 2,
+      "paper_page": 18,
+      "pdf_title": "Forced low mixed modes"
     },
     {
       "lean": [
@@ -1176,7 +1198,9 @@
       "kind": "lemma",
       "paper_file": "paper/appendices/B_quantitative.tex",
       "source_index": 3,
-      "section": "Appendix B. Quantitative bounds"
+      "section": "Appendix B. Quantitative bounds",
+      "paper_page": 18,
+      "pdf_title": "Conjugate-point improvement"
     },
     {
       "lean": [
@@ -1201,7 +1225,9 @@
       "kind": "lemma",
       "paper_file": "paper/appendices/B_quantitative.tex",
       "source_index": 4,
-      "section": "Appendix B. Quantitative bounds"
+      "section": "Appendix B. Quantitative bounds",
+      "paper_page": 19,
+      "pdf_title": "Qualitative continuation"
     },
     {
       "lean": [
@@ -1229,7 +1255,9 @@
       "kind": "proposition",
       "paper_file": "paper/appendices/B_quantitative.tex",
       "source_index": 1,
-      "section": "Appendix B. Quantitative bounds"
+      "section": "Appendix B. Quantitative bounds",
+      "paper_page": 19,
+      "pdf_title": "Uniform vanishing of the Gram-dependent term"
     },
     {
       "label": "B:lem:quant-tails",
@@ -1273,7 +1301,9 @@
         "B:lem:means": "The formal baselineTail and repeated_tail_bound prove these quantitative estimates for arbitrary m and epsilon under the specified modulus bounds. Translate the paper minus sector to the Lean plus sector. The theorem analyticInputs assembles the estimates without an unproved analytic hypothesis."
       },
       "kind": "lemma",
-      "source_index": 5
+      "source_index": 5,
+      "paper_page": 20,
+      "pdf_title": "Uniform finite tails"
     },
     {
       "label": "B:lem:quant-continuation",
@@ -1315,7 +1345,9 @@
       ],
       "formal_routes": {},
       "kind": "lemma",
-      "source_index": 6
+      "source_index": 6,
+      "paper_page": 21,
+      "pdf_title": "Quantitative continuation"
     },
     {
       "label": "C:lem:witness",
@@ -1370,7 +1402,9 @@
       "paper_dependencies": [],
       "formal_routes": {},
       "kind": "lemma",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 22,
+      "pdf_title": "Exact negative direction"
     },
     {
       "lean": [],
@@ -1389,7 +1423,9 @@
       "kind": "remark",
       "paper_file": "paper/appendices/C_negative_witness.tex",
       "source_index": 1,
-      "section": "Appendix C. Negative witness"
+      "section": "Appendix C. Negative witness",
+      "paper_page": 23,
+      "pdf_title": ""
     },
     {
       "lean": [],
@@ -1408,7 +1444,9 @@
       "kind": "remark",
       "paper_file": "paper/appendices/C_negative_witness.tex",
       "source_index": 2,
-      "section": "Appendix C. Negative witness"
+      "section": "Appendix C. Negative witness",
+      "paper_page": 23,
+      "pdf_title": "Alternative families of test points"
     },
     {
       "label": "thm:finite-scale",
@@ -1463,7 +1501,9 @@
       ],
       "formal_routes": {},
       "kind": "theorem",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 23,
+      "pdf_title": "Uniform finite-scale non-SoS test"
     },
     {
       "label": "prop:explicit-threshold",
@@ -1519,7 +1559,9 @@
         "lem:corner": "Lean proves the impossibility of the selected corner data, extracts such data from any corner SOS, and proves the same explicit ambient non-SOS statement. It uses a direct quantitative application at k = 4980737; the paper applies its uniform Theorem D.1."
       },
       "kind": "proposition",
-      "source_index": 1
+      "source_index": 1,
+      "paper_page": 24,
+      "pdf_title": "Explicit sufficient order"
     },
     {
       "lean": [],
@@ -1538,7 +1580,9 @@
       "kind": "proposition",
       "paper_file": "paper/appendices/E_positive_certificates.tex",
       "source_index": 1,
-      "section": "Appendix E. Positive certificates"
+      "section": "Appendix E. Positive certificates",
+      "paper_page": 25,
+      "pdf_title": "An explicit window decomposition"
     }
   ]
 }

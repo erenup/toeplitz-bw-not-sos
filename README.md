@@ -9,8 +9,8 @@ Ping Nie — David R. Cheriton School of Computer Science, University of Waterlo
 — ping.nie@uwaterloo.ca
 
 The paper is [arXiv:2610.08980](https://arxiv.org/abs/2610.08980),
-version 1, submitted 6 October 2026. Read the [published PDF](paper/main.pdf)
-or its [sources and provenance](paper/README.md). The result map uses arXiv v1
+version 1, submitted 6 October 2026. Read the [published PDF](paper/main.pdf). The LaTeX source is the [arXiv e-print](https://arxiv.org/src/2610.08980v1)
+(sha256 `eed5b9c04bfa1c0e832288bee7550032d196b4ada5bc360e65fec00c72b41b01`). The result map uses arXiv v1
 numbering. The [2 October working version](https://github.com/erenup/toeplitz-bw-not-sos/blob/v1.0/paper/main.pdf)
 remains at tag v1.0. Version 1.1 updates the paper and documentation while
 preserving the v1.0 Lean source tree and exact verification code and data.
@@ -91,7 +91,7 @@ the exact `lean/` tree, the reproduction commands and the target-theorem
 axiom reports.
 
 Install [elan](https://github.com/leanprover/elan), Python 3.10 or later,
-Graphviz (`dot`), and the TeX dependencies listed in [paper/](paper/README.md).
+Graphviz (`dot`).
 
 **Formal proof (recommended first check).** From this directory:
 
@@ -148,7 +148,6 @@ python3 verification/negative.py
 python3 -O verification/negative.py
 python3 verification/witness.py
 python3 -O verification/witness.py
-bash paper/build.sh
 python3 paper-lean-mapping/build_and_check.py
 python3 -O paper-lean-mapping/build_and_check.py
 ```
@@ -161,14 +160,13 @@ controls, including under `python -O`. Expected last line of each command
 PASS: F_N is SOS for 2 <= N <= 50; 48 exact steps; negative controls rejected
 PASS: exact tangent witness and constants
 PASS: manuscript witness, convolution, threshold, and five rejection controls
-PASS: paper built (.build/main.pdf)
 PASS: mapping, DAG, declarations, scripts, and rejection controls (arXiv numbering and frozen tree checked)
 ```
 
 The toolchain and all Lean dependencies are pinned; do not run `lake update`.
-The manuscript build writes the ignored `paper/.build/main.pdf`; the tracked
-`paper/main.pdf` contains the published arXiv bytes. The local PDF has no arXiv
-stamp and can differ with the TeX distribution; see [paper/README.md](paper/README.md).
+The paper directory contains only the published arXiv PDF. Its SHA-256 is
+`aa474f031feb4e2e002611db9c4f18625e13b471cf059090970a7785492bdff4`.
+The e-print source is linked above and is kept outside this repository.
 Per-command runtime and memory costs are listed in the directory READMEs.
 
 ## Layout
@@ -176,14 +174,12 @@ Per-command runtime and memory costs are listed in the directory READMEs.
 - `paper-lean-mapping/`: beginner guide, result map, and generated dependency diagrams.
 - `lean/`: pinned Lean project, proofs, generated certificates, and `verify`.
 - `verification/`: exact Python checkers and compressed positive certificates.
-- `paper/`: manuscript sources, PDF, and portable build script.
+- `paper/`: the published arXiv PDF.
 
 ## License
 
 Everything outside `paper/` is available under the [MIT license](LICENSE).
-The contents of `paper/`, including the paper sources and PDF, are licensed
-under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), matching
-arXiv v1. See [paper/LICENSE](paper/LICENSE).
+The published `paper/main.pdf` is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), matching arXiv v1.
 
 
 ## Citation

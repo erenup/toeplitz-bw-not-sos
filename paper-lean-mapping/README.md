@@ -23,9 +23,9 @@ open. The enormous threshold is sufficient; no smallest bad order is established
 
 ## Three complementary parts
 
-The [paper directory](../paper/) contains the mathematical statements and proofs.
-Read [arXiv:2610.08980v1](https://arxiv.org/abs/2610.08980v1) or its
-[published PDF](../paper/main.pdf) alongside this guide. All current map numbers
+Read [arXiv:2610.08980v1](https://arxiv.org/abs/2610.08980v1) and its
+[published PDF](../paper/main.pdf) alongside this guide. The clean repository
+keeps the published PDF; the e-print source is linked from the root README. All current map numbers
 refer to arXiv v1; the [v1.0 map](https://github.com/erenup/toeplitz-bw-not-sos/tree/v1.0/paper-lean-mapping)
 refers to the 2 October working version. The negative theorem has a finite analytic
 proof; the supplied arithmetic checks establish specific inputs to that
@@ -103,7 +103,7 @@ in arXiv v1, including the exchange and boundary results, are listed in the
 
 Follow the complete commands in the [root README](../README.md). They install
 the pinned Lean dependencies, run all exact programs in normal and optimized
-Python, and build and audit the Lean certificates.
+Python, and audit the Lean certificates.
 
 To check the tables and diagrams, install Graphviz (the `dot` command)
 and run from the repository root:
@@ -122,7 +122,7 @@ Graphviz versions. After editing the map, regenerate explicitly with
 
 Without Graphviz, the default command exits with an installation message.
 Use the non-graph mode to check all map data, paper labels, declarations,
-section tables, Mermaid, and rejection controls without invoking `dot`:
+section tables, Mermaid, PDF text, and rejection controls without invoking `dot`:
 
 ```sh
 python3 paper-lean-mapping/build_and_check.py --no-graph
@@ -143,11 +143,13 @@ dangling or cyclic dependencies, nonexistent Lean declarations, and missing
 verification scripts. It also rejects a numbered paper result that lacks its
 own entry. The [remaining questions](by-section.md#remaining-questions) list
 open mathematical problems and gaps in the formalization.
-The checker checks every number against newly compiled `.aux` data, verifies
-the published source and PDF digests, and checks each cited declaration against
-the frozen Lean tree `69d02281c91fea6ff54fe3556aaddc43eae66e65` at v1.0.
-Wrong numbers, labels, source anchors and omitted unlabelled remarks are rejection
-controls, including under optimized Python.
+The checker extracts page-separated text from `paper/main.pdf` with `pdftotext` and
+checks every mapped number and optional title on its recorded page, as well as the
+published PDF digest and each cited declaration against the frozen Lean tree
+`69d02281c91fea6ff54fe3556aaddc43eae66e65` at v1.0. The e-print `.aux` numbering
+was cross-checked once in the records evidence. Wrong numbers, pages, titles,
+labels, source anchors and omitted entries are rejection controls, including under
+optimized Python. `pdftotext` is therefore a required checker dependency.
 Paper-only results include statements whose precise wording is stronger than
 the corresponding formal ingredients; the entry explains each difference.
 
@@ -156,7 +158,5 @@ any limits; `paper_dependencies` records the written argument; `formal_routes`
 explains where the formal proof uses a different or specialized result.
 Each checker command appears once in the section table's command catalogue.
 
-Both full and non-graph commands compile a temporary source copy with the
-paper build dependencies and take about 3 seconds, using under 100 MiB of memory. Graphviz installation time
-depends on the operating system. SVG geometry can vary across versions;
+Both full and non-graph commands extract the published PDF text and take about 3 seconds, using under 100 MiB of memory. Graphviz installation time depends on the operating system. SVG geometry can vary across versions;
 the comparison checks its mathematical content and evidence legend.

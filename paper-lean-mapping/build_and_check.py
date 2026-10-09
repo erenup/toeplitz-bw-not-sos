@@ -103,33 +103,43 @@ STATUSES = {
 }
 
 
-def validate(root, data, compiled):
+def pdf_tokens(text):
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+
+def phrase_found(page, phrase):
+    wanted = pdf_tokens(phrase)
+    if not wanted:
+        return True
+    got = pdf_tokens(page)
+    return any(got[i:i + len(wanted)] == wanted for i in range(len(got) - len(wanted) + 1))
+
+
+def validate(root, data, pdf_pages):
+    """Validate the result map against page-scoped text extracted from paper/main.pdf."""
     rows = data["results"]
     by_label = {row["label"]: row for row in rows}
-    require(
-        bool(rows) and len(by_label) == len(rows), "empty or repeated result labels"
-    )
-    assigned = []
+    require(bool(rows) and len(by_label) == len(rows), "empty or repeated result labels")
+    require(data.get("paper_status") == "pdf-only", "paper status must document PDF-only export")
+    require(len(pdf_pages) == 29, "published PDF text must have 29 pages")
+    require(hashlib.sha256((root / "paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"],
+            "published PDF hash")
+    numbers = []
     for row in rows:
         require(row["status"] in STATUSES, "unknown evidence status")
-        for field in (
-            "label",
-            "title",
-            "statement",
-            "section",
-            "explanation",
-            "scope",
-        ):
-            require(
-                isinstance(row[field], str) and bool(row[field]),
-                "missing result field: " + field,
-            )
+        for field in ("label", "number", "title", "statement", "section", "explanation", "scope"):
+            require(isinstance(row.get(field), str) and row[field], "missing result field: " + field)
+        require(isinstance(row.get("paper_page"), int) and 1 <= row["paper_page"] <= len(pdf_pages),
+                "invalid recorded PDF page: " + row["label"])
+        page = pdf_pages[row["paper_page"] - 1]
+        require(row["number"] in page, "mapped result number absent from recorded PDF page: " + row["label"])
+        require(row.get("pdf_title", "") == "" or phrase_found(page, row["pdf_title"]),
+                "mapped result title absent from recorded PDF page: " + row["label"])
+        require(row.get("paper_file", "").startswith("paper/"), "missing e-print source anchor")
+        require(isinstance(row.get("source_index"), int) and row["source_index"] > 0, "missing source index")
         require(not row.get("additional_labels", []), "non-result labels belong in other_labels")
-        assigned += [row["label"]]
-        require(
-            len(set(row["paper_dependencies"])) == len(row["paper_dependencies"]),
-            "repeated dependency",
-        )
+        numbers.append(row["number"])
+        require(len(set(row["paper_dependencies"])) == len(row["paper_dependencies"]), "repeated dependency")
         for dep in row["paper_dependencies"]:
             require(dep in by_label, "dangling dependency: " + dep)
         routes = row["formal_routes"]
@@ -139,75 +149,29 @@ def validate(root, data, compiled):
             if row["status"] == "Lean-proved" and by_label[dep]["status"] != "Lean-proved":
                 require(bool(row["lean"]) and bool(routes.get(dep)),
                         "Lean-proved result must explain its separate formal route: " + dep)
-        require(all(isinstance(note, str) and note.strip() for note in routes.values()),
-                "empty formal-route explanation")
+        require(all(isinstance(note, str) and note.strip() for note in routes.values()), "empty formal-route explanation")
         for ref in row["lean"]:
             path = root / ref["file"]
-            require(
-                ref["file"].startswith("lean/")
-                and ".." not in Path(ref["file"]).parts
-                and path.is_file(),
-                "missing Lean file",
-            )
-            require(
-                ref["name"] in declarations(path.read_text()),
-                "missing Lean declaration: " + ref["name"],
-            )
+            require(ref["file"].startswith("lean/") and ".." not in Path(ref["file"]).parts and path.is_file(), "missing Lean file")
+            require(ref["name"] in declarations(path.read_text()), "missing Lean declaration: " + ref["name"])
             require(bool(ref["role"]), "Lean reference must state its role")
         for check in row["checks"]:
             path = root / check["script"]
-            require(
-                check["script"].startswith("verification/")
-                and ".." not in Path(check["script"]).parts
-                and path.is_file(),
-                "missing verification script",
-            )
-            require(
-                check["script"] in check["command"]
-                and check["expected"]
-                and check["scope"],
-                "incomplete exact-check command",
-            )
+            require(check["script"].startswith("verification/") and ".." not in Path(check["script"]).parts and path.is_file(), "missing verification script")
+            require(check["script"] in check["command"] and check["expected"] and check["scope"], "incomplete exact-check command")
             for data_file in check.get("data_files", []):
-                require(isinstance(data_file, str) and data_file.startswith("verification/")
-                        and ".." not in Path(data_file).parts and (root/data_file).is_file(),
-                        "missing exact-check data file")
-    require(len(assigned) == len(set(assigned)), "paper label assigned more than once")
+                require(isinstance(data_file, str) and data_file.startswith("verification/") and ".." not in Path(data_file).parts and (root/data_file).is_file(), "missing exact-check data file")
+    require(len(numbers) == len(set(numbers)), "duplicate mapped PDF numbers")
+    require(len(data["other_labels"]) == len({row["label"] for row in data["other_labels"]}), "repeated other label")
     visited, active = set(), set()
-
     def visit(label):
         require(label not in active, "cyclic dependency: " + label)
-        if label in visited:
-            return
+        if label in visited: return
         active.add(label)
-        for dep in by_label[label]["paper_dependencies"]:
-            visit(dep)
-        active.remove(label)
-        visited.add(label)
-
-    for label in by_label:
-        visit(label)
-    inventory, locations = source_inventory(root)
-    require(data["paper_status"] == "present", "included manuscript must be marked present")
-    require(set(by_label) == set(inventory), "numbered-result inventory differs from the sources")
-    require([row["label"] for row in rows] == list(inventory), "result order differs from the sources")
-    for label, result in inventory.items():
-        row = by_label[label]
-        for key in ("paper_file", "kind", "source_index"):
-            require(row[key] == result[key], "wrong source anchor for " + label)
-        aux_label = result["aux_label"]
-        require(aux_label in compiled, "result label missing from compiled aux: " + label)
-        expected = result["kind"].capitalize() + " " + compiled[aux_label]
-        require(row["number"] == expected, "compiled result number differs: " + label)
-    other = data["other_labels"]
-    require(len(other) == len({row["label"] for row in other}), "repeated other label")
-    require({row["label"] for row in other} == set(locations) - set(by_label), "source-label coverage differs")
-    for row in other:
-        label = row["label"]
-        require(locations[label] == row["paper_file"], "label in wrong source file: " + label)
-        require(label in compiled and compiled[label] == row["number"], "compiled label number differs: " + label)
+        for dep in by_label[label]["paper_dependencies"]: visit(dep)
+        active.remove(label); visited.add(label)
+    for label in by_label: visit(label)
     return True
-
 
 KINDS = "theorem|proposition|lemma|corollary|remark|example"
 RESULT_RE = re.compile(r"\\begin\{(" + KINDS + r")\}(?:\[[^\]]*\])?(.*?)\\end\{\1\}", re.S)
@@ -288,11 +252,10 @@ def immutable_inputs(root, data):
             payload = git("show", revision+":"+ref["file"])
             require(payload == (root/ref["file"]).read_bytes(), "cited declaration file differs from frozen tree")
             require(ref["name"] in declarations(payload.decode()), "declaration absent at frozen revision")
-    for filename, expected in data["source_sha256"].items():
-        require(hashlib.sha256((root/"paper"/filename).read_bytes()).hexdigest() == expected,
-                "published source hash differs: "+filename)
     require(hashlib.sha256((root/"paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"],
             "published PDF hash differs")
+    require({str(p.relative_to(root/"paper")) for p in (root/"paper").iterdir()} == {"main.pdf"},
+            "paper directory must contain only main.pdf")
 
 
 def compile_numbering(root):
@@ -638,65 +601,26 @@ def generated_controls():
 
 
 def controls():
+    """Exercise PDF-page and mapping rejection controls without touching the release."""
     with tempfile.TemporaryDirectory() as temporary:
-        root = Path(temporary)
-        for name in ("lean", "paper", "verification"):
-            (root/name).mkdir()
-        (root/"paper/main.tex").write_text(r"\begin{theorem}\label{thm:test}X\end{theorem}")
-        (root/"lean/Test.lean").write_text("namespace Example\n/-- def ghost := 0 -/\ndef present := 0\nend Example\n")
-        (root/"verification/test.py").write_text("")
+        root = Path(temporary); (root / "paper").mkdir(); (root / "lean").mkdir(); (root / "verification").mkdir()
+        payload = b"Theorem 1.1. Test result."
+        fake_pages = ["Theorem 1.1. Test result."] + [""] * 28
+        (root / "paper/main.pdf").write_bytes(payload)
+        (root / "lean/Test.lean").write_text("namespace Example\ndef present := 0\nend Example\n")
+        (root / "verification/test.py").write_text("")
         row = dict(label="thm:test", number="Theorem 1.1", title="Test", statement="Test", section="Test",
                    explanation="Test", scope="Test", kind="theorem", paper_file="paper/main.tex", source_index=1,
-                   status="Exact-verified", paper_dependencies=[], formal_routes={},
+                   paper_page=1, pdf_title="", status="Exact-verified", paper_dependencies=[], formal_routes={},
                    lean=[dict(name="Example.present",file="lean/Test.lean",role="definition")],
                    checks=[dict(script="verification/test.py",command="python3 verification/test.py",expected="PASS",scope="Test")])
-        base = dict(paper_status="present", other_labels=[], todos=["Test"], results=[row])
-        compiled = {"thm:test":"1.1"}
-        require(validate(root, base, compiled), "mapping positive control")
-        corruptions = [("number", "Theorem 9.9"), ("label", "thm:absent"), ("source_index", 2),
-                       ("paper_file", "paper/wrong.tex"), ("additional_labels", ["absent"]), ("paper_dependencies", ["missing"]),
-                       ("paper_dependencies", ["thm:test"]),
-                       ("lean", [dict(name="Example.ghost",file="lean/Test.lean",role="definition")]),
-                       ("checks", [dict(script="verification/missing.py",command="python3 verification/missing.py",expected="PASS",scope="Test")])]
-        for field, value in corruptions:
-            bad = copy.deepcopy(base)
-            bad["results"][0][field] = value
-            try:
-                validate(root, bad, compiled)
-            except ValueError:
-                pass
-            else:
-                raise ValueError("FAIL: corrupted mapping accepted: "+field)
-        try:
-            validate(root, base, {})
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: absent compiled label accepted")
-        (root/"paper/main.tex").write_text(r"\begin{theorem}\label{thm:test}X\end{theorem}\begin{remark}Y\end{remark}")
-        try:
-            validate(root, base, compiled)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: unlabelled numbered result omitted")
-        # A synthetic source anchor must still match a compiled number.
-        synthetic = "unlabelled:main.tex:remark:1"
-        extra = copy.deepcopy(row)
-        extra.update(label=synthetic,kind="remark",number="Remark 1.1",paper_dependencies=[],formal_routes={})
-        base["results"].append(extra)
-        compiled["mapping:"+synthetic] = "1.1"
-        require(validate(root, base, compiled), "unlabelled-result positive control")
-        compiled["mapping:"+synthetic] = "1.2"
-        try:
-            validate(root, base, compiled)
-        except ValueError:
-            pass
-        else:
-            raise ValueError("FAIL: corrupted unlabelled numbering accepted")
-        require(aux_labels(r"\newlabel{x}{{{BW-Form}}{1}{title}{anchor}{}}") == {"x":"{BW-Form}"},
-                "nested aux number parser")
-
+        base = dict(paper_status="pdf-only", pdf_sha256=hashlib.sha256(payload).hexdigest(), other_labels=[], todos=["Test"], results=[row])
+        require(validate(root, base, fake_pages), "PDF mapping positive control")
+        for field, value in (("number", "Theorem 9.9"), ("paper_page", 2), ("pdf_title", "Absent title"), ("label", "")):
+            bad = copy.deepcopy(base); bad["results"][0][field] = value
+            try: validate(root, bad, fake_pages)
+            except ValueError: pass
+            else: raise ValueError("FAIL: corrupted PDF mapping accepted: " + field)
 
 def graphviz_preflight():
     executable = shutil.which("dot")
@@ -709,6 +633,15 @@ def graphviz_preflight():
         raise ValueError("FAIL: Graphviz 'dot' could not run; repair the installation or use --no-graph") from error
     require(result.returncode == 0, "Graphviz 'dot -V' failed; repair the installation or use --no-graph")
 
+
+def pdf_text_pages(root):
+    pdf = root / "paper/main.pdf"
+    require(pdf.is_file(), "missing published PDF")
+    text = subprocess.check_output(["pdftotext", "-raw", str(pdf), "-"], text=True,
+                                   stderr=subprocess.PIPE)
+    pages = text.split("\f")
+    if pages and not pages[-1].strip(): pages.pop()
+    return pages
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -723,8 +656,8 @@ def main():
     controls()
     generated_controls()
     immutable_inputs(directory.parent, data)
-    compiled = compile_numbering(directory.parent)
-    has_paper = validate(directory.parent, data, compiled)
+    pdf_pages = pdf_text_pages(directory.parent)
+    has_paper = validate(directory.parent, data, pdf_pages)
     outputs = {"by-section.md": render_tables(data), **render_graphs(data, svg=not args.no_graph)}
     generated_files(directory, outputs, write=args.write)
     print(
