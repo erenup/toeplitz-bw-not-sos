@@ -186,5 +186,3 @@ The published `paper/main.pdf` is licensed under [CC BY-SA 4.0](https://creative
 
 [CITATION.cff](CITATION.cff) prefers the arXiv paper, DOI
 [10.48550/arXiv.2610.08980](https://doi.org/10.48550/arXiv.2610.08980).
-After version 1.1 is merged, set the software release date with one command:
-`python3 paper-lean-mapping/set_release_date.py` (UTC date, or `--date YYYY-MM-DD`).

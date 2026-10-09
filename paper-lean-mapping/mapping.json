@@ -7,462 +7,462 @@
   "other_labels": [
     {
       "label": "B:eq:AC-limit",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "35"
     },
     {
       "label": "B:eq:Linfty",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "34"
     },
     {
       "label": "B:eq:Rvanish",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "37"
     },
     {
       "label": "B:eq:conjugate-tail",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "44"
     },
     {
       "label": "B:eq:denominators",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "38"
     },
     {
       "label": "B:eq:dyadic-scale",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "45"
     },
     {
       "label": "B:eq:dyadic-tails",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "46"
     },
     {
       "label": "B:eq:generating",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "39"
     },
     {
       "label": "B:eq:global",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "40"
     },
     {
       "label": "B:eq:hepsilon",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "47"
     },
     {
       "label": "B:eq:means",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "36"
     },
     {
       "label": "B:eq:quant-continuation",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "48"
     },
     {
       "label": "B:eq:repeated",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "41"
     },
     {
       "label": "B:eq:repeated-baseline",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "42"
     },
     {
       "label": "B:eq:speed-region",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "49"
     },
     {
       "label": "B:eq:tail-budget",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "43"
     },
     {
       "label": "B:subsec:effective",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "B.3"
     },
     {
       "label": "C:eq:eig-margin",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "number": "53"
     },
     {
       "label": "C:eq:entry",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "number": "50"
     },
     {
       "label": "C:eq:witness",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "number": "51"
     },
     {
       "label": "C:eq:witness-bounds",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "number": "52"
     },
     {
       "label": "app:exact-psd-checks",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "F.2"
     },
     {
       "label": "app:explicit-bound",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "D"
     },
     {
       "label": "app:finite-certificates",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "F"
     },
     {
       "label": "app:increment-data",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "F.1"
     },
     {
       "label": "app:lean-negative",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "F.3"
     },
     {
       "label": "app:negative-witness",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "number": "C"
     },
     {
       "label": "app:normal-form-proof",
-      "paper_file": "paper/appendices/A_wedge_gram.tex",
+      "paper_file": "eprint/appendices/A_wedge_gram.tex",
       "number": "A"
     },
     {
       "label": "app:positive-certificates",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "E"
     },
     {
       "label": "app:positive-coupling",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "E.3"
     },
     {
       "label": "app:positive-lean",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "F.4"
     },
     {
       "label": "app:positive-windows",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "E.2"
     },
     {
       "label": "app:quantitative",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "number": "B"
     },
     {
       "label": "app:same-symmetry-reduction",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "E.1"
     },
     {
       "label": "app:wedge-gram",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.1"
     },
     {
       "label": "eq:Bm-definition",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "9"
     },
     {
       "label": "eq:FN",
-      "paper_file": "paper/sections/01_introduction.tex",
+      "paper_file": "eprint/sections/01_introduction.tex",
       "number": "{BW form}"
     },
     {
       "label": "eq:L-limit",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "24"
     },
     {
       "label": "eq:L-negative-limit",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "25"
     },
     {
       "label": "eq:R-vanishes",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "26"
     },
     {
       "label": "eq:appendix-geometric-step",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "63"
     },
     {
       "label": "eq:appendix-normalized-step",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "62"
     },
     {
       "label": "eq:baseline-gram",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "13"
     },
     {
       "label": "eq:baselines",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "14"
     },
     {
       "label": "eq:commutator-overlap",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "12"
     },
     {
       "label": "eq:corner-example-matrix",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "8"
     },
     {
       "label": "eq:evaluated-gram",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "55"
     },
     {
       "label": "eq:exact-residual-certificate",
-      "paper_file": "paper/appendices/F_finite_certificates.tex",
+      "paper_file": "eprint/appendices/F_finite_certificates.tex",
       "number": "64"
     },
     {
       "label": "eq:exchange",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "15"
     },
     {
       "label": "eq:finite-chain",
-      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "paper_file": "eprint/sections/04_exact_certificates.tex",
       "number": "33"
     },
     {
       "label": "eq:finite-compression",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "18"
     },
     {
       "label": "eq:finite-decomposition",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "20"
     },
     {
       "label": "eq:finite-scale",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "54"
     },
     {
       "label": "eq:finite-tangent",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "58"
     },
     {
       "label": "eq:frame",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "7"
     },
     {
       "label": "eq:general-gram-1",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "16"
     },
     {
       "label": "eq:general-gram-2",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "{Block-diag Gram}"
     },
     {
       "label": "eq:literal-gram",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "11"
     },
     {
       "label": "eq:matched-features",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "22"
     },
     {
       "label": "eq:plucker",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "6"
     },
     {
       "label": "eq:positive-ddvv-relation",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "32"
     },
     {
       "label": "eq:positive-mixed",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "29"
     },
     {
       "label": "eq:positive-reduced-form",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "31"
     },
     {
       "label": "eq:positive-reduction",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "30"
     },
     {
       "label": "eq:positive-slack",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "60"
     },
     {
       "label": "eq:positive-split",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "27"
     },
     {
       "label": "eq:positive-split-identities",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "28"
     },
     {
       "label": "eq:positive-tent",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "59"
     },
     {
       "label": "eq:positive-window-certificate",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "number": "61"
     },
     {
       "label": "eq:realigned-diagonal",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "56"
     },
     {
       "label": "eq:realigned-error",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "number": "57"
     },
     {
       "label": "eq:sectors",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "17"
     },
     {
       "label": "eq:special-V",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "19"
     },
     {
       "label": "eq:test-nodes",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "23"
     },
     {
       "label": "eq:toeplitz",
-      "paper_file": "paper/sections/01_introduction.tex",
+      "paper_file": "eprint/sections/01_introduction.tex",
       "number": "1"
     },
     {
       "label": "origin parameter",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2"
     },
     {
       "label": "restricted wedge coordinate",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "10"
     },
     {
       "label": "sec choose direction",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.2.3"
     },
     {
       "label": "sec:conclusion",
-      "paper_file": "paper/sections/05_conclusion.tex",
+      "paper_file": "eprint/sections/05_conclusion.tex",
       "number": "5"
     },
     {
       "label": "sec:exact-certificates",
-      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "paper_file": "eprint/sections/04_exact_certificates.tex",
       "number": "4"
     },
     {
       "label": "sec:introduction",
-      "paper_file": "paper/sections/01_introduction.tex",
+      "paper_file": "eprint/sections/01_introduction.tex",
       "number": "1"
     },
     {
       "label": "sec:non-sos",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2"
     },
     {
       "label": "sec:positive-subclasses",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "3"
     },
     {
       "label": "subsec:certificate-chain",
-      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "paper_file": "eprint/sections/04_exact_certificates.tex",
       "number": "4"
     },
     {
       "label": "subsec:corner",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.2"
     },
     {
       "label": "subsec:corner-gram",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.2.1"
     },
     {
       "label": "subsec:finite-test",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.2.2"
     },
     {
       "label": "subsec:positive-pairs",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "3"
     },
     {
       "label": "subsec:positive-split",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "number": "3"
     },
     {
       "label": "subsec:wedge-coordinates",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "2.1"
     },
     {
       "label": "vanish",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "5"
     },
     {
       "label": "wedge coordinate",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "number": "3"
     }
   ],
@@ -478,7 +478,7 @@
       "number": "Theorem 2.1",
       "title": "Non-SOS at large orders",
       "section": "2. Failure of SOS",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "statement": "There is a sufficient N0 such that F_N is nonnegative and not a finite sum of real homogeneous quadratic squares for every N >= N0.",
       "lean": [
         {
@@ -546,7 +546,7 @@
       "number": "Lemma 2.1",
       "title": "Complete wedge Gram characterization",
       "section": "2. Failure of SOS",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "statement": "For any homogeneous quartic vanishing at (x,0), (0,y) and (x,x), every quadratic SOS factor is an alternating wedge form; the full Gram correction space is the Plucker span.",
       "lean": [
         {
@@ -578,7 +578,7 @@
       "number": "Lemma 2.2",
       "title": "Literal corner stabilization",
       "section": "2. Failure of SOS",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "statement": "Restriction keeps the principal wedge Gram, the corner polynomial is independent of N for N >= 2m, and corner non-SOS transfers to all such orders.",
       "lean": [
         {
@@ -632,7 +632,7 @@
       "additional_labels": [],
       "number": "Example 2.1",
       "kind": "example",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 1,
       "section": "2. Failure of SOS",
       "paper_page": 6,
@@ -661,7 +661,7 @@
       "additional_labels": [],
       "number": "Lemma 2.3",
       "kind": "lemma",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 3,
       "section": "2. Failure of SOS",
       "paper_page": 6,
@@ -691,7 +691,7 @@
       "additional_labels": [],
       "number": "Lemma 2.4",
       "kind": "lemma",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 4,
       "section": "2. Failure of SOS",
       "paper_page": 7,
@@ -730,7 +730,7 @@
       "additional_labels": [],
       "number": "Lemma 2.5",
       "kind": "lemma",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 5,
       "section": "2. Failure of SOS",
       "paper_page": 7,
@@ -753,7 +753,7 @@
       "additional_labels": [],
       "number": "Remark 2.1",
       "kind": "remark",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 1,
       "section": "2. Failure of SOS",
       "paper_page": 8,
@@ -783,7 +783,7 @@
       "additional_labels": [],
       "number": "Lemma 2.6",
       "kind": "lemma",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 6,
       "section": "2. Failure of SOS",
       "paper_page": 8,
@@ -809,7 +809,7 @@
       "additional_labels": [],
       "number": "Proposition 2.1",
       "kind": "proposition",
-      "paper_file": "paper/sections/02_non_sos.tex",
+      "paper_file": "eprint/sections/02_non_sos.tex",
       "source_index": 1,
       "section": "2. Failure of SOS",
       "paper_page": 9,
@@ -830,7 +830,7 @@
       "additional_labels": [],
       "number": "Lemma 3.1",
       "kind": "lemma",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "source_index": 1,
       "section": "3. Positive subclasses",
       "paper_page": 11,
@@ -851,7 +851,7 @@
       "additional_labels": [],
       "number": "Lemma 3.2",
       "kind": "lemma",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "source_index": 2,
       "section": "3. Positive subclasses",
       "paper_page": 11,
@@ -874,7 +874,7 @@
       "additional_labels": [],
       "number": "Proposition 3.1",
       "kind": "proposition",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "source_index": 1,
       "section": "3. Positive subclasses",
       "paper_page": 11,
@@ -899,7 +899,7 @@
       "additional_labels": [],
       "number": "Theorem 3.1",
       "kind": "theorem",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "source_index": 1,
       "section": "3. Positive subclasses",
       "paper_page": 12,
@@ -922,7 +922,7 @@
       "additional_labels": [],
       "number": "Remark 3.1",
       "kind": "remark",
-      "paper_file": "paper/sections/03_positive_subclasses.tex",
+      "paper_file": "eprint/sections/03_positive_subclasses.tex",
       "source_index": 1,
       "section": "3. Positive subclasses",
       "paper_page": 12,
@@ -1001,7 +1001,7 @@
       "additional_labels": [],
       "number": "Lemma 4.1",
       "kind": "lemma",
-      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "paper_file": "eprint/sections/04_exact_certificates.tex",
       "source_index": 1,
       "section": "4. Exact certificates",
       "paper_page": 14,
@@ -1012,7 +1012,7 @@
       "number": "Theorem 4.1",
       "title": "SOS through order 50",
       "section": "4. Exact certificates",
-      "paper_file": "paper/sections/04_exact_certificates.tex",
+      "paper_file": "eprint/sections/04_exact_certificates.tex",
       "statement": "The unrestricted Toeplitz BW form is SOS for every 2 <= N <= 50.",
       "lean": [
         {
@@ -1122,7 +1122,7 @@
       "additional_labels": [],
       "number": "Lemma B.1",
       "kind": "lemma",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "source_index": 1,
       "section": "Appendix B. Quantitative bounds",
       "paper_page": 17,
@@ -1133,7 +1133,7 @@
       "number": "Lemma B.2",
       "title": "Forced low mixed modes",
       "section": "Appendix B. Quantitative bounds",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "statement": "The mixed baseline B is PSD, and every feasible normal form satisfies M s_g = B s_g = 0 for 0 <= g < m.",
       "lean": [
         {
@@ -1196,7 +1196,7 @@
       "additional_labels": [],
       "number": "Lemma B.3",
       "kind": "lemma",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "source_index": 3,
       "section": "Appendix B. Quantitative bounds",
       "paper_page": 18,
@@ -1223,7 +1223,7 @@
       "additional_labels": [],
       "number": "Lemma B.4",
       "kind": "lemma",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "source_index": 4,
       "section": "Appendix B. Quantitative bounds",
       "paper_page": 19,
@@ -1253,7 +1253,7 @@
       "additional_labels": [],
       "number": "Proposition B.1",
       "kind": "proposition",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "source_index": 1,
       "section": "Appendix B. Quantitative bounds",
       "paper_page": 19,
@@ -1264,7 +1264,7 @@
       "number": "Lemma B.5",
       "title": "Uniform finite tails",
       "section": "Appendix B. Quantitative bounds",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "statement": "For 0 < epsilon <= 1, the baseline truncation and conjugate-node error are bounded by 2^32 epsilon^-8 exp(-epsilon m/4).",
       "lean": [
         {
@@ -1310,7 +1310,7 @@
       "number": "Lemma B.6",
       "title": "Quantitative continuation",
       "section": "Appendix B. Quantitative bounds",
-      "paper_file": "paper/appendices/B_quantitative.tex",
+      "paper_file": "eprint/appendices/B_quantitative.tex",
       "statement": "For every dyadic scale k >= 16, the scaled pure Gram-vector norm in the stated speed region is at most 2^20 epsilon^(2^-17), independently of its dimension.",
       "lean": [
         {
@@ -1354,7 +1354,7 @@
       "number": "Lemma C.1",
       "title": "Exact limiting witness",
       "section": "Appendix C. Negative witness",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "statement": "The 1024-point integer vector has l1 mass 859652168 and pairing below -2^42; its Rayleigh quotient gives a smallest eigenvalue below -2^-18.",
       "lean": [
         {
@@ -1421,7 +1421,7 @@
       "additional_labels": [],
       "number": "Remark C.1",
       "kind": "remark",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "source_index": 1,
       "section": "Appendix C. Negative witness",
       "paper_page": 23,
@@ -1442,7 +1442,7 @@
       "additional_labels": [],
       "number": "Remark C.2",
       "kind": "remark",
-      "paper_file": "paper/appendices/C_negative_witness.tex",
+      "paper_file": "eprint/appendices/C_negative_witness.tex",
       "source_index": 2,
       "section": "Appendix C. Negative witness",
       "paper_page": 23,
@@ -1453,7 +1453,7 @@
       "number": "Theorem D.1",
       "title": "Uniform finite-scale obstruction",
       "section": "Appendix D. Explicit threshold",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "statement": "For every k >= 16 and m = 2^(2k), feasibility implies 0 <= Phi_m < -2^42 + 2^90 m^(-1/2) + 2^80 m^(-1/262144).",
       "lean": [
         {
@@ -1510,7 +1510,7 @@
       "number": "Proposition D.1",
       "title": "Explicit sufficient order",
       "section": "Appendix D. Explicit threshold",
-      "paper_file": "paper/appendices/D_explicit_bound.tex",
+      "paper_file": "eprint/appendices/D_explicit_bound.tex",
       "statement": "The corner at m = 2^9961474 is non-SOS; consequently F_N is non-SOS for every N >= 2^9961475.",
       "lean": [
         {
@@ -1578,7 +1578,7 @@
       "additional_labels": [],
       "number": "Proposition E.1",
       "kind": "proposition",
-      "paper_file": "paper/appendices/E_positive_certificates.tex",
+      "paper_file": "eprint/appendices/E_positive_certificates.tex",
       "source_index": 1,
       "section": "Appendix E. Positive certificates",
       "paper_page": 25,

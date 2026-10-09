@@ -135,7 +135,7 @@ def validate(root, data, pdf_pages):
         require(row["number"] in page, "mapped result number absent from recorded PDF page: " + row["label"])
         require(row.get("pdf_title", "") == "" or phrase_found(page, row["pdf_title"]),
                 "mapped result title absent from recorded PDF page: " + row["label"])
-        require(row.get("paper_file", "").startswith("paper/"), "missing e-print source anchor")
+        require(row.get("paper_file", "").startswith("eprint/"), "missing e-print source anchor")
         require(isinstance(row.get("source_index"), int) and row["source_index"] > 0, "missing source index")
         require(not row.get("additional_labels", []), "non-result labels belong in other_labels")
         numbers.append(row["number"])
@@ -173,120 +173,23 @@ def validate(root, data, pdf_pages):
     for label in by_label: visit(label)
     return True
 
-KINDS = "theorem|proposition|lemma|corollary|remark|example"
-RESULT_RE = re.compile(r"\\begin\{(" + KINDS + r")\}(?:\[[^\]]*\])?(.*?)\\end\{\1\}", re.S)
-
-
-def source_files(root):
-    main = root / "paper/main.tex"
-    require(main.is_file(), "missing paper main source")
-    files = ["paper/main.tex"]
-    def visit(filename):
-        text = re.sub(r"(?<!\\)%[^\n]*", "", (root / filename).read_text())
-        for name in re.findall(r"\\input\{([^}]+)\}", text):
-            child = "paper/" + name + ("" if name.endswith(".tex") else ".tex")
-            require(".." not in Path(child).parts and (root/child).is_file(), "invalid paper input")
-            require(child not in files, "repeated or cyclic paper input")
-            files.append(child)
-            visit(child)
-    visit("paper/main.tex")
-    return files
-
-
-def source_inventory(root):
-    results, locations = {}, {}
-    for filename in source_files(root):
-        text = re.sub(r"(?<!\\)%[^\n]*", "", (root/filename).read_text())
-        for label in re.findall(r"\\label\s*\{([^}]+)\}", text):
-            require(label not in locations, "duplicate TeX label: " + label)
-            locations[label] = filename
-        counts = {}
-        for match in RESULT_RE.finditer(text):
-            kind, body = match.groups()
-            counts[kind] = counts.get(kind, 0) + 1
-            labels = re.findall(r"\\label\s*\{([^}]+)\}", body)
-            label = labels[0] if labels else f"unlabelled:{filename.removeprefix('paper/')}:{kind}:{counts[kind]}"
-            require(label not in results, "duplicate numbered result")
-            results[label] = dict(paper_file=filename,kind=kind,source_index=counts[kind],
-                                  aux_label=label if labels else "mapping:"+label)
-    require(bool(results), "no numbered results")
-    return results, locations
-
-
-def aux_group(text, start):
-    require(start < len(text) and text[start] == "{", "expected aux group")
-    depth, end = 1, start + 1
-    while end < len(text) and depth:
-        escaped = text[end-1] == "\\"
-        if not escaped and text[end] == "{": depth += 1
-        if not escaped and text[end] == "}": depth -= 1
-        end += 1
-    require(depth == 0, "incomplete aux group")
-    return text[start+1:end-1], end
-
-
-def aux_labels(text):
-    labels = {}
-    for match in re.finditer(r"\\newlabel\{", text):
-        label, end = aux_group(text, match.end()-1)
-        contents, end = aux_group(text, end)
-        number, end = aux_group(contents, 0)
-        require(label not in labels, "duplicate compiled label")
-        labels[label] = number
-    return labels
-
 
 def immutable_inputs(root, data):
     revision = data["frozen_revision"]
     require(revision == "7126c0841b008dc89a21edfd008bbf1b748d280f", "wrong frozen revision")
-    def git(*parts):
-        return subprocess.check_output(["git", "-C", str(root), *parts])
-    require(data["lean_tree"] == "69d02281c91fea6ff54fe3556aaddc43eae66e65", "wrong frozen Lean tree")
+    def git(*parts): return subprocess.check_output(["git", "-C", str(root), *parts])
+    require(data["lean_tree"] == "69d02281c91fea6ff54fe3556aaddc43eae66e65", "wrong Lean tree")
     require(git("rev-parse", revision+":lean").decode().strip() == data["lean_tree"], "frozen Lean tree differs")
     require(git("rev-parse", "HEAD:lean").decode().strip() == data["lean_tree"], "HEAD Lean tree differs")
-    require(subprocess.run(["git", "-C", str(root), "diff", "--quiet", revision, "--", "lean"]).returncode == 0,
-            "working Lean tree differs")
+    require(subprocess.run(["git", "-C", str(root), "diff", "--quiet", revision, "--", "lean"]).returncode == 0, "working Lean tree differs")
     require(not git("ls-files", "--others", "--exclude-standard", "lean").strip(), "additional Lean source")
     for row in data["results"]:
         for ref in row["lean"]:
             payload = git("show", revision+":"+ref["file"])
             require(payload == (root/ref["file"]).read_bytes(), "cited declaration file differs from frozen tree")
             require(ref["name"] in declarations(payload.decode()), "declaration absent at frozen revision")
-    require(hashlib.sha256((root/"paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"],
-            "published PDF hash differs")
-    require({str(p.relative_to(root/"paper")) for p in (root/"paper").iterdir()} == {"main.pdf"},
-            "paper directory must contain only main.pdf")
-
-
-def compile_numbering(root):
-    """Compile a temporary copy, labelling only unlabelled results in that copy."""
-    inventory, locations = source_inventory(root)
-    with tempfile.TemporaryDirectory(prefix="paper-numbering-") as temporary:
-        paper = Path(temporary)/"paper"
-        shutil.copytree(root/"paper", paper, ignore=shutil.ignore_patterns(".build"))
-        for filename in source_files(root):
-            path = Path(temporary)/filename
-            text = path.read_text()
-            counts = {}
-            # The published sources have no commented-out numbered environments.
-            def instrument(match):
-                kind, body = match.groups()
-                counts[kind] = counts.get(kind, 0) + 1
-                if re.search(r"\\label\s*\{", body):
-                    return match.group()
-                label = f"mapping:unlabelled:{filename.removeprefix('paper/')}:{kind}:{counts[kind]}"
-                opening = match.group().index("}") + 1
-                if match.group()[opening:opening+1] == "[":
-                    opening = match.group().index("]", opening) + 1
-                return match.group()[:opening] + r"\label{" + label + "}" + match.group()[opening:]
-            path.write_text(RESULT_RE.sub(instrument, text))
-        built = subprocess.run(["bash", str(paper/"build.sh")], stdout=subprocess.PIPE,
-                               stderr=subprocess.STDOUT, text=True,
-                               env={**os.environ, "OMP_NUM_THREADS":"1", "OPENBLAS_NUM_THREADS":"1",
-                                    "MKL_NUM_THREADS":"1", "NUMEXPR_NUM_THREADS":"1"})
-        require(built.returncode == 0, "numbering build failed:\n"+built.stdout[-4000:])
-        return aux_labels((paper/".build/main.aux").read_text())
-
+    require(hashlib.sha256((root/"paper/main.pdf").read_bytes()).hexdigest() == data["pdf_sha256"], "published PDF hash differs")
+    require({str(p.relative_to(root/"paper")) for p in (root/"paper").iterdir()} == {"main.pdf"}, "paper directory must contain only main.pdf")
 
 def render_tables(data):
     lines = [
@@ -610,7 +513,7 @@ def controls():
         (root / "lean/Test.lean").write_text("namespace Example\ndef present := 0\nend Example\n")
         (root / "verification/test.py").write_text("")
         row = dict(label="thm:test", number="Theorem 1.1", title="Test", statement="Test", section="Test",
-                   explanation="Test", scope="Test", kind="theorem", paper_file="paper/main.tex", source_index=1,
+                   explanation="Test", scope="Test", kind="theorem", paper_file="eprint/main.tex", source_index=1,
                    paper_page=1, pdf_title="", status="Exact-verified", paper_dependencies=[], formal_routes={},
                    lean=[dict(name="Example.present",file="lean/Test.lean",role="definition")],
                    checks=[dict(script="verification/test.py",command="python3 verification/test.py",expected="PASS",scope="Test")])

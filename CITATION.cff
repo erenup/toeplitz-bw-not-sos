@@ -3,6 +3,7 @@ message: "Please cite this software using the metadata below."
 type: software
 title: "Sum-of-Squares and Non-Sum-of-Squares Regimes for the Toeplitz Böttcher–Wenzel Form"
 version: "1.1"
+date-released: 2026-10-09
 authors:
   - family-names: Zhu
     given-names: Wenqi
