@@ -404,12 +404,12 @@ def render_graphs(data, svg=True):
     for row in rows:
         identifier = ids[row["label"]]
         title = row.get("graph_title", row["title"])
-        label = "\n".join(textwrap.wrap(title, 30)) + "\n" + row["label"]
+        label = "\n".join(textwrap.wrap(title, 30)) + "\n" + row.get("number", row["label"])
         dot.append(
             f'{identifier} [label={json.dumps(label)}, fillcolor="{STATUSES[row["status"]]}"];'
         )
         mermaid.append(
-            f'  {identifier}["{title}<br/>{row["label"]}"]:::{status_ids[row["status"]]}'
+            f'  {identifier}["{row.get("number", row["label"])}<br/>{title}"]:::{status_ids[row["status"]]}'
         )
         for dep in row["paper_dependencies"]:
             dashed = row["status"] == "Unproved remark" or dep in row["formal_routes"]
